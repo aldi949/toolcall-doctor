@@ -1,0 +1,12 @@
+{
+  "failure": {
+    "condition": "not_in_enum",
+    "path": "arguments.account"
+  },
+  "preserve": [
+    {"type": "tool_name", "value": "get_balance"},
+    {"type": "contains", "value": "ACC-999-XYZ"},
+    {"type": "enum_nonempty", "property": "account"},
+    {"type": "arg_equals", "path": "account", "value": "ACC-999-XYZ"}
+  ]
+}

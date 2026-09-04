@@ -1,0 +1,31 @@
+{
+  "outcome": "UNSTABLE",
+  "control_unstable": true,
+  "broken_unstable": false,
+  "control": {
+    "n": 10,
+    "http_2xx": 10,
+    "http_err": 0,
+    "tool_calls": 8,
+    "schema_valid": 8,
+    "schema_invalid": 0,
+    "timeout": 0,
+    "malformed_args": 0,
+    "raw_tool_syntax": 2
+  },
+  "broken": {
+    "n": 10,
+    "http_2xx": 10,
+    "http_err": 0,
+    "tool_calls": 10,
+    "schema_valid": 10,
+    "schema_invalid": 0,
+    "timeout": 0,
+    "malformed_args": 0,
+    "raw_tool_syntax": 0
+  },
+  "CONTROL_UNSTABLE": true,
+  "BROKEN_CONSISTENT_FAILURE": false,
+  "probe": "P_SCHEMA_FLAT",
+  "escalated_n": 10
+}

@@ -1,0 +1,12 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"children\":\"\\u003cTodoList /\\u003e\"}",
+  "arguments_parsed": {
+    "children": "<TodoList />"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:16:13Z"
+}

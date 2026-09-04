@@ -1,0 +1,22 @@
+{
+  "stem": "fix",
+  "http_status": 200,
+  "streaming": true,
+  "tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": true,
+  "raw_tool_syntax_present": false,
+  "arguments_valid": true,
+  "finish_reason": "stop",
+  "finish_reasons_all": [
+    "stop"
+  ],
+  "chunk_count": 4,
+  "stream_terminated": true,
+  "timeout": false,
+  "protocol_error": false,
+  "latency_ms": 8180,
+  "content_preview": "",
+  "error": null,
+  "content_type": "text/event-stream"
+}

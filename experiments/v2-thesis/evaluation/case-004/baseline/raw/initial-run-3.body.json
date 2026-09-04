@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:11.2248545Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_weather","arguments":{"city":"New York"}}}]},"done_reason":"stop","done":true,"total_duration":498584000,"load_duration":33485900,"prompt_eval_count":158,"prompt_eval_duration":7000000,"eval_count":18,"eval_duration":456000000}

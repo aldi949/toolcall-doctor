@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "core": {
+    "real_endpoint": true,
+    "original_3_3": true,
+    "control_pass": true,
+    "oracle_frozen_before_min": true,
+    "transformation_space_frozen": true,
+    "true_ddmin": true,
+    "no_manual_selection": true,
+    "candidates_executed": true,
+    "accepted_and_rejected_logged": true,
+    "no_overwrite": true,
+    "identity_preserved": true,
+    "automatic_payload": true,
+    "material_reduction": true,
+    "independent_1min": true,
+    "reproducer_from_ddmin": true,
+    "reproducer_5_5": true,
+    "no_old_leakage": true,
+    "workaround_3_3": true,
+    "real_hashes": true,
+    "no_simulated": true
+  },
+  "verdict": "BUG #001 TRUE DDMIN = PASS",
+  "thesis": "FIRST EMPIRICAL SUPPORT FOR AUTOMATIC DDMIN THESIS"
+}

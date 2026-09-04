@@ -1,0 +1,16 @@
+{
+  "false_positives": {
+    "baseline": {
+      "false_positive": true,
+      "STATUS": "UNHEALTHY",
+      "FAMILY": "STREAM_DEPENDENT_FAILURE",
+      "CONF": "HIGH"
+    },
+    "adaptive": {
+      "false_positive": true,
+      "STATUS": "UNHEALTHY",
+      "FAMILY": "STREAM_DEPENDENT_FAILURE",
+      "CONF": "HIGH"
+    }
+  }
+}

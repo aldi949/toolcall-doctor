@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-09-03T19:39:34Z",
+  "ended_utc": "2026-09-03T19:39:34Z",
+  "elapsed_ms": 700,
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "http_status": 200,
+  "error": null,
+  "request_sha256": "ac4b65da1da9055baea7d9b4b4ab229a71b59f234e2ef19a339b46860e6dcdc3",
+  "response_sha256": "3db56379f1715c66823b3a3bbf9b5b3a96234c329f377339d286c0cae12dd0ab",
+  "compact_bytes": 401,
+  "byte_count": 428,
+  "headers": [
+    "content-type: application/json",
+    "date: Thu, 03 Sep 2026 19:39:34 GMT",
+    "content-length: 428"
+  ],
+  "fingerprint": {
+    "python": "3.12.0",
+    "client": "httpx",
+    "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+    "ollama_version": "0.4.6",
+    "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "pid": 127416
+  }
+}

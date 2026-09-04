@@ -1,0 +1,13 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"content\":\"\\u003cul\\u003e\\u003cli\\u003eItem 1\\u003c/li\\u003e\\u003cli\\u003eItem 2\\u003c/li\\u003e\\u003c/ul\\u003e\",\"path\":\"../components/TodoList.js\"}",
+  "arguments_parsed": {
+    "content": "<ul><li>Item 1</li><li>Item 2</li></ul>",
+    "path": "../components/TodoList.js"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:33Z"
+}

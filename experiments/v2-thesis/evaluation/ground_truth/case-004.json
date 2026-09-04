@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#7778",
+  "USEFUL_FAILURE_FAMILY": "TOOL_CHOICE_CONSTRAINT_FAILURE",
+  "quality": "GT-B",
+  "note": "tool_choice required documented as having no effect.",
+  "revealed_utc": "2026-09-03T10:37:29Z"
+}

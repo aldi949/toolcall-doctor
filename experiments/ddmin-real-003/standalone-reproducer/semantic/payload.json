@@ -1,0 +1,26 @@
+{
+  "model": "llama3.2:3b",
+  "tools": [
+    {
+      "function": {
+        "name": "g",
+        "parameters": {
+          "properties": {
+            "account": {
+              "type": "string",
+              "enum": [
+                "T"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "unt ACC-999-XYZ"
+    }
+  ]
+}

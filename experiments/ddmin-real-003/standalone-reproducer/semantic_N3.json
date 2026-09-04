@@ -1,0 +1,32 @@
+{
+  "mode": "semantic",
+  "behavioral_rate": "2/3",
+  "semantic_rate": "2/3",
+  "runs": [
+    {
+      "i": 1,
+      "behavioral_fail": true,
+      "semantic_ok": true,
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      }
+    },
+    {
+      "i": 2,
+      "behavioral_fail": false,
+      "semantic_ok": false,
+      "arguments": {
+        "account": "T"
+      }
+    },
+    {
+      "i": 3,
+      "behavioral_fail": true,
+      "semantic_ok": true,
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      }
+    }
+  ],
+  "utc": "2026-09-03T19:30:11Z"
+}

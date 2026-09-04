@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-09-03T13:54:05Z",
+  "ended_utc": "2026-09-03T13:54:06Z",
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"city\":\"Hongkong\"}",
+  "arguments_parsed": {
+    "city": "Hongkong"
+  },
+  "extra_nesting": false,
+  "content": "",
+  "finish_reason": "tool_calls"
+}

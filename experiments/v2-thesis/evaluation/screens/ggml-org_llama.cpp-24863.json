@@ -1,0 +1,8 @@
+{
+  "id": "ggml-org/llama.cpp#24863",
+  "screen": "runtime_down",
+  "utc": "2026-09-03T10:39:17Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "path": "<REPO_ROOT>\\experiments\\bug-001\\runtime\\ollama-0.4.5",
+    "exe_exists": true
+  },
+  {
+    "path": "<REPO_ROOT>\\experiments\\bug-001\\runtime\\ollama-0.4.6",
+    "exe_exists": true
+  }
+]

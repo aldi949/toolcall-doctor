@@ -1,0 +1,27 @@
+{
+  "id": "ollama/ollama#8421",
+  "screen": "tool_choice_none_still_calls",
+  "utc": "2026-09-03T10:37:55Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 830,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-617\",\"object\":\"chat.completion\",\"created\":1788431876,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_7kmyj9re\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":169,\"completion_tokens\":17,\"total_tokens\":186}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 794,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-477\",\"object\":\"chat.completion\",\"created\":1788431877,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_vcydci0m\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":169,\"completion_tokens\":17,\"total_tokens\":186}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 786,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-871\",\"object\":\"chat.completion\",\"created\":1788431877,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_g98j2rl6\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":169,\"completion_tokens\":15,\"total_tokens\":184}}\n"
+    }
+  ],
+  "disposition": "NON_MANIFESTING",
+  "note": "tool_choice=none produced no tool_calls on this model (constraint may be honored or model never calls)."
+}

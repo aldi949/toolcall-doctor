@@ -1,0 +1,10 @@
+started_utc=2026-09-03T10:37:36.895460+00:00
+ended_utc=2026-09-03T10:37:37.662747+00:00
+elapsed_ms=766
+url=http://127.0.0.1:11434/api/chat
+http_status=200
+error=None
+---
+content-type: application/x-ndjson
+date: Thu, 03 Sep 2026 10:37:37 GMT
+transfer-encoding: chunked

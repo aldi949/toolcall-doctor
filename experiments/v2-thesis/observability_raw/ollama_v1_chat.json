@@ -1,0 +1,45 @@
+{
+  "name": "ollama_v1_chat",
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "started_utc": "2026-09-03T10:24:07.830711+00:00",
+  "request_keys": [
+    "messages",
+    "model",
+    "stream",
+    "tools"
+  ],
+  "http_status": 200,
+  "response_headers": {
+    "content-type": "application/json",
+    "date": "Thu, 03 Sep 2026 10:24:08 GMT",
+    "content-length": "416"
+  },
+  "body_chars": 416,
+  "body_preview": "{\"id\":\"chatcmpl-782\",\"object\":\"chat.completion\",\"created\":1788431048,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_rwhiz8ug\",\"type\":\"function\",\"function\":{\"name\":\"get_time\",\"arguments\":\"{\\\"city\\\":\\\"Tokyo\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":164,\"completion_tokens\":18,\"total_tokens\":182}}\n",
+  "json_top_keys": [
+    "choices",
+    "created",
+    "id",
+    "model",
+    "object",
+    "system_fingerprint",
+    "usage"
+  ],
+  "has_message": false,
+  "has_choices": true,
+  "has_prompt": false,
+  "has_thinking": false,
+  "done_reason": null,
+  "choice0_keys": [
+    "finish_reason",
+    "index",
+    "message"
+  ],
+  "compat_message_keys": [
+    "content",
+    "role",
+    "tool_calls"
+  ],
+  "compat_tool_calls": true,
+  "ended_utc": "2026-09-03T10:24:08.577941+00:00"
+}

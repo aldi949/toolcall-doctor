@@ -1,0 +1,23 @@
+{
+  "oracle": "FAIL",
+  "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+  "http_status": 200,
+  "tool_call_present": true,
+  "tool_name": "g",
+  "arguments": {
+    "account": "ACC-999-XYZ"
+  },
+  "enum_error_paths": [
+    "/account"
+  ],
+  "schema_present_for_tool": true,
+  "schema": {
+    "properties": {
+      "account": {
+        "enum": [
+          "T"
+        ]
+      }
+    }
+  }
+}

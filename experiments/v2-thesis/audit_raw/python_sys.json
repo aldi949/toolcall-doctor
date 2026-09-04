@@ -1,0 +1,9 @@
+{
+  "name": "python_sys",
+  "cmd": "\"<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -c \"import sys,platform; print(sys.version); print(sys.executable); print(platform.platform())\"",
+  "started_utc": "2026-09-03T10:22:42.874536+00:00",
+  "returncode": 0,
+  "stdout": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]\n<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\nWindows-11-10.0.26200-SP0\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:43.262519+00:00"
+}

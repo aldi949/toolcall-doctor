@@ -1,0 +1,22 @@
+{
+  "screen_original_http": 20,
+  "screen_control_http": 10,
+  "baseline_search_http": 229,
+  "baseline_verify_http": 3,
+  "baseline_holdout_http": 20,
+  "baseline_standalone_http": 10,
+  "robust_search_http": 348,
+  "robust_verify_http": 10,
+  "robust_holdout_http": 20,
+  "robust_standalone_http": 10,
+  "robust_1min_http": 35,
+  "robust_search_vs_baseline_search": {
+    "baseline": 229,
+    "robust": 348,
+    "delta": 119,
+    "relative_increase": 1.52,
+    "note": "Exactly 17 accepted candidates * (10-3) extra trials."
+  },
+  "wall_s": {"baseline_search": 194.94, "robust_search": 295.87},
+  "grand_total_http_including_screen": 715
+}

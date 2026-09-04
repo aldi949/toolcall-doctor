@@ -1,0 +1,9 @@
+{
+  "name": "mem",
+  "cmd": "wmic computersystem get TotalPhysicalMemory /format:list",
+  "started_utc": "2026-09-03T10:22:43.972315+00:00",
+  "returncode": 0,
+  "stdout": "\n\n\n\nTotalPhysicalMemory=16856289280\n\n\n\n\n\n\n\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:44.579064+00:00"
+}

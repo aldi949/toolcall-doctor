@@ -1,0 +1,28 @@
+{
+  "stem": "workaround-run-1",
+  "http_status": 200,
+  "streaming": false,
+  "tool_choice": "none",
+  "tool_choice_kind": "none",
+  "named_tool_choice": null,
+  "tools_in_request": false,
+  "tool_calls_present": false,
+  "tool_call_names": [],
+  "raw_tool_syntax_present": false,
+  "arguments_valid": null,
+  "finish_reason": "stop",
+  "finish_reasons_all": [
+    "stop"
+  ],
+  "chunk_count": 1,
+  "stream_terminated": null,
+  "timeout": false,
+  "protocol_error": false,
+  "latency_ms": 4578,
+  "content_preview": "I'm just an AI, I don't have real-time access to current weather conditions. However, I can suggest some ways for you to find out the current weather in Paris.\n\n1. Check online weather websites: You can check websites like AccuWeather, Weather.com, or the National Weather Service (NWS) for the current weather conditions in Paris.\n2. Use a virtual assistant: You can ask virtual assistants like Siri, Google Assistant, or Alexa to tell you the current weather in Paris.\n3. Check social media: Many w",
+  "content_nonempty": true,
+  "constraint_none_violated": false,
+  "constraint_forced_violated": false,
+  "error": null,
+  "content_type": "application/json"
+}

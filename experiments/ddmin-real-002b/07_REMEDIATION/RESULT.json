@@ -1,0 +1,55 @@
+{
+  "classification": "WORKAROUND_INEFFECTIVE",
+  "source_patch": "NOT_TESTABLE",
+  "attempt": "add response_format json_schema with the same parameters object; tools unchanged",
+  "n": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 1019
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 1455
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 823
+    }
+  ]
+}

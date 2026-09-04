@@ -1,0 +1,46 @@
+{
+  "name": "ollama_api_think_true",
+  "url": "http://127.0.0.1:11434/api/chat",
+  "started_utc": "2026-09-03T10:24:09.558257+00:00",
+  "request_keys": [
+    "messages",
+    "model",
+    "stream",
+    "think",
+    "tools"
+  ],
+  "http_status": 200,
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "date": "Thu, 03 Sep 2026 10:24:10 GMT",
+    "content-length": "370"
+  },
+  "body_chars": 370,
+  "body_preview": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:24:10.3708814Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_time\",\"arguments\":{\"city\":\"Tokyo\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":396046800,\"load_duration\":48117700,\"prompt_eval_count\":164,\"prompt_eval_duration\":2000000,\"eval_count\":18,\"eval_duration\":343000000}",
+  "json_top_keys": [
+    "created_at",
+    "done",
+    "done_reason",
+    "eval_count",
+    "eval_duration",
+    "load_duration",
+    "message",
+    "model",
+    "prompt_eval_count",
+    "prompt_eval_duration",
+    "total_duration"
+  ],
+  "has_message": true,
+  "has_choices": false,
+  "has_prompt": false,
+  "has_thinking": false,
+  "done_reason": "stop",
+  "message_keys": [
+    "content",
+    "role",
+    "tool_calls"
+  ],
+  "tool_calls_present": true,
+  "content_preview": "",
+  "ended_utc": "2026-09-03T10:24:10.371929+00:00"
+}

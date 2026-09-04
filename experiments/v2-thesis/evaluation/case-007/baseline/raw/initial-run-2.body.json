@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:38:53.1413905Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"set_account","arguments":{"account":"ACC-999-XYZ"}}}]},"done_reason":"stop","done":true,"total_duration":582403800,"load_duration":40291700,"prompt_eval_count":177,"prompt_eval_duration":8000000,"eval_count":21,"eval_duration":533000000}

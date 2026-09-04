@@ -1,0 +1,294 @@
+{
+  "one_min": {
+    "mode": "naive",
+    "n_probes": 29,
+    "n_still_preserve": 0,
+    "one_minimal": true,
+    "still": [],
+    "probes": [
+      {
+        "dropped_atom": "key:/model",
+        "candidate_id": "C0408",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/0",
+        "candidate_id": "C0409",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/1",
+        "candidate_id": "C0410",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/2",
+        "candidate_id": "C0411",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/3",
+        "candidate_id": "C0412",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/4",
+        "candidate_id": "C0413",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/5",
+        "candidate_id": "C0414",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/6",
+        "candidate_id": "C0415",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/7",
+        "candidate_id": "C0416",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/8",
+        "candidate_id": "C0417",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/9",
+        "candidate_id": "C0418",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/model/10",
+        "candidate_id": "C0419",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools",
+        "candidate_id": "C0420",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "idx:/tools/0",
+        "candidate_id": "C0421",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function",
+        "candidate_id": "C0422",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/name",
+        "candidate_id": "C0423",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/name/2",
+        "candidate_id": "C0424",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters",
+        "candidate_id": "C0425",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties",
+        "candidate_id": "C0426",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties/account",
+        "candidate_id": "C0427",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties/account/enum",
+        "candidate_id": "C0428",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/messages",
+        "candidate_id": "C0429",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "idx:/messages/0",
+        "candidate_id": "C0430",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/messages/0/role",
+        "candidate_id": "C0431",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/0",
+        "candidate_id": "C0432",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/1",
+        "candidate_id": "C0433",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/2",
+        "candidate_id": "C0434",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/3",
+        "candidate_id": "C0435",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      },
+      {
+        "dropped_atom": "key:/messages/0/content",
+        "candidate_id": "C0436",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": null,
+        "degenerate_codes": null
+      }
+    ]
+  },
+  "degenerate": {
+    "flags": {
+      "empty_enum": true,
+      "enum_nonempty_strings": false,
+      "frozen_value_in_user": false,
+      "user_content_empty": true,
+      "schema_missing": false
+    },
+    "enum": [],
+    "degenerate_if_empty_enum": true
+  },
+  "control": {
+    "mode": "naive",
+    "static_satisfiable": false,
+    "enum": [],
+    "http_valid_tool_calls": "skipped",
+    "rows": []
+  },
+  "reproducer": {
+    "mode": "naive",
+    "behavioral_rate": "3/3",
+    "semantic_rate": "0/3",
+    "runs": [
+      {
+        "i": 1,
+        "behavioral_fail": true,
+        "semantic_ok": false,
+        "arguments": {
+          "account": "null"
+        }
+      },
+      {
+        "i": 2,
+        "behavioral_fail": true,
+        "semantic_ok": false,
+        "arguments": {
+          "account": "null"
+        }
+      },
+      {
+        "i": 3,
+        "behavioral_fail": true,
+        "semantic_ok": false,
+        "arguments": {
+          "account": "null"
+        }
+      }
+    ],
+    "utc": "2026-09-03T19:10:28Z"
+  },
+  "utc": "2026-09-03T19:10:28Z"
+}

@@ -1,0 +1,12 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"content\":\"\\u003cul\\u003e\\\\n  \\u003cli\\u003e Item 1 \\\\n\\\\n  \\u003cli\\u003e Item 2 \\\\n\\n\\u003c/ul\\u003e\"}",
+  "arguments_parsed": {
+    "content": "<ul>\\n  <li> Item 1 \\n\\n  <li> Item 2 \\n\n</ul>"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:08Z"
+}

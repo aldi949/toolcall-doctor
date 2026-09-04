@@ -1,0 +1,69 @@
+{
+  "baseline": {
+    "arm": "baseline",
+    "search_candidates": 422,
+    "search_accepted": 17,
+    "search_rejected": 405,
+    "search_http_calls": 229,
+    "search_n_posted_sum": 229,
+    "one_min_probes": 0,
+    "one_min_http": 0,
+    "reject_early": {
+      "execution_gate": 227,
+      "non_event_at_1": 178
+    },
+    "last_accepted_id": "C0324",
+    "last_accepted_k_n": "3/3",
+    "size": {
+      "original_bytes": 401,
+      "final_bytes": 205,
+      "reduction_pct": 48.88,
+      "material": true
+    },
+    "wall_s": 194.939467,
+    "payload_sha256": "14d2a2224eabdfa7af100eb4699322a4c0c0a80a7a0039b9ce9290a68b542d17",
+    "search_failure_rate": "3/3",
+    "verification": "3/3",
+    "holdout": "20/20",
+    "holdout_pass": true,
+    "standalone": "10/10",
+    "standalone_pass": true
+  },
+  "robust": {
+    "arm": "robust",
+    "search_candidates": 422,
+    "search_accepted": 17,
+    "search_rejected": 405,
+    "search_http_calls": 348,
+    "search_n_posted_sum": 348,
+    "one_min_probes": 49,
+    "one_min_http": 35,
+    "reject_early": {
+      "execution_gate": 227,
+      "non_event_at_1": 178
+    },
+    "last_accepted_id": "C0324",
+    "last_accepted_k_n": "10/10",
+    "size": {
+      "original_bytes": 401,
+      "final_bytes": 205,
+      "reduction_pct": 48.88,
+      "material": true
+    },
+    "wall_s": 295.871376,
+    "payload_sha256": "14d2a2224eabdfa7af100eb4699322a4c0c0a80a7a0039b9ce9290a68b542d17",
+    "search_failure_rate": "10/10",
+    "verification": "10/10",
+    "holdout": "20/20",
+    "holdout_pass": true,
+    "standalone": "10/10",
+    "standalone_pass": true
+  },
+  "payloads_identical": true,
+  "p_3of3_if_p065": 0.274625,
+  "p_10of10_if_p065": 0.013463,
+  "p_holdout_ge18_if_p23": 0.01759263,
+  "p_holdout_ge18_if_p10": 1.0,
+  "verdict_search_overfitting": "NO",
+  "verdict_reason": "Baseline 3/3 and robust 10/10 selected identical payloads; untouched holdout was 20/20 FAILURE_EVENT for both; standalone 10/10 both arms. Observed p appears near 1.0 once temperature=0.0 is kept. This does not demonstrate that n=10 prevented a lucky 3/3; it shows the selected witness generalized."
+}

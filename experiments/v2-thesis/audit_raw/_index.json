@@ -1,0 +1,99 @@
+{
+  "summary": [
+    {
+      "name": "python_sys",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "cpu",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "mem",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "os",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "gpu",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "nvidia_smi",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "node",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "npm",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "git",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "docker",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "docker_info",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "wsl",
+      "returncode": 50,
+      "error": null
+    },
+    {
+      "name": "wsl_list",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "disk",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "where_ollama",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "where_llama_server",
+      "returncode": 1,
+      "error": null
+    },
+    {
+      "name": "where_python",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "pip",
+      "returncode": 0,
+      "error": null
+    },
+    {
+      "name": "nvcc",
+      "returncode": 1,
+      "error": null
+    }
+  ]
+}

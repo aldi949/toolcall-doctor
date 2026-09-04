@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#6155",
+  "screen": "nested_schema_http_ok_then_behavior",
+  "utc": "2026-09-03T10:36:09Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 4067,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:36:13.9690536Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"execute_service\",\"arguments\":{\"list\":\"[\\\"light\\\", \\\"buro_deckenlampe_2\\\", \\\"off\\\"]\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":3681900400,\"load_duration\":2891013300,\"prompt_eval_count\":166,\"prompt_eval_duration\":217000000,\"eval_count\":32,\"eval_duration\":569000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 969,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:36:14.9380635Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"execute_service\",\"arguments\":{\"list\":\"[\\\"turn_off\\\", \\\"light.buro_deckenlampe_2\\\"]\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":595361500,\"load_duration\":23660100,\"prompt_eval_count\":166,\"prompt_eval_duration\":6000000,\"eval_count\":31,\"eval_duration\":561000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 1034,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:36:15.972572Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"execute_service\",\"arguments\":{\"list\":\"[\\\"turn_off\\\", \\\"light.buro_deckenlampe_2\\\"]\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":595128800,\"load_duration\":29094300,\"prompt_eval_count\":166,\"prompt_eval_duration\":7000000,\"eval_count\":31,\"eval_duration\":557000000}"
+    }
+  ],
+  "disposition": "MANIFESTED"
+}

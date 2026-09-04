@@ -1,0 +1,17 @@
+{
+  "experimental_hypothesis_frozen_before_execution": true,
+  "control": {
+    "variable_held": ["model", "messages", "tools", "stream=false", "temperature=0", "seed=42", "max_tokens=200"],
+    "variable_changed": "tool_choice",
+    "tool_choice": "auto",
+    "expected_if_runtime_is_healthy_openai_compat": "model may call tools; structured tool_calls allowed"
+  },
+  "broken": {
+    "variable_held": ["model", "messages", "tools", "stream=false", "temperature=0", "seed=42", "max_tokens=200"],
+    "variable_changed": "tool_choice",
+    "tool_choice": "none",
+    "expected_if_openai_compat_honored": "no tool_calls; text response",
+    "expected_if_documented_bug_holds": "tool_calls still present (constraint ignored)"
+  },
+  "why_not_bug_001": "stream remains false on both probes; only tool_choice changes"
+}

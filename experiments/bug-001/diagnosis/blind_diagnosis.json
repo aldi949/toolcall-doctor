@@ -1,0 +1,124 @@
+{
+  "SYMPTOM": "control tool_calls_present=True raw_tool_syntax=False streaming=False finish_reason=tool_calls; broken tool_calls_present=False raw_tool_syntax=True streaming=True finish_reason=stop",
+  "OBSERVATIONS": {
+    "control": {
+      "stem": "control",
+      "http_status": 200,
+      "streaming": false,
+      "tool_choice": null,
+      "tools_in_request": true,
+      "tool_calls_present": true,
+      "raw_tool_syntax_present": false,
+      "arguments_valid": true,
+      "finish_reason": "tool_calls",
+      "finish_reasons_all": [
+        "tool_calls"
+      ],
+      "chunk_count": 1,
+      "stream_terminated": null,
+      "timeout": false,
+      "protocol_error": false,
+      "latency_ms": 6267,
+      "content_preview": "",
+      "error": null,
+      "content_type": "application/json"
+    },
+    "broken": {
+      "stem": "broken",
+      "http_status": 200,
+      "streaming": true,
+      "tool_choice": null,
+      "tools_in_request": true,
+      "tool_calls_present": false,
+      "raw_tool_syntax_present": true,
+      "arguments_valid": null,
+      "finish_reason": "stop",
+      "finish_reasons_all": [
+        "stop"
+      ],
+      "chunk_count": 49,
+      "stream_terminated": true,
+      "timeout": false,
+      "protocol_error": false,
+      "latency_ms": 1474,
+      "content_preview": "{\"name\": \"function_1\", \"parameters\": {\"a\": \"10\", \"b\": \"11\"}} \n{\"name\": \"function_2\", \"parameters\": {\"a\": \"10\", \"b\": \"11\"}}",
+      "error": null,
+      "content_type": "text/event-stream"
+    }
+  },
+  "COMPETING_HYPOTHESES": [
+    {
+      "id": "H1_STREAMING_RESPONSE_SHAPING",
+      "layer": "streaming_parser_or_response_shaping",
+      "claim": "The broken probe is streaming and loses structured tool_calls while the same tools still appear as raw tool syntax in content."
+    },
+    {
+      "id": "H2_TOOL_SCHEMA_OR_TEMPLATE",
+      "layer": "chat_template_or_tool_schema",
+      "claim": "The model/template cannot emit usable tool calls at all; both probes would lack structured tool_calls."
+    },
+    {
+      "id": "H3_FORCED_TOOL_CHOICE",
+      "layer": "tool_choice_handling",
+      "claim": "A tool_choice constraint differs between probes and is being ignored or mishandled."
+    },
+    {
+      "id": "H4_PROTOCOL_OR_TRANSPORT",
+      "layer": "http_protocol",
+      "claim": "The broken probe fails at HTTP/SSE transport (status, timeout, protocol error) rather than tool shaping."
+    },
+    {
+      "id": "H5_ARGUMENT_JSON",
+      "layer": "tool_argument_serialization",
+      "claim": "Structured tool_calls are present but arguments are invalid JSON only on the broken probe."
+    },
+    {
+      "id": "H6_NONDETERMINISTIC_MODEL",
+      "layer": "model_sampling",
+      "claim": "The model simply chose not to call tools on one probe; this is behavioral variance, not a stack failure."
+    }
+  ],
+  "SUPPORTING_EVIDENCE": {
+    "H1_STREAMING_RESPONSE_SHAPING": [
+      "Control non-stream has structured tool_calls; broken stream lacks them but raw tool syntax is present."
+    ],
+    "H2_TOOL_SCHEMA_OR_TEMPLATE": [],
+    "H3_FORCED_TOOL_CHOICE": [],
+    "H4_PROTOCOL_OR_TRANSPORT": [],
+    "H5_ARGUMENT_JSON": [],
+    "H6_NONDETERMINISTIC_MODEL": []
+  },
+  "CONTRADICTING_EVIDENCE": {
+    "H1_STREAMING_RESPONSE_SHAPING": [],
+    "H2_TOOL_SCHEMA_OR_TEMPLATE": [
+      "Control produced structured tool_calls, so the template/schema path can work."
+    ],
+    "H3_FORCED_TOOL_CHOICE": [
+      "tool_choice is identical on both probes."
+    ],
+    "H4_PROTOCOL_OR_TRANSPORT": [
+      "Broken probe completed HTTP without protocol error."
+    ],
+    "H5_ARGUMENT_JSON": [
+      "Broken probe has no structured tool_calls to validate."
+    ],
+    "H6_NONDETERMINISTIC_MODEL": [
+      "Broken output still contains raw tool syntax, which is a shaping/parse mismatch rather than a no-tool decision.",
+      "Probes differ on streaming, so variance is not the only changed variable."
+    ]
+  },
+  "ELIMINATED_HYPOTHESES": [
+    "H2_TOOL_SCHEMA_OR_TEMPLATE",
+    "H3_FORCED_TOOL_CHOICE",
+    "H4_PROTOCOL_OR_TRANSPORT",
+    "H5_ARGUMENT_JSON",
+    "H6_NONDETERMINISTIC_MODEL"
+  ],
+  "UNRESOLVED_HYPOTHESES": [],
+  "REMAINING_SUPPORTED_HYPOTHESES": [
+    "H1_STREAMING_RESPONSE_SHAPING"
+  ],
+  "SUSPECTED_FAILURE_LAYER": "streaming_parser_or_response_shaping",
+  "CONFIDENCE": "HIGH",
+  "NEXT_BEST_PROBE": "Re-run the broken probe with streaming disabled and the control probe with streaming enabled, changing only that flag."
+}

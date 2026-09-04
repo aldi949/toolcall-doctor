@@ -1,0 +1,110 @@
+{
+  "doctor_version": "2.0.0-freeze",
+  "STATUS": "AMBIGUOUS",
+  "OBSERVABLE_FAILURE_DIMENSIONS": [
+    "H_PROTOCOL",
+    "H_SCHEMA"
+  ],
+  "USEFUL_FAILURE_FAMILY": "AMBIGUOUS",
+  "LOCALIZATION_CONFIDENCE": "LOW",
+  "SUSPECTED_INTERNAL_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Initial request produced structured tool_calls on all replicates.",
+    "P_SCHEMA_FLAT outcome=FAIL remaining=['H_PROTOCOL', 'H_SCHEMA']"
+  ],
+  "CONTRADICTING_EVIDENCE": [],
+  "ELIMINATED_HYPOTHESES": [
+    "H_ADAPTER",
+    "H_BASE",
+    "H_CHOICE_FORCE",
+    "H_CHOICE_NONE",
+    "H_GRAMMAR",
+    "H_MULTI_TURN",
+    "H_REASONING",
+    "H_STREAM"
+  ],
+  "UNRESOLVED_HYPOTHESES": [
+    "H_PROTOCOL",
+    "H_SCHEMA"
+  ],
+  "PROBES_EXECUTED": [
+    "P_SCHEMA_FLAT"
+  ],
+  "STOP_REASON": "LOCALIZED",
+  "NEXT_MANUAL_EVIDENCE": "A probe that partitions remaining hypotheses, or an observability hook listed as NOT_EXPOSED.",
+  "UNSTABLE": false,
+  "WHY_EACH_PROBE_WAS_CHOSEN": [
+    {
+      "utc": "2026-09-03T10:36:30Z",
+      "mode": "adaptive",
+      "probe": "P_SCHEMA_FLAT",
+      "reason": "minimax worst_remaining=9 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_PROTOCOL', 'H_REASONING', 'H_SCHEMA', 'H_STREAM']",
+      "remaining_before": [
+        "H_ADAPTER",
+        "H_CHOICE_FORCE",
+        "H_CHOICE_NONE",
+        "H_GRAMMAR",
+        "H_MULTI_TURN",
+        "H_PROTOCOL",
+        "H_REASONING",
+        "H_SCHEMA",
+        "H_STREAM"
+      ],
+      "request_count_before": 3,
+      "choice": {
+        "probe": "P_SCHEMA_FLAT",
+        "reason": "minimax worst_remaining=9 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_PROTOCOL', 'H_REASONING', 'H_SCHEMA', 'H_STREAM']",
+        "score": {
+          "probe": "P_SCHEMA_FLAT",
+          "worst_remaining": 9,
+          "n_partitions": 4,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_PROTOCOL",
+              "H_REASONING",
+              "H_SCHEMA",
+              "H_STREAM"
+            ],
+            "PASS": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING",
+              "H_STREAM"
+            ],
+            "MALFORMED": [
+              "H_PROTOCOL"
+            ],
+            "FAIL": [
+              "H_PROTOCOL",
+              "H_SCHEMA"
+            ],
+            "TIMEOUT": [],
+            "UNCHANGED": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING",
+              "H_STREAM"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "REQUEST_COUNT": 9,
+  "mode": "adaptive"
+}

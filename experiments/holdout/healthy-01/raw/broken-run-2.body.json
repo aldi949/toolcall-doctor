@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T09:54:58.8046108Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_time","arguments":{"city":"Tokyo"}}}]},"done_reason":"stop","done":true,"total_duration":465057700,"load_duration":18584700,"prompt_eval_count":166,"prompt_eval_duration":1000000,"eval_count":18,"eval_duration":442000000}

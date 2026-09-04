@@ -1,0 +1,34 @@
+{
+  "utc": "2026-09-04T07:23:51Z",
+  "version": "ddmin-real-006-1.0",
+  "original_screen": "10/10",
+  "control_screen": "10/10",
+  "search_freedom": {
+    "n_atoms": 187,
+    "n_single_drop_still_ok": 112,
+    "freedom_frac": 0.5989
+  },
+  "hashes": {
+    "FROZEN_EXPERIMENT.md": "0d3eaddf0478d11bfcca1eafaaa83137705668911389cd3018c3d4281b5711a3",
+    "FAILURE_CONTRACT.md": "20fceac8f846469d541cbd0428f91374a6cf6fba7b5f02331f7d30196f2f142e",
+    "ENGINE_FREEZE.md": "899610235cbb85a156366861d7c65774c6323d5e7637c8ac64cdf470b384ef02",
+    "TARGET_LOCK.md": "44ec4e462c7df2627ac477a414f022a338bd330ca8cbc222fb4174187cbd0604",
+    "EXECUTION_IDENTITY.md": "411868f1dbf4d049ff2f57a75103ed483b79ea9ad9ab6b07141238fa8de8c44f",
+    "POLICY.json": "36f38d871642a6d32c5921c91acaeedc705defe44d3543a276d75a06700923e7",
+    "FROZEN_FACTS.json": "87ae0d290ef48520068202819db5cbc5830da4d0722dc41b08c9207f280ac3b5",
+    "original_request": "a82e3dc1cbc0af81e02ebb626ca19658a44f91cf6daa298d0e274814fcf64ca0",
+    "control_request": "0e0d0ae0ed71ad123a1ccee1d45fc90b73a6698c3901a14a6e4e142f6061fe25",
+    "behavioral_oracle.py": "4d2fc7e2dd878690400b711681953d97b8289571166fd56f74be14ee3d01b3c3",
+    "semantic_gate.py": "a27d43cd48965e146433da6d3aa635c5dce21f2960742f2c9142334b7552249a",
+    "execution_gate.py": "af3356830b9399658a2e37154bd8feba1b26b550d7a5a81b3f9dcb23c45b70b7",
+    "minimizer.py": "f4190f9fb4bbbf95cbcc2bfab8b8f9283acc5cea9bd5e0814a53d00bd9cc422a",
+    "execute.py": "1f98e65dd1496336767f02d7c04b2c861c8b4200984b83a3180e7bf5827fb039",
+    "screen_and_freeze.py": "7669a2cf29d1c5e0d438055b6a7704203aaba79f1e695e8635a82eecbb944587",
+    "control_oracle.py": "e48375326fb500aea6424641adfbbb2566b53507960a504fbd84f4ec3e2bd029",
+    "search_freedom.json": "cb6d4305c667862cd68b985e17a7cf4ebaba6a8d094f02b9407e6468f480033d",
+    "ATOMS_AT_FREEZE.json": "cdf75c1caac636bc4ee2d4ffb0ac65d30759e032f1ba697374d31ebea3e0e6d2",
+    "EXEC_SPEC.json": "65eb84e30a59b97e14b2c804aefd767dc4210127839d082fcb10e6b4299737d5",
+    "original_compact": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca"
+  },
+  "note": "DDMin must not start before this file. Holdout must not start before CANDIDATE_FROZEN.json."
+}

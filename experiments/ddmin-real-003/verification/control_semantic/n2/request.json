@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","tools":[{"function":{"name":"g","parameters":{"properties":{"account":{"type":"string","enum":["T"]}}}}}],"messages":[{"role":"user","content":"What is the balance of account T?"}]}

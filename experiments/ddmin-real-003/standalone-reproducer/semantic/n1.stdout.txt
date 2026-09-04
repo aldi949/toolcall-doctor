@@ -1,0 +1,3 @@
+200
+{"id":"chatcmpl-578","object":"chat.completion","created":1788463809,"model":"llama3.2:3b","system_fingerprint":"fp_ollama","choices":[{"index":0,"message":{"role":"assistant","content":"","tool_calls":[{"id":"call_3ttfc5lz","type":"function","function":{"name":"g","arguments":"{\"account\":\"ACC-999-XYZ\"}"}}]},"finish_reason":"tool_calls"}],"usage":{"prompt_tokens":150,"completion_tokens":20,"total_tokens":170}}
+

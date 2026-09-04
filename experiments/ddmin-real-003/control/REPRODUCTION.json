@@ -1,0 +1,92 @@
+{
+  "n": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 674
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 662
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 766
+    }
+  ],
+  "control_pass": true
+}

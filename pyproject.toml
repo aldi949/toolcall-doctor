@@ -1,0 +1,38 @@
+[project]
+name = "toolcall-doctor"
+version = "0.1.0"
+description = "Shrink a reproducible tool-calling failure into a smaller request under an explicit contract."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "toolcall-doctor"}]
+dependencies = ["httpx>=0.27"]
+
+[project.scripts]
+toolcall-doctor = "toolcall_doctor.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+toolcall_doctor = ["demo_data/*"]
+"toolcall_doctor.demo_data" = ["*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "live: needs local Ollama and llama3.2:3b",
+    "integration: mocked full DDMin search (still no live model)",
+]
+addopts = ["-m", "not live"]

@@ -1,0 +1,53 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call select_op to get team T-9."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "select_op",
+        "description": "Select a teams operation.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "selectSchema": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "operation": {"type": "string", "const": "get-teams"},
+                    "params": {"type": "object", "properties": {}, "additionalProperties": false}
+                  },
+                  "required": ["operation", "params"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "operation": {"type": "string", "const": "get-team"},
+                    "params": {
+                      "type": "object",
+                      "properties": {"teamId": {"type": "string"}},
+                      "required": ["teamId"],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": ["operation", "params"],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": ["selectSchema"],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

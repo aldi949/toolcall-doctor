@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#18051",
+  "screen": "http_error",
+  "utc": "2026-09-03T10:39:14Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 1301,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-718\",\"object\":\"chat.completion\",\"created\":1788431955,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_huuh772h\",\"type\":\"function\",\"function\":{\"name\":\"calculate_area\",\"arguments\":\"{\\\"dimensions\\\":\\\"{\\\\\\\"radius\\\\\\\": 5}\\\",\\\"shape\\\":\\\"circle\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":179,\"completion_tokens\":26,\"total_tokens\":205}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 1078,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-960\",\"object\":\"chat.completion\",\"created\":1788431956,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_sy3eq5tp\",\"type\":\"function\",\"function\":{\"name\":\"calculate_area\",\"arguments\":\"{\\\"dimensions\\\":\\\"{\\\\\\\"radius\\\\\\\": 5}\\\",\\\"shape\\\":\\\"circle\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":179,\"completion_tokens\":27,\"total_tokens\":206}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 1089,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-779\",\"object\":\"chat.completion\",\"created\":1788431957,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_9ukg3ewe\",\"type\":\"function\",\"function\":{\"name\":\"calculate_area\",\"arguments\":\"{\\\"dimensions\\\":\\\"{'radius': 5}\\\",\\\"shape\\\":\\\"circle\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":179,\"completion_tokens\":28,\"total_tokens\":207}}\n"
+    }
+  ],
+  "disposition": "NON_MANIFESTING"
+}

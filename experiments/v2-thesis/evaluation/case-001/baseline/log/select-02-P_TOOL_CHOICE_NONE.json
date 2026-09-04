@@ -1,0 +1,16 @@
+{
+  "utc": "2026-09-03T10:35:52Z",
+  "mode": "baseline",
+  "probe": "P_TOOL_CHOICE_NONE",
+  "reason": "fixed baseline order selected P_TOOL_CHOICE_NONE",
+  "remaining_before": [
+    "H_GRAMMAR",
+    "H_PROTOCOL",
+    "H_SCHEMA"
+  ],
+  "request_count_before": 9,
+  "choice": {
+    "probe": "P_TOOL_CHOICE_NONE",
+    "reason": "fixed baseline order selected P_TOOL_CHOICE_NONE"
+  }
+}

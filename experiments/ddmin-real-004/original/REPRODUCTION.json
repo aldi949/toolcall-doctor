@@ -1,0 +1,668 @@
+{
+  "k": 20,
+  "n": 20,
+  "emitted": [
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ"
+  ],
+  "rows": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 4721,
+      "event": true
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 674,
+      "event": true
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 700,
+      "event": true
+    },
+    {
+      "i": 4,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 783,
+      "event": true
+    },
+    {
+      "i": 5,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 611,
+      "event": true
+    },
+    {
+      "i": 6,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 777,
+      "event": true
+    },
+    {
+      "i": 7,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 936,
+      "event": true
+    },
+    {
+      "i": 8,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 810,
+      "event": true
+    },
+    {
+      "i": 9,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 834,
+      "event": true
+    },
+    {
+      "i": 10,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 852,
+      "event": true
+    },
+    {
+      "i": 11,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 852,
+      "event": true
+    },
+    {
+      "i": 12,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 844,
+      "event": true
+    },
+    {
+      "i": 13,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 818,
+      "event": true
+    },
+    {
+      "i": 14,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 783,
+      "event": true
+    },
+    {
+      "i": 15,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 763,
+      "event": true
+    },
+    {
+      "i": 16,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 1043,
+      "event": true
+    },
+    {
+      "i": 17,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 840,
+      "event": true
+    },
+    {
+      "i": 18,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 852,
+      "event": true
+    },
+    {
+      "i": 19,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 782,
+      "event": true
+    },
+    {
+      "i": 20,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 852,
+      "event": true
+    }
+  ]
+}

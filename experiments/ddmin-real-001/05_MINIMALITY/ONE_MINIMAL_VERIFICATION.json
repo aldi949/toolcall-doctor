@@ -1,0 +1,142 @@
+{
+  "n_probes": 15,
+  "n_still_fail_identity": 9,
+  "one_minimal_in_space": false,
+  "probes": [
+    {
+      "name": "drop_model",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 304,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "empty_messages",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 259,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_user_content",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 274,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "empty_user_content",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 259,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "empty_tools",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 1472,
+      "body_preview": "{\"id\":\"chatcmpl-730\",\"object\":\"chat.completion\",\"created\":1788439790,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"It seems like you started to type something but it go"
+    },
+    {
+      "name": "drop_tools_key",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 1124,
+      "body_preview": "{\"id\":\"chatcmpl-750\",\"object\":\"chat.completion\",\"created\":1788439791,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"It seems like you've started with a letter. Is there "
+    },
+    {
+      "name": "drop_tool_type",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 247,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_fn_name",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 325,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_params_type",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 261,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_properties",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 1543,
+      "body_preview": "{\"id\":\"chatcmpl-158\",\"object\":\"chat.completion\",\"created\":1788439793,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_r1x5mblc\",\"type\":\"functio"
+    },
+    {
+      "name": "drop_query_property",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 543,
+      "body_preview": "{\"id\":\"chatcmpl-623\",\"object\":\"chat.completion\",\"created\":1788439794,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_71w95sde\",\"type\":\"functio"
+    },
+    {
+      "name": "drop_query_type_key",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 606,
+      "body_preview": "{\"id\":\"chatcmpl-12\",\"object\":\"chat.completion\",\"created\":1788439794,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"name\\\":\\\"search-files\\\",\\\"parameters\\\"\\u003e{\\\\\\\"qu"
+    },
+    {
+      "name": "empty_type_array",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 266,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_last_type_element",
+      "http_status": 400,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "preserves_target": true,
+      "elapsed_ms": 332,
+      "body_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "type_scalar_null_string",
+      "http_status": 200,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 753,
+      "body_preview": "{\"id\":\"chatcmpl-756\",\"object\":\"chat.completion\",\"created\":1788439796,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_37ved4ts\",\"type\":\"functio"
+    }
+  ]
+}

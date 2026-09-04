@@ -1,0 +1,45 @@
+{
+  "utc": "2026-09-03T10:36:01Z",
+  "mode": "adaptive",
+  "probe": "P_SCHEMA_FLAT",
+  "reason": "minimax worst_remaining=3 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_GRAMMAR', 'H_PROTOCOL', 'H_SCHEMA']",
+  "remaining_before": [
+    "H_GRAMMAR",
+    "H_PROTOCOL",
+    "H_SCHEMA"
+  ],
+  "request_count_before": 3,
+  "choice": {
+    "probe": "P_SCHEMA_FLAT",
+    "reason": "minimax worst_remaining=3 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_GRAMMAR', 'H_PROTOCOL', 'H_SCHEMA']",
+    "score": {
+      "probe": "P_SCHEMA_FLAT",
+      "worst_remaining": 3,
+      "n_partitions": 4,
+      "quality": "CLEAN",
+      "quality_rank": 0,
+      "cost": 6,
+      "parts": {
+        "UNKNOWN": [
+          "H_GRAMMAR",
+          "H_PROTOCOL",
+          "H_SCHEMA"
+        ],
+        "PASS": [
+          "H_GRAMMAR"
+        ],
+        "MALFORMED": [
+          "H_PROTOCOL"
+        ],
+        "FAIL": [
+          "H_PROTOCOL",
+          "H_SCHEMA"
+        ],
+        "TIMEOUT": [],
+        "UNCHANGED": [
+          "H_GRAMMAR"
+        ]
+      }
+    }
+  }
+}

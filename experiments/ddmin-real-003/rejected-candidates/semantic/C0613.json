@@ -1,0 +1,15 @@
+{
+  "candidate_id": "C0613",
+  "mode": "semantic",
+  "reason": "rejected: behavioral hits=3/3 semantic_ok=False failed=['INV_ENUM_NONEMPTY_STRINGS', 'INV_SATISFIABLE'] degen=['D1_EMPTY_OR_NONSTRING_ENUM']",
+  "n_identity_hits": 3,
+  "semantic_ok": false,
+  "failed_invariants": [
+    "INV_ENUM_NONEMPTY_STRINGS",
+    "INV_SATISFIABLE"
+  ],
+  "degenerate_codes": [
+    "D1_EMPTY_OR_NONSTRING_ENUM"
+  ],
+  "compact_bytes": 184
+}

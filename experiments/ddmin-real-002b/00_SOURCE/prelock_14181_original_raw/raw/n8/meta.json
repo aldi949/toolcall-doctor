@@ -1,0 +1,13 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"content\":\"\\u003chtml\\u003e \\u003chead\\u003e\\u003c/head\\u003e \\u003cbody\\u003e\\u003cdiv id=\\\"app\\\"\\u003e\\u003c/div\\u003e\\u003c/body\\u003e\\u003c/html\\u003e\",\"path\":\"public/index.html\"}",
+  "arguments_parsed": {
+    "content": "<html> <head></head> <body><div id=\"app\"></div></body></html>",
+    "path": "public/index.html"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:29Z"
+}

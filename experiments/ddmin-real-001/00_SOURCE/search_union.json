@@ -1,0 +1,142 @@
+[
+  {
+    "number": 3690,
+    "title": "Support vision models (image input) in OpenAI API chat completions",
+    "html_url": "https://github.com/ollama/ollama/issues/3690",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 4710,
+    "title": "s390x build ollama : running gcc failed ",
+    "html_url": "https://github.com/ollama/ollama/issues/4710",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 5990,
+    "title": "Tools and properties.type Not Supporting Arrays",
+    "html_url": "https://github.com/ollama/ollama/issues/5990",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 8217,
+    "title": "Chat Golang API with tools: the `resp.Message.ToolCalls` contains only one tool call",
+    "html_url": "https://github.com/ollama/ollama/issues/8217",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 10164,
+    "title": "Tool call - Ollama enforces usage of string in enums for JSON Schema",
+    "html_url": "https://github.com/ollama/ollama/issues/10164",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 10255,
+    "title": "litellm.exceptions.APIConnectionError: litellm.APIConnectionError: Ollama_chatException - {\"error\":\"json: cannot unmarshal array into Go struct field ChatRequest.messages.content of type string\"}",
+    "html_url": "https://github.com/ollama/ollama/issues/10255",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 10328,
+    "title": "Error when using tools: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string",
+    "html_url": "https://github.com/ollama/ollama/issues/10328",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 12794,
+    "title": "Tool Calling with Jan Nano",
+    "html_url": "https://github.com/ollama/ollama/issues/12794",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 13331,
+    "title": "{\"error\":\"json: cannot unmarshal object into Go struct field GenerateRequest.format of type string\"}",
+    "html_url": "https://github.com/ollama/ollama/issues/13331",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 14256,
+    "title": "tools",
+    "html_url": "https://github.com/ollama/ollama/issues/14256",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 14986,
+    "title": "/api/generate returns HTTP 500 {\"error\":\"EOF\"} with qwen3.5:9b when prompt requests <tool_call> XML output",
+    "html_url": "https://github.com/ollama/ollama/issues/14986",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 15315,
+    "title": "gemma4:e4b with ollama 0.20.1 still has tool parsing errors",
+    "html_url": "https://github.com/ollama/ollama/issues/15315",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 15645,
+    "title": "v1/messages :cloud \u2014 Kimi K2.5 native tokens leak, nested objects stringified on Qwen/GLM",
+    "html_url": "https://github.com/ollama/ollama/issues/15645",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 16383,
+    "title": "qwen3.6 occasionally violates its own tool-call template; qwen3.5 parser returns 500 instead of tolerating the drift",
+    "html_url": "https://github.com/ollama/ollama/issues/16383",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 17118,
+    "title": "Intermittent /v1/responses stream closes during reasoning without a terminal event",
+    "html_url": "https://github.com/ollama/ollama/issues/17118",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 17142,
+    "title": "Tool-parameter JSON-Schema constraints (minimum/maximum/default/\u2026) silently dropped at parse time",
+    "html_url": "https://github.com/ollama/ollama/issues/17142",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 17353,
+    "title": "qwen3coder.go parser drops tool calls when model omits the <tool_call> wrapper (bare <function=\u2026>)",
+    "html_url": "https://github.com/ollama/ollama/issues/17353",
+    "state": "closed",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 17444,
+    "title": "0.32.4 and 0.32.5 appear to break tool calling in VS Code GitHub Harness",
+    "html_url": "https://github.com/ollama/ollama/issues/17444",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue tools unmarshal"
+  },
+  {
+    "number": 17597,
+    "title": "Tool-parameter `enum` reaches the model but is not enforced during decoding (unlike `response_format`)",
+    "html_url": "https://github.com/ollama/ollama/issues/17597",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  },
+  {
+    "number": 18051,
+    "title": "json: cannot unmarshal object into Go struct field ToolProperty.required of type []string when `required` is an object",
+    "html_url": "https://github.com/ollama/ollama/issues/18051",
+    "state": "open",
+    "query": "repo:ollama/ollama is:issue cannot unmarshal tools"
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "n": 10,
+  "k_events": 10,
+  "rows": [
+    {
+      "i": 1,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 803,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 2,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 833,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 3,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 716,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 4,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 815,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 5,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 706,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 6,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 1062,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 7,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 723,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 8,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 878,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 9,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 702,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    },
+    {
+      "i": 10,
+      "http_status": 200,
+      "arguments": {
+        "city": "Paris"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 855,
+      "request_sha256": "908df2164562eba21a405ac172afe62454561dd15c9aa1dda843b5a63ff37f4b",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "failed_invariants": [],
+          "request_ok": true
+        }
+      }
+    }
+  ],
+  "pass": true,
+  "need": 10,
+  "utc": "2026-09-03T20:15:09Z"
+}

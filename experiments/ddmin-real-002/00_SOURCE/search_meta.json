@@ -1,0 +1,40 @@
+{
+  "utc": "2026-09-03T13:33:47Z",
+  "queries": [
+    {
+      "q": "repo:ollama/ollama is:issue tool call schema enum OR required OR nested",
+      "total_count": 83,
+      "returned": 30
+    },
+    {
+      "q": "repo:ollama/ollama is:issue tool_calls arguments JSON",
+      "total_count": 100,
+      "returned": 30
+    },
+    {
+      "q": "repo:ollama/ollama is:issue \"tool call\" content instead",
+      "total_count": 115,
+      "returned": 30
+    },
+    {
+      "q": "repo:ollama/ollama is:issue tool parameter enum minimum maximum",
+      "total_count": 3,
+      "returned": 3
+    },
+    {
+      "q": "repo:ggml-org/llama.cpp is:issue tool call schema arguments",
+      "total_count": 59,
+      "returned": 30
+    },
+    {
+      "q": "repo:vllm-project/vllm is:issue tool calling schema HTTP 200",
+      "total_count": 35,
+      "returned": 30
+    },
+    {
+      "q": "repo:sgl-project/sglang is:issue tool call arguments schema",
+      "total_count": 32,
+      "returned": 30
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama/ollama#6713",
+  "screen": "wrong_model",
+  "utc": "2026-09-03T10:36:37Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "required model mistral-nemo not installed; only llama3.2:3b present"
+}

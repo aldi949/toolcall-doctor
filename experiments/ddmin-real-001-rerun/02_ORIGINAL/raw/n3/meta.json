@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-09-03T13:27:09Z",
+  "ended_utc": "2026-09-03T13:27:09Z",
+  "elapsed_ms": 427,
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "http_status": 400,
+  "error": null,
+  "request_sha256": "03e1c8a0a88e0a287861be7c8584e48b15471af7369126f8b906c52196d21435",
+  "response_sha256": "ec2a43cfa69a17747f2ec02ed69c1b740d65fbecd478f0e1c3ee3fcba5ab3d4f",
+  "compact_bytes": 437,
+  "byte_count": 187,
+  "headers": [
+    "content-type: application/json; charset=utf-8",
+    "date: Thu, 03 Sep 2026 13:27:09 GMT",
+    "content-length: 187"
+  ]
+}

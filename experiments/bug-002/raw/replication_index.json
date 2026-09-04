@@ -1,0 +1,68 @@
+[
+  {
+    "started_utc": "2026-09-03T08:57:33.799948+00:00",
+    "ended_utc": "2026-09-03T08:57:37.640823+00:00",
+    "elapsed_ms": 3840,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 423,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T08:57:38.062550+00:00",
+    "ended_utc": "2026-09-03T08:57:38.716713+00:00",
+    "elapsed_ms": 654,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 423,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\broken.json"
+  },
+  {
+    "started_utc": "2026-09-03T08:57:39.190057+00:00",
+    "ended_utc": "2026-09-03T08:57:40.002140+00:00",
+    "elapsed_ms": 812,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 423,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T08:57:40.490413+00:00",
+    "ended_utc": "2026-09-03T08:57:41.153508+00:00",
+    "elapsed_ms": 663,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 422,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\broken.json"
+  },
+  {
+    "started_utc": "2026-09-03T08:57:41.514246+00:00",
+    "ended_utc": "2026-09-03T08:57:42.214929+00:00",
+    "elapsed_ms": 700,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 423,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T08:57:43.453805+00:00",
+    "ended_utc": "2026-09-03T08:57:44.278860+00:00",
+    "elapsed_ms": 825,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 423,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/v1/chat/completions",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\broken.json"
+  }
+]

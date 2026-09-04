@@ -1,0 +1,20 @@
+{
+  "stem": "broken",
+  "http_status": 200,
+  "streaming": true,
+  "tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": false,
+  "raw_tool_syntax_present": true,
+  "arguments_valid": null,
+  "finish_reason": "stop",
+  "finish_reasons_all": ["stop"],
+  "chunk_count": 49,
+  "stream_terminated": true,
+  "timeout": false,
+  "protocol_error": false,
+  "latency_ms": 1474,
+  "content_preview": "{\"name\": \"function_1\", \"parameters\": {\"a\": \"10\", \"b\": \"11\"}}",
+  "error": null,
+  "content_type": "text/event-stream"
+}

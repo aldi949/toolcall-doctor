@@ -1,0 +1,303 @@
+{
+  "n_probes": 49,
+  "n_still": 0,
+  "one_minimal": true,
+  "still": [],
+  "http_calls": 35,
+  "probes": [
+    {
+      "dropped_atom": "key:/model",
+      "cid": "C0423",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/0",
+      "cid": "C0424",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/1",
+      "cid": "C0425",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/2",
+      "cid": "C0426",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/3",
+      "cid": "C0427",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/4",
+      "cid": "C0428",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/5",
+      "cid": "C0429",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/6",
+      "cid": "C0430",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/7",
+      "cid": "C0431",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/8",
+      "cid": "C0432",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/9",
+      "cid": "C0433",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/10",
+      "cid": "C0434",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/temperature",
+      "cid": "C0435",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/stream",
+      "cid": "C0436",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/tools",
+      "cid": "C0437",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "idx:/tools/0",
+      "cid": "C0438",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function",
+      "cid": "C0439",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/name",
+      "cid": "C0440",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/0/function/name/0",
+      "cid": "C0441",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters",
+      "cid": "C0442",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties",
+      "cid": "C0443",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties/account",
+      "cid": "C0444",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties/account/enum",
+      "cid": "C0445",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "idx:/tools/0/function/parameters/properties/account/enum/0",
+      "cid": "C0446",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/0/function/parameters/properties/account/enum/0/17",
+      "cid": "C0447",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/messages",
+      "cid": "C0448",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "idx:/messages/0",
+      "cid": "C0449",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/messages/0/role",
+      "cid": "C0450",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/0",
+      "cid": "C0451",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/1",
+      "cid": "C0452",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/2",
+      "cid": "C0453",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/3",
+      "cid": "C0454",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/messages/0/content",
+      "cid": "C0455",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/27",
+      "cid": "C0456",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/28",
+      "cid": "C0457",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/29",
+      "cid": "C0458",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/30",
+      "cid": "C0459",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/31",
+      "cid": "C0460",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/32",
+      "cid": "C0461",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/33",
+      "cid": "C0462",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/34",
+      "cid": "C0463",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/35",
+      "cid": "C0464",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/36",
+      "cid": "C0465",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/37",
+      "cid": "C0466",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/38",
+      "cid": "C0467",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/39",
+      "cid": "C0468",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/40",
+      "cid": "C0469",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/41",
+      "cid": "C0470",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/42",
+      "cid": "C0471",
+      "preserves": false,
+      "n_posted": 1
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:41:33.6555172Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_time","arguments":{}}}]},"done_reason":"stop","done":true,"total_duration":348892900,"load_duration":28158800,"prompt_eval_count":158,"prompt_eval_duration":14000000,"eval_count":11,"eval_duration":304000000}

@@ -1,0 +1,8 @@
+{
+  "id": "vllm-project/vllm#54808",
+  "screen": "runtime_down",
+  "utc": "2026-09-03T10:39:17Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "vLLM not installed/running; Docker/WSL unavailable."
+}

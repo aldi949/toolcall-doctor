@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "My name is John"}], "model": "llama3.2:3b", "stream": false, "tool_choice": "auto", "tools": [{"function": {"type": "function", "name": "ExtractName", "description": "Extract the name", "parameters": {"type": "object", "properties": {"name": {"type": "string"}}, "required": ["name"]}}}]}

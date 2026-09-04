@@ -1,0 +1,34 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "format": "json",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use the search_web tool to search for apple.com. Do not answer without the tool."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_web",
+        "description": "Search for something on the internet/web.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The query you want to search for."
+            },
+            "numberOfResults": {
+              "type": "number",
+              "description": "How many results you want to get. Recommended 3 - 5."
+            }
+          },
+          "required": ["query"]
+        }
+      }
+    }
+  ]
+}

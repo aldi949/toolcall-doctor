@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-03T18:55:56Z",
+  "version": "ddmin-real-003-1.0",
+  "identity_behavioral": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+  "n_atoms": 160,
+  "n_reps": 3,
+  "hashes": {
+    "FROZEN_EXPERIMENT.md": "61ac4bd9d86692b4baad49910bfdcf17ba0edd26935ed640b1997fc11960e102",
+    "SEMANTIC_PRESERVATION_SPEC.md": "2b05607ecfbff97454c4f7b43c93a355191d976627b60345d859ddcc054b7f6e",
+    "FROZEN_FACTS.json": "75b167484bc391278dce652c626be15202e0eccc8f9d20d12f2cebad81da92ba",
+    "original_request": "8795113cc8357c13fe5a829956a49ff597b150e9f97c133333d2b08a3e31798a",
+    "control_request": "b281ea909f718c3842c303f64689390fd128f1ce4d8b5a3c348c97ba828843ac",
+    "behavioral_oracle.py": "8fa442cfe0055b170c57f6cd6f94b8709046372ea8d8122719edf9f247ee3ae0",
+    "semantic_gate.py": "3b5a6721e504b31fafbd62381900544687ad494668de7d04a6199c37db63cf39",
+    "minimizer.py": "1a0deaba70762d2c41eb8e06964b1c091f434939ef79602de9fadf3e5ce50141",
+    "execute.py": "d4b4abbf088b63ca531c5b974a49d5e92dac003fe478e78e0935e079c7aaa1d5",
+    "screen_and_freeze.py": "5482788afff8173e71aa5d063c9b5554c9b007b6f1bd17c20ee8334336e3f975",
+    "ATOMS_AT_FREEZE.json": "f2c218a3b07f2893ad29210a981a81dbfcc9494fc70fc4527b79b072b4a1189c",
+    "search_freedom.json": "2f283e864dc8cade821585570fc63957834e9d5439195fdf70a0fb1e698f6efb"
+  },
+  "search_freedom": {
+    "n_atoms": 160,
+    "n_single_drop_still_request_ok": 113,
+    "n_single_drop_breaks_request_invariants": 47,
+    "freedom_frac": 0.7063,
+    "note": "Request-side only (no HTTP). Response-side invariants are not in this count."
+  },
+  "note": "DDMin HTTP must not start before this file exists. Do not edit hashed files."
+}

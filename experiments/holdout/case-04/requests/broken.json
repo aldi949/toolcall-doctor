@@ -1,0 +1,63 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Look up order 1234567890 using get_order."
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "call_ctrl1",
+          "type": "function",
+          "function": {
+            "name": "get_order",
+            "arguments": "{\"number\":\"1234567890\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_ctrl1",
+      "content": "Order not found."
+    },
+    {
+      "role": "user",
+      "content": "The lookup failed. Call get_order_status with number 1234567890."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_order",
+        "description": "Gets the order from the client based on the number.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "number": {"type": "string"}
+          },
+          "required": ["number"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_order_status",
+        "description": "Gets status for an order number.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "number": {"type": "string"}
+          },
+          "required": ["number"]
+        }
+      }
+    }
+  ]
+}

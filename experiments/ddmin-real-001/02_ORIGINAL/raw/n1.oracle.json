@@ -1,0 +1,5 @@
+{
+  "oracle": "FAIL",
+  "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+  "http_status": 400
+}

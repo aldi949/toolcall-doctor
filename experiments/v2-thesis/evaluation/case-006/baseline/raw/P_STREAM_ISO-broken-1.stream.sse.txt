@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:38:30.2902601Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"GetOrdersAtRiskCount","arguments":{}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:38:30.3145679Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":466702200,"load_duration":41666200,"prompt_eval_count":153,"prompt_eval_duration":7000000,"eval_count":16,"eval_duration":417000000}

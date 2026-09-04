@@ -1,0 +1,12 @@
+{
+  "failure": {
+    "condition": "type_is",
+    "path": "arguments.list",
+    "value": "string"
+  },
+  "preserve": [
+    {"type": "tool_name", "value": "execute_service"},
+    {"type": "contains", "value": "light.buro_deckenlampe_2"},
+    {"type": "schema_type", "property": "list", "value": "array"}
+  ]
+}

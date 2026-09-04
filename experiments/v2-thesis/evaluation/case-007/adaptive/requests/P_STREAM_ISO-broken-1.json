@@ -1,0 +1,33 @@
+{
+  "model": "llama3.2:3b",
+  "stream": true,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call set_account with account equal to ACC-999-XYZ even though that is not in the enum."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "set_account",
+        "description": "Set account",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account": {
+              "type": "string",
+              "enum": [
+                "ONLY-VALID-ACCOUNT"
+              ]
+            }
+          },
+          "required": [
+            "account"
+          ]
+        }
+      }
+    }
+  ]
+}

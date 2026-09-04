@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"children\":[{\"name\":\"TodoList\",\"parameters\":{}}]}",
+  "arguments_parsed": {
+    "children": [
+      {
+        "name": "TodoList",
+        "parameters": {}
+      }
+    ]
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:21Z"
+}

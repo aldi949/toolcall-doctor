@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:41:08.249082+00:00",
+  "ended_utc": "2026-09-03T10:41:09.061998+00:00",
+  "elapsed_ms": 812,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 371,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\healthy-001\\adaptive\\requests\\P_STREAM_ISO-control-3.json"
+}

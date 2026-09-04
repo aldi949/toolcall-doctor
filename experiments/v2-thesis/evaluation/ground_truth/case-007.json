@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#17597",
+  "USEFUL_FAILURE_FAMILY": "GRAMMAR_CONSTRAINT_FAILURE",
+  "quality": "GT-C",
+  "note": "enum reaches the model but is not decoding-enforced. Manifest only if a tool call violates the enum.",
+  "revealed_utc": "2026-09-03T10:39:14Z"
+}

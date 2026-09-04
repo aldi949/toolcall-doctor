@@ -1,0 +1,9 @@
+{
+  "name": "os",
+  "cmd": "systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\" /C:\"System Type\"",
+  "started_utc": "2026-09-03T10:22:44.581274+00:00",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:50.357104+00:00"
+}

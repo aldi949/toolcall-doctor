@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:35:57.557452+00:00",
+  "ended_utc": "2026-09-03T10:35:57.873517+00:00",
+  "elapsed_ms": 315,
+  "http_status": 400,
+  "error": null,
+  "byte_count": 119,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\case-001\\baseline\\requests\\P_NATIVE_VS_COMPAT-control-1.json"
+}

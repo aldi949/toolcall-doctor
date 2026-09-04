@@ -1,0 +1,12 @@
+{
+  "diagnosis_timestamp_utc": "2026-09-03T09:53:04Z",
+  "diagnosis_ended_utc": "2026-09-03T09:53:04Z",
+  "diagnosis_sha256": "6f9d5d3cff36e79605e971cffd5b697aa01f99c7d0708e6635402cdc3c139725",
+  "probe_wall_started_utc": "2026-09-03T09:53:00Z",
+  "probe_wall_ended_utc": "2026-09-03T09:53:04Z",
+  "url": "http://127.0.0.1:11434/api/chat",
+  "n": 3,
+  "doctor_version": "1.0.0-freeze",
+  "FAMILY": "PROTOCOL_FAILURE",
+  "STATUS": "UNHEALTHY"
+}

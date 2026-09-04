@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "tool_call_present": false,
+  "arguments_raw": null,
+  "arguments_parsed": null,
+  "content": "{\"type\":\"function\",\"name\":\"write_file\",\"parameters\":{\"path\":\"public/index.html\",\"content\":\"\n  <!DOCTYPE html>\n  <html lang=\"en\">\n    <head>\n      <meta charset=\"UTF-8\" />\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n      <title>Todo List</title>\n    </head>\n    <body>\n      <h1>Todo List App</h1>\n      <input type=\"text\" id=\"new-todo\" placeholder=\"/new-todo-item\"/>\n      <button onclick=\\\"addTodoItem()\\\">Add Todo</button>\n      <ul id=\\\"todo-list\\\"></ul>\n\n      <script src=\\\"/index.js\\\"></script>\n    </body>\n  </html>\n\"}};",
+  "finish_reason": "stop",
+  "error_message": null,
+  "utc": "2026-09-03T18:16:12Z"
+}

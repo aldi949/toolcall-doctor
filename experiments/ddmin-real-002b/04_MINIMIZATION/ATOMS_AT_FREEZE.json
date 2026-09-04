@@ -1,0 +1,1914 @@
+{
+  "n": 160,
+  "atoms": [
+    {
+      "atom_id": "key:/model",
+      "kind": "key",
+      "path": [],
+      "token": "model",
+      "char": null
+    },
+    {
+      "atom_id": "char:/model/0",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "0",
+      "char": "l"
+    },
+    {
+      "atom_id": "char:/model/1",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "1",
+      "char": "l"
+    },
+    {
+      "atom_id": "char:/model/2",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "2",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/model/3",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "3",
+      "char": "m"
+    },
+    {
+      "atom_id": "char:/model/4",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "4",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/model/5",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "5",
+      "char": "3"
+    },
+    {
+      "atom_id": "char:/model/6",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "6",
+      "char": "."
+    },
+    {
+      "atom_id": "char:/model/7",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "7",
+      "char": "2"
+    },
+    {
+      "atom_id": "char:/model/8",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "8",
+      "char": ":"
+    },
+    {
+      "atom_id": "char:/model/9",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "9",
+      "char": "3"
+    },
+    {
+      "atom_id": "char:/model/10",
+      "kind": "char",
+      "path": [
+        "model"
+      ],
+      "token": "10",
+      "char": "b"
+    },
+    {
+      "atom_id": "key:/temperature",
+      "kind": "key",
+      "path": [],
+      "token": "temperature",
+      "char": null
+    },
+    {
+      "atom_id": "key:/stream",
+      "kind": "key",
+      "path": [],
+      "token": "stream",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools",
+      "kind": "key",
+      "path": [],
+      "token": "tools",
+      "char": null
+    },
+    {
+      "atom_id": "idx:/tools/0",
+      "kind": "idx",
+      "path": [
+        "tools"
+      ],
+      "token": "0",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools/0/type",
+      "kind": "key",
+      "path": [
+        "tools",
+        0
+      ],
+      "token": "type",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/type/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "0",
+      "char": "f"
+    },
+    {
+      "atom_id": "char:/tools/0/type/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "1",
+      "char": "u"
+    },
+    {
+      "atom_id": "char:/tools/0/type/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "2",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/type/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "3",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/type/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "4",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/tools/0/type/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "5",
+      "char": "i"
+    },
+    {
+      "atom_id": "char:/tools/0/type/6",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "6",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/tools/0/type/7",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "type"
+      ],
+      "token": "7",
+      "char": "n"
+    },
+    {
+      "atom_id": "key:/tools/0/function",
+      "kind": "key",
+      "path": [
+        "tools",
+        0
+      ],
+      "token": "function",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools/0/function/name",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function"
+      ],
+      "token": "name",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "0",
+      "char": "g"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "1",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "2",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "3",
+      "char": "_"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "4",
+      "char": "b"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "5",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/6",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "6",
+      "char": "l"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/7",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "7",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/8",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "8",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/9",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "9",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/name/10",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "name"
+      ],
+      "token": "10",
+      "char": "e"
+    },
+    {
+      "atom_id": "key:/tools/0/function/description",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function"
+      ],
+      "token": "description",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "0",
+      "char": "G"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "1",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "2",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "3",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "4",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "5",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/6",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "6",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/7",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "7",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/8",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "8",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/9",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "9",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/10",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "10",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/11",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "11",
+      "char": "u"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/12",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "12",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/13",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "13",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/14",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "14",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/15",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "15",
+      "char": "b"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/16",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "16",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/17",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "17",
+      "char": "l"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/18",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "18",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/19",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "19",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/20",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "20",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/21",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "21",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/tools/0/function/description/22",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "description"
+      ],
+      "token": "22",
+      "char": "."
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function"
+      ],
+      "token": "parameters",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/type",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters"
+      ],
+      "token": "type",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "0",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "1",
+      "char": "b"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "2",
+      "char": "j"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "3",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "4",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/type/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "type"
+      ],
+      "token": "5",
+      "char": "t"
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/required",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters"
+      ],
+      "token": "required",
+      "char": null
+    },
+    {
+      "atom_id": "idx:/tools/0/function/parameters/required/0",
+      "kind": "idx",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required"
+      ],
+      "token": "0",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "0",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "1",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "2",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "3",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "4",
+      "char": "u"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "5",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/required/0/6",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "required",
+        0
+      ],
+      "token": "6",
+      "char": "t"
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/properties",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters"
+      ],
+      "token": "properties",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/properties/account",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties"
+      ],
+      "token": "account",
+      "char": null
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/properties/account/type",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account"
+      ],
+      "token": "type",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "0",
+      "char": "s"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "1",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "2",
+      "char": "r"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "3",
+      "char": "i"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "4",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/type/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "type"
+      ],
+      "token": "5",
+      "char": "g"
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/properties/account/enum",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account"
+      ],
+      "token": "enum",
+      "char": null
+    },
+    {
+      "atom_id": "idx:/tools/0/function/parameters/properties/account/enum/0",
+      "kind": "idx",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum"
+      ],
+      "token": "0",
+      "char": null
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/0",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "0",
+      "char": "O"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/1",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "1",
+      "char": "N"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/2",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "2",
+      "char": "L"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/3",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "3",
+      "char": "Y"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/4",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "4",
+      "char": "-"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/5",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "5",
+      "char": "V"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/6",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "6",
+      "char": "A"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/7",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "7",
+      "char": "L"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/8",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "8",
+      "char": "I"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/9",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "9",
+      "char": "D"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/10",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "10",
+      "char": "-"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/11",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "11",
+      "char": "A"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/12",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "12",
+      "char": "C"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/13",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "13",
+      "char": "C"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/14",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "14",
+      "char": "O"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/15",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "15",
+      "char": "U"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/16",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "16",
+      "char": "N"
+    },
+    {
+      "atom_id": "char:/tools/0/function/parameters/properties/account/enum/0/17",
+      "kind": "char",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters",
+        "properties",
+        "account",
+        "enum",
+        0
+      ],
+      "token": "17",
+      "char": "T"
+    },
+    {
+      "atom_id": "key:/tools/0/function/parameters/additionalProperties",
+      "kind": "key",
+      "path": [
+        "tools",
+        0,
+        "function",
+        "parameters"
+      ],
+      "token": "additionalProperties",
+      "char": null
+    },
+    {
+      "atom_id": "key:/messages",
+      "kind": "key",
+      "path": [],
+      "token": "messages",
+      "char": null
+    },
+    {
+      "atom_id": "idx:/messages/0",
+      "kind": "idx",
+      "path": [
+        "messages"
+      ],
+      "token": "0",
+      "char": null
+    },
+    {
+      "atom_id": "key:/messages/0/role",
+      "kind": "key",
+      "path": [
+        "messages",
+        0
+      ],
+      "token": "role",
+      "char": null
+    },
+    {
+      "atom_id": "char:/messages/0/role/0",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "role"
+      ],
+      "token": "0",
+      "char": "u"
+    },
+    {
+      "atom_id": "char:/messages/0/role/1",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "role"
+      ],
+      "token": "1",
+      "char": "s"
+    },
+    {
+      "atom_id": "char:/messages/0/role/2",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "role"
+      ],
+      "token": "2",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/messages/0/role/3",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "role"
+      ],
+      "token": "3",
+      "char": "r"
+    },
+    {
+      "atom_id": "key:/messages/0/content",
+      "kind": "key",
+      "path": [
+        "messages",
+        0
+      ],
+      "token": "content",
+      "char": null
+    },
+    {
+      "atom_id": "char:/messages/0/content/0",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "0",
+      "char": "W"
+    },
+    {
+      "atom_id": "char:/messages/0/content/1",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "1",
+      "char": "h"
+    },
+    {
+      "atom_id": "char:/messages/0/content/2",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "2",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/messages/0/content/3",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "3",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/messages/0/content/4",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "4",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/5",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "5",
+      "char": "i"
+    },
+    {
+      "atom_id": "char:/messages/0/content/6",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "6",
+      "char": "s"
+    },
+    {
+      "atom_id": "char:/messages/0/content/7",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "7",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/8",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "8",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/messages/0/content/9",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "9",
+      "char": "h"
+    },
+    {
+      "atom_id": "char:/messages/0/content/10",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "10",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/messages/0/content/11",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "11",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/12",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "12",
+      "char": "b"
+    },
+    {
+      "atom_id": "char:/messages/0/content/13",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "13",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/messages/0/content/14",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "14",
+      "char": "l"
+    },
+    {
+      "atom_id": "char:/messages/0/content/15",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "15",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/messages/0/content/16",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "16",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/messages/0/content/17",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "17",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/messages/0/content/18",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "18",
+      "char": "e"
+    },
+    {
+      "atom_id": "char:/messages/0/content/19",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "19",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/20",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "20",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/messages/0/content/21",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "21",
+      "char": "f"
+    },
+    {
+      "atom_id": "char:/messages/0/content/22",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "22",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/23",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "23",
+      "char": "a"
+    },
+    {
+      "atom_id": "char:/messages/0/content/24",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "24",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/messages/0/content/25",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "25",
+      "char": "c"
+    },
+    {
+      "atom_id": "char:/messages/0/content/26",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "26",
+      "char": "o"
+    },
+    {
+      "atom_id": "char:/messages/0/content/27",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "27",
+      "char": "u"
+    },
+    {
+      "atom_id": "char:/messages/0/content/28",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "28",
+      "char": "n"
+    },
+    {
+      "atom_id": "char:/messages/0/content/29",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "29",
+      "char": "t"
+    },
+    {
+      "atom_id": "char:/messages/0/content/30",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "30",
+      "char": " "
+    },
+    {
+      "atom_id": "char:/messages/0/content/31",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "31",
+      "char": "A"
+    },
+    {
+      "atom_id": "char:/messages/0/content/32",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "32",
+      "char": "C"
+    },
+    {
+      "atom_id": "char:/messages/0/content/33",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "33",
+      "char": "C"
+    },
+    {
+      "atom_id": "char:/messages/0/content/34",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "34",
+      "char": "-"
+    },
+    {
+      "atom_id": "char:/messages/0/content/35",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "35",
+      "char": "9"
+    },
+    {
+      "atom_id": "char:/messages/0/content/36",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "36",
+      "char": "9"
+    },
+    {
+      "atom_id": "char:/messages/0/content/37",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "37",
+      "char": "9"
+    },
+    {
+      "atom_id": "char:/messages/0/content/38",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "38",
+      "char": "-"
+    },
+    {
+      "atom_id": "char:/messages/0/content/39",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "39",
+      "char": "X"
+    },
+    {
+      "atom_id": "char:/messages/0/content/40",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "40",
+      "char": "Y"
+    },
+    {
+      "atom_id": "char:/messages/0/content/41",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "41",
+      "char": "Z"
+    },
+    {
+      "atom_id": "char:/messages/0/content/42",
+      "kind": "char",
+      "path": [
+        "messages",
+        0,
+        "content"
+      ],
+      "token": "42",
+      "char": "?"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#17429",
+  "screen": "hang_on_tool_role",
+  "utc": "2026-09-03T10:38:45Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 893,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:46.5517946Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":588593400,\"load_duration\":27582700,\"prompt_eval_count\":203,\"prompt_eval_duration\":27000000,\"eval_count\":17,\"eval_duration\":532000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 846,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:47.3981336Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":464407900,\"load_duration\":30329600,\"prompt_eval_count\":203,\"prompt_eval_duration\":2000000,\"eval_count\":17,\"eval_duration\":427000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 901,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:48.2992569Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":511114700,\"load_duration\":46164500,\"prompt_eval_count\":203,\"prompt_eval_duration\":3000000,\"eval_count\":17,\"eval_duration\":457000000}"
+    }
+  ],
+  "disposition": "NON_MANIFESTING"
+}

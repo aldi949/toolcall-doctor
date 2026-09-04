@@ -1,0 +1,53 @@
+{
+  "broken_fail": true,
+  "control_pass": true,
+  "control_rows": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "elapsed_ms": null,
+      "request_sha256": null
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "elapsed_ms": null,
+      "request_sha256": null
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "elapsed_ms": null,
+      "request_sha256": null
+    }
+  ],
+  "utc": "2026-09-03T18:25:25Z",
+  "source": "03_ORACLE/control_raw re-evaluated with frozen oracle"
+}

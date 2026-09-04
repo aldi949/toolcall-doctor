@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-03T13:27:15Z",
+  "version": "ddmin-real-001-rerun-1.0",
+  "identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+  "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+  "git_commit": null,
+  "hashes": {
+    "FAILURE_PREDICATE.md": "da3a254bacee61e2e423100f2c83fcb7bc166fe27d4b6c7482ce8d3cf1cd7cbd",
+    "oracle.py": "1f25cf279da08af3618096465785dc789f9022195396e9f66233b193d3020196",
+    "minimizer.py": "a9d2b977a7c81c1ec77d45d7b41919904ef14c45fa8883a8e85cc63d7bba40cb",
+    "execute.py": "d62e69a9d43d8c5a42bd9a898a23ea42c7efff0c66a27d916c7ab12c1eb2e448",
+    "TRANSFORMATION_SPACE.md": "4b803a4bf4eab488e2bc2f7b4664b7af7359aac8915968e6a3a8c38970ed3162",
+    "original_request": "ad5e2cd51fc13d251045f7957443cbe1608947d2a7cf3f8c62a114385a731bc7",
+    "verify_1minimal.py": "38989ec8bede9fa78f8008e6de83fc40b9bbeff228e539083a47241f478955af",
+    "run_pipeline.py": "fbca4c7834f5050150c11590d5c4a9839eaaefb98bee5e6729dfb568076e52c3",
+    "ATOMS_AT_FREEZE.json": "32f661e2952c222b7a3f376689ce53059f77bcb4aa45a276a6b800c0e23d57b5"
+  },
+  "n_atoms": 168,
+  "note": "Minimization HTTP must not start before this file exists."
+}

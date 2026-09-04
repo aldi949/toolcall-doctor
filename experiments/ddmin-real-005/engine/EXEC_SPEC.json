@@ -1,0 +1,11 @@
+{
+  "keys": ["model", "temperature", "stream", "tool_choice", "seed", "max_tokens"],
+  "values": {
+    "model": "llama3.2:3b",
+    "temperature": 0,
+    "stream": false,
+    "tool_choice": "none",
+    "seed": 42,
+    "max_tokens": 200
+  }
+}

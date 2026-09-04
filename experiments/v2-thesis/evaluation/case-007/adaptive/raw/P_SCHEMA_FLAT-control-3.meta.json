@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:39:06.834061+00:00",
+  "ended_utc": "2026-09-03T10:39:07.738380+00:00",
+  "elapsed_ms": 904,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 382,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\case-007\\adaptive\\requests\\P_SCHEMA_FLAT-control-3.json"
+}

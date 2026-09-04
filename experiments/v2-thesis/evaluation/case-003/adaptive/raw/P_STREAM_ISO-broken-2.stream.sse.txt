@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:04.5364789Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_weather","arguments":{"city":"Paris"}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:04.5626983Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":411058700,"load_duration":31134300,"prompt_eval_count":169,"prompt_eval_duration":1000000,"eval_count":15,"eval_duration":375000000}

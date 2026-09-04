@@ -1,0 +1,41 @@
+{
+  "stem": "control-run-2",
+  "http_status": 200,
+  "http_status_class": "2xx",
+  "streaming": false,
+  "tool_choice": null,
+  "tool_choice_kind": null,
+  "named_tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": true,
+  "tool_call_names": [
+    "lookup_city"
+  ],
+  "tool_name_valid": true,
+  "raw_tool_syntax_present": false,
+  "arguments_json_valid": true,
+  "arguments_valid": true,
+  "arguments_schema_valid": true,
+  "missing_required_fields": [],
+  "unexpected_fields": [],
+  "nested_structure_valid": true,
+  "declared_schema_depth": 1,
+  "returned_argument_depth": 1,
+  "constraint_none_violated": false,
+  "constraint_forced_violated": false,
+  "finish_reason": "tool_calls",
+  "finish_reasons_all": [
+    "tool_calls"
+  ],
+  "content_present": false,
+  "content_preview": "",
+  "content_nonempty": false,
+  "timeout": false,
+  "protocol_error": false,
+  "runtime_error": false,
+  "latency_ms": 693,
+  "stream_terminated": null,
+  "chunk_count": 1,
+  "error": null,
+  "content_type": "application/json"
+}

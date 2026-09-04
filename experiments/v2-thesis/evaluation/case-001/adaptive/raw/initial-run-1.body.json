@@ -1,0 +1,1 @@
+{"error":"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string"}

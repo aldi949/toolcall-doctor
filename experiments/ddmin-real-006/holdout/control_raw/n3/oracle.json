@@ -1,0 +1,15 @@
+{
+  "oracle": "PASS",
+  "failure_identity": null,
+  "http_status": 200,
+  "tool_call_present": true,
+  "tool_name": "execute_service",
+  "arguments": {
+    "entity_id": "light.buro_deckenlampe_2",
+    "service": "turn_off"
+  },
+  "list_is_str": false,
+  "declared_tool_names": [
+    "execute_service"
+  ]
+}

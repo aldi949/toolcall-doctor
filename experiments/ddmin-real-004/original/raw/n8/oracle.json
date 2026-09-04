@@ -1,0 +1,29 @@
+{
+  "oracle": "FAIL",
+  "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+  "http_status": 200,
+  "tool_call_present": true,
+  "tool_name": "get_balance",
+  "arguments": {
+    "account": "ACC-999-XYZ"
+  },
+  "enum_error_paths": [
+    "/account"
+  ],
+  "schema_present_for_tool": true,
+  "schema": {
+    "type": "object",
+    "required": [
+      "account"
+    ],
+    "properties": {
+      "account": {
+        "type": "string",
+        "enum": [
+          "ONLY-VALID-ACCOUNT"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

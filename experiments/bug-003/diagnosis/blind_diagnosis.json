@@ -1,0 +1,192 @@
+{
+  "SYMPTOM": "control tool_calls=True schema_valid=True declared_depth=1; broken tool_calls=True schema_valid=False declared_depth=2 missing_required=True",
+  "CONTROL_OBSERVATIONS": {
+    "n": 3,
+    "tool_calls_present": true,
+    "tool_calls_present_count": 3,
+    "arguments_schema_valid": true,
+    "arguments_schema_valid_true_count": 3,
+    "arguments_schema_valid_false_count": 0,
+    "streaming": false,
+    "streaming_any": false,
+    "streaming_all_false": true,
+    "tool_choice": null,
+    "http_status": 200,
+    "protocol_error": false,
+    "declared_schema_depth": 1,
+    "returned_argument_depth": [
+      1,
+      1,
+      1
+    ],
+    "missing_required_fields_any": false,
+    "content_present_count": 0,
+    "raw_tool_syntax_present_count": 0,
+    "finish_reason": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "latency_ms_min": 889,
+    "latency_ms_max": 4399
+  },
+  "BROKEN_OBSERVATIONS": {
+    "n": 3,
+    "tool_calls_present": true,
+    "tool_calls_present_count": 3,
+    "arguments_schema_valid": false,
+    "arguments_schema_valid_true_count": 0,
+    "arguments_schema_valid_false_count": 3,
+    "streaming": false,
+    "streaming_any": false,
+    "streaming_all_false": true,
+    "tool_choice": null,
+    "http_status": 200,
+    "protocol_error": false,
+    "declared_schema_depth": 2,
+    "returned_argument_depth": [
+      1,
+      1,
+      1
+    ],
+    "missing_required_fields_any": true,
+    "content_present_count": 0,
+    "raw_tool_syntax_present_count": 0,
+    "finish_reason": [
+      "stop",
+      "stop",
+      "stop"
+    ],
+    "latency_ms_min": 779,
+    "latency_ms_max": 990
+  },
+  "COMPETING_HYPOTHESES": [
+    {
+      "id": "H_STREAMING",
+      "layer": "STREAMING_PARSER",
+      "claim": "Streaming shaping lost structured tool_calls."
+    },
+    {
+      "id": "H_TOOL_CHOICE",
+      "layer": "TOOL_CHOICE_CONSTRAINT",
+      "claim": "A tool_choice constraint is ignored."
+    },
+    {
+      "id": "H_SCHEMA",
+      "layer": "TOOL_SCHEMA",
+      "claim": "Declared schema structure causes argument structure failure while a simpler schema for the same tool works."
+    },
+    {
+      "id": "H_MODEL",
+      "layer": "MODEL_CAPABILITY",
+      "claim": "The model cannot call tools, or nested complexity exceeds model skill even if the schema is fully presented."
+    },
+    {
+      "id": "H_TEMPLATE",
+      "layer": "CHAT_TEMPLATE",
+      "claim": "Chat template serialization, not schema unmarshal, drops nested fields."
+    },
+    {
+      "id": "H_PARSER",
+      "layer": "TOOL_PARSER",
+      "claim": "Arguments were generated correctly then damaged by response parsing."
+    },
+    {
+      "id": "H_PROTOCOL",
+      "layer": "PROTOCOL_COMPATIBILITY",
+      "claim": "HTTP/transport failure unique to the broken probe."
+    },
+    {
+      "id": "H_MULTI",
+      "layer": "MULTI_TURN_STATE",
+      "claim": "Failure depends on prior tool turns."
+    },
+    {
+      "id": "H_REASONING",
+      "layer": "REASONING_PARSER",
+      "claim": "Reasoning traces interfere with tools."
+    },
+    {
+      "id": "H_RUNTIME",
+      "layer": "RUNTIME_INTERNAL",
+      "claim": "An internal runtime transformer corrupts nested schema before the model sees it."
+    }
+  ],
+  "SUPPORTING_EVIDENCE": {
+    "H_STREAMING": [],
+    "H_TOOL_CHOICE": [],
+    "H_SCHEMA": [
+      "Control arguments validate against the declared simple schema; broken arguments fail the declared deeper schema; both produced tool_calls.",
+      "Broken runs are missing required fields declared in the nested/deeper schema."
+    ],
+    "H_MODEL": [
+      "Model can emit a tool call; nested/complex schema invalidity could still be model skill rather than runtime stripping."
+    ],
+    "H_TEMPLATE": [
+      "Template rendering could drop nested schema fields even if unmarshal preserved them; endpoint data cannot separate this from unmarshal."
+    ],
+    "H_PARSER": [
+      "Possible that nested JSON was parsed into a flatter/wrong object."
+    ],
+    "H_PROTOCOL": [],
+    "H_MULTI": [],
+    "H_REASONING": [],
+    "H_RUNTIME": [
+      "A runtime schema transformer could strip nested properties before prompting; this is consistent with schema-valid control and schema-invalid broken, but not proven from the HTTP body alone."
+    ]
+  },
+  "CONTRADICTING_EVIDENCE": {
+    "H_STREAMING": [
+      "Both probes are non-streaming.",
+      "Broken probe still has structured tool_calls."
+    ],
+    "H_TOOL_CHOICE": [
+      "tool_choice is not the independent observed difference (both unset or equal)."
+    ],
+    "H_SCHEMA": [],
+    "H_MODEL": [
+      "Control produced structured tool_calls, so the model/runtime can call this tool under the simple schema."
+    ],
+    "H_TEMPLATE": [
+      "No template text was observed; template vs unmarshal vs model-skill remain bundled."
+    ],
+    "H_PARSER": [
+      "Parser-damage vs model-emitted-wrong-shape cannot be distinguished without the raw generated tokens."
+    ],
+    "H_PROTOCOL": [
+      "Broken HTTP completed without protocol error."
+    ],
+    "H_MULTI": [
+      "Single-turn captures; no prior assistant/tool messages in the request differential."
+    ],
+    "H_REASONING": [
+      "No think-marker content observed."
+    ],
+    "H_RUNTIME": [
+      "Endpoint observations do not include the rendered prompt, so an internal transformer line cannot be confirmed."
+    ]
+  },
+  "ELIMINATED_HYPOTHESES": [
+    "H_STREAMING",
+    "H_TOOL_CHOICE",
+    "H_PROTOCOL",
+    "H_MULTI",
+    "H_REASONING"
+  ],
+  "UNRESOLVED_HYPOTHESES": [
+    "H_MODEL",
+    "H_TEMPLATE",
+    "H_PARSER",
+    "H_RUNTIME"
+  ],
+  "REMAINING_SUPPORTED_HYPOTHESES": [
+    "H_SCHEMA"
+  ],
+  "UNEXPLAINED_OBSERVATIONS": [
+    "Cannot separate runtime schema stripping, template omission, parser damage, and nested-model-skill from HTTP arguments alone."
+  ],
+  "SUSPECTED_FAILURE_LAYER": "SCHEMA_DEPENDENT_FAILURE",
+  "CONFIDENCE": "HIGH",
+  "NEXT_BEST_PROBE": "Capture the rendered tools prompt (debug log) and compare declared nested property keys to keys present in the prompt; also replay the nested schema on a runtime advertised to preserve nested properties.",
+  "NOTE": "SCHEMA_DEPENDENT_FAILURE is the narrowest justified endpoint diagnosis when simple schema validates and nested/deeper schema does not. It is not a claim of a specific internal transformer bug."
+}

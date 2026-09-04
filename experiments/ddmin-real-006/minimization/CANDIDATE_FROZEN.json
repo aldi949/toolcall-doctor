@@ -1,0 +1,34 @@
+{
+  "utc": "2026-09-04T07:36:01Z",
+  "n_search": 10,
+  "payload": {
+    "model": "llama3.2:3b",
+    "stream": false,
+    "temperature": 0,
+    "seed": 42,
+    "messages": [
+      {
+        "role": "user",
+        "content": "light.buro_deckenlampe_2"
+      }
+    ],
+    "tools": [
+      {
+        "function": {
+          "name": "execute_service",
+          "parameters": {
+            "properties": {
+              "list": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "status": "REDUCED",
+  "last_accepted_id": "C0467",
+  "http_calls_search": 577,
+  "note": "Holdout may run only after this file exists. Do not change payload."
+}

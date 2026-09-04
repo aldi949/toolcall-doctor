@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T09:53:23.1852042Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"select_op","arguments":{"selectSchema":"T-9"}}}]},"done_reason":"stop","done":true,"total_duration":557984200,"load_duration":23432500,"prompt_eval_count":160,"prompt_eval_duration":16000000,"eval_count":20,"eval_duration":517000000}

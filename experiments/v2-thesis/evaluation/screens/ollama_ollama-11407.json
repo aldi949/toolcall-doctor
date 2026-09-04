@@ -1,0 +1,36 @@
+{
+  "id": "ollama/ollama#11407",
+  "screen": "stream_drops_tools",
+  "utc": "2026-09-03T10:38:02Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 783,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:03.4122415Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done\":false}\n{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:03.4389565Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":460933200,\"load_duration\":25187000,\"prompt_eval_count\":167,\"prompt_eval_duration\":2000000,\"eval_count\":17,\"eval_duration\":432000000}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 920,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:04.3348656Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done\":false}\n{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:04.3597157Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":507386800,\"load_duration\":45707600,\"prompt_eval_count\":167,\"prompt_eval_duration\":2000000,\"eval_count\":17,\"eval_duration\":416000000}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 828,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:05.1624924Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_weather\",\"arguments\":{\"city\":\"Paris\"}}}]},\"done\":false}\n{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:05.1876076Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":466575700,\"load_duration\":26410100,\"prompt_eval_count\":167,\"prompt_eval_duration\":2000000,\"eval_count\":17,\"eval_duration\":437000000}\n"
+    }
+  ],
+  "control_tools": [
+    true,
+    true,
+    true
+  ],
+  "stream_hint": [
+    true,
+    true,
+    true
+  ],
+  "disposition": "NON_MANIFESTING"
+}

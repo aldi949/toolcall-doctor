@@ -1,0 +1,199 @@
+{
+  "doctor_version": "2.0.0-freeze",
+  "STATUS": "UNKNOWN",
+  "OBSERVABLE_FAILURE_DIMENSIONS": [
+    "H_GRAMMAR"
+  ],
+  "USEFUL_FAILURE_FAMILY": "UNKNOWN",
+  "LOCALIZATION_CONFIDENCE": "LOW",
+  "SUSPECTED_INTERNAL_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Initial request HTTP error on all replicates.",
+    "P_SCHEMA_FLAT outcome=UNCHANGED remaining=['H_GRAMMAR']",
+    "P_SCHEMA_SIMPLIFY_STEP outcome=UNCHANGED remaining=['H_GRAMMAR']",
+    "P_STREAM_ISO outcome=UNCHANGED remaining=['H_GRAMMAR']",
+    "P_TOOL_CHOICE_FORCE outcome=UNCHANGED remaining=['H_GRAMMAR']"
+  ],
+  "CONTRADICTING_EVIDENCE": [],
+  "ELIMINATED_HYPOTHESES": [
+    "H_ADAPTER",
+    "H_BASE",
+    "H_CHOICE_FORCE",
+    "H_CHOICE_NONE",
+    "H_MULTI_TURN",
+    "H_PROTOCOL",
+    "H_REASONING",
+    "H_SCHEMA",
+    "H_STREAM"
+  ],
+  "UNRESOLVED_HYPOTHESES": [
+    "H_GRAMMAR"
+  ],
+  "PROBES_EXECUTED": [
+    "P_SCHEMA_FLAT",
+    "P_SCHEMA_SIMPLIFY_STEP",
+    "P_STREAM_ISO",
+    "P_TOOL_CHOICE_FORCE"
+  ],
+  "STOP_REASON": "BUDGET",
+  "NEXT_MANUAL_EVIDENCE": "A probe that partitions remaining hypotheses, or an observability hook listed as NOT_EXPOSED.",
+  "UNSTABLE": false,
+  "WHY_EACH_PROBE_WAS_CHOSEN": [
+    {
+      "utc": "2026-09-03T10:36:01Z",
+      "mode": "adaptive",
+      "probe": "P_SCHEMA_FLAT",
+      "reason": "minimax worst_remaining=3 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_GRAMMAR', 'H_PROTOCOL', 'H_SCHEMA']",
+      "remaining_before": [
+        "H_GRAMMAR",
+        "H_PROTOCOL",
+        "H_SCHEMA"
+      ],
+      "request_count_before": 3,
+      "choice": {
+        "probe": "P_SCHEMA_FLAT",
+        "reason": "minimax worst_remaining=3 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_GRAMMAR', 'H_PROTOCOL', 'H_SCHEMA']",
+        "score": {
+          "probe": "P_SCHEMA_FLAT",
+          "worst_remaining": 3,
+          "n_partitions": 4,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_GRAMMAR",
+              "H_PROTOCOL",
+              "H_SCHEMA"
+            ],
+            "PASS": [
+              "H_GRAMMAR"
+            ],
+            "MALFORMED": [
+              "H_PROTOCOL"
+            ],
+            "FAIL": [
+              "H_PROTOCOL",
+              "H_SCHEMA"
+            ],
+            "TIMEOUT": [],
+            "UNCHANGED": [
+              "H_GRAMMAR"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "utc": "2026-09-03T10:36:03Z",
+      "mode": "adaptive",
+      "probe": "P_SCHEMA_SIMPLIFY_STEP",
+      "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 8 scored probes; remaining=['H_GRAMMAR']",
+      "remaining_before": [
+        "H_GRAMMAR"
+      ],
+      "request_count_before": 9,
+      "choice": {
+        "probe": "P_SCHEMA_SIMPLIFY_STEP",
+        "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 8 scored probes; remaining=['H_GRAMMAR']",
+        "score": {
+          "probe": "P_SCHEMA_SIMPLIFY_STEP",
+          "worst_remaining": 1,
+          "n_partitions": 1,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_GRAMMAR"
+            ],
+            "PASS": [
+              "H_GRAMMAR"
+            ],
+            "MALFORMED": [],
+            "TIMEOUT": [],
+            "FAIL": [],
+            "UNCHANGED": [
+              "H_GRAMMAR"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "utc": "2026-09-03T10:36:05Z",
+      "mode": "adaptive",
+      "probe": "P_STREAM_ISO",
+      "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 7 scored probes; remaining=['H_GRAMMAR']",
+      "remaining_before": [
+        "H_GRAMMAR"
+      ],
+      "request_count_before": 15,
+      "choice": {
+        "probe": "P_STREAM_ISO",
+        "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 7 scored probes; remaining=['H_GRAMMAR']",
+        "score": {
+          "probe": "P_STREAM_ISO",
+          "worst_remaining": 1,
+          "n_partitions": 1,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_GRAMMAR"
+            ],
+            "PASS": [
+              "H_GRAMMAR"
+            ],
+            "MALFORMED": [],
+            "TIMEOUT": [],
+            "FAIL": [],
+            "UNCHANGED": [
+              "H_GRAMMAR"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "utc": "2026-09-03T10:36:07Z",
+      "mode": "adaptive",
+      "probe": "P_TOOL_CHOICE_FORCE",
+      "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 6 scored probes; remaining=['H_GRAMMAR']",
+      "remaining_before": [
+        "H_GRAMMAR"
+      ],
+      "request_count_before": 21,
+      "choice": {
+        "probe": "P_TOOL_CHOICE_FORCE",
+        "reason": "minimax worst_remaining=1 partitions=1 quality=CLEAN among 6 scored probes; remaining=['H_GRAMMAR']",
+        "score": {
+          "probe": "P_TOOL_CHOICE_FORCE",
+          "worst_remaining": 1,
+          "n_partitions": 1,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_GRAMMAR"
+            ],
+            "PASS": [
+              "H_GRAMMAR"
+            ],
+            "MALFORMED": [],
+            "TIMEOUT": [],
+            "FAIL": [],
+            "UNCHANGED": [
+              "H_GRAMMAR"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "REQUEST_COUNT": 27,
+  "mode": "adaptive"
+}

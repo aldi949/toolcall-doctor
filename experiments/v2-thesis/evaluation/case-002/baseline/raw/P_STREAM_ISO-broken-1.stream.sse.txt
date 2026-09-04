@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:36:21.5893696Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"execute_service","arguments":{"list":"[\"turn_off\", \"light.buro_deckenlampe_2\"]"}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:36:21.6151463Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":817193100,"load_duration":23464800,"prompt_eval_count":166,"prompt_eval_duration":4000000,"eval_count":31,"eval_duration":787000000}

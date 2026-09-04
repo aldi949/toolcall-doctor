@@ -1,0 +1,10 @@
+{
+  "candidate_id": "C0073",
+  "mode": "naive",
+  "reason": "rejected: behavioral hits=0/3",
+  "n_identity_hits": 0,
+  "semantic_ok": null,
+  "failed_invariants": null,
+  "degenerate_codes": null,
+  "compact_bytes": 2
+}

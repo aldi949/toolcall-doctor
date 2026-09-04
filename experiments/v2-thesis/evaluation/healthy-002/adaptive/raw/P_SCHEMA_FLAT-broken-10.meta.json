@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:41:36.715860+00:00",
+  "ended_utc": "2026-09-03T10:41:37.641961+00:00",
+  "elapsed_ms": 925,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 364,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\healthy-002\\adaptive\\requests\\P_SCHEMA_FLAT-broken-10.json"
+}

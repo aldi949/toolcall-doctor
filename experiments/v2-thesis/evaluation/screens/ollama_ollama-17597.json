@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#17597",
+  "screen": "enum_not_enforced",
+  "utc": "2026-09-03T10:38:48Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 1036,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:49.3417665Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"set_account\",\"arguments\":{\"account\":\"ACC-999-XYZ\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":649509600,\"load_duration\":26451300,\"prompt_eval_count\":177,\"prompt_eval_duration\":20000000,\"eval_count\":21,\"eval_duration\":600000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 1122,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:50.4596686Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"set_account\",\"arguments\":{\"account\":\"ACC-999-XYZ\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":597638800,\"load_duration\":50929500,\"prompt_eval_count\":177,\"prompt_eval_duration\":9000000,\"eval_count\":21,\"eval_duration\":535000000}"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 879,
+      "error": null,
+      "text": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:38:51.3448033Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"set_account\",\"arguments\":{\"account\":\"ACC-999-XYZ\"}}}]},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":573822800,\"load_duration\":29000800,\"prompt_eval_count\":177,\"prompt_eval_duration\":4000000,\"eval_count\":21,\"eval_duration\":538000000}"
+    }
+  ],
+  "disposition": "MANIFESTED"
+}

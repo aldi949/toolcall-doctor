@@ -1,0 +1,31 @@
+{
+  "utc": "2026-09-03T20:05:09Z",
+  "version": "ddmin-real-005-1.0",
+  "original_screen": "10/10",
+  "control_screen": "10/10",
+  "search_freedom": {
+    "n_atoms": 239,
+    "n_single_drop_still_ok": 183,
+    "freedom_frac": 0.7657
+  },
+  "hashes": {
+    "FROZEN_EXPERIMENT.md": "596bd35fa6ab753058df0b6d25b4cc1785ac9fbf99d0d02b46010e0941662083",
+    "SEMANTIC_PRESERVATION_SPEC.md": "9b45003ef2e12c6b6d7b8800132dbed9539aad165ae47d21c67656ed981f1129",
+    "EXECUTION_IDENTITY.md": "be066daa7ddf017b9f5f22b031c4abe82d9e00957da66b57eaffc6ac84ed9f07",
+    "POLICY.json": "36f38d871642a6d32c5921c91acaeedc705defe44d3543a276d75a06700923e7",
+    "FROZEN_FACTS.json": "af7ffdfe4bc55e32e1a4d1f7377a6ec167d67e5ae88cdafa829c3bb97d871b16",
+    "original_request": "bc89ea80a7b69b95b65382e09fa1fd1d42e5fdea410c01d6e00ff6a01a336e91",
+    "control_request": "f0a143f5190051c0e64f49b9d471a8224932466c72abd4585cacc89f12fb281e",
+    "behavioral_oracle.py": "d7ebda210fd437fc1f8624b14f23138fbe439edceb8ca1b960d84511404f1222",
+    "semantic_gate.py": "cd1f49c013a3dbc4914165cba68f04db133b8704ea05a999ab8adb2aaad7655c",
+    "execution_gate.py": "af3356830b9399658a2e37154bd8feba1b26b550d7a5a81b3f9dcb23c45b70b7",
+    "minimizer.py": "19351d390c8531dc8b144759029979bf4aafd2cb74d326af05a668fd8a374648",
+    "execute.py": "1f98e65dd1496336767f02d7c04b2c861c8b4200984b83a3180e7bf5827fb039",
+    "screen_and_freeze.py": "055a84723b23c910608778f0c198e0cf8c341691bb0f8693934582fbce788e9b",
+    "search_freedom.json": "7275084e1f8b1c77deb3d0f0fdeec6ae2e1af7bda75c6917788001ab3dd80a36",
+    "ATOMS_AT_FREEZE.json": "5ad31763d38f86accb77f0691cc5041351d7499e176731e33cbf36da1c1d981a",
+    "EXEC_SPEC.json": "cef68c5788772e6a798c4c2261abc5a4bdc90651218315283fed850dec436328",
+    "original_compact": "080557ffeda292f2e321d78921aa4488689b9756d64ff588211bdb315b73fea0"
+  },
+  "note": "DDMin must not start before this file. Holdout must not start before CANDIDATE_FROZEN.json."
+}

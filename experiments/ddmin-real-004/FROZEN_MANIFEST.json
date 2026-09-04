@@ -1,0 +1,30 @@
+{
+  "utc": "2026-09-03T19:39:57Z",
+  "version": "ddmin-real-004-1.0",
+  "n_atoms": 160,
+  "hashes": {
+    "FROZEN_EXPERIMENT.md": "4dc4b7f8bba99a85de1d4b59dd99772a587efdb613f1870960f05addae04220e",
+    "STOCHASTIC_ORACLE_SPEC.md": "8ba7ec99b62236c64303fc8989296311f901c1a0d0d6cc68520b5352b5a3add8",
+    "EXECUTION_INDEPENDENCE_SPEC.md": "7e010b3f47dbec4fdee3cc2411de2a0392162649cc313c9bfda7f424f1496b76",
+    "POLICY.json": "1217b351252220f10917ae9fb800a91d9c027188adbf45286e7794d20a3913a8",
+    "FROZEN_FACTS.json": "992f7366caaef990f0a68261b6836b66373fc677f282cabba83a6c47bb5306f0",
+    "original_request": "8795113cc8357c13fe5a829956a49ff597b150e9f97c133333d2b08a3e31798a",
+    "control_request": "b281ea909f718c3842c303f64689390fd128f1ce4d8b5a3c348c97ba828843ac",
+    "behavioral_oracle.py": "8fa442cfe0055b170c57f6cd6f94b8709046372ea8d8122719edf9f247ee3ae0",
+    "semantic_gate.py": "3b5a6721e504b31fafbd62381900544687ad494668de7d04a6199c37db63cf39",
+    "execution_gate.py": "8eb9bf5a9a5c96fd606b4d6fa122462b04c308fcb0268586ef2be997082e9f02",
+    "minimizer.py": "e3844d9f8a835f90456c51a8a8e3e049ad16b940f0f02c3de7d20614340fa46a",
+    "execute.py": "1f98e65dd1496336767f02d7c04b2c861c8b4200984b83a3180e7bf5827fb039",
+    "screen_and_freeze.py": "e746b0c8b6deabf02b8e421f3c421d8c48c6f0b4904307896a37f24d13503a37",
+    "ATOMS_AT_FREEZE.json": "f2c218a3b07f2893ad29210a981a81dbfcc9494fc70fc4527b79b072b4a1189c",
+    "search_freedom.json": "a663f5002293275163217439f03f80955e5e101d21b702d7d30982f3c1ed5e86"
+  },
+  "search_freedom": {
+    "n_atoms": 160,
+    "n_single_drop_still_ok": 99,
+    "freedom_frac": 0.6188
+  },
+  "original_screen": "20/20",
+  "control_screen": "10/10",
+  "note": "DDMin must not start before this file. Holdout must not start before CANDIDATE_FROZEN.json."
+}

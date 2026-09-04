@@ -1,0 +1,79 @@
+{
+  "n_probes": 7,
+  "n_still_fail_identity": 0,
+  "one_minimal_in_space": true,
+  "identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+  "still_fail_atoms": [],
+  "probes": [
+    {
+      "dropped_atom": "key:/tools",
+      "candidate_id": "C0091",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 2,
+      "n_atoms": 0
+    },
+    {
+      "dropped_atom": "idx:/tools/0",
+      "candidate_id": "C0092",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 12,
+      "n_atoms": 1
+    },
+    {
+      "dropped_atom": "key:/tools/0/function",
+      "candidate_id": "C0093",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 14,
+      "n_atoms": 2
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters",
+      "candidate_id": "C0094",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 27,
+      "n_atoms": 3
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties",
+      "candidate_id": "C0095",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 42,
+      "n_atoms": 4
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties/query",
+      "candidate_id": "C0096",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 57,
+      "n_atoms": 5
+    },
+    {
+      "dropped_atom": "key:/tools/0/function/parameters/properties/query/type",
+      "candidate_id": "C0097",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "compact_bytes": 67,
+      "n_atoms": 6
+    }
+  ]
+}

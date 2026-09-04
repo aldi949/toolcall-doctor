@@ -1,0 +1,23 @@
+{
+  "model": "llama3.2:3b",
+  "tools": [
+    {
+      "function": {
+        "name": "t",
+        "parameters": {
+          "properties": {
+            "account": {
+              "enum": []
+            }
+          }
+        }
+      }
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": ""
+    }
+  ]
+}

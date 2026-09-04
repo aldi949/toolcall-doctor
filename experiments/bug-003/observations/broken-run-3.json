@@ -1,0 +1,33 @@
+{
+  "stem": "broken-run-3",
+  "http_status": 200,
+  "streaming": false,
+  "tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": true,
+  "tool_call_names": [
+    "press_button"
+  ],
+  "tool_name_valid": true,
+  "raw_tool_syntax_present": false,
+  "arguments_json_valid": true,
+  "arguments_schema_valid": false,
+  "missing_required_fields": [
+    "button_press.number_one",
+    "button_press.number_two"
+  ],
+  "unexpected_fields": [],
+  "nested_structure_valid": false,
+  "declared_schema_depth": 2,
+  "returned_argument_depth": 1,
+  "finish_reason": "stop",
+  "content_present": false,
+  "content_preview": "",
+  "timeout": false,
+  "protocol_error": false,
+  "runtime_error": false,
+  "latency_ms": 990,
+  "error": null,
+  "content_type": "application/json; charset=utf-8",
+  "validator_path": "validator\\broken-run-3.json"
+}

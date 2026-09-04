@@ -1,0 +1,7 @@
+{
+  "scores": {
+    "baseline": "C",
+    "adaptive": "C"
+  },
+  "genuine_adaptive_win": false
+}

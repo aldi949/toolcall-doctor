@@ -1,0 +1,16 @@
+{
+  "candidate_id": "C0371",
+  "mode": "semantic",
+  "reason": "rejected: behavioral hits=3/3 semantic_ok=False failed=['INV_EMITTED_EQ_FROZEN', 'INV_FROZEN_REQUESTED_IN_USER'] degen=['D5_REQUESTED_ILLEGAL_VALUE_REMOVED', 'D6_EMITTED_VALUE_CHANGED']",
+  "n_identity_hits": 3,
+  "semantic_ok": false,
+  "failed_invariants": [
+    "INV_EMITTED_EQ_FROZEN",
+    "INV_FROZEN_REQUESTED_IN_USER"
+  ],
+  "degenerate_codes": [
+    "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+    "D6_EMITTED_VALUE_CHANGED"
+  ],
+  "compact_bytes": 187
+}

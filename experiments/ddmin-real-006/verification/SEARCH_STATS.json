@@ -1,0 +1,19 @@
+{
+  "search_candidates": 745,
+  "accepted": 18,
+  "rejected": 727,
+  "reject_early": {
+    "execution_gate": 330,
+    "non_event_at_1": 397
+  },
+  "first_trial_failed_invariants": {
+    "INV_TOOL_EXECUTE_SERVICE": 111,
+    "INV_LIST_DECLARED_ARRAY": 82,
+    "INV_BEHAVIORAL_CLASS": 163,
+    "INV_EMITTED_IN_DECLARED": 152,
+    "INV_ENTITY_IN_USER": 240,
+    "INV_TOOL_CALL": 73,
+    "INV_HTTP_200": 28
+  },
+  "http_from_ledger_n_posted": 577
+}

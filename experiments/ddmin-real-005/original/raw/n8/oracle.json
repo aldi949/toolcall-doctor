@@ -1,0 +1,16 @@
+{
+  "oracle": "FAIL",
+  "failure_identity": "HTTP_200_TOOL_CHOICE_NONE_VIOLATION",
+  "http_status": 200,
+  "tool_call_present": true,
+  "n_tool_calls": 1,
+  "tool_name": "get_weather",
+  "arguments": {
+    "location": "Paris"
+  },
+  "declared_tool_names": [
+    "get_time",
+    "get_weather"
+  ],
+  "index_present": false
+}

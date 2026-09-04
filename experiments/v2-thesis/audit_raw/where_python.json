@@ -1,0 +1,9 @@
+{
+  "name": "where_python",
+  "cmd": "where python",
+  "started_utc": "2026-09-03T10:22:54.670371+00:00",
+  "returncode": 0,
+  "stdout": "<USER_HOME>\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\n<USER_HOME>\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:55.141359+00:00"
+}

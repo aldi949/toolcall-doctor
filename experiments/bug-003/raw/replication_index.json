@@ -1,0 +1,68 @@
+[
+  {
+    "started_utc": "2026-09-03T09:09:59.561126+00:00",
+    "ended_utc": "2026-09-03T09:10:03.959951+00:00",
+    "elapsed_ms": 4399,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 416,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T09:10:04.309589+00:00",
+    "ended_utc": "2026-09-03T09:10:05.089757+00:00",
+    "elapsed_ms": 779,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 396,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\broken.json"
+  },
+  {
+    "started_utc": "2026-09-03T09:10:05.543946+00:00",
+    "ended_utc": "2026-09-03T09:10:06.433629+00:00",
+    "elapsed_ms": 889,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 412,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T09:10:06.766708+00:00",
+    "ended_utc": "2026-09-03T09:10:07.620544+00:00",
+    "elapsed_ms": 853,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 396,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\broken.json"
+  },
+  {
+    "started_utc": "2026-09-03T09:10:07.967658+00:00",
+    "ended_utc": "2026-09-03T09:10:08.968400+00:00",
+    "elapsed_ms": 1000,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 412,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\control.json"
+  },
+  {
+    "started_utc": "2026-09-03T09:10:09.446893+00:00",
+    "ended_utc": "2026-09-03T09:10:10.438185+00:00",
+    "elapsed_ms": 990,
+    "http_status": 200,
+    "error": null,
+    "byte_count": 396,
+    "stream": false,
+    "url": "http://127.0.0.1:11434/api/chat",
+    "request_json": "<REPO_ROOT>\\experiments\\bug-003\\requests\\broken.json"
+  }
+]

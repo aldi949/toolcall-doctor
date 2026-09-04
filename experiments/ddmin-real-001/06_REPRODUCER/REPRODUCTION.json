@@ -1,0 +1,43 @@
+{
+  "fail_count": 5,
+  "n": 5,
+  "rate": "5/5",
+  "runs": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 235
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 271
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 248
+    },
+    {
+      "i": 4,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 412
+    },
+    {
+      "i": 5,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 309
+    }
+  ],
+  "utc": "2026-09-03T12:49:07Z"
+}

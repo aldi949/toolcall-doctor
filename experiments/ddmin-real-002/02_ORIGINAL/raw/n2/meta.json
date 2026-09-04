@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-09-03T13:54:03Z",
+  "ended_utc": "2026-09-03T13:54:04Z",
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"name\":\"John\"}",
+  "arguments_parsed": {
+    "name": "John"
+  },
+  "extra_nesting": false,
+  "content": "",
+  "finish_reason": "tool_calls"
+}

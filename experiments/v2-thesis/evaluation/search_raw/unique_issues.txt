@@ -1,0 +1,174 @@
+ggml-org/llama.cpp#20260	open	Eval bug: unsloth/Qwen3.5-35B-A3B-GGUF `peg-native` chat format parser fails when model outputs text before `<tool_call>` (thinking model + tool calling)
+ggml-org/llama.cpp#20702	closed	Compile bug: c++: error: unrecognized command-line option ‘-fsycl’
+ggml-org/llama.cpp#20733	closed	Eval bug: Unable to generate parser for this template, System message must be at the beginnin
+ggml-org/llama.cpp#21365	closed	Eval bug: gemma4 infinite output
+ggml-org/llama.cpp#24888	open	Eval bug: Malformed tokenizer metadata can cause ASan heap-buffer-overflow reads in vocab load
+ggml-org/llama.cpp#24932	open	Misc. bug: Agent mode, shelling command executing can fail caused by whitespace in path
+ggml-org/llama.cpp#25285	open	Eval bug: failed to tokenize error if contents of /props appears in prompt.
+ggml-org/llama.cpp#25292	closed	Eval bug: VibeThinker 3B showing think tags
+ggml-org/llama.cpp#25321	closed	gpt-oss/harmony: non-streaming final without channel markup hard-throws 500 ("does not match the expected peg-native format") — lenient fallback unreachable
+ggml-org/llama.cpp#25618	open	Eval bug: Speculative decoding (draft-mtp / draft-dspark): greedy output diverges from vanilla on quantized targets
+ggml-org/llama.cpp#25746	open	Misc. bug: json-schema-to-grammar — nested string maxLength >= 2000 emits un-parseable GBNF (tool-call grammar, b10034)
+ggml-org/llama.cpp#25986	open	Eval bug: gemma4 peg template intermittently unparseable with long multi-line tool-call string arguments
+ggml-org/llama.cpp#26043	open	Server always reports `chat format: peg-native` at runtime
+ggml-org/llama.cpp#26273	open	Feature Request: Add a CLI flag to escape special tokens in user input and tool responses
+ggml-org/llama.cpp#26359	open	Misc. bug: llama-server returns a tool-call id that its own chat template then rejects (Ministral-8B, --jinja)
+ggml-org/llama.cpp#26530	open	Qwen3-Coder template: model fails to trigger XML tool calls with large prompts — request JSON format option
+ggml-org/llama.cpp#26974	closed	Misc. bug: chat-template rendering is O(N²) in emitted parts (gather_string_parts)
+ggml-org/llama.cpp#26987	open	Qwen3-Coder parser: lazy tool-call trigger never fires when model skips both <tool_call> and <function=
+ggml-org/llama.cpp#27107	closed	Misc. bug: Claude Code does not work with Qwen3.8 27B out of the box with llama-cpp server
+ggml-org/llama.cpp#27217	open	server: tool_choice: "required" accepted but not enforced on templates with supports_preserve_reasoning=true
+ggml-org/llama.cpp#27279	open	server: `response_format.json_schema` under `peg-native` — generation stops mid-object, then `common_chat_peg_parse` throws 500
+ggml-org/llama.cpp#27363	closed	Eval bug: common_chat_parse silently drops Qwen3-Coder tool calls
+ggml-org/llama.cpp#27462	open	Eval bug: Bailing V3 (Ling 3.0) autoparser lacks a <tool_call> reasoning terminator but emits these often mid-reasoning
+ggml-org/llama.cpp#27613	open	server: generation terminates mid-tag (finish=stop) when reasoning stream contains DSML closing fragments — DeepSeek-V4-Flash, peg-native, long context
+ggml-org/llama.cpp#27675	closed	Misc. bug: Slow decode speed with large tool sets
+ggml-org/llama.cpp#27720	closed	Eval bug: gpt-oss-20b malformed Harmony channel header (`<|channel|>` + free text / `??` / `commentary?`) fails the final PEG parse and errors the whole turn (~4% of turns at temp 1.0)
+ggml-org/llama.cpp#27767	open	Eval bug: named/required tool_choice not enforced for Qwen3.6 templates when enable_thinking=false
+ggml-org/llama.cpp#27772	open	`common_peg_until_parser` returns SUCCESS instead of FAIL when its delimiter never appears in a final (non-lenient) parse
+ggml-org/llama.cpp#27859	open	Eval bug: grammar parse fail on array length test on exactly 2000 chars
+ggml-org/llama.cpp#28132	open	[Bug] DeepSeek-V4-Flash on sm_121 (GB10): deterministic character-level output corruption — quant/build-independent
+ollama/ollama#2572	closed	PrivateGPT example is broken for me
+ollama/ollama#3165	closed	Support "tool" role in messages
+ollama/ollama#4386	closed	Support tools in OpenAI-compatible API
+ollama/ollama#5796	closed	Streaming for tool calls is unsupported
+ollama/ollama#5990	closed	Tools and properties.type Not Supporting Arrays
+ollama/ollama#6127	closed	llama3.1 always uses tool
+ollama/ollama#6155	closed	Support Nested Parameters for Tools
+ollama/ollama#6704	closed	ollama model not support tool calling
+ollama/ollama#6713	open	Talking to  Mistral-Nemo via OpenAI tool calling - fails
+ollama/ollama#6980	closed	Tools support is not working right
+ollama/ollama#7051	closed	Tool call support in Qwen 2.5 hallucinates with Maybe pattern
+ollama/ollama#7572	closed	OpenAI API tool calling doesn't work
+ollama/ollama#7778	closed	tool_choice parameter
+ollama/ollama#7865	open	Model Context Protocol (MCP) support
+ollama/ollama#7881	closed	OpenAI-compatible API tool calls have no index
+ollama/ollama#8337	closed	Cannot get a tool call and a message in the same response
+ollama/ollama#8421	closed	`tool_choice` argument is being ignored
+ollama/ollama#8517	closed	Missing tool support for DeepSeek-R1 Distillates based on Qwen
+ollama/ollama#8588	closed	Qwen not recognizing function / tools
+ollama/ollama#9437	closed	Tool calls not returning properly with phi4-mini:3.8b
+ollama/ollama#9632	closed	Ollama not streaming tool calling responses
+ollama/ollama#9680	closed	gemma3 lack function calling tag
+ollama/ollama#9802	open	Messages[].ToolCalls not passed correctly to the template
+ollama/ollama#9941	open	Support for Tools in OpenAI calls for Gemma3
+ollama/ollama#9961	closed	How can i send api-key via the OpenAI sdk
+ollama/ollama#10976	open	Thinking + tools + qwen3 = empty output
+ollama/ollama#11407	closed	Streaming (sometimes?) breaks tool calling
+ollama/ollama#11633	closed	Are tool calls guaranteed to be streamed in a single chunk?
+ollama/ollama#11704	closed	GPT-OSS 120B has malformed tool calls and I'm not sure if it is on the Ollama side or the gpt-oss side
+ollama/ollama#11805	open	Tool call arguments structure inconsistent — extra nesting added in certain cases
+ollama/ollama#12074	closed	Seed-OSS-36B-Instruct-GGUF:Q4_K_M
+ollama/ollama#12158	open	Response message after a tool_call with OpenAI chat completions and gpt-oss missing "reasoning"
+ollama/ollama#12159	closed	gpt-oss models don't support parallel tool calling
+ollama/ollama#12174	open	tool_calls missing from qwen2.5-coder v0.11.7 (also v0.11.8)
+ollama/ollama#12187	open	GPT-OSS not completing tool calls
+ollama/ollama#12203	open	gpt-oss:120b - thinking being returned in tool calls
+ollama/ollama#12362	open	JSON reply schema is ignored by Cloud model
+ollama/ollama#12557	closed	Ollama Tool Calling + Streaming Issue
+ollama/ollama#12776	closed	Tool calls not working with huihui_ai/kimi-k2:1026b
+ollama/ollama#12884	open	error parsing tool call ... raw=... err=invalid character ... after top-level value after request to gpt-oss via api/chat
+ollama/ollama#14493	open	Qwen 3.5 27B: Tool calling completely non-functional and repetition penalties silently ignored
+ollama/ollama#14958	closed	Tool calls silently drop with large system prompts (~1600+ tokens)
+ollama/ollama#14967	open	Warn on tool name mismatch when tool_choice: "required" &/ support case-insensitive tool name matching
+ollama/ollama#15109	closed	Gemini 3 tool continuation via /api/chat and /v1/chat/completions is missing thought_signature
+ollama/ollama#15183	closed	Add Clarvia AEO score badge — agent compatibility score for Ollama
+ollama/ollama#15315	open	gemma4:e4b with ollama 0.20.1 still has tool parsing errors
+ollama/ollama#15390	open	Claude Code & Ollama Integration - Invalid tool parameters & CPU Fallback
+ollama/ollama#15428	closed	gemma4:26b (MoE) returns completely empty response (no content, no reasoning) and stops early on long system prompts
+ollama/ollama#15457	closed	OpenAI-compatible streaming: tool_calls index is always 0 for multiple tool calls
+ollama/ollama#15497	open	OpenAI-compatible streaming: Function.Index still 0 for models without a registered parser (follow-up to #15457 / #15467)
+ollama/ollama#15539	closed	[Bug] gemma4 parser fails to extract tool_calls when combining system prompt + think:false + tools
+ollama/ollama#15576	open	gemma4:26b / 31b issues with structured output
+ollama/ollama#15645	open	v1/messages :cloud — Kimi K2.5 native tokens leak, nested objects stringified on Qwen/GLM
+ollama/ollama#15663	closed	Feature Request: Expose account quota/usage details via Ollama Cloud API (headers and/or response body)
+ollama/ollama#15798	closed	gemma4-64k chat-template special tokens (<|tool_call|>, <|"|>, <|channel|>) leak into OpenAI-compat tool-calling output
+ollama/ollama#15910	open	Intermittent connection reset on :cloud model proxy after upgrading 0.20.2 → 0.22.0 (no GIN log entry)
+ollama/ollama#15923	closed	[0.20.5][macOS Apple Silicon] Runner crashes under sustained multi-turn tool-calling on /v1/chat/completions (72% crash rate across 7 models)
+ollama/ollama#16066	open	Cloud models: tool_call.function.arguments truncated or 502 Bad Gateway when outputting large content
+ollama/ollama#16212	closed	qwen3-coder streaming: multiple tool_calls all emitted with index=0; finish_reason=stop
+ollama/ollama#16279	open	Tool calling is not streaming on macOS with MLX, causing timeout when write tool outputs large code
+ollama/ollama#16375	open	DSML insert to tool_call
+ollama/ollama#16563	closed	Structured outputs appear to be ignored for MLX models
+ollama/ollama#16618	open	API Error: Claude's response exceeded the 32000 output token maximum.
+ollama/ollama#16777	closed	MLX runner: tool calling produces degenerate output / no tool_calls (regression in 0.30.9)
+ollama/ollama#16793	closed	Image recognition of Model Gemma4-E4B does not work in Ollama (Version 0.30.9 and later)
+ollama/ollama#16932	open	Tool call silently dropped (empty response) when a tool parameter is named `name` - Mistral-format models (devstral-small-2)
+ollama/ollama#17097	closed	[Bug] GLM-5.2 Cloud returns empty responses (no content, no reasoning) on complex prompts — agent frameworks dead in the water
+ollama/ollama#17274	open	Tool-call output is silently discarded when the parse fails: empty content, no tool_calls, 40 completion tokens reported
+ollama/ollama#17429	closed	/api/chat and /v1/chat/completions hang indefinitely when message history includes a role: "tool" message
+ollama/ollama#17444	open	0.32.4 and 0.32.5 appear to break tool calling in VS Code GitHub Harness
+ollama/ollama#17547	open	Docs gap: no guide for creative content generation (game worlds, stories, interactive fiction)
+ollama/ollama#17597	open	Tool-parameter `enum` reaches the model but is not enforced during decoding (unlike `response_format`)
+ollama/ollama#17602	open	Laguna parser turns JSON in ordinary content into a tool call, aborting or corrupting the reply
+ollama/ollama#17638	open	gpt-oss: HTTP 500 "error parsing tool call" — ollama rejects a tool call its own model generated
+ollama/ollama#17673	open	custom tools (OpenAI Responses API compatibility)
+ollama/ollama#17684	closed	`muse-glimmer:30b-mlx` leaks harmony channel tokens and ignores `response_format`, GGUF build is fine
+ollama/ollama#17778	open	qwen 3.8 reports error during query: Error: ResponseError during chat streaming: no user query found in messages (status code: 500)
+ollama/ollama#17839	closed	Agent integrations hang indefinitely with local Qwen models on macOS, while Ollama API works correctly
+ollama/ollama#17875	closed	MLX runner: KV-cache memory accumulates per-request on dense models (independent of context size/tools), not released short of restart
+ollama/ollama#17921	open	tool_choice still ignored in v0.32.15: forced returns plain text, "none" still calls tools (OpenAI and Anthropic compat)
+ollama/ollama#17933	closed	Structured outputs silently ignored on MLX backend (format and response_format both no-op; invalid response_format returns 200)
+ollama/ollama#17957	open	ornith-1.5:35b fails when a response format is specified and tools are provided
+ollama/ollama#18051	open	json: cannot unmarshal object into Go struct field ToolProperty.required of type []string when `required` is an object
+ollama/ollama#18069	open	glm-5.3-flash:cloud — thinking trace degenerates into infinite single-token repetition ("lock"), never terminates
+sgl-project/sglang#17050	open	[Tracking] CI Test Failures and Fixes
+sgl-project/sglang#20865	open	[Feature] Improve Unit Test Coverage
+sgl-project/sglang#23020	closed	[Bug] PD Disaggregation: Gradual KV cache corruption causes model output to degenerate into gibberish after ~100 requests
+sgl-project/sglang#29157	closed	[Bug] CUDA graph causes garbled outputs with concurrent multi-LoRA decoding on GLM-5.1-FP8
+sgl-project/sglang#29512	closed	[Bug] glm-5.2-w4afp8 with sglang 0.5.13.post1 llm repeat and repeat
+sgl-project/sglang#29516	closed	[Bug] qwen3.6-35b-a3b-fp8 with sglang RuntimeError: The size of tensor a (96) must match the size of tensor b (90) at non-singleton dimension 1
+sgl-project/sglang#29957	closed	[Bug] Deadlock in decode scheduler when running with --grpc-mode
+sgl-project/sglang#30082	closed	[Bug] The performance of deepseekv4 failed to pass the test on the main branch
+sgl-project/sglang#30314	open	[Bug] Scheduler event loop blocks on Mamba eviction under large-context requests, causing server hang and process kill
+sgl-project/sglang#30760	open	[Bug] HiCache prefetch all_reduce deadlock with TP=4, no PP — mismatched call count in check_prefetch_progress
+sgl-project/sglang#31261	open	[Feature] Support Deterministic Inference for Qwen3_5ForConditionalGeneration
+sgl-project/sglang#31915	open	Tool-call parsers lose or corrupt data at streaming chunk boundaries (multiple detectors)
+sgl-project/sglang#32286	open	[Bug] MiniMax-M3 tool-call parser: top-level `oneOf` parameters schema not resolved (numbers become strings, arrays leak raw tags)
+sgl-project/sglang#33397	open	[Bug] DeepSeek-V4-Flash-0731 on 2× H200: progressive output corruption under concurrency (dsv4 + DP attention)
+sgl-project/sglang#35433	open	[Bug] DeepSeek-V4 returns an empty response when the final message has role=system
+sgl-project/sglang#36018	closed	[Bug] Kimi-K3 crash in v0.5.18 release
+sgl-project/sglang#36537	open	[Bug] Qwen3.8-Flash-Next thinking + qwen3_coder tool parser loops on token ID 0
+sgl-project/sglang#37089	open	[Bug] Qwen3.8-Flash-Next W4A16 on A100 TP4: Marlin MoE invalid thread config; Triton MoE then hits QSA FA-CuTe capture failure
+sgl-project/sglang#37183	open	AMD MI308X SGLang GLM-5.3-Flash ValueError: The checkpoint you are trying to load has model type `glm5_next` but Transformers does not recognize this architecture.
+sgl-project/sglang#37187	open	[Bug] GPT-OSS with DP attention enabled produces garbage output (GSM8K 0/128 vs 124/128)
+sgl-project/sglang#37268	open	[Bug] Shared experts fusion 3072 vs 6144 and Marlin+DeepEP NotImplementedError on GLM-5.3-NVFP4 (H100, v0.5.18)
+sgl-project/sglang#37283	open	[Bug] A non-object entry in a tool-call array discards the valid calls beside it
+sgl-project/sglang#37393	open	[Bug] Kimi-K3 chunked prefill submits different VocabParallelEmbedding ALLREDUCE sizes across TP ranks
+sgl-project/sglang#37430	open	[Bug] Kimi-K3 tool_choice=required requests hang until ReadTimeout in 2P2D TP8/DCP8 deployment
+sgl-project/sglang#37526	open	[CI] Test Escape Report: /rerun-test did not enforce registered test __main__ validation
+sgl-project/sglang#37608	open	[Bug] --tool-call-parser auto selects glm45 instead of spark25 for Spark-X2.5
+sgl-project/sglang#37633	open	[Bug] QSA prefill kernel CUDA illegal memory access at ~22 concurrent requests on H20 TP8 (Qwen3.8-Flash-Next-FP8)
+sgl-project/sglang#37634	closed	[Bug] 9 tool-call parsers drop arguments when one streaming increment has more than one complete call
+sgl-project/sglang#37645	open	[Bug] glm45 reasoning parser returns the whole answer as reasoning_content (content empty) when the model skips thinking and stops on EOS
+sgl-project/sglang#37648	open	[Bug][ROCm] GLM-5.3-MXFP4 TP8 + EAGLE GPU memory fault under high-concurrency long-context load
+vllm-project/vllm#19001	open	[Usage]: How to use DeepSeek-R1-0528-Qwen3-8B with function call
+vllm-project/vllm#32587	open	[Bug]: gpt-oss special tokens leak into tool names and responses despite `reasoning_parser: "openai_gptoss"`
+vllm-project/vllm#36435	open	[Bug]: Responses API streaming emits tool call XML as `response.output_text.delta` instead of `response.function_call_arguments.delta` for non-harmony models
+vllm-project/vllm#37030	open	[Bug]: GPT-OSS-120B gpt-oss MXFP4 on SM121 (Blackwell DGX Spark): Marlin kernel generates wrong first Harmony token, producing null content/reasoning
+vllm-project/vllm#39072	open	[Bug]: Gemma4 on vLLM + PI coding agent: Validation failed for tool "edit": - path: must have required property 'path'
+vllm-project/vllm#39848	open	[RFC]: Unifying Tool Calling via Region-Scoped Guided Decoding, Tool-Aware Grammars, and Related Parsers
+vllm-project/vllm#41691	open	[Bug]: The last few reasoning output tokens are missing when using Gemma4 and setting "--streaming-interval" to be larger than 1
+vllm-project/vllm#42065	open	[Feature]: Add nemotron_json as built-in tool parser (NVIDIA Nemotron-Nano-9B-v2 plugin breaks against v0.20.x module reorg)
+vllm-project/vllm#42210	open	[Bug]: Streaming chat completion drops partial content when stop string interrupts auto tool parsing
+vllm-project/vllm#43116	open	[Bug]: Granite 3.3 / 4.0 H-Small Python-style tool calls not converted to OpenAI tool_calls format
+vllm-project/vllm#43713	open	[Bug]: qwen3_xml tool parser emits invalid JSON for multiple <function=...> blocks inside one <tool_call>
+vllm-project/vllm#43933	open	[Bug]: DeepSeek reasoning parser can emit reasoning_content and content in the same streaming chunk
+vllm-project/vllm#44139	open	BUG: ValueError too many values to unpack in internlm2_tool_parser when output contains multiple tool-call markers
+vllm-project/vllm#44280	closed	[Roadmap] Rust Frontend Feature Parity
+vllm-project/vllm#47137	closed	[Bug]: Streaming vs non-streaming tool-parser divergence on a truncated `<tool_call>` opener (ParserEngine / Qwen3)
+vllm-project/vllm#48089	closed	[Bug]:  DeepSeek V4 reasoning/tool parsers produce unbalanced tags under concurrent load
+vllm-project/vllm#51660	open	[Bug]: No viable structured-outputs backend for Kimi-K2.6 + EAGLE3 on v0.26.0: xgrammar bitmask desync kills the engine, outlines compile-timeout leaks threads until OOM, guidance rejects the slow tokenizer
+vllm-project/vllm#51679	open	[Bug]: qwen3_xml tool parser consumes `</think>`, merging reasoning into `content` with no way to split it
+vllm-project/vllm#53130	open	[Bug]: Scheduler permanently stops admitting requests once running + skipped_waiting ("deferred") reaches max_num_seqs - engine reports healthy, KV cache mostly free, only a restart recovers
+vllm-project/vllm#53227	closed	[Bug]: DeepSeek V4 streaming tool calls leak DSML markup into arguments
+vllm-project/vllm#54150	open	[Bug]: GLM-5.3-Flash — ModelOpt NVFP4 checkpoints emit invalid UTF-8 byte tokens on SM120, while a compressed-tensors NVFP4 of the same model is clean
+vllm-project/vllm#54317	open	[Bug]: GLM-5.3-Flash (glm5next) — recurring CUDA illegal memory access on 4xB200, surfacing in three unrelated kernels (KDA linear-attention, MHC TileLang, TRT-LLM fused MoE)
+vllm-project/vllm#54491	open	[Bug]: Qwen2.5 tool parser plus openai content format fails chat requests
+vllm-project/vllm#54677	open	[Perf]: DeepSeek-V4-Flash TP4 on 4xH800: v0.28.0 needs ~4 GiB/GPU more non-KV memory than v0.26.0; my earlier TTFT-regression claim was caused by VLLM_USE_BREAKABLE_CUDAGRAPH=0 on my side (retracted)
+vllm-project/vllm#54701	open	[Bug] kimi_k2 streaming tool parser intermittently emits empty tool_calls deltas under concurrent load (finish_reason=tool_calls, no name/arguments)
+vllm-project/vllm#54808	open	[Bug]: qwen3_coder / qwen3_xml parser silently ignores tool_choice "required" and named function on /v1/chat/completions (0.28.0)
+vllm-project/vllm#54829	open	[Feature][Frontend] Add reasoning and content phase per-request metrics
+vllm-project/vllm#54937	open	[Feature]: Tokenized Prompt as Input for Chat and Messages Endpoints when serving
+vllm-project/vllm#55080	open	[Bug]: tool_choice='none' silently deletes tool-call-shaped content
+vllm-project/vllm#55082	open	[Bug]: step3 streaming tool parser returns empty arguments unless each token arrives in its own delta

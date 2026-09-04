@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:16.9742643Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_weather","arguments":{"city":"London"}}}]},"done_reason":"stop","done":true,"total_duration":477555700,"load_duration":34997700,"prompt_eval_count":158,"prompt_eval_duration":7000000,"eval_count":17,"eval_duration":434000000}

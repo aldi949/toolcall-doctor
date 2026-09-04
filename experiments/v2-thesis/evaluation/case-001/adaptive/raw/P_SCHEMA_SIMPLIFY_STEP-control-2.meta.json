@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:36:03.964795+00:00",
+  "ended_utc": "2026-09-03T10:36:04.310856+00:00",
+  "elapsed_ms": 345,
+  "http_status": 400,
+  "error": null,
+  "byte_count": 119,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\case-001\\adaptive\\requests\\P_SCHEMA_SIMPLIFY_STEP-control-2.json"
+}

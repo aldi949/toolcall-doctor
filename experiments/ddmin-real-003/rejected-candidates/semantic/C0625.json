@@ -1,0 +1,14 @@
+{
+  "candidate_id": "C0625",
+  "mode": "semantic",
+  "reason": "rejected: behavioral hits=3/3 semantic_ok=False failed=['INV_EMITTED_EQ_FROZEN'] degen=['D6_EMITTED_VALUE_CHANGED']",
+  "n_identity_hits": 3,
+  "semantic_ok": false,
+  "failed_invariants": [
+    "INV_EMITTED_EQ_FROZEN"
+  ],
+  "degenerate_codes": [
+    "D6_EMITTED_VALUE_CHANGED"
+  ],
+  "compact_bytes": 186
+}

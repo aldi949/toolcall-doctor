@@ -1,0 +1,8 @@
+{
+  "candidate_id": "C0251",
+  "arm": "robust",
+  "reason": "rejected: k=0/0 early=execution_gate exec={'ok': False, 'failed': ['model', 'temperature', 'stream']}",
+  "k_events": 0,
+  "n_posted": 0,
+  "early_stop": "execution_gate"
+}

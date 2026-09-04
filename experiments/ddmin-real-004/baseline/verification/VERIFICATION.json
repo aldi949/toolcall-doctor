@@ -1,0 +1,132 @@
+{
+  "n": 3,
+  "k_events": 3,
+  "rows": [
+    {
+      "i": 1,
+      "http_status": 200,
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 904,
+      "request_sha256": "14d2a2224eabdfa7af100eb4699322a4c0c0a80a7a0039b9ce9290a68b542d17",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "invariants": {
+            "INV_BEHAVIORAL_CLASS": true,
+            "INV_HTTP_200": true,
+            "INV_TOOL_CALL": true,
+            "INV_SCHEMA_COMPILES": true,
+            "INV_ENUM_NONEMPTY_STRINGS": true,
+            "INV_SATISFIABLE": true,
+            "INV_PATH_ACCOUNT": true,
+            "INV_KEYWORD_ENUM": true,
+            "INV_EMITTED_EQ_FROZEN": true,
+            "INV_FROZEN_REQUESTED_IN_USER": true,
+            "INV_FROZEN_NOT_IN_ENUM": true,
+            "INV_EMITTED_NONEMPTY_STRING": true
+          },
+          "failed_invariants": [],
+          "degenerate_codes": [],
+          "enum": [
+            "T"
+          ],
+          "emitted": "ACC-999-XYZ",
+          "user_has_frozen": true
+        }
+      }
+    },
+    {
+      "i": 2,
+      "http_status": 200,
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 775,
+      "request_sha256": "14d2a2224eabdfa7af100eb4699322a4c0c0a80a7a0039b9ce9290a68b542d17",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "invariants": {
+            "INV_BEHAVIORAL_CLASS": true,
+            "INV_HTTP_200": true,
+            "INV_TOOL_CALL": true,
+            "INV_SCHEMA_COMPILES": true,
+            "INV_ENUM_NONEMPTY_STRINGS": true,
+            "INV_SATISFIABLE": true,
+            "INV_PATH_ACCOUNT": true,
+            "INV_KEYWORD_ENUM": true,
+            "INV_EMITTED_EQ_FROZEN": true,
+            "INV_FROZEN_REQUESTED_IN_USER": true,
+            "INV_FROZEN_NOT_IN_ENUM": true,
+            "INV_EMITTED_NONEMPTY_STRING": true
+          },
+          "failed_invariants": [],
+          "degenerate_codes": [],
+          "enum": [
+            "T"
+          ],
+          "emitted": "ACC-999-XYZ",
+          "user_has_frozen": true
+        }
+      }
+    },
+    {
+      "i": 3,
+      "http_status": 200,
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "oracle": "FAIL",
+      "event": true,
+      "elapsed_ms": 826,
+      "request_sha256": "14d2a2224eabdfa7af100eb4699322a4c0c0a80a7a0039b9ce9290a68b542d17",
+      "detail": {
+        "execution": {
+          "ok": true,
+          "failed": []
+        },
+        "semantic": {
+          "ok": true,
+          "invariants": {
+            "INV_BEHAVIORAL_CLASS": true,
+            "INV_HTTP_200": true,
+            "INV_TOOL_CALL": true,
+            "INV_SCHEMA_COMPILES": true,
+            "INV_ENUM_NONEMPTY_STRINGS": true,
+            "INV_SATISFIABLE": true,
+            "INV_PATH_ACCOUNT": true,
+            "INV_KEYWORD_ENUM": true,
+            "INV_EMITTED_EQ_FROZEN": true,
+            "INV_FROZEN_REQUESTED_IN_USER": true,
+            "INV_FROZEN_NOT_IN_ENUM": true,
+            "INV_EMITTED_NONEMPTY_STRING": true
+          },
+          "failed_invariants": [],
+          "degenerate_codes": [],
+          "enum": [
+            "T"
+          ],
+          "emitted": "ACC-999-XYZ",
+          "user_has_frozen": true
+        }
+      }
+    }
+  ],
+  "pass": true,
+  "need": 3,
+  "utc": "2026-09-03T19:50:53Z"
+}

@@ -1,0 +1,43 @@
+{
+  "classification": "RELATED",
+  "note": "Same documented unmarshal class on Ollama 0.4.6 + llama3.2:3b (documented model mistral-nemo not installed). Not ORIGINAL.",
+  "n": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 427,
+      "error": null,
+      "started_utc": "2026-09-03T13:27:08Z",
+      "ended_utc": "2026-09-03T13:27:09Z",
+      "request_sha256": "03e1c8a0a88e0a287861be7c8584e48b15471af7369126f8b906c52196d21435",
+      "response_sha256": "ec2a43cfa69a17747f2ec02ed69c1b740d65fbecd478f0e1c3ee3fcba5ab3d4f"
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 342,
+      "error": null,
+      "started_utc": "2026-09-03T13:27:09Z",
+      "ended_utc": "2026-09-03T13:27:09Z",
+      "request_sha256": "03e1c8a0a88e0a287861be7c8584e48b15471af7369126f8b906c52196d21435",
+      "response_sha256": "ec2a43cfa69a17747f2ec02ed69c1b740d65fbecd478f0e1c3ee3fcba5ab3d4f"
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_400_UNMARSHAL_TYPE_ARRAY_INTO_STRING",
+      "http_status": 400,
+      "elapsed_ms": 427,
+      "error": null,
+      "started_utc": "2026-09-03T13:27:09Z",
+      "ended_utc": "2026-09-03T13:27:09Z",
+      "request_sha256": "03e1c8a0a88e0a287861be7c8584e48b15471af7369126f8b906c52196d21435",
+      "response_sha256": "ec2a43cfa69a17747f2ec02ed69c1b740d65fbecd478f0e1c3ee3fcba5ab3d4f"
+    }
+  ],
+  "utc": "2026-09-03T13:27:09Z"
+}

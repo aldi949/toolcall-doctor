@@ -1,0 +1,11 @@
+{
+  "n": 3,
+  "http_2xx": 3,
+  "http_err": 0,
+  "tool_calls": 3,
+  "schema_valid": 0,
+  "schema_invalid": 3,
+  "timeout": 0,
+  "malformed_args": 0,
+  "raw_tool_syntax": 0
+}

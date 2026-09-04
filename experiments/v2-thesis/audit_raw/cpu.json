@@ -1,0 +1,9 @@
+{
+  "name": "cpu",
+  "cmd": "wmic cpu get Name,NumberOfCores,NumberOfLogicalProcessors /format:list",
+  "started_utc": "2026-09-03T10:22:43.263518+00:00",
+  "returncode": 0,
+  "stdout": "\n\n\n\nName=11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz\n\nNumberOfCores=4\n\nNumberOfLogicalProcessors=8\n\n\n\n\n\n\n\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:43.971312+00:00"
+}

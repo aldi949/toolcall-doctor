@@ -1,0 +1,62 @@
+{
+  "doctor_version": "2.0.0-freeze",
+  "STATUS": "UNHEALTHY",
+  "OBSERVABLE_FAILURE_DIMENSIONS": [
+    "H_STREAM"
+  ],
+  "USEFUL_FAILURE_FAMILY": "STREAM_DEPENDENT_FAILURE",
+  "LOCALIZATION_CONFIDENCE": "HIGH",
+  "SUSPECTED_INTERNAL_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Initial request produced structured tool_calls on all replicates.",
+    "P_STREAM_ISO outcome=FAIL remaining=['H_STREAM']"
+  ],
+  "CONTRADICTING_EVIDENCE": [],
+  "ELIMINATED_HYPOTHESES": [
+    "H_ADAPTER",
+    "H_BASE",
+    "H_CHOICE_FORCE",
+    "H_CHOICE_NONE",
+    "H_GRAMMAR",
+    "H_MULTI_TURN",
+    "H_PROTOCOL",
+    "H_REASONING",
+    "H_SCHEMA"
+  ],
+  "UNRESOLVED_HYPOTHESES": [
+    "H_STREAM"
+  ],
+  "PROBES_EXECUTED": [
+    "P_STREAM_ISO"
+  ],
+  "STOP_REASON": "LOCALIZED",
+  "NEXT_MANUAL_EVIDENCE": "Capture tokens before stream assembly if a debug hook exists.",
+  "UNSTABLE": false,
+  "WHY_EACH_PROBE_WAS_CHOSEN": [
+    {
+      "utc": "2026-09-03T10:37:11Z",
+      "mode": "baseline",
+      "probe": "P_STREAM_ISO",
+      "reason": "fixed baseline order selected P_STREAM_ISO",
+      "remaining_before": [
+        "H_ADAPTER",
+        "H_CHOICE_FORCE",
+        "H_CHOICE_NONE",
+        "H_GRAMMAR",
+        "H_MULTI_TURN",
+        "H_PROTOCOL",
+        "H_REASONING",
+        "H_SCHEMA",
+        "H_STREAM"
+      ],
+      "request_count_before": 3,
+      "choice": {
+        "probe": "P_STREAM_ISO",
+        "reason": "fixed baseline order selected P_STREAM_ISO"
+      }
+    }
+  ],
+  "REQUEST_COUNT": 9,
+  "mode": "baseline"
+}

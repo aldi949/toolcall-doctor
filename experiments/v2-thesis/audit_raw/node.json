@@ -1,0 +1,9 @@
+{
+  "name": "node",
+  "cmd": "node -v",
+  "started_utc": "2026-09-03T10:22:50.953064+00:00",
+  "returncode": 0,
+  "stdout": "v24.16.0\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:51.313602+00:00"
+}

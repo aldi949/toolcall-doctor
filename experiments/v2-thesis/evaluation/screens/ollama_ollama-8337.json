@@ -1,0 +1,8 @@
+{
+  "id": "ollama/ollama#8337",
+  "screen": "cannot_manifest_contract",
+  "utc": "2026-09-03T10:37:55Z",
+  "runs": [],
+  "disposition": "NON_MANIFESTING",
+  "note": "No binary fail contract executable on this pin without the reported model/channel pair."
+}

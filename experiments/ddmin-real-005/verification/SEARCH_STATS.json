@@ -1,0 +1,10 @@
+{
+  "search_candidates": 654,
+  "accepted": 22,
+  "rejected": 632,
+  "reject_early": {
+    "execution_gate": 361,
+    "non_event_at_1": 271
+  },
+  "http_from_result": 491
+}

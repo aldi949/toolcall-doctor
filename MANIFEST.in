@@ -1,0 +1,14 @@
+include pyproject.toml
+include README.md
+include LICENSE
+include USER_CONTRACT_SPEC.md
+recursive-include src/toolcall_doctor *
+recursive-include tests *
+recursive-include examples *
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude .DS_Store
+prune experiments
+prune doctor_frozen
+prune .dogfood
+prune .dogfood-rc

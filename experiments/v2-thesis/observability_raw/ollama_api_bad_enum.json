@@ -1,0 +1,28 @@
+{
+  "name": "ollama_api_bad_enum",
+  "url": "http://127.0.0.1:11434/api/chat",
+  "started_utc": "2026-09-03T10:24:09.094864+00:00",
+  "request_keys": [
+    "messages",
+    "model",
+    "stream",
+    "tools"
+  ],
+  "http_status": 400,
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "date": "Thu, 03 Sep 2026 10:24:09 GMT",
+    "content-length": "120"
+  },
+  "body_chars": 120,
+  "body_preview": "{\"error\":\"json: cannot unmarshal number into Go struct field .tools.function.parameters.properties.enum of type string\"}",
+  "json_top_keys": [
+    "error"
+  ],
+  "has_message": false,
+  "has_choices": false,
+  "has_prompt": false,
+  "has_thinking": false,
+  "done_reason": null,
+  "ended_utc": "2026-09-03T10:24:09.554402+00:00"
+}

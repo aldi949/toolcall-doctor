@@ -1,0 +1,45 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "temperature": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Press the button number two"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "press_button",
+        "description": "",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "button_press": {
+              "description": "Press a button",
+              "type": "object",
+              "properties": {
+                "number_one": {
+                  "description": "button number one pressed yes/no",
+                  "type": "string"
+                },
+                "number_two": {
+                  "description": "button number two pressed yes/no",
+                  "type": "string"
+                }
+              },
+              "required": ["number_one", "number_two"]
+            },
+            "description": {
+              "description": "Summary in English",
+              "type": "string"
+            }
+          },
+          "required": ["button_press", "description"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T09:55:16.431153+00:00",
+  "ended_utc": "2026-09-03T09:55:17.164713+00:00",
+  "elapsed_ms": 732,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 420,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "request_json": "<REPO_ROOT>\\experiments\\holdout\\healthy-02\\requests\\broken.json"
+}

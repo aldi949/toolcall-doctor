@@ -1,0 +1,12 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"account\":\"ACC-999-XYZ\"}",
+  "arguments_parsed": {
+    "account": "ACC-999-XYZ"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:18:52Z"
+}

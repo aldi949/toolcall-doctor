@@ -1,0 +1,23 @@
+{
+  "candidate_id": "C0394",
+  "mode": "semantic",
+  "reason": "rejected: behavioral hits=0/3 semantic_ok=False failed=['INV_BEHAVIORAL_CLASS', 'INV_EMITTED_EQ_FROZEN', 'INV_EMITTED_NONEMPTY_STRING', 'INV_ENUM_NONEMPTY_STRINGS', 'INV_FROZEN_NOT_IN_ENUM', 'INV_KEYWORD_ENUM', 'INV_PATH_ACCOUNT', 'INV_SATISFIABLE'] degen=['D1_EMPTY_OR_NONSTRING_ENUM', 'D6_EMITTED_VALUE_CHANGED', 'D8_BEHAVIORAL_DECISION_ABSENT']",
+  "n_identity_hits": 0,
+  "semantic_ok": false,
+  "failed_invariants": [
+    "INV_BEHAVIORAL_CLASS",
+    "INV_EMITTED_EQ_FROZEN",
+    "INV_EMITTED_NONEMPTY_STRING",
+    "INV_ENUM_NONEMPTY_STRINGS",
+    "INV_FROZEN_NOT_IN_ENUM",
+    "INV_KEYWORD_ENUM",
+    "INV_PATH_ACCOUNT",
+    "INV_SATISFIABLE"
+  ],
+  "degenerate_codes": [
+    "D1_EMPTY_OR_NONSTRING_ENUM",
+    "D6_EMITTED_VALUE_CHANGED",
+    "D8_BEHAVIORAL_DECISION_ABSENT"
+  ],
+  "compact_bytes": 147
+}

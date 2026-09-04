@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#6155",
+  "USEFUL_FAILURE_FAMILY": "SCHEMA_HANDLING_FAILURE",
+  "quality": "GT-B",
+  "note": "Nested/array tool parameters not represented in the Go struct; double-encoding on OpenAI path.",
+  "revealed_utc": "2026-09-03T10:36:37Z"
+}

@@ -1,0 +1,27 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Look up the population of Lisbon using lookup_city."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "lookup_city",
+        "description": "Look up population for a city.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "city": {"type": "string"},
+            "country": {"type": "string"}
+          },
+          "required": ["city"]
+        }
+      }
+    }
+  ]
+}

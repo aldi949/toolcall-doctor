@@ -1,0 +1,27 @@
+{
+  "model": "llama3.2:3b",
+  "temperature": 0.0,
+  "stream": false,
+  "tools": [
+    {
+      "function": {
+        "name": "get_balance",
+        "parameters": {
+          "properties": {
+            "account": {
+              "enum": [
+                "N"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "ACC-999-XYZ"
+    }
+  ]
+}

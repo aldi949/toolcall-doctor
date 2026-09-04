@@ -1,0 +1,7 @@
+{
+  "n_atoms": 160,
+  "n_single_drop_still_request_ok": 113,
+  "n_single_drop_breaks_request_invariants": 47,
+  "freedom_frac": 0.7063,
+  "note": "Request-side only (no HTTP). Response-side invariants are not in this count."
+}

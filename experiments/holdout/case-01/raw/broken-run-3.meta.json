@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T09:52:31.026783+00:00",
+  "ended_utc": "2026-09-03T09:52:31.934520+00:00",
+  "elapsed_ms": 907,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 399,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\holdout\\case-01\\requests\\broken.json"
+}

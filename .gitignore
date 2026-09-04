@@ -1,0 +1,40 @@
+# Byte-compiled / packaging
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.cleanroom/
+.cleanroom-out/
+.cleanroom-live/
+
+# Local product runs
+.dogfood/
+.dogfood-rc/
+.tcd-probe/
+out/
+out-demo-rc/
+examples/**/out/
+*.log
+.DS_Store
+
+# Research local-only: weights, vendor runtimes, machine dumps, candidate HTTP
+experiments/**/runtime/models/
+experiments/**/runtime/ollama-*/
+experiments/**/runtime/ollama-*.zip
+experiments/**/runtime/*.stderr.txt
+experiments/**/environment/
+experiments/**/01_ENVIRONMENT/
+experiments/**/MACHINE.txt
+experiments/**/MACHINE_AUDIT.md
+experiments/**/ddmin_result.json
+experiments/**/GENERATED_SCRIPT_*.json
+experiments/**/*.jsonl
+experiments/**/candidates/
+experiments/**/search/candidates/
+experiments/**/*.bin
+**/*.gguf

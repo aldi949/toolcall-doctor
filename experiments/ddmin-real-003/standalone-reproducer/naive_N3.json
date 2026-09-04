@@ -1,0 +1,32 @@
+{
+  "mode": "naive",
+  "behavioral_rate": "3/3",
+  "semantic_rate": "0/3",
+  "runs": [
+    {
+      "i": 1,
+      "behavioral_fail": true,
+      "semantic_ok": false,
+      "arguments": {
+        "account": "null"
+      }
+    },
+    {
+      "i": 2,
+      "behavioral_fail": true,
+      "semantic_ok": false,
+      "arguments": {
+        "account": "null"
+      }
+    },
+    {
+      "i": 3,
+      "behavioral_fail": true,
+      "semantic_ok": false,
+      "arguments": {
+        "account": "null"
+      }
+    }
+  ],
+  "utc": "2026-09-03T19:10:28Z"
+}

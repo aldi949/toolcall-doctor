@@ -1,0 +1,22 @@
+{
+  "utc": "2026-09-03T10:40:52Z",
+  "mode": "baseline",
+  "probe": "P_STREAM_ISO",
+  "reason": "fixed baseline order selected P_STREAM_ISO",
+  "remaining_before": [
+    "H_ADAPTER",
+    "H_CHOICE_FORCE",
+    "H_CHOICE_NONE",
+    "H_GRAMMAR",
+    "H_MULTI_TURN",
+    "H_PROTOCOL",
+    "H_REASONING",
+    "H_SCHEMA",
+    "H_STREAM"
+  ],
+  "request_count_before": 3,
+  "choice": {
+    "probe": "P_STREAM_ISO",
+    "reason": "fixed baseline order selected P_STREAM_ISO"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "original": {
+    "compact_chars": 401,
+    "utf8_bytes": 401,
+    "pretty_chars": 700
+  },
+  "minimized": {
+    "compact_chars": 153,
+    "utf8_bytes": 153,
+    "pretty_chars": 318
+  },
+  "reduction_bytes": 248,
+  "reduction_pct": 61.85
+}

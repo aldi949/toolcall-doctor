@@ -1,0 +1,102 @@
+{
+  "n": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 4994
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 749
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "elapsed_ms": 598
+    }
+  ],
+  "emitted": [
+    "ACC-999-XYZ",
+    "ACC-999-XYZ",
+    "ACC-999-XYZ"
+  ]
+}

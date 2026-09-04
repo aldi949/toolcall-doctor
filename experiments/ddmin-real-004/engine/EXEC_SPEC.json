@@ -1,0 +1,5 @@
+{
+  "model": "llama3.2:3b",
+  "temperature": 0.0,
+  "stream": false
+}

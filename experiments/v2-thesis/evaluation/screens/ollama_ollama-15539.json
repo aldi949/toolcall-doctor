@@ -1,0 +1,8 @@
+{
+  "id": "ollama/ollama#15539",
+  "screen": "wrong_model",
+  "utc": "2026-09-03T10:38:45Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "required model gemma4 not installed; only llama3.2:3b present"
+}

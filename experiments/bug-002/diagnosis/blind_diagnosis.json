@@ -1,0 +1,158 @@
+{
+  "SYMPTOM": "control tool_calls_present=True raw_tool_syntax=False streaming=False tool_choice_kind='auto' finish_reason=tool_calls; broken tool_calls_present=True raw_tool_syntax=False streaming=False tool_choice_kind='none' constraint_none_violated=True constraint_forced_violated=False finish_reason=tool_calls",
+  "CONTROL_OBSERVATIONS": {
+    "n": 3,
+    "tool_calls_present": true,
+    "tool_calls_present_count": 3,
+    "raw_tool_syntax_present": false,
+    "raw_tool_syntax_present_count": 0,
+    "streaming": false,
+    "streaming_any": false,
+    "tool_choice": "auto",
+    "tool_choice_kind": "auto",
+    "named_tool_choice": null,
+    "tools_in_request": true,
+    "arguments_valid": true,
+    "finish_reason": "tool_calls",
+    "http_status": 200,
+    "protocol_error": false,
+    "timeout": false,
+    "constraint_none_violated": false,
+    "constraint_none_violated_count": 0,
+    "constraint_forced_violated": false,
+    "constraint_forced_violated_count": 0,
+    "latency_ms_min": 700,
+    "latency_ms_max": 3840,
+    "content_nonempty_count": 0
+  },
+  "BROKEN_OBSERVATIONS": {
+    "n": 3,
+    "tool_calls_present": true,
+    "tool_calls_present_count": 3,
+    "raw_tool_syntax_present": false,
+    "raw_tool_syntax_present_count": 0,
+    "streaming": false,
+    "streaming_any": false,
+    "tool_choice": "none",
+    "tool_choice_kind": "none",
+    "named_tool_choice": null,
+    "tools_in_request": true,
+    "arguments_valid": true,
+    "finish_reason": "tool_calls",
+    "http_status": 200,
+    "protocol_error": false,
+    "timeout": false,
+    "constraint_none_violated": true,
+    "constraint_none_violated_count": 3,
+    "constraint_forced_violated": false,
+    "constraint_forced_violated_count": 0,
+    "latency_ms_min": 654,
+    "latency_ms_max": 825,
+    "content_nonempty_count": 0
+  },
+  "REPLICATION": {
+    "control_n": 3,
+    "broken_n": 3,
+    "control_tool_calls_count": 3,
+    "broken_tool_calls_count": 3,
+    "broken_constraint_none_violated_count": 3
+  },
+  "COMPETING_HYPOTHESES": [
+    {
+      "id": "H1_STREAMING_RESPONSE_SHAPING",
+      "layer": "STREAMING_PARSER",
+      "claim": "The broken probe is streaming and loses structured tool_calls while the same tools still appear as raw tool syntax in content."
+    },
+    {
+      "id": "H2_TOOL_SCHEMA_OR_TEMPLATE",
+      "layer": "CHAT_TEMPLATE",
+      "claim": "The model/template cannot emit usable tool calls at all; both probes would lack structured tool_calls."
+    },
+    {
+      "id": "H3_TOOL_CHOICE_CONSTRAINT",
+      "layer": "TOOL_CHOICE_CONSTRAINT",
+      "claim": "A tool_choice constraint differs between probes and is ignored or mishandled."
+    },
+    {
+      "id": "H4_PROTOCOL_OR_TRANSPORT",
+      "layer": "PROTOCOL_COMPATIBILITY",
+      "claim": "The broken probe fails at HTTP/SSE transport (status, timeout, protocol error) rather than tool shaping."
+    },
+    {
+      "id": "H5_ARGUMENT_JSON",
+      "layer": "TOOL_PARSER",
+      "claim": "Structured tool_calls are present but arguments are invalid JSON only on the broken probe."
+    },
+    {
+      "id": "H6_NONDETERMINISTIC_MODEL",
+      "layer": "MODEL_CAPABILITY",
+      "claim": "The model simply chose not to call tools on one probe; this is behavioral variance, not a stack failure."
+    },
+    {
+      "id": "H7_MULTI_TURN_STATE",
+      "layer": "MULTI_TURN_STATE",
+      "claim": "Failure depends on prior assistant/tool messages rather than a single-turn constraint."
+    },
+    {
+      "id": "H8_REASONING_PARSER",
+      "layer": "REASONING_PARSER",
+      "claim": "Reasoning/thinking traces interfere with tool parsing."
+    }
+  ],
+  "SUPPORTING_EVIDENCE": {
+    "H1_STREAMING_RESPONSE_SHAPING": [],
+    "H2_TOOL_SCHEMA_OR_TEMPLATE": [],
+    "H3_TOOL_CHOICE_CONSTRAINT": [
+      "tool_choice differs: control='auto' ('auto') broken='none' ('none').",
+      "Broken probe requested tool_choice none but still emitted structured tool_calls; control shows tools are available."
+    ],
+    "H4_PROTOCOL_OR_TRANSPORT": [],
+    "H5_ARGUMENT_JSON": [],
+    "H6_NONDETERMINISTIC_MODEL": [],
+    "H7_MULTI_TURN_STATE": [],
+    "H8_REASONING_PARSER": []
+  },
+  "CONTRADICTING_EVIDENCE": {
+    "H1_STREAMING_RESPONSE_SHAPING": [
+      "Streaming flag is the same on both probes.",
+      "Broken probe still has structured tool_calls."
+    ],
+    "H2_TOOL_SCHEMA_OR_TEMPLATE": [
+      "Control produced structured tool_calls, so the template/schema path can work."
+    ],
+    "H3_TOOL_CHOICE_CONSTRAINT": [],
+    "H4_PROTOCOL_OR_TRANSPORT": [
+      "Broken probe completed HTTP without protocol error."
+    ],
+    "H5_ARGUMENT_JSON": [
+      "Broken probe arguments parsed as JSON."
+    ],
+    "H6_NONDETERMINISTIC_MODEL": [
+      "Broken output still contains structured tool_calls under tool_choice none, which is a constraint miss rather than a no-tool decision.",
+      "Probes differ on tool_choice, so variance is not the only changed variable.",
+      "Both probes produced structured tool_calls, so this is not a one-sided sampling miss."
+    ],
+    "H7_MULTI_TURN_STATE": [
+      "Observations are single-turn request/response captures; no prior tool-turn differential was provided."
+    ],
+    "H8_REASONING_PARSER": [
+      "No reasoning/think markers were observed in captured content previews."
+    ]
+  },
+  "ELIMINATED_HYPOTHESES": [
+    "H1_STREAMING_RESPONSE_SHAPING",
+    "H2_TOOL_SCHEMA_OR_TEMPLATE",
+    "H4_PROTOCOL_OR_TRANSPORT",
+    "H5_ARGUMENT_JSON",
+    "H6_NONDETERMINISTIC_MODEL",
+    "H7_MULTI_TURN_STATE",
+    "H8_REASONING_PARSER"
+  ],
+  "UNRESOLVED_HYPOTHESES": [],
+  "REMAINING_SUPPORTED_HYPOTHESES": [
+    "H3_TOOL_CHOICE_CONSTRAINT"
+  ],
+  "SUSPECTED_FAILURE_LAYER": "TOOL_CHOICE_CONSTRAINT",
+  "CONFIDENCE": "HIGH",
+  "NEXT_BEST_PROBE": "Hold streaming and schema fixed. Swap only tool_choice among auto, none, required, and a named function; additionally replay none by omitting the tools array."
+}

@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:15.9989979Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_weather","arguments":{"city":"London"}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:37:16.0169968Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":365294500,"load_duration":26602900,"prompt_eval_count":158,"prompt_eval_duration":5000000,"eval_count":13,"eval_duration":329000000}

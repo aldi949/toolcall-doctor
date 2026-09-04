@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:41:17.3568942Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"get_time","arguments":{}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:41:17.3836072Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":316150300,"load_duration":29934300,"prompt_eval_count":157,"prompt_eval_duration":5000000,"eval_count":11,"eval_duration":278000000}

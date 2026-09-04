@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "tool_call_present": false,
+  "arguments_raw": null,
+  "arguments_parsed": null,
+  "content": "{\"name\": \"App\", \"parameters\": {\"children\": \"[{\\r\\n  \\\"type\\\": \\\"div\\\",\\n  \\\"children\\\": [[\\\"New Todo Item\\\", {\\\\n    \\\"key\\\": \\\\\\\",null\\\\\\\",\\n    \\\"onClick\\\": ({\\\\n      \\\"type\\\": \\\"function\\\\\",\\n      \\\"name\\\": \\\"write_file\\\",\\n      \\\"parameters\\\": {\\n        \\\"content\\\": \\\"New Todo Item\\\",\\n        \\\"path\\\": \\\\\\\"/home/user/ todo.txt\\\"\\n      }\\n    })\\n  }]\\r\\n},\\\\n\\r\\n  \\\"type\\\": \\\"div\\\",\\n  \\\"children\\\": [[\\\"Todo List\\\", {\\\\n    \\\"key\\\": \\\\\\\",null\\\\\\\",\\n    \\\"onClick\\\": ({\\\\n      \\\"type\\\": \\\"function\\\",\\n      \\\"name\\\": \\\"list_files\\\",\\n      \\\"parameters\\\": {\\n        \\\"directory\\\": \\\"/home/user/\\\"\\n      }\\n    })\\n  }]\\r\\n}]\"}}",
+  "finish_reason": "stop",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:19Z"
+}

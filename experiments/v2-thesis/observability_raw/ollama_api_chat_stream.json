@@ -1,0 +1,21 @@
+{
+  "name": "ollama_api_chat_stream",
+  "url": "http://127.0.0.1:11434/api/chat",
+  "started_utc": "2026-09-03T10:24:07.023684+00:00",
+  "request_keys": [
+    "messages",
+    "model",
+    "stream",
+    "tools"
+  ],
+  "http_status": 200,
+  "response_headers": {
+    "content-type": "application/x-ndjson",
+    "date": "Thu, 03 Sep 2026 10:24:07 GMT",
+    "transfer-encoding": "chunked"
+  },
+  "body_chars": 496,
+  "body_preview": "{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:24:07.8082898Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"function\":{\"name\":\"get_time\",\"arguments\":{\"city\":\"Tokyo\"}}}]},\"done\":false}\n{\"model\":\"llama3.2:3b\",\"created_at\":\"2026-09-03T10:24:07.8263083Z\",\"message\":{\"role\":\"assistant\",\"content\":\"\"},\"done_reason\":\"stop\",\"done\":true,\"total_duration\":371109100,\"load_duration\":30313500,\"prompt_eval_count\":164,\"prompt_eval_duration\":3000000,\"eval_count\":18,\"eval_duration\":334000000}\n",
+  "json_error": "JSONDecodeError('Extra data: line 2 column 1 (char 202)')",
+  "ended_utc": "2026-09-03T10:24:07.828171+00:00"
+}

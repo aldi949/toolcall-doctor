@@ -1,0 +1,28 @@
+{
+  "classification": "WORKAROUND_VERIFIED",
+  "source_patch": "NOT_TESTABLE",
+  "workaround": "properties.query.type scalar string instead of array",
+  "n": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 948
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 667
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 949
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "search_n": 10,
+  "holdout_n": 20,
+  "holdout_pass_k": 18,
+  "standalone_n": 10,
+  "standalone_pass_k": 9,
+  "original_screen_n": 10,
+  "original_screen_k": 9,
+  "control_screen_n": 10,
+  "control_screen_k": 8,
+  "material_reduction_pct": 10.0,
+  "sequential_reject": true,
+  "accept_requires_all_n": true
+}

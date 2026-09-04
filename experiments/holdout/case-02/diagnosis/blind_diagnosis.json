@@ -1,0 +1,26 @@
+{
+  "doctor_version": "1.0.0-freeze",
+  "STATUS": "UNHEALTHY",
+  "OBSERVABLE_FAILURE_DIMENSION": "D_HTTP_STATUS",
+  "USEFUL_FAILURE_FAMILY": "PROTOCOL_FAILURE",
+  "LOCALIZATION_CONFIDENCE": "MEDIUM",
+  "INTERNAL_ROOT_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Broken HTTP status 400 vs control 200."
+  ],
+  "CONTRADICTING_EVIDENCE": [
+    "Timeout is recorded as an observable only and is not used as the protocol diagnosis."
+  ],
+  "ELIMINATED_ALTERNATIVES": [
+    "HEALTHY",
+    "STREAM_DEPENDENT_FAILURE (not indicated by stream/content leak alone)"
+  ],
+  "UNRESOLVED_ALTERNATIVES": [
+    "PROTOCOL_ADAPTER",
+    "RUNTIME_INTERNAL",
+    "GRAMMAR_CONSTRAINT"
+  ],
+  "NEXT_BEST_PROBE": "Inspect the error body; if it mentions grammar/schema compile, rerun changing only schema complexity.",
+  "MATCHED_RULE": "R6"
+}

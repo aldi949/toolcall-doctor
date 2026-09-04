@@ -1,0 +1,36 @@
+{
+  "utc": "2026-09-03T19:49:50Z",
+  "arm": "robust",
+  "n_search": 10,
+  "payload": {
+    "model": "llama3.2:3b",
+    "temperature": 0.0,
+    "stream": false,
+    "tools": [
+      {
+        "function": {
+          "name": "g",
+          "parameters": {
+            "properties": {
+              "account": {
+                "enum": [
+                  "T"
+                ]
+              }
+            }
+          }
+        }
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "unt ACC-999-XYZ?"
+      }
+    ]
+  },
+  "status": "REDUCED",
+  "last_accepted_id": "C0324",
+  "http_calls_search": 348,
+  "note": "Holdout may run only after this file exists. Do not change payload."
+}

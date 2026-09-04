@@ -1,0 +1,15 @@
+{
+  "tools": [
+    {
+      "function": {
+        "parameters": {
+          "properties": {
+            "query": {
+              "type": []
+            }
+          }
+        }
+      }
+    }
+  ]
+}

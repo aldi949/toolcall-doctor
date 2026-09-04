@@ -1,0 +1,11 @@
+{
+  "baseline_n": 3,
+  "robust_n": 10,
+  "holdout_n": 20,
+  "holdout_pass_k": 18,
+  "standalone_n": 10,
+  "standalone_pass_k": 9,
+  "material_reduction_pct": 10.0,
+  "sequential_reject": true,
+  "accept_requires_all_n": true
+}

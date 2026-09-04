@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","stream":false,"temperature":0,"seed":42,"messages":[{"role":"user","content":"light.buro_deckenlampe_2"}],"tools":[{"function":{"name":"execute_service","parameters":{"properties":{"list":{"type":"array"}}}}}]}

@@ -1,0 +1,6 @@
+{
+  "n": 3,
+  "preserve_iff": "all_n_preserve_identity",
+  "escalate": false,
+  "note": "A candidate preserves the target only if every one of N independent POSTs FAILs HTTP_200_TOOL_ARGS_ENUM_VIOLATION."
+}

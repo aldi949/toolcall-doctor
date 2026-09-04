@@ -1,0 +1,295 @@
+{
+  "ok": "10/10",
+  "rows": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 4,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 5,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 6,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 7,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 8,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 9,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    },
+    {
+      "i": 10,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ONLY-VALID-ACCOUNT"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "ONLY-VALID-ACCOUNT"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "control_ok": true
+    }
+  ]
+}

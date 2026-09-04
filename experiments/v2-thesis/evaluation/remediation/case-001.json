@@ -1,0 +1,8 @@
+{
+  "kind": "WORKAROUND",
+  "original_status": 400,
+  "original_preview": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}",
+  "remediated_status": 200,
+  "remediated_preview": "{\"id\":\"chatcmpl-885\",\"object\":\"chat.completion\",\"created\":1788432126,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_9cnxc0nh\",\"type\":\"function\",\"function\":{\"name\":\"search_files\",\"arguments\":\"{\\\"query\\\":\\\"Hello\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":151,\"completion_tokens\":13,",
+  "verdict": "WORKAROUND_VERIFIED"
+}

@@ -1,0 +1,24 @@
+{
+  "declared_schema_count": 1,
+  "declared_schema_depth": 1,
+  "returned_argument_depth": 1,
+  "tool_calls_found": true,
+  "arguments_schema_valid": true,
+  "missing_required_fields": [],
+  "unexpected_fields_when_additional_false": [],
+  "nested_structure_valid": true,
+  "per_call": [
+    {
+      "name": "press_button",
+      "arguments_json_valid": true,
+      "arguments_schema_valid": true,
+      "schema_errors": [],
+      "missing_required_fields": [],
+      "unexpected_fields_when_additional_false": [],
+      "returned_argument_depth": 1,
+      "tool_name_declared": true
+    }
+  ],
+  "request_path": "requests\\control.json",
+  "body_path": "raw\\control-run-1.body.json"
+}

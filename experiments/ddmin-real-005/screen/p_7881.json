@@ -1,0 +1,30 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "temperature": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call get_weather for Paris."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_weather",
+        "description": "Get the current weather for a city",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string",
+              "description": "City name"
+            }
+          },
+          "required": ["city"]
+        }
+      }
+    }
+  ]
+}

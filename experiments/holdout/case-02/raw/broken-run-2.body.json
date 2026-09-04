@@ -1,0 +1,1 @@
+{"error":"json: cannot unmarshal number into Go struct field .tools.function.parameters.properties.enum of type string"}

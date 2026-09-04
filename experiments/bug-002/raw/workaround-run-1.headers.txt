@@ -1,0 +1,10 @@
+started_utc=2026-09-03T08:59:08.180963+00:00
+ended_utc=2026-09-03T08:59:12.759863+00:00
+elapsed_ms=4578
+url=http://127.0.0.1:11434/v1/chat/completions
+http_status=200
+error=None
+---
+content-type: application/json
+date: Thu, 03 Sep 2026 08:59:12 GMT
+content-length: 1074

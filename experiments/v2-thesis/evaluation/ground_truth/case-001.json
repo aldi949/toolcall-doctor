@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#5990",
+  "USEFUL_FAILURE_FAMILY": "SCHEMA_HANDLING_FAILURE",
+  "quality": "GT-B",
+  "note": "properties.type array unmarshals as string; HTTP 400. PR #9434.",
+  "revealed_utc": "2026-09-03T10:36:09Z"
+}

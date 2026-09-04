@@ -1,0 +1,27 @@
+{
+  "doctor_version": "1.0.0-freeze",
+  "STATUS": "HEALTHY",
+  "OBSERVABLE_FAILURE_DIMENSION": "D_NONE",
+  "USEFUL_FAILURE_FAMILY": "HEALTHY",
+  "LOCALIZATION_CONFIDENCE": "HIGH",
+  "INTERNAL_ROOT_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "No registered unhealthful differential matched; HTTP completed.",
+    "Structured tool_calls present on both executed arms."
+  ],
+  "CONTRADICTING_EVIDENCE": [
+    "Optional probes that were not executed are not treated as failures."
+  ],
+  "ELIMINATED_ALTERNATIVES": [
+    "STREAM_DEPENDENT_FAILURE",
+    "TOOL_CHOICE_CONSTRAINT_FAILURE",
+    "SCHEMA_DEPENDENT_FAILURE",
+    "PROTOCOL_FAILURE"
+  ],
+  "UNRESOLVED_ALTERNATIVES": [
+    "Unexecuted optional reasoning/multi-turn probes"
+  ],
+  "NEXT_BEST_PROBE": "No further probe required for HEALTHY on the executed set.",
+  "MATCHED_RULE": "R1"
+}

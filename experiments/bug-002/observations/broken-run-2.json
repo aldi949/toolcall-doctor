@@ -1,0 +1,30 @@
+{
+  "stem": "broken-run-2",
+  "http_status": 200,
+  "streaming": false,
+  "tool_choice": "none",
+  "tool_choice_kind": "none",
+  "named_tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": true,
+  "tool_call_names": [
+    "get_weather"
+  ],
+  "raw_tool_syntax_present": false,
+  "arguments_valid": true,
+  "finish_reason": "tool_calls",
+  "finish_reasons_all": [
+    "tool_calls"
+  ],
+  "chunk_count": 1,
+  "stream_terminated": null,
+  "timeout": false,
+  "protocol_error": false,
+  "latency_ms": 663,
+  "content_preview": "",
+  "content_nonempty": false,
+  "constraint_none_violated": true,
+  "constraint_forced_violated": false,
+  "error": null,
+  "content_type": "application/json"
+}

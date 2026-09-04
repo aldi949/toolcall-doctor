@@ -1,0 +1,31 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Turn off light.buro_deckenlampe_2 using execute_service."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "execute_service",
+        "description": "Execute a Home Assistant service",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "list": {
+              "type": "string",
+              "description": "flattened array"
+            }
+          },
+          "required": [
+            "list"
+          ]
+        }
+      }
+    }
+  ]
+}

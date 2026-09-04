@@ -1,0 +1,70 @@
+{
+  "classification": "RELATED",
+  "note": "HTTP 200 structured tool-call enum violation on Ollama 0.4.6 + llama3.2:3b (documented model qwen2.5:7b-instruct not used; 7B not practical on 4GB VRAM). Not ORIGINAL.",
+  "n": [
+    {
+      "i": 1,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 3476,
+      "error": null,
+      "started_utc": "2026-09-03T18:25:21Z",
+      "ended_utc": "2026-09-03T18:25:24Z",
+      "request_sha256": "ac4b65da1da9055baea7d9b4b4ab229a71b59f234e2ef19a339b46860e6dcdc3",
+      "response_sha256": "f0e6a4194bac1b3e66c3de46d34bc54355b95804c25e17a384fec4b30b989c27"
+    },
+    {
+      "i": 2,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 656,
+      "error": null,
+      "started_utc": "2026-09-03T18:25:24Z",
+      "ended_utc": "2026-09-03T18:25:25Z",
+      "request_sha256": "ac4b65da1da9055baea7d9b4b4ab229a71b59f234e2ef19a339b46860e6dcdc3",
+      "response_sha256": "aa2d97589aabf71b93965df12f44840b57e75364d7165b1b09022264d78f153f"
+    },
+    {
+      "i": 3,
+      "oracle": "FAIL",
+      "failure_identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "get_balance",
+      "arguments": {
+        "account": "ACC-999-XYZ"
+      },
+      "enum_error_paths": [
+        "/account"
+      ],
+      "schema_present_for_tool": true,
+      "elapsed_ms": 607,
+      "error": null,
+      "started_utc": "2026-09-03T18:25:25Z",
+      "ended_utc": "2026-09-03T18:25:25Z",
+      "request_sha256": "ac4b65da1da9055baea7d9b4b4ab229a71b59f234e2ef19a339b46860e6dcdc3",
+      "response_sha256": "0c8870d6de44b63d9b3613462de9a8ef9b7416467f569d2c24c54866b59394a6"
+    }
+  ],
+  "utc": "2026-09-03T18:25:25Z"
+}

@@ -1,0 +1,272 @@
+[
+  {
+    "name": "p_17921_none",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 1,
+        "elapsed_ms": 4799
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 2,
+        "elapsed_ms": 639
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 3,
+        "elapsed_ms": 668
+      }
+    ]
+  },
+  {
+    "name": "p_17921_auto",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 1,
+        "elapsed_ms": 713
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 2,
+        "elapsed_ms": 604
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 3,
+        "elapsed_ms": 678
+      }
+    ]
+  },
+  {
+    "name": "p_11805",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "ExtractName"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"name\":\"John\"}",
+        "i": 1,
+        "elapsed_ms": 792
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "ExtractName"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"name\":\"John\"}",
+        "i": 2,
+        "elapsed_ms": 749
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "ExtractName"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"name\":\"John\"}",
+        "i": 3,
+        "elapsed_ms": 674
+      }
+    ]
+  },
+  {
+    "name": "p_7881",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"city\":\"Paris\"}",
+        "i": 1,
+        "elapsed_ms": 804
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"city\":\"Paris\"}",
+        "i": 2,
+        "elapsed_ms": 704
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"city\":\"Paris\"}",
+        "i": 3,
+        "elapsed_ms": 715
+      }
+    ]
+  },
+  {
+    "name": "p_8095_format_tools",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 1,
+        "elapsed_ms": 840
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 2,
+        "elapsed_ms": 654
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "get_weather"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"location\":\"Paris\"}",
+        "i": 3,
+        "elapsed_ms": 729
+      }
+    ]
+  },
+  {
+    "name": "p_13472_nested_v1",
+    "n": 3,
+    "rows": [
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "press_button"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"button_press\":\"2\",\"description\":\"\"}",
+        "i": 1,
+        "elapsed_ms": 933
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "press_button"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"button_press\":\"2\",\"description\":\"\"}",
+        "i": 2,
+        "elapsed_ms": 1030
+      },
+      {
+        "status": 200,
+        "parse": true,
+        "n_tool_calls": 1,
+        "names": [
+          "press_button"
+        ],
+        "has_index": false,
+        "content_prefix": "",
+        "args0": "{\"button_press\":\"2\",\"description\":\"\"}",
+        "i": 3,
+        "elapsed_ms": 805
+      }
+    ]
+  }
+]

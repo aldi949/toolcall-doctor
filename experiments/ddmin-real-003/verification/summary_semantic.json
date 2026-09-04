@@ -1,0 +1,806 @@
+{
+  "one_min": {
+    "mode": "semantic",
+    "n_probes": 53,
+    "n_still_preserve": 0,
+    "one_minimal": true,
+    "still": [],
+    "probes": [
+      {
+        "dropped_atom": "key:/model",
+        "candidate_id": "C0585",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/0",
+        "candidate_id": "C0586",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/1",
+        "candidate_id": "C0587",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/2",
+        "candidate_id": "C0588",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/3",
+        "candidate_id": "C0589",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/4",
+        "candidate_id": "C0590",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/5",
+        "candidate_id": "C0591",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/6",
+        "candidate_id": "C0592",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/7",
+        "candidate_id": "C0593",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/8",
+        "candidate_id": "C0594",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/9",
+        "candidate_id": "C0595",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/model/10",
+        "candidate_id": "C0596",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools",
+        "candidate_id": "C0597",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "idx:/tools/0",
+        "candidate_id": "C0598",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function",
+        "candidate_id": "C0599",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/name",
+        "candidate_id": "C0600",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/name/0",
+        "candidate_id": "C0601",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters",
+        "candidate_id": "C0602",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties",
+        "candidate_id": "C0603",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties/account",
+        "candidate_id": "C0604",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties/account/type",
+        "candidate_id": "C0605",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/0",
+        "candidate_id": "C0606",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/1",
+        "candidate_id": "C0607",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/2",
+        "candidate_id": "C0608",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/3",
+        "candidate_id": "C0609",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/4",
+        "candidate_id": "C0610",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/type/5",
+        "candidate_id": "C0611",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D2_UNSATISFIABLE_CONSTRAINT",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/tools/0/function/parameters/properties/account/enum",
+        "candidate_id": "C0612",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "idx:/tools/0/function/parameters/properties/account/enum/0",
+        "candidate_id": "C0613",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM"
+        ]
+      },
+      {
+        "dropped_atom": "char:/tools/0/function/parameters/properties/account/enum/0/17",
+        "candidate_id": "C0614",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/messages",
+        "candidate_id": "C0615",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "idx:/messages/0",
+        "candidate_id": "C0616",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/messages/0/role",
+        "candidate_id": "C0617",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/0",
+        "candidate_id": "C0618",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/1",
+        "candidate_id": "C0619",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/2",
+        "candidate_id": "C0620",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/role/3",
+        "candidate_id": "C0621",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "key:/messages/0/content",
+        "candidate_id": "C0622",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/27",
+        "candidate_id": "C0623",
+        "preserves": false,
+        "n_identity_hits": 1,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/28",
+        "candidate_id": "C0624",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/29",
+        "candidate_id": "C0625",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/30",
+        "candidate_id": "C0626",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/31",
+        "candidate_id": "C0627",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/32",
+        "candidate_id": "C0628",
+        "preserves": false,
+        "n_identity_hits": 1,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/33",
+        "candidate_id": "C0629",
+        "preserves": false,
+        "n_identity_hits": 0,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/34",
+        "candidate_id": "C0630",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/35",
+        "candidate_id": "C0631",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/36",
+        "candidate_id": "C0632",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D1_EMPTY_OR_NONSTRING_ENUM",
+          "D3_MALFORMED_SCHEMA",
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/37",
+        "candidate_id": "C0633",
+        "preserves": false,
+        "n_identity_hits": 2,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED",
+          "D8_BEHAVIORAL_DECISION_ABSENT"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/38",
+        "candidate_id": "C0634",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/39",
+        "candidate_id": "C0635",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/40",
+        "candidate_id": "C0636",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      },
+      {
+        "dropped_atom": "char:/messages/0/content/41",
+        "candidate_id": "C0637",
+        "preserves": false,
+        "n_identity_hits": 3,
+        "semantic_ok": false,
+        "degenerate_codes": [
+          "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+          "D6_EMITTED_VALUE_CHANGED"
+        ]
+      }
+    ]
+  },
+  "degenerate": {
+    "flags": {
+      "empty_enum": false,
+      "enum_nonempty_strings": true,
+      "frozen_value_in_user": true,
+      "user_content_empty": false,
+      "schema_missing": false
+    },
+    "enum": [
+      "T"
+    ],
+    "degenerate_if_empty_enum": false
+  },
+  "control": {
+    "mode": "semantic",
+    "static_satisfiable": true,
+    "enum": [
+      "T"
+    ],
+    "http_valid_tool_calls": "3/3",
+    "rows": [
+      {
+        "i": 1,
+        "oracle": "PASS",
+        "failure_identity": null,
+        "http_status": 200,
+        "tool_call_present": true,
+        "tool_name": "g",
+        "arguments": {
+          "account": "T"
+        },
+        "enum_error_paths": [],
+        "schema_present_for_tool": true,
+        "schema": {
+          "properties": {
+            "account": {
+              "type": "string",
+              "enum": [
+                "T"
+              ]
+            }
+          }
+        },
+        "schema_valid_tool_call": true
+      },
+      {
+        "i": 2,
+        "oracle": "PASS",
+        "failure_identity": null,
+        "http_status": 200,
+        "tool_call_present": true,
+        "tool_name": "g",
+        "arguments": {
+          "account": "T"
+        },
+        "enum_error_paths": [],
+        "schema_present_for_tool": true,
+        "schema": {
+          "properties": {
+            "account": {
+              "type": "string",
+              "enum": [
+                "T"
+              ]
+            }
+          }
+        },
+        "schema_valid_tool_call": true
+      },
+      {
+        "i": 3,
+        "oracle": "PASS",
+        "failure_identity": null,
+        "http_status": 200,
+        "tool_call_present": true,
+        "tool_name": "g",
+        "arguments": {
+          "account": "T"
+        },
+        "enum_error_paths": [],
+        "schema_present_for_tool": true,
+        "schema": {
+          "properties": {
+            "account": {
+              "type": "string",
+              "enum": [
+                "T"
+              ]
+            }
+          }
+        },
+        "schema_valid_tool_call": true
+      }
+    ]
+  },
+  "reproducer": {
+    "mode": "semantic",
+    "behavioral_rate": "2/3",
+    "semantic_rate": "2/3",
+    "runs": [
+      {
+        "i": 1,
+        "behavioral_fail": true,
+        "semantic_ok": true,
+        "arguments": {
+          "account": "ACC-999-XYZ"
+        }
+      },
+      {
+        "i": 2,
+        "behavioral_fail": false,
+        "semantic_ok": false,
+        "arguments": {
+          "account": "T"
+        }
+      },
+      {
+        "i": 3,
+        "behavioral_fail": true,
+        "semantic_ok": true,
+        "arguments": {
+          "account": "ACC-999-XYZ"
+        }
+      }
+    ],
+    "utc": "2026-09-03T19:30:11Z"
+  },
+  "utc": "2026-09-03T19:30:11Z"
+}

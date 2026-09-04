@@ -1,0 +1,8 @@
+{
+  "id": "sgl-project/sglang#37283",
+  "screen": "runtime_down",
+  "utc": "2026-09-03T10:39:17Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "SGLang not installed/running; Docker/WSL unavailable."
+}

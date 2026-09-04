@@ -1,0 +1,13 @@
+{
+  "flags": {
+    "empty_enum": false,
+    "enum_nonempty_strings": true,
+    "frozen_value_in_user": true,
+    "user_content_empty": false,
+    "schema_missing": false
+  },
+  "enum": [
+    "T"
+  ],
+  "degenerate_if_empty_enum": false
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ollama/ollama#10976",
+  "screen": "wrong_model",
+  "utc": "2026-09-03T10:38:02Z",
+  "runs": [],
+  "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+  "blocker": "required model qwen3 not installed; only llama3.2:3b present"
+}

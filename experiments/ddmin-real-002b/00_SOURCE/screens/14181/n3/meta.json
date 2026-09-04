@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "tool_call_present": false,
+  "arguments_raw": null,
+  "arguments_parsed": null,
+  "content": "{\"type\": \"function\", \"name\": \"write_file\", \"parameters\": {\"path\": \"public/index.html\", \"content\": \"<html><head><title>Todo List</title></head><body><h1>Todo List</h1><ul id=\"todo-list\"></ul><script src=\"bundle.js\"></script></body></html>\"}}",
+  "finish_reason": "stop",
+  "error_message": null,
+  "utc": "2026-09-03T18:16:15Z"
+}

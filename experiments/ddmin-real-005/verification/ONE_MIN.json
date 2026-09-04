@@ -1,0 +1,345 @@
+{
+  "n_probes": 56,
+  "n_still": 0,
+  "one_minimal": true,
+  "still": [],
+  "http_calls": 35,
+  "probes": [
+    {
+      "dropped_atom": "key:/model",
+      "cid": "C0655",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/0",
+      "cid": "C0656",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/1",
+      "cid": "C0657",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/2",
+      "cid": "C0658",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/3",
+      "cid": "C0659",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/4",
+      "cid": "C0660",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/5",
+      "cid": "C0661",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/6",
+      "cid": "C0662",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/7",
+      "cid": "C0663",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/8",
+      "cid": "C0664",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/9",
+      "cid": "C0665",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/model/10",
+      "cid": "C0666",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/stream",
+      "cid": "C0667",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/temperature",
+      "cid": "C0668",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/seed",
+      "cid": "C0669",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/max_tokens",
+      "cid": "C0670",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/tool_choice",
+      "cid": "C0671",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/tool_choice/0",
+      "cid": "C0672",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/tool_choice/1",
+      "cid": "C0673",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/tool_choice/2",
+      "cid": "C0674",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "char:/tool_choice/3",
+      "cid": "C0675",
+      "preserves": false,
+      "n_posted": 0
+    },
+    {
+      "dropped_atom": "key:/messages",
+      "cid": "C0676",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "idx:/messages/0",
+      "cid": "C0677",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/messages/0/role",
+      "cid": "C0678",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/0",
+      "cid": "C0679",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/1",
+      "cid": "C0680",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/2",
+      "cid": "C0681",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/role/3",
+      "cid": "C0682",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/messages/0/content",
+      "cid": "C0683",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/12",
+      "cid": "C0684",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/13",
+      "cid": "C0685",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/14",
+      "cid": "C0686",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/15",
+      "cid": "C0687",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/16",
+      "cid": "C0688",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/17",
+      "cid": "C0689",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/18",
+      "cid": "C0690",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/23",
+      "cid": "C0691",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/24",
+      "cid": "C0692",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/25",
+      "cid": "C0693",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/26",
+      "cid": "C0694",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/messages/0/content/27",
+      "cid": "C0695",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools",
+      "cid": "C0696",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "idx:/tools/1",
+      "cid": "C0697",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/1/function",
+      "cid": "C0698",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "key:/tools/1/function/name",
+      "cid": "C0699",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/0",
+      "cid": "C0700",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/1",
+      "cid": "C0701",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/2",
+      "cid": "C0702",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/3",
+      "cid": "C0703",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/4",
+      "cid": "C0704",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/5",
+      "cid": "C0705",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/6",
+      "cid": "C0706",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/7",
+      "cid": "C0707",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/8",
+      "cid": "C0708",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/9",
+      "cid": "C0709",
+      "preserves": false,
+      "n_posted": 1
+    },
+    {
+      "dropped_atom": "char:/tools/1/function/name/10",
+      "cid": "C0710",
+      "preserves": false,
+      "n_posted": 1
+    }
+  ]
+}

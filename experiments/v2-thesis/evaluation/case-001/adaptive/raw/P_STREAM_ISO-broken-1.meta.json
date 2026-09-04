@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:36:05.815603+00:00",
+  "ended_utc": "2026-09-03T10:36:06.122053+00:00",
+  "elapsed_ms": 306,
+  "http_status": 400,
+  "error": null,
+  "byte_count": 119,
+  "stream": true,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\case-001\\adaptive\\requests\\P_STREAM_ISO-broken-1.json"
+}

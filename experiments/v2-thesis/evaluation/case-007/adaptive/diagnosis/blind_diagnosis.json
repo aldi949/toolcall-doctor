@@ -1,0 +1,171 @@
+{
+  "doctor_version": "2.0.0-freeze",
+  "STATUS": "UNHEALTHY",
+  "OBSERVABLE_FAILURE_DIMENSIONS": [
+    "H_STREAM"
+  ],
+  "USEFUL_FAILURE_FAMILY": "STREAM_DEPENDENT_FAILURE",
+  "LOCALIZATION_CONFIDENCE": "HIGH",
+  "SUSPECTED_INTERNAL_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Initial request produced structured tool_calls on all replicates.",
+    "P_SCHEMA_FLAT outcome=PASS remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_REASONING', 'H_STREAM']",
+    "P_STREAM_ISO outcome=FAIL remaining=['H_STREAM']"
+  ],
+  "CONTRADICTING_EVIDENCE": [],
+  "ELIMINATED_HYPOTHESES": [
+    "H_ADAPTER",
+    "H_BASE",
+    "H_CHOICE_FORCE",
+    "H_CHOICE_NONE",
+    "H_GRAMMAR",
+    "H_MULTI_TURN",
+    "H_PROTOCOL",
+    "H_REASONING",
+    "H_SCHEMA"
+  ],
+  "UNRESOLVED_HYPOTHESES": [
+    "H_STREAM"
+  ],
+  "PROBES_EXECUTED": [
+    "P_SCHEMA_FLAT",
+    "P_STREAM_ISO"
+  ],
+  "STOP_REASON": "LOCALIZED",
+  "NEXT_MANUAL_EVIDENCE": "Capture tokens before stream assembly if a debug hook exists.",
+  "UNSTABLE": false,
+  "WHY_EACH_PROBE_WAS_CHOSEN": [
+    {
+      "utc": "2026-09-03T10:39:02Z",
+      "mode": "adaptive",
+      "probe": "P_SCHEMA_FLAT",
+      "reason": "minimax worst_remaining=9 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_PROTOCOL', 'H_REASONING', 'H_SCHEMA', 'H_STREAM']",
+      "remaining_before": [
+        "H_ADAPTER",
+        "H_CHOICE_FORCE",
+        "H_CHOICE_NONE",
+        "H_GRAMMAR",
+        "H_MULTI_TURN",
+        "H_PROTOCOL",
+        "H_REASONING",
+        "H_SCHEMA",
+        "H_STREAM"
+      ],
+      "request_count_before": 3,
+      "choice": {
+        "probe": "P_SCHEMA_FLAT",
+        "reason": "minimax worst_remaining=9 partitions=4 quality=CLEAN among 9 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_PROTOCOL', 'H_REASONING', 'H_SCHEMA', 'H_STREAM']",
+        "score": {
+          "probe": "P_SCHEMA_FLAT",
+          "worst_remaining": 9,
+          "n_partitions": 4,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_PROTOCOL",
+              "H_REASONING",
+              "H_SCHEMA",
+              "H_STREAM"
+            ],
+            "PASS": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING",
+              "H_STREAM"
+            ],
+            "MALFORMED": [
+              "H_PROTOCOL"
+            ],
+            "FAIL": [
+              "H_PROTOCOL",
+              "H_SCHEMA"
+            ],
+            "TIMEOUT": [],
+            "UNCHANGED": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING",
+              "H_STREAM"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "utc": "2026-09-03T10:39:08Z",
+      "mode": "adaptive",
+      "probe": "P_STREAM_ISO",
+      "reason": "minimax worst_remaining=7 partitions=3 quality=CLEAN among 8 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_REASONING', 'H_STREAM']",
+      "remaining_before": [
+        "H_ADAPTER",
+        "H_CHOICE_FORCE",
+        "H_CHOICE_NONE",
+        "H_GRAMMAR",
+        "H_MULTI_TURN",
+        "H_REASONING",
+        "H_STREAM"
+      ],
+      "request_count_before": 9,
+      "choice": {
+        "probe": "P_STREAM_ISO",
+        "reason": "minimax worst_remaining=7 partitions=3 quality=CLEAN among 8 scored probes; remaining=['H_ADAPTER', 'H_CHOICE_FORCE', 'H_CHOICE_NONE', 'H_GRAMMAR', 'H_MULTI_TURN', 'H_REASONING', 'H_STREAM']",
+        "score": {
+          "probe": "P_STREAM_ISO",
+          "worst_remaining": 7,
+          "n_partitions": 3,
+          "quality": "CLEAN",
+          "quality_rank": 0,
+          "cost": 6,
+          "parts": {
+            "UNKNOWN": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING",
+              "H_STREAM"
+            ],
+            "PASS": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING"
+            ],
+            "MALFORMED": [],
+            "FAIL": [
+              "H_STREAM"
+            ],
+            "TIMEOUT": [],
+            "UNCHANGED": [
+              "H_ADAPTER",
+              "H_CHOICE_FORCE",
+              "H_CHOICE_NONE",
+              "H_GRAMMAR",
+              "H_MULTI_TURN",
+              "H_REASONING"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "REQUEST_COUNT": 15,
+  "mode": "adaptive"
+}

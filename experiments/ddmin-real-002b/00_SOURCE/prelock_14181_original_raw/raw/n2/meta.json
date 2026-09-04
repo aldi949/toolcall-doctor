@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "tool_call_present": false,
+  "arguments_raw": null,
+  "arguments_parsed": null,
+  "content": "{\"name\": \"App\", \"parameters\": {\"children\": \"{\\\"type\\\":\\\"function\\\",\\\"function\\\":{\\\"name\\\":\\\"TodoList\\\",\\\"description\\\":\\\"Show a List of todos\\\",\\\"parameters\\\":{\\\"content\\\":{},\"totalitems\"\\\":0,\\\"todos\\\":[],\\\"newtodo\\\":\"}}}\"}}",
+  "finish_reason": "stop",
+  "error_message": null,
+  "utc": "2026-09-03T18:17:10Z"
+}

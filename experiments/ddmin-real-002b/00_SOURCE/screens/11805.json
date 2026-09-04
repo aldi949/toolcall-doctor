@@ -1,0 +1,43 @@
+{
+  "issue": 11805,
+  "status": "NON_MANIFESTING",
+  "hits": "0/3",
+  "rows": [
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"name\":\"John\"}",
+      "arguments_parsed": {
+        "name": "John"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:01Z"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"name\":\"John\"}",
+      "arguments_parsed": {
+        "name": "John"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:02Z"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"name\":\"John\"}",
+      "arguments_parsed": {
+        "name": "John"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:03Z"
+    }
+  ]
+}

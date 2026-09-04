@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-03T19:39:49Z",
+  "failing_value": "ACC-999-XYZ",
+  "constraint_property": "account",
+  "validator_keyword": "enum",
+  "error_path": "/account",
+  "original_enum": [
+    "ONLY-VALID-ACCOUNT"
+  ],
+  "source_issue": 17597,
+  "classification": "RELATED",
+  "screen_n": 20,
+  "screen_mode_count": 20
+}

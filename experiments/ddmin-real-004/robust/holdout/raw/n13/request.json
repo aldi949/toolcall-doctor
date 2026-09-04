@@ -1,0 +1,1 @@
+{"model":"llama3.2:3b","temperature":0.0,"stream":false,"tools":[{"function":{"name":"g","parameters":{"properties":{"account":{"enum":["T"]}}}}}],"messages":[{"role":"user","content":"unt ACC-999-XYZ?"}]}

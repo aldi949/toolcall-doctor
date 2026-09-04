@@ -1,0 +1,99 @@
+{
+  "k": 10,
+  "n": 10,
+  "pass": true,
+  "need": 9,
+  "rows": [
+    {
+      "i": 1,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 2,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 3,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 4,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 5,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 6,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 7,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 8,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 9,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 10,
+      "event": true,
+      "tool_name": "execute_service",
+      "arguments": {
+        "list": "[\"light.buro_deckenlampe_2\"]"
+      },
+      "returncode": 0
+    }
+  ],
+  "utc": "2026-09-04T07:40:39Z"
+}

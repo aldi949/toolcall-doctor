@@ -1,0 +1,10 @@
+started_utc=2026-09-03T10:36:59.007851+00:00
+ended_utc=2026-09-03T10:36:59.785728+00:00
+elapsed_ms=777
+url=http://127.0.0.1:11434/api/chat
+http_status=200
+error=None
+---
+content-type: application/json; charset=utf-8
+date: Thu, 03 Sep 2026 10:36:59 GMT
+content-length: 373

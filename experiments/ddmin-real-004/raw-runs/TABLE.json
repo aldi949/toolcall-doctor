@@ -1,0 +1,22 @@
+{
+  "status": "STRONG PASS",
+  "columns": ["ORIGINAL", "BASELINE", "ROBUST"],
+  "Size": [401, 205, 205],
+  "Reduction_pct": [null, 48.88, 48.88],
+  "Candidates_tested": [null, 422, 422],
+  "Search_accepted": [null, 17, 17],
+  "Total_runtime_calls_search": [20, 229, 348],
+  "Arm_calls_search_verify_holdout_standalone": [30, 262, 388],
+  "Arm_calls_plus_1min": [30, 262, 423],
+  "Search_failure_rate": ["20/20", "3/3", "10/10"],
+  "Verification_failure_rate": [null, "3/3", "10/10"],
+  "Holdout_failure_rate": [null, "20/20", "20/20"],
+  "Standalone_failure_rate": [null, "10/10", "10/10"],
+  "Semantic_invariants": [true, true, true],
+  "one_minimality": [null, "not pre-registered for baseline", "49/49 PASS"],
+  "Degenerate_witness_empty_enum": [false, false, false],
+  "Enum_truncated_to_T": [false, true, true],
+  "Material_reduction": [null, true, true],
+  "Holdout_PASS": [null, true, true],
+  "payloads_identical": true
+}

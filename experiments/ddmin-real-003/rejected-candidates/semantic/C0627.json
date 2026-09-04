@@ -1,0 +1,20 @@
+{
+  "candidate_id": "C0627",
+  "mode": "semantic",
+  "reason": "rejected: behavioral hits=2/3 semantic_ok=False failed=['INV_BEHAVIORAL_CLASS', 'INV_EMITTED_EQ_FROZEN', 'INV_FROZEN_REQUESTED_IN_USER', 'INV_KEYWORD_ENUM', 'INV_PATH_ACCOUNT'] degen=['D5_REQUESTED_ILLEGAL_VALUE_REMOVED', 'D6_EMITTED_VALUE_CHANGED', 'D8_BEHAVIORAL_DECISION_ABSENT']",
+  "n_identity_hits": 2,
+  "semantic_ok": false,
+  "failed_invariants": [
+    "INV_BEHAVIORAL_CLASS",
+    "INV_EMITTED_EQ_FROZEN",
+    "INV_FROZEN_REQUESTED_IN_USER",
+    "INV_KEYWORD_ENUM",
+    "INV_PATH_ACCOUNT"
+  ],
+  "degenerate_codes": [
+    "D5_REQUESTED_ILLEGAL_VALUE_REMOVED",
+    "D6_EMITTED_VALUE_CHANGED",
+    "D8_BEHAVIORAL_DECISION_ABSENT"
+  ],
+  "compact_bytes": 186
+}

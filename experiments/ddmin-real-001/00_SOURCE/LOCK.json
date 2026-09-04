@@ -1,0 +1,16 @@
+{
+  "locked_utc": "2026-09-03T12:48:00Z",
+  "source_url": "https://github.com/ollama/ollama/issues/5990",
+  "issue_number": 5990,
+  "title": "Tools and properties.type Not Supporting Arrays",
+  "runtime": "ollama",
+  "runtime_version_documented": "0.3.0",
+  "runtime_version_used": "0.4.6",
+  "runtime_justification": "Parse-time HTTP 400; 0.4.6 is the running local server. 0.3.0 is not installed. Closest executable pin.",
+  "model_documented": "mistral-nemo",
+  "model_used": "llama3.2:3b",
+  "model_justification": "mistral-nemo is not in GET /api/tags. Failure is request unmarshal, not generation.",
+  "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+  "documented_symptom": "HTTP 400; json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string",
+  "minimizer_must_not_read": ["known fix", "PR identity", "this lock file"]
+}

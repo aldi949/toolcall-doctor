@@ -1,0 +1,24 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call get-orders-at-risk-count now."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "GetOrdersAtRiskCount",
+        "description": "Count orders at risk",
+        "parameters": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    }
+  ],
+  "tool_choice": "required"
+}

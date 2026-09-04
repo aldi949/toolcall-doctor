@@ -1,0 +1,1 @@
+{"id":"chatcmpl-12","object":"chat.completion","created":1788439794,"model":"llama3.2:3b","system_fingerprint":"fp_ollama","choices":[{"index":0,"message":{"role":"assistant","content":"{\"name\":\"search-files\",\"parameters\"\u003e{\\\"query\\\":\\\"H\\\"}}"},"finish_reason":"stop"}],"usage":{"prompt_tokens":144,"completion_tokens":15,"total_tokens":159}}

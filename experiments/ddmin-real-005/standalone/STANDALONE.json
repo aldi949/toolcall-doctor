@@ -1,0 +1,99 @@
+{
+  "k": 10,
+  "n": 10,
+  "pass": true,
+  "need": 9,
+  "rows": [
+    {
+      "i": 1,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 2,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 3,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 4,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 5,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 6,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 7,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 8,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 9,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    },
+    {
+      "i": 10,
+      "event": true,
+      "tool_name": "get_weather",
+      "arguments": {
+        "city": "Paris"
+      },
+      "returncode": 0
+    }
+  ],
+  "utc": "2026-09-03T20:16:29Z"
+}

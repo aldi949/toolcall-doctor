@@ -1,0 +1,251 @@
+{
+  "utc": "2026-09-03T10:39:17Z",
+  "counts": {
+    "MANIFESTED": 7,
+    "NON_MANIFESTING": 12,
+    "ENVIRONMENT_NOT_EXECUTABLE": 29,
+    "DISQUALIFIED": 0
+  },
+  "walk": [
+    {
+      "id": "ollama/ollama#5990",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#6127",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model llama3.1 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#6155",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#6713",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model mistral-nemo not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#6980",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#7051",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model qwen2.5 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#7572",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#7778",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#7881",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#8222",
+      "disposition": "NON_MANIFESTING",
+      "note": "HTTP accepted $ref/$defs; rendered prompt not exposed on this pin."
+    },
+    {
+      "id": "ollama/ollama#8337",
+      "disposition": "NON_MANIFESTING",
+      "note": "No binary fail contract executable on this pin without the reported model/channel pair."
+    },
+    {
+      "id": "ollama/ollama#8421",
+      "disposition": "NON_MANIFESTING",
+      "note": "tool_choice=none produced no tool_calls on this model (constraint may be honored or model never calls)."
+    },
+    {
+      "id": "ollama/ollama#8517",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model deepseek-r1 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#8588",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model qwen2.5 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#9437",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model phi4-mini not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#9632",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#9680",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model gemma3 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#9941",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model gemma3 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#10976",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model qwen3 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#11407",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#11805",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#12288",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#12557",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#13705",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model ministral not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#14958",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#14967",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#15539",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model gemma4 not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#16932",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "required model devstral not installed; only llama3.2:3b present"
+    },
+    {
+      "id": "ollama/ollama#17429",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#17597",
+      "disposition": "MANIFESTED",
+      "note": null
+    },
+    {
+      "id": "ollama/ollama#18051",
+      "disposition": "NON_MANIFESTING",
+      "note": null
+    },
+    {
+      "id": "ggml-org/llama.cpp#20260",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "ggml-org/llama.cpp#24807",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "ggml-org/llama.cpp#24863",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "ggml-org/llama.cpp#25746",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "ggml-org/llama.cpp#26359",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "ggml-org/llama.cpp#27217",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "llama-server not running; 4GB VRAM laptop cannot host the reported models."
+    },
+    {
+      "id": "vllm-project/vllm#45167",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "vllm-project/vllm#47137",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "vllm-project/vllm#48294",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "vllm-project/vllm#43713",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "vllm-project/vllm#54808",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "vllm-project/vllm#55080",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "vLLM not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "sgl-project/sglang#31915",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "SGLang not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "sgl-project/sglang#32286",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "SGLang not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "sgl-project/sglang#37283",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "SGLang not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "sgl-project/sglang#37634",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "SGLang not installed/running; Docker/WSL unavailable."
+    },
+    {
+      "id": "sgl-project/sglang#37430",
+      "disposition": "ENVIRONMENT_NOT_EXECUTABLE",
+      "note": "SGLang not installed/running; Docker/WSL unavailable."
+    }
+  ]
+}

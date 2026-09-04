@@ -1,0 +1,23 @@
+{
+  "n": 3,
+  "http_status": 400,
+  "streaming": false,
+  "streaming_any": false,
+  "streaming_all_false": true,
+  "tool_choice": null,
+  "tool_choice_kind": null,
+  "tool_calls_present": false,
+  "tool_calls_present_count": 0,
+  "raw_tool_syntax_present": false,
+  "arguments_schema_valid": null,
+  "arguments_json_valid": true,
+  "arguments_valid": true,
+  "declared_schema_depth": 1,
+  "nested_structure_valid": true,
+  "missing_required_fields_any": false,
+  "constraint_none_violated": false,
+  "constraint_forced_violated": false,
+  "timeout": false,
+  "protocol_error": false,
+  "finish_reason": null
+}

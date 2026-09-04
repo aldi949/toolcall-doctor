@@ -1,0 +1,17 @@
+{
+  "locked_utc": "2026-09-03T18:19:00Z",
+  "source": "https://github.com/ollama/ollama/issues/17597",
+  "issue_id": 17597,
+  "title": "Tool-parameter `enum` reaches the model but is not enforced during decoding (unlike `response_format`)",
+  "documented_runtime": "ollama (OpenAI-compatible /v1)",
+  "runtime_used": "ollama 0.4.6",
+  "documented_model": "qwen2.5:7b-instruct",
+  "model_used": "llama3.2:3b",
+  "classification": "RELATED",
+  "http_class": "200",
+  "documented_symptom": "HTTP 200 structured tool_calls whose arguments violate a declared parameter enum (model asked for ACC-999-XYZ while enum is ONLY-VALID-ACCOUNT).",
+  "expected_behavioral_invariant": "When tools[].function.parameters.properties.X.enum is declared, tool call arguments must be JSON-schema-valid for that enum.",
+  "why_executable": "llama3.2:3b produces structured tool_calls on this host. Screen 3/3 enum violations. 7B documented model is not practical on 4GB VRAM.",
+  "screen": "MANIFESTED_STABLE 3/3",
+  "skipped_flaky_14181": "2/10 after N=10; too stochastic to lock"
+}

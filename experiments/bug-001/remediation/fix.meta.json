@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T08:38:40.397424+00:00",
+  "ended_utc": "2026-09-03T08:38:48.578215+00:00",
+  "elapsed_ms": 8180,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 953,
+  "stream": true,
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "request_json": "experiments\\bug-001\\requests\\broken.json"
+}

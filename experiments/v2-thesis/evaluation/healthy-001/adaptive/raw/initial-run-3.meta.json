@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T10:40:58.921616+00:00",
+  "ended_utc": "2026-09-03T10:40:59.726383+00:00",
+  "elapsed_ms": 803,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 373,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/api/chat",
+  "request_json": "<REPO_ROOT>\\experiments\\v2-thesis\\evaluation\\healthy-001\\adaptive\\requests\\initial-run-3.json"
+}

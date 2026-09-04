@@ -1,0 +1,1083 @@
+{
+  "original": {
+    "n": 20,
+    "k_events": 20,
+    "rows": [
+      {
+        "i": 1,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1325,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 2,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1179,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 3,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1055,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 4,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1253,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 5,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1136,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 6,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1229,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 7,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1345,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 8,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1046,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 9,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1230,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 10,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1129,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 11,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1149,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 12,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1023,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 13,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1095,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 14,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1152,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 15,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1034,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 16,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1070,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 17,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1042,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 18,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1062,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 19,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1080,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 20,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1073,
+        "request_sha256": "0a73df87da8c3f4dc83949bd5804d2c3858cd73544916e622982a7c6fa7d06ca",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      }
+    ]
+  },
+  "minimized": {
+    "n": 20,
+    "k_events": 20,
+    "rows": [
+      {
+        "i": 1,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 971,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 2,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 948,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 3,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 999,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 4,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 995,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 5,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 934,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 6,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 924,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 7,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1010,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 8,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 940,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 9,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 952,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 10,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1261,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 11,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1281,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 12,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1261,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 13,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1302,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 14,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1198,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 15,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1214,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 16,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1402,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 17,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1241,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 18,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1083,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 19,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 1001,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      },
+      {
+        "i": 20,
+        "http_status": 200,
+        "arguments": {
+          "list": "[\"light.buro_deckenlampe_2\"]"
+        },
+        "oracle": "FAIL",
+        "event": true,
+        "elapsed_ms": 993,
+        "request_sha256": "5197fcf463b9d75fc29635b727ea1ce0fa5795ac7ab56ac4a9d533009be4eb96",
+        "detail": {
+          "execution": {
+            "ok": true,
+            "failed": []
+          },
+          "semantic": {
+            "ok": true,
+            "failed_invariants": [],
+            "request_ok": true
+          }
+        }
+      }
+    ],
+    "pass": true,
+    "need": 18
+  },
+  "control": {
+    "n": 20,
+    "k_ok": 20,
+    "rows": [
+      {
+        "i": 1,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 2,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 3,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 4,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 5,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 6,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 7,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 8,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 9,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 10,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 11,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 12,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 13,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 14,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 15,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 16,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 17,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 18,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 19,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      },
+      {
+        "i": 20,
+        "ok": true,
+        "tool_name": "execute_service",
+        "arguments": {
+          "entity_id": "light.buro_deckenlampe_2",
+          "service": "turn_off"
+        }
+      }
+    ]
+  },
+  "minimized_pass": true
+}

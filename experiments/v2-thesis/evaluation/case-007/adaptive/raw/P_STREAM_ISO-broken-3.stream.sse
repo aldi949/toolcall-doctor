@@ -1,0 +1,2 @@
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:39:14.1388867Z","message":{"role":"assistant","content":"","tool_calls":[{"function":{"name":"set_account","arguments":{"account":"ACC-999-XYZ"}}}]},"done":false}
+{"model":"llama3.2:3b","created_at":"2026-09-03T10:39:14.1636885Z","message":{"role":"assistant","content":""},"done_reason":"stop","done":true,"total_duration":568351100,"load_duration":30681400,"prompt_eval_count":177,"prompt_eval_duration":6000000,"eval_count":21,"eval_duration":529000000}

@@ -1,0 +1,14 @@
+{
+  "oracle": "FAIL",
+  "failure_identity": "HTTP_200_TOOL_ARGS_LIST_STRINGIFIED",
+  "http_status": 200,
+  "tool_call_present": true,
+  "tool_name": "execute_service",
+  "arguments": {
+    "list": "[\"turn_off\", \"light.buro_deckenlampe_2\"]"
+  },
+  "list_is_str": true,
+  "declared_tool_names": [
+    "execute_service"
+  ]
+}

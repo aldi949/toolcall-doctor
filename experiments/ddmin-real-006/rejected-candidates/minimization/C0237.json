@@ -1,0 +1,8 @@
+{
+  "candidate_id": "C0237",
+  "arm": "minimization",
+  "reason": "rejected: k=0/1 early=non_event_at_1 exec={'ok': True, 'failed': []}",
+  "k_events": 0,
+  "n_posted": 1,
+  "early_stop": "non_event_at_1"
+}

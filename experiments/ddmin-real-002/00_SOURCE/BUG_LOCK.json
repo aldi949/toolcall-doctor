@@ -1,0 +1,16 @@
+{
+  "locked_utc": "2026-09-03T13:50:00Z",
+  "source": "https://github.com/ollama/ollama/issues/11805",
+  "issue_id": 11805,
+  "title": "Tool call arguments structure inconsistent — extra nesting added in certain cases",
+  "documented_runtime": "ollama (version unspecified in issue)",
+  "runtime_used": "ollama 0.4.6",
+  "documented_model": "qwen2.5:14b",
+  "model_used": "llama3.2:3b",
+  "classification_if_manifests": "RELATED",
+  "documented_symptom": "HTTP 200 tool_calls with arguments wrapped as {arguments:{...}, name:ToolName} when a parameter is named name; working case uses parameter city and returns {city:...}",
+  "expected_behavioral_invariant": "tool_calls[].function.arguments JSON object equals only the declared parameters object — no extra top-level arguments or tool-name wrapper",
+  "why_executable": "Local Ollama /v1/chat/completions is up; llama3.2:3b is the only installed model and already produces structured tool_calls on this host. Issue contrast is schema/prompt shape (ExtractName vs ExtractCity), not a GPU-only feature.",
+  "http_class": "200",
+  "minimizer_must_not_read": ["known fix", "PR identity", "this lock after freeze"]
+}

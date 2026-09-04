@@ -1,0 +1,43 @@
+{
+  "issue": 13750,
+  "status": "NON_MANIFESTING",
+  "hits": "0/3",
+  "rows": [
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"city\":\"Paris\"}",
+      "arguments_parsed": {
+        "city": "Paris"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:04Z"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"city\":\"Paris\"}",
+      "arguments_parsed": {
+        "city": "Paris"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:05Z"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "arguments_raw": "{\"city\":\"Paris\"}",
+      "arguments_parsed": {
+        "city": "Paris"
+      },
+      "content": "",
+      "finish_reason": "tool_calls",
+      "error_message": null,
+      "utc": "2026-09-03T18:16:06Z"
+    }
+  ]
+}

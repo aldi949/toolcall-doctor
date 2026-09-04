@@ -1,0 +1,89 @@
+{
+  "broken_hits": "2/10",
+  "control_ok": "3/3",
+  "broken": [
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": false,
+      "identity_hit": false,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": false,
+      "identity_hit": true,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": false,
+      "identity_hit": true,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "control": [
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "control_ok": true,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "control_ok": true,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "http_status": 200,
+      "tool_call_present": true,
+      "identity_hit": false,
+      "control_ok": true,
+      "finish_reason": "tool_calls"
+    }
+  ]
+}

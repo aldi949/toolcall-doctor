@@ -1,0 +1,30 @@
+{
+  "outcome": "FAIL",
+  "control_unstable": false,
+  "broken_unstable": false,
+  "control": {
+    "n": 3,
+    "http_2xx": 3,
+    "http_err": 0,
+    "tool_calls": 3,
+    "schema_valid": 3,
+    "schema_invalid": 0,
+    "timeout": 0,
+    "malformed_args": 0,
+    "raw_tool_syntax": 0
+  },
+  "broken": {
+    "n": 3,
+    "http_2xx": 3,
+    "http_err": 0,
+    "tool_calls": 0,
+    "schema_valid": 0,
+    "schema_invalid": 0,
+    "timeout": 0,
+    "malformed_args": 0,
+    "raw_tool_syntax": 0
+  },
+  "CONTROL_UNSTABLE": false,
+  "BROKEN_CONSISTENT_FAILURE": true,
+  "probe": "P_STREAM_ISO"
+}

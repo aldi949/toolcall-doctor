@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#7881",
+  "screen": "compat_missing_index",
+  "utc": "2026-09-03T10:37:29Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 877,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-497\",\"object\":\"chat.completion\",\"created\":1788431849,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_iyhsedqr\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":161,\"completion_tokens\":17,\"total_tokens\":178}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 788,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-343\",\"object\":\"chat.completion\",\"created\":1788431850,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_250vbb7y\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":161,\"completion_tokens\":17,\"total_tokens\":178}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 835,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-356\",\"object\":\"chat.completion\",\"created\":1788431851,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_oq05h31o\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":161,\"completion_tokens\":17,\"total_tokens\":178}}\n"
+    }
+  ],
+  "disposition": "MANIFESTED"
+}

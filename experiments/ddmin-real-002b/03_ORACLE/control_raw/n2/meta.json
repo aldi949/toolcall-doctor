@@ -1,0 +1,12 @@
+{
+  "http_status": 200,
+  "tool_call_present": true,
+  "arguments_raw": "{\"account\":\"ONLY-VALID-ACCOUNT\"}",
+  "arguments_parsed": {
+    "account": "ONLY-VALID-ACCOUNT"
+  },
+  "content": "",
+  "finish_reason": "tool_calls",
+  "error_message": null,
+  "utc": "2026-09-03T18:19:56Z"
+}

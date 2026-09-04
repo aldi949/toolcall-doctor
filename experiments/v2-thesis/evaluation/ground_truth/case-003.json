@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#7572",
+  "USEFUL_FAILURE_FAMILY": "PROTOCOL_OR_ADAPTER_FAILURE",
+  "quality": "GT-D",
+  "note": "OpenAI API tool calling reported broken; treat as adapter if native works and compat does not.",
+  "revealed_utc": "2026-09-03T10:37:06Z"
+}

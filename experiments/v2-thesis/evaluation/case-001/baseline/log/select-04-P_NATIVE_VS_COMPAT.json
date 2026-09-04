@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-03T10:35:57Z",
+  "mode": "baseline",
+  "probe": "P_NATIVE_VS_COMPAT",
+  "reason": "fixed baseline order selected P_NATIVE_VS_COMPAT",
+  "remaining_before": [
+    "H_GRAMMAR"
+  ],
+  "request_count_before": 21,
+  "choice": {
+    "probe": "P_NATIVE_VS_COMPAT",
+    "reason": "fixed baseline order selected P_NATIVE_VS_COMPAT"
+  }
+}

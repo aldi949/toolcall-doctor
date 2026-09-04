@@ -1,0 +1,28 @@
+{
+  "model": "llama3.2:3b",
+  "stream": true,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Call get_time now using the tool."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_time",
+        "description": "Get the current time",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "tz": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      }
+    }
+  ]
+}

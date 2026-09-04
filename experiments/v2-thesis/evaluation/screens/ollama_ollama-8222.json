@@ -1,0 +1,27 @@
+{
+  "id": "ollama/ollama#8222",
+  "screen": "http_error_or_strip",
+  "utc": "2026-09-03T10:37:52Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 828,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-686\",\"object\":\"chat.completion\",\"created\":1788431873,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_tyhlsjqr\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"account\\\":\\\"ACC-1\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":151,\"completion_tokens\":18,\"total_tokens\":169}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 868,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-403\",\"object\":\"chat.completion\",\"created\":1788431874,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_e2at8ju5\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"account\\\":\\\"ACC-1\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":151,\"completion_tokens\":14,\"total_tokens\":165}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 1094,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-823\",\"object\":\"chat.completion\",\"created\":1788431875,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"name\\\":\\\"lookup\\\",\\\"parameters {\\\"account\\\": \\\"ACC-1\\\"}}\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":151,\"completion_tokens\":15,\"total_tokens\":166}}\n"
+    }
+  ],
+  "disposition": "NON_MANIFESTING",
+  "note": "HTTP accepted $ref/$defs; rendered prompt not exposed on this pin."
+}

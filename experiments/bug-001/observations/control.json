@@ -1,0 +1,22 @@
+{
+  "stem": "control",
+  "http_status": 200,
+  "streaming": false,
+  "tool_choice": null,
+  "tools_in_request": true,
+  "tool_calls_present": true,
+  "raw_tool_syntax_present": false,
+  "arguments_valid": true,
+  "finish_reason": "tool_calls",
+  "finish_reasons_all": [
+    "tool_calls"
+  ],
+  "chunk_count": 1,
+  "stream_terminated": null,
+  "timeout": false,
+  "protocol_error": false,
+  "latency_ms": 6267,
+  "content_preview": "",
+  "error": null,
+  "content_type": "application/json"
+}

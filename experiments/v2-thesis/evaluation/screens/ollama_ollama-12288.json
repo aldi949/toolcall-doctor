@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#12288",
+  "screen": "http_error",
+  "utc": "2026-09-03T10:38:10Z",
+  "runs": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 809,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-109\",\"object\":\"chat.completion\",\"created\":1788431891,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_8rmwpc93\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\\\"\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":147,\"completion_tokens\":15,\"total_tokens\":162}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 787,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-432\",\"object\":\"chat.completion\",\"created\":1788431891,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_wyz1pu50\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\\\"\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":147,\"completion_tokens\":15,\"total_tokens\":162}}\n"
+    },
+    {
+      "http_status": 200,
+      "elapsed_ms": 783,
+      "error": null,
+      "text": "{\"id\":\"chatcmpl-349\",\"object\":\"chat.completion\",\"created\":1788431892,\"model\":\"llama3.2:3b\",\"system_fingerprint\":\"fp_ollama\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_bdd5jatg\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{\\\"q\\\":\\\"Hello\\\"}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":147,\"completion_tokens\":12,\"total_tokens\":159}}\n"
+    }
+  ],
+  "disposition": "NON_MANIFESTING"
+}

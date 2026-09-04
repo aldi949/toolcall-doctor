@@ -1,0 +1,32 @@
+{
+  "declared_schema_count": 1,
+  "declared_schema_depth": 2,
+  "returned_argument_depth": 1,
+  "tool_calls_found": true,
+  "arguments_schema_valid": false,
+  "missing_required_fields": [
+    "button_press.number_one",
+    "button_press.number_two"
+  ],
+  "unexpected_fields_when_additional_false": [],
+  "nested_structure_valid": false,
+  "per_call": [
+    {
+      "name": "press_button",
+      "arguments_json_valid": true,
+      "arguments_schema_valid": false,
+      "schema_errors": [
+        "'2' is not of type 'object'"
+      ],
+      "missing_required_fields": [
+        "button_press.number_one",
+        "button_press.number_two"
+      ],
+      "unexpected_fields_when_additional_false": [],
+      "returned_argument_depth": 1,
+      "tool_name_declared": true
+    }
+  ],
+  "request_path": "requests\\broken.json",
+  "body_path": "raw\\broken-run-2.body.json"
+}

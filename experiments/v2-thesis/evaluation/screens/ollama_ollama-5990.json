@@ -1,0 +1,26 @@
+{
+  "id": "ollama/ollama#5990",
+  "screen": "http_error",
+  "utc": "2026-09-03T10:35:49Z",
+  "runs": [
+    {
+      "http_status": 400,
+      "elapsed_ms": 335,
+      "error": null,
+      "text": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "http_status": 400,
+      "elapsed_ms": 238,
+      "error": null,
+      "text": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "http_status": 400,
+      "elapsed_ms": 228,
+      "error": null,
+      "text": "{\"error\":{\"message\":\"json: cannot unmarshal array into Go struct field .tools.function.parameters.properties.type of type string\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    }
+  ],
+  "disposition": "MANIFESTED"
+}

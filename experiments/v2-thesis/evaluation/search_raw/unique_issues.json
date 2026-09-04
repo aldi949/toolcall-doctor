@@ -1,0 +1,1877 @@
+[
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 20260,
+    "title": "Eval bug: unsloth/Qwen3.5-35B-A3B-GGUF `peg-native` chat format parser fails when model outputs text before `<tool_call>` (thinking model + tool calling)",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/20260",
+    "updated": "2026-08-28T03:34:05Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 20702,
+    "title": "Compile bug: c++: error: unrecognized command-line option \u2018-fsycl\u2019",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/20702",
+    "updated": "2026-08-20T02:06:57Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 20733,
+    "title": "Eval bug: Unable to generate parser for this template, System message must be at the beginnin",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/20733",
+    "updated": "2026-08-25T07:49:41Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 21365,
+    "title": "Eval bug: gemma4 infinite output",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/21365",
+    "updated": "2026-08-25T07:49:42Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 24888,
+    "title": "Eval bug: Malformed tokenizer metadata can cause ASan heap-buffer-overflow reads in vocab load",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/24888",
+    "updated": "2026-08-31T01:16:04Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 24932,
+    "title": "Misc. bug: Agent mode, shelling command executing can fail caused by whitespace in path",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/24932",
+    "updated": "2026-08-25T01:07:33Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25285,
+    "title": "Eval bug: failed to tokenize error if contents of /props appears in prompt.",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25285",
+    "updated": "2026-08-17T01:07:23Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25292,
+    "title": "Eval bug: VibeThinker 3B showing think tags",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25292",
+    "updated": "2026-08-21T02:13:16Z",
+    "labels": [
+      "bug-unconfirmed",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25321,
+    "title": "gpt-oss/harmony: non-streaming final without channel markup hard-throws 500 (\"does not match the expected peg-native format\") \u2014 lenient fallback unreachable",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25321",
+    "updated": "2026-08-21T02:13:14Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25618,
+    "title": "Eval bug: Speculative decoding (draft-mtp / draft-dspark): greedy output diverges from vanilla on quantized targets",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25618",
+    "updated": "2026-08-26T11:57:33Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25746,
+    "title": "Misc. bug: json-schema-to-grammar \u2014 nested string maxLength >= 2000 emits un-parseable GBNF (tool-call grammar, b10034)",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25746",
+    "updated": "2026-09-02T01:11:32Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 25986,
+    "title": "Eval bug: gemma4 peg template intermittently unparseable with long multi-line tool-call string arguments",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/25986",
+    "updated": "2026-08-22T01:13:03Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26043,
+    "title": "Server always reports `chat format: peg-native` at runtime",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26043",
+    "updated": "2026-08-23T01:07:08Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26273,
+    "title": "Feature Request: Add a CLI flag to escape special tokens in user input and tool responses",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26273",
+    "updated": "2026-08-29T01:00:25Z",
+    "labels": [
+      "enhancement",
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26359,
+    "title": "Misc. bug: llama-server returns a tool-call id that its own chat template then rejects (Ministral-8B, --jinja)",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26359",
+    "updated": "2026-08-31T01:15:02Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26530,
+    "title": "Qwen3-Coder template: model fails to trigger XML tool calls with large prompts \u2014 request JSON format option",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26530",
+    "updated": "2026-09-03T01:11:58Z",
+    "labels": [
+      "stale"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26974,
+    "title": "Misc. bug: chat-template rendering is O(N\u00b2) in emitted parts (gather_string_parts)",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26974",
+    "updated": "2026-08-14T21:34:42Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 26987,
+    "title": "Qwen3-Coder parser: lazy tool-call trigger never fires when model skips both <tool_call> and <function=",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/26987",
+    "updated": "2026-08-17T03:10:39Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27107,
+    "title": "Misc. bug: Claude Code does not work with Qwen3.8 27B out of the box with llama-cpp server",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27107",
+    "updated": "2026-08-17T22:14:54Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27217,
+    "title": "server: tool_choice: \"required\" accepted but not enforced on templates with supports_preserve_reasoning=true",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27217",
+    "updated": "2026-08-31T07:13:40Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27279,
+    "title": "server: `response_format.json_schema` under `peg-native` \u2014 generation stops mid-object, then `common_chat_peg_parse` throws 500",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27279",
+    "updated": "2026-08-18T04:39:40Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27363,
+    "title": "Eval bug: common_chat_parse silently drops Qwen3-Coder tool calls",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27363",
+    "updated": "2026-08-19T15:09:46Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27462,
+    "title": "Eval bug: Bailing V3 (Ling 3.0) autoparser lacks a <tool_call> reasoning terminator but emits these often mid-reasoning",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27462",
+    "updated": "2026-08-23T11:20:11Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27613,
+    "title": "server: generation terminates mid-tag (finish=stop) when reasoning stream contains DSML closing fragments \u2014 DeepSeek-V4-Flash, peg-native, long context",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27613",
+    "updated": "2026-08-23T16:13:05Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27675,
+    "title": "Misc. bug: Slow decode speed with large tool sets",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27675",
+    "updated": "2026-08-25T14:33:02Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27720,
+    "title": "Eval bug: gpt-oss-20b malformed Harmony channel header (`<|channel|>` + free text / `??` / `commentary?`) fails the final PEG parse and errors the whole turn (~4% of turns at temp 1.0)",
+    "state": "closed",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27720",
+    "updated": "2026-08-26T19:33:07Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27767,
+    "title": "Eval bug: named/required tool_choice not enforced for Qwen3.6 templates when enable_thinking=false",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27767",
+    "updated": "2026-08-26T21:16:03Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27772,
+    "title": "`common_peg_until_parser` returns SUCCESS instead of FAIL when its delimiter never appears in a final (non-lenient) parse",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27772",
+    "updated": "2026-08-27T18:06:00Z",
+    "labels": []
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 27859,
+    "title": "Eval bug: grammar parse fail on array length test on exactly 2000 chars",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/27859",
+    "updated": "2026-08-31T10:05:52Z",
+    "labels": [
+      "bug-unconfirmed"
+    ]
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "number": 28132,
+    "title": "[Bug] DeepSeek-V4-Flash on sm_121 (GB10): deterministic character-level output corruption \u2014 quant/build-independent",
+    "state": "open",
+    "html_url": "https://github.com/ggml-org/llama.cpp/issues/28132",
+    "updated": "2026-09-02T23:35:26Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 2572,
+    "title": "PrivateGPT example is broken for me",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/2572",
+    "updated": "2026-03-07T14:45:45Z",
+    "labels": [
+      "question"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 3165,
+    "title": "Support \"tool\" role in messages",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/3165",
+    "updated": "2025-06-22T17:41:38Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 4386,
+    "title": "Support tools in OpenAI-compatible API",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/4386",
+    "updated": "2025-06-28T01:08:38Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 5796,
+    "title": "Streaming for tool calls is unsupported",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/5796",
+    "updated": "2025-03-03T19:44:11Z",
+    "labels": [
+      "bug",
+      "api"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 5990,
+    "title": "Tools and properties.type Not Supporting Arrays",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/5990",
+    "updated": "2025-04-07T22:42:42Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 6127,
+    "title": "llama3.1 always uses tool",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/6127",
+    "updated": "2025-07-06T14:08:02Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 6155,
+    "title": "Support Nested Parameters for Tools",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/6155",
+    "updated": "2025-12-17T19:56:39Z",
+    "labels": [
+      "feature request",
+      "api"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 6704,
+    "title": "ollama model not support tool calling",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/6704",
+    "updated": "2025-11-17T06:37:59Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 6713,
+    "title": "Talking to  Mistral-Nemo via OpenAI tool calling - fails",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/6713",
+    "updated": "2025-01-16T14:54:23Z",
+    "labels": [
+      "bug",
+      "needs more info"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 6980,
+    "title": "Tools support is not working right",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/6980",
+    "updated": "2025-02-07T08:44:51Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 7051,
+    "title": "Tool call support in Qwen 2.5 hallucinates with Maybe pattern",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/7051",
+    "updated": "2025-05-07T21:44:41Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 7572,
+    "title": "OpenAI API tool calling doesn't work",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/7572",
+    "updated": "2024-11-08T23:01:26Z",
+    "labels": [
+      "bug",
+      "api"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 7778,
+    "title": "tool_choice parameter",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/7778",
+    "updated": "2025-04-13T14:39:57Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 7865,
+    "title": "Model Context Protocol (MCP) support",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/7865",
+    "updated": "2026-08-08T13:53:16Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 7881,
+    "title": "OpenAI-compatible API tool calls have no index",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/7881",
+    "updated": "2024-12-02T03:50:48Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 8337,
+    "title": "Cannot get a tool call and a message in the same response",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/8337",
+    "updated": "2025-05-15T02:42:03Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 8421,
+    "title": "`tool_choice` argument is being ignored",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/8421",
+    "updated": "2026-07-05T19:10:36Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 8517,
+    "title": "Missing tool support for DeepSeek-R1 Distillates based on Qwen",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/8517",
+    "updated": "2026-03-30T18:57:12Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 8588,
+    "title": "Qwen not recognizing function / tools",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/8588",
+    "updated": "2026-07-20T10:19:35Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9437,
+    "title": "Tool calls not returning properly with phi4-mini:3.8b",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/9437",
+    "updated": "2026-04-20T10:54:33Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9632,
+    "title": "Ollama not streaming tool calling responses",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/9632",
+    "updated": "2025-05-27T01:55:35Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9680,
+    "title": "gemma3 lack function calling tag",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/9680",
+    "updated": "2025-06-04T00:19:56Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9802,
+    "title": "Messages[].ToolCalls not passed correctly to the template",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/9802",
+    "updated": "2025-09-18T10:01:39Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9941,
+    "title": "Support for Tools in OpenAI calls for Gemma3",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/9941",
+    "updated": "2025-09-09T10:26:18Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 9961,
+    "title": "How can i send api-key via the OpenAI sdk",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/9961",
+    "updated": "2025-03-24T17:01:21Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 10976,
+    "title": "Thinking + tools + qwen3 = empty output",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/10976",
+    "updated": "2026-06-16T05:26:03Z",
+    "labels": [
+      "bug",
+      "tools",
+      "thinking"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 11407,
+    "title": "Streaming (sometimes?) breaks tool calling",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/11407",
+    "updated": "2025-07-23T18:43:15Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 11633,
+    "title": "Are tool calls guaranteed to be streamed in a single chunk?",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/11633",
+    "updated": "2025-08-04T21:38:46Z",
+    "labels": [
+      "question"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 11704,
+    "title": "GPT-OSS 120B has malformed tool calls and I'm not sure if it is on the Ollama side or the gpt-oss side",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/11704",
+    "updated": "2025-08-12T19:04:44Z",
+    "labels": [
+      "bug",
+      "tools",
+      "harmony"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 11805,
+    "title": "Tool call arguments structure inconsistent \u2014 extra nesting added in certain cases",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/11805",
+    "updated": "2025-10-10T10:28:46Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12074,
+    "title": "Seed-OSS-36B-Instruct-GGUF:Q4_K_M",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/12074",
+    "updated": "2026-07-03T15:38:22Z",
+    "labels": [
+      "model"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12158,
+    "title": "Response message after a tool_call with OpenAI chat completions and gpt-oss missing \"reasoning\"",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12158",
+    "updated": "2025-09-06T13:28:10Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12159,
+    "title": "gpt-oss models don't support parallel tool calling",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/12159",
+    "updated": "2025-09-02T22:57:14Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12174,
+    "title": "tool_calls missing from qwen2.5-coder v0.11.7 (also v0.11.8)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12174",
+    "updated": "2026-04-15T17:09:42Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12187,
+    "title": "GPT-OSS not completing tool calls",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12187",
+    "updated": "2026-02-26T17:22:54Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12203,
+    "title": "gpt-oss:120b - thinking being returned in tool calls",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12203",
+    "updated": "2026-07-28T04:37:44Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12362,
+    "title": "JSON reply schema is ignored by Cloud model",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12362",
+    "updated": "2026-07-19T15:33:46Z",
+    "labels": [
+      "bug",
+      "cloud"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12557,
+    "title": "Ollama Tool Calling + Streaming Issue",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/12557",
+    "updated": "2025-10-18T00:48:08Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12776,
+    "title": "Tool calls not working with huihui_ai/kimi-k2:1026b",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/12776",
+    "updated": "2025-10-25T18:15:13Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 12884,
+    "title": "error parsing tool call ... raw=... err=invalid character ... after top-level value after request to gpt-oss via api/chat",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/12884",
+    "updated": "2026-07-24T09:31:48Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 14493,
+    "title": "Qwen 3.5 27B: Tool calling completely non-functional and repetition penalties silently ignored",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/14493",
+    "updated": "2026-09-01T07:46:14Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 14958,
+    "title": "Tool calls silently drop with large system prompts (~1600+ tokens)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/14958",
+    "updated": "2026-03-19T22:14:25Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 14967,
+    "title": "Warn on tool name mismatch when tool_choice: \"required\" &/ support case-insensitive tool name matching",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/14967",
+    "updated": "2026-03-30T17:19:17Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15109,
+    "title": "Gemini 3 tool continuation via /api/chat and /v1/chat/completions is missing thought_signature",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15109",
+    "updated": "2026-03-27T23:19:15Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15183,
+    "title": "Add Clarvia AEO score badge \u2014 agent compatibility score for Ollama",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15183",
+    "updated": "2026-04-12T21:53:23Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15315,
+    "title": "gemma4:e4b with ollama 0.20.1 still has tool parsing errors",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15315",
+    "updated": "2026-08-01T18:09:26Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15390,
+    "title": "Claude Code & Ollama Integration - Invalid tool parameters & CPU Fallback",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15390",
+    "updated": "2026-07-05T18:55:45Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15428,
+    "title": "gemma4:26b (MoE) returns completely empty response (no content, no reasoning) and stops early on long system prompts",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15428",
+    "updated": "2026-05-21T10:36:39Z",
+    "labels": [
+      "needs more info"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15457,
+    "title": "OpenAI-compatible streaming: tool_calls index is always 0 for multiple tool calls",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15457",
+    "updated": "2026-04-10T22:23:22Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15497,
+    "title": "OpenAI-compatible streaming: Function.Index still 0 for models without a registered parser (follow-up to #15457 / #15467)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15497",
+    "updated": "2026-04-19T00:16:53Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15539,
+    "title": "[Bug] gemma4 parser fails to extract tool_calls when combining system prompt + think:false + tools",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15539",
+    "updated": "2026-04-14T00:43:21Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15576,
+    "title": "gemma4:26b / 31b issues with structured output",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15576",
+    "updated": "2026-07-06T15:28:10Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15645,
+    "title": "v1/messages :cloud \u2014 Kimi K2.5 native tokens leak, nested objects stringified on Qwen/GLM",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15645",
+    "updated": "2026-04-18T18:13:42Z",
+    "labels": [
+      "cloud"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15663,
+    "title": "Feature Request: Expose account quota/usage details via Ollama Cloud API (headers and/or response body)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15663",
+    "updated": "2026-05-23T01:06:52Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15798,
+    "title": "gemma4-64k chat-template special tokens (<|tool_call|>, <|\"|>, <|channel|>) leak into OpenAI-compat tool-calling output",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15798",
+    "updated": "2026-04-30T08:28:00Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15910,
+    "title": "Intermittent connection reset on :cloud model proxy after upgrading 0.20.2 \u2192 0.22.0 (no GIN log entry)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/15910",
+    "updated": "2026-08-16T15:33:39Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 15923,
+    "title": "[0.20.5][macOS Apple Silicon] Runner crashes under sustained multi-turn tool-calling on /v1/chat/completions (72% crash rate across 7 models)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/15923",
+    "updated": "2026-06-07T23:09:44Z",
+    "labels": [
+      "bug",
+      "needs more info"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16066,
+    "title": "Cloud models: tool_call.function.arguments truncated or 502 Bad Gateway when outputting large content",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/16066",
+    "updated": "2026-05-09T22:51:20Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16212,
+    "title": "qwen3-coder streaming: multiple tool_calls all emitted with index=0; finish_reason=stop",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/16212",
+    "updated": "2026-05-18T19:12:50Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16279,
+    "title": "Tool calling is not streaming on macOS with MLX, causing timeout when write tool outputs large code",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/16279",
+    "updated": "2026-08-21T03:22:54Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16375,
+    "title": "DSML insert to tool_call",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/16375",
+    "updated": "2026-08-19T02:47:15Z",
+    "labels": [
+      "bug",
+      "cloud"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16563,
+    "title": "Structured outputs appear to be ignored for MLX models",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/16563",
+    "updated": "2026-08-26T00:14:24Z",
+    "labels": [
+      "bug",
+      "mlx"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16618,
+    "title": "API Error: Claude's response exceeded the 32000 output token maximum.",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/16618",
+    "updated": "2026-06-26T03:31:24Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16777,
+    "title": "MLX runner: tool calling produces degenerate output / no tool_calls (regression in 0.30.9)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/16777",
+    "updated": "2026-06-17T22:41:31Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16793,
+    "title": "Image recognition of Model Gemma4-E4B does not work in Ollama (Version 0.30.9 and later)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/16793",
+    "updated": "2026-06-18T06:24:34Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 16932,
+    "title": "Tool call silently dropped (empty response) when a tool parameter is named `name` - Mistral-format models (devstral-small-2)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/16932",
+    "updated": "2026-06-26T21:51:58Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17097,
+    "title": "[Bug] GLM-5.2 Cloud returns empty responses (no content, no reasoning) on complex prompts \u2014 agent frameworks dead in the water",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17097",
+    "updated": "2026-07-09T15:50:14Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17274,
+    "title": "Tool-call output is silently discarded when the parse fails: empty content, no tool_calls, 40 completion tokens reported",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17274",
+    "updated": "2026-08-24T14:04:51Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17429,
+    "title": "/api/chat and /v1/chat/completions hang indefinitely when message history includes a role: \"tool\" message",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17429",
+    "updated": "2026-08-12T07:56:29Z",
+    "labels": [
+      "needs more info"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17444,
+    "title": "0.32.4 and 0.32.5 appear to break tool calling in VS Code GitHub Harness",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17444",
+    "updated": "2026-08-16T15:45:55Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17547,
+    "title": "Docs gap: no guide for creative content generation (game worlds, stories, interactive fiction)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17547",
+    "updated": "2026-08-04T01:26:33Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17597,
+    "title": "Tool-parameter `enum` reaches the model but is not enforced during decoding (unlike `response_format`)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17597",
+    "updated": "2026-08-08T11:24:02Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17602,
+    "title": "Laguna parser turns JSON in ordinary content into a tool call, aborting or corrupting the reply",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17602",
+    "updated": "2026-08-12T17:11:07Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17638,
+    "title": "gpt-oss: HTTP 500 \"error parsing tool call\" \u2014 ollama rejects a tool call its own model generated",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17638",
+    "updated": "2026-08-09T17:57:09Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17673,
+    "title": "custom tools (OpenAI Responses API compatibility)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17673",
+    "updated": "2026-08-11T13:45:15Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17684,
+    "title": "`muse-glimmer:30b-mlx` leaks harmony channel tokens and ignores `response_format`, GGUF build is fine",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17684",
+    "updated": "2026-08-14T05:49:17Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17778,
+    "title": "qwen 3.8 reports error during query: Error: ResponseError during chat streaming: no user query found in messages (status code: 500)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17778",
+    "updated": "2026-08-31T18:39:46Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17839,
+    "title": "Agent integrations hang indefinitely with local Qwen models on macOS, while Ollama API works correctly",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17839",
+    "updated": "2026-08-29T18:47:47Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17875,
+    "title": "MLX runner: KV-cache memory accumulates per-request on dense models (independent of context size/tools), not released short of restart",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17875",
+    "updated": "2026-08-29T18:46:04Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17921,
+    "title": "tool_choice still ignored in v0.32.15: forced returns plain text, \"none\" still calls tools (OpenAI and Anthropic compat)",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17921",
+    "updated": "2026-08-22T00:04:00Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17933,
+    "title": "Structured outputs silently ignored on MLX backend (format and response_format both no-op; invalid response_format returns 200)",
+    "state": "closed",
+    "html_url": "https://github.com/ollama/ollama/issues/17933",
+    "updated": "2026-08-22T08:47:00Z",
+    "labels": []
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 17957,
+    "title": "ornith-1.5:35b fails when a response format is specified and tools are provided",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/17957",
+    "updated": "2026-08-24T02:13:28Z",
+    "labels": [
+      "bug"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 18051,
+    "title": "json: cannot unmarshal object into Go struct field ToolProperty.required of type []string when `required` is an object",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/18051",
+    "updated": "2026-08-30T08:03:02Z",
+    "labels": [
+      "cloud"
+    ]
+  },
+  {
+    "repo": "ollama/ollama",
+    "number": 18069,
+    "title": "glm-5.3-flash:cloud \u2014 thinking trace degenerates into infinite single-token repetition (\"lock\"), never terminates",
+    "state": "open",
+    "html_url": "https://github.com/ollama/ollama/issues/18069",
+    "updated": "2026-08-28T00:09:19Z",
+    "labels": [
+      "cloud"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 17050,
+    "title": "[Tracking] CI Test Failures and Fixes",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/17050",
+    "updated": "2026-09-03T09:28:38Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 20865,
+    "title": "[Feature] Improve Unit Test Coverage",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/20865",
+    "updated": "2026-09-03T07:35:40Z",
+    "labels": [
+      "enhancement",
+      "good first issue",
+      "ci"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 23020,
+    "title": "[Bug] PD Disaggregation: Gradual KV cache corruption causes model output to degenerate into gibberish after ~100 requests",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/23020",
+    "updated": "2026-09-02T11:47:49Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 29157,
+    "title": "[Bug] CUDA graph causes garbled outputs with concurrent multi-LoRA decoding on GLM-5.1-FP8",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/29157",
+    "updated": "2026-09-01T00:34:28Z",
+    "labels": [
+      "inactive"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 29512,
+    "title": "[Bug] glm-5.2-w4afp8 with sglang 0.5.13.post1 llm repeat and repeat",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/29512",
+    "updated": "2026-09-01T00:34:34Z",
+    "labels": [
+      "inactive"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 29516,
+    "title": "[Bug] qwen3.6-35b-a3b-fp8 with sglang RuntimeError: The size of tensor a (96) must match the size of tensor b (90) at non-singleton dimension 1",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/29516",
+    "updated": "2026-08-31T00:31:45Z",
+    "labels": [
+      "inactive"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 29957,
+    "title": "[Bug] Deadlock in decode scheduler when running with --grpc-mode",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/29957",
+    "updated": "2026-09-02T00:29:07Z",
+    "labels": [
+      "inactive"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 30082,
+    "title": "[Bug] The performance of deepseekv4 failed to pass the test on the main branch",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/30082",
+    "updated": "2026-09-03T00:29:45Z",
+    "labels": [
+      "inactive"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 30314,
+    "title": "[Bug] Scheduler event loop blocks on Mamba eviction under large-context requests, causing server hang and process kill",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/30314",
+    "updated": "2026-08-31T18:04:16Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 30760,
+    "title": "[Bug] HiCache prefetch all_reduce deadlock with TP=4, no PP \u2014 mismatched call count in check_prefetch_progress",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/30760",
+    "updated": "2026-08-31T07:02:14Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 31261,
+    "title": "[Feature] Support Deterministic Inference for Qwen3_5ForConditionalGeneration",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/31261",
+    "updated": "2026-09-03T02:37:53Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 31915,
+    "title": "Tool-call parsers lose or corrupt data at streaming chunk boundaries (multiple detectors)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/31915",
+    "updated": "2026-09-02T17:26:06Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 32286,
+    "title": "[Bug] MiniMax-M3 tool-call parser: top-level `oneOf` parameters schema not resolved (numbers become strings, arrays leak raw tags)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/32286",
+    "updated": "2026-08-31T15:52:45Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 33397,
+    "title": "[Bug] DeepSeek-V4-Flash-0731 on 2\u00d7 H200: progressive output corruption under concurrency (dsv4 + DP attention)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/33397",
+    "updated": "2026-09-02T11:48:54Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 35433,
+    "title": "[Bug] DeepSeek-V4 returns an empty response when the final message has role=system",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/35433",
+    "updated": "2026-09-02T17:19:32Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 36018,
+    "title": "[Bug] Kimi-K3 crash in v0.5.18 release",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/36018",
+    "updated": "2026-09-02T03:15:38Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 36537,
+    "title": "[Bug] Qwen3.8-Flash-Next thinking + qwen3_coder tool parser loops on token ID 0",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/36537",
+    "updated": "2026-09-02T02:00:55Z",
+    "labels": [
+      "high priority"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37089,
+    "title": "[Bug] Qwen3.8-Flash-Next W4A16 on A100 TP4: Marlin MoE invalid thread config; Triton MoE then hits QSA FA-CuTe capture failure",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37089",
+    "updated": "2026-08-30T05:59:30Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37183,
+    "title": "AMD MI308X SGLang GLM-5.3-Flash ValueError: The checkpoint you are trying to load has model type `glm5_next` but Transformers does not recognize this architecture.",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37183",
+    "updated": "2026-08-31T08:33:47Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37187,
+    "title": "[Bug] GPT-OSS with DP attention enabled produces garbage output (GSM8K 0/128 vs 124/128)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37187",
+    "updated": "2026-08-31T03:45:58Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37268,
+    "title": "[Bug] Shared experts fusion 3072 vs 6144 and Marlin+DeepEP NotImplementedError on GLM-5.3-NVFP4 (H100, v0.5.18)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37268",
+    "updated": "2026-09-01T00:43:36Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37283,
+    "title": "[Bug] A non-object entry in a tool-call array discards the valid calls beside it",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37283",
+    "updated": "2026-08-31T18:48:44Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37393,
+    "title": "[Bug] Kimi-K3 chunked prefill submits different VocabParallelEmbedding ALLREDUCE sizes across TP ranks",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37393",
+    "updated": "2026-09-01T09:52:44Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37430,
+    "title": "[Bug] Kimi-K3 tool_choice=required requests hang until ReadTimeout in 2P2D TP8/DCP8 deployment",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37430",
+    "updated": "2026-09-02T02:39:56Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37526,
+    "title": "[CI] Test Escape Report: /rerun-test did not enforce registered test __main__ validation",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37526",
+    "updated": "2026-09-02T03:33:47Z",
+    "labels": [
+      "nvidia"
+    ]
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37608,
+    "title": "[Bug] --tool-call-parser auto selects glm45 instead of spark25 for Spark-X2.5",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37608",
+    "updated": "2026-09-03T04:12:17Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37633,
+    "title": "[Bug] QSA prefill kernel CUDA illegal memory access at ~22 concurrent requests on H20 TP8 (Qwen3.8-Flash-Next-FP8)",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37633",
+    "updated": "2026-09-02T18:36:40Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37634,
+    "title": "[Bug] 9 tool-call parsers drop arguments when one streaming increment has more than one complete call",
+    "state": "closed",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37634",
+    "updated": "2026-09-02T17:52:57Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37645,
+    "title": "[Bug] glm45 reasoning parser returns the whole answer as reasoning_content (content empty) when the model skips thinking and stops on EOS",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37645",
+    "updated": "2026-09-02T19:51:39Z",
+    "labels": []
+  },
+  {
+    "repo": "sgl-project/sglang",
+    "number": 37648,
+    "title": "[Bug][ROCm] GLM-5.3-MXFP4 TP8 + EAGLE GPU memory fault under high-concurrency long-context load",
+    "state": "open",
+    "html_url": "https://github.com/sgl-project/sglang/issues/37648",
+    "updated": "2026-09-02T20:05:20Z",
+    "labels": []
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 19001,
+    "title": "[Usage]: How to use DeepSeek-R1-0528-Qwen3-8B with function call",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/19001",
+    "updated": "2026-09-03T01:47:52Z",
+    "labels": [
+      "usage",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 32587,
+    "title": "[Bug]: gpt-oss special tokens leak into tool names and responses despite `reasoning_parser: \"openai_gptoss\"`",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/32587",
+    "updated": "2026-09-03T01:47:05Z",
+    "labels": [
+      "bug",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 36435,
+    "title": "[Bug]: Responses API streaming emits tool call XML as `response.output_text.delta` instead of `response.function_call_arguments.delta` for non-harmony models",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/36435",
+    "updated": "2026-09-02T01:49:39Z",
+    "labels": [
+      "bug",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 37030,
+    "title": "[Bug]: GPT-OSS-120B gpt-oss MXFP4 on SM121 (Blackwell DGX Spark): Marlin kernel generates wrong first Harmony token, producing null content/reasoning",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/37030",
+    "updated": "2026-08-31T23:45:25Z",
+    "labels": [
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 39072,
+    "title": "[Bug]: Gemma4 on vLLM + PI coding agent: Validation failed for tool \"edit\": - path: must have required property 'path'",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/39072",
+    "updated": "2026-09-02T01:47:33Z",
+    "labels": [
+      "bug",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 39848,
+    "title": "[RFC]: Unifying Tool Calling via Region-Scoped Guided Decoding, Tool-Aware Grammars, and Related Parsers",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/39848",
+    "updated": "2026-09-02T01:46:51Z",
+    "labels": [
+      "structured-output",
+      "RFC",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 41691,
+    "title": "[Bug]: The last few reasoning output tokens are missing when using Gemma4 and setting \"--streaming-interval\" to be larger than 1",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/41691",
+    "updated": "2026-09-01T01:52:00Z",
+    "labels": [
+      "bug",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 42065,
+    "title": "[Feature]: Add nemotron_json as built-in tool parser (NVIDIA Nemotron-Nano-9B-v2 plugin breaks against v0.20.x module reorg)",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/42065",
+    "updated": "2026-09-01T01:51:23Z",
+    "labels": [
+      "feature request",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 42210,
+    "title": "[Bug]: Streaming chat completion drops partial content when stop string interrupts auto tool parsing",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/42210",
+    "updated": "2026-09-01T01:51:07Z",
+    "labels": [
+      "bug",
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 43116,
+    "title": "[Bug]: Granite 3.3 / 4.0 H-Small Python-style tool calls not converted to OpenAI tool_calls format",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/43116",
+    "updated": "2026-09-01T01:49:54Z",
+    "labels": [
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 43713,
+    "title": "[Bug]: qwen3_xml tool parser emits invalid JSON for multiple <function=...> blocks inside one <tool_call>",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/43713",
+    "updated": "2026-09-01T01:49:06Z",
+    "labels": [
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 43933,
+    "title": "[Bug]: DeepSeek reasoning parser can emit reasoning_content and content in the same streaming chunk",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/43933",
+    "updated": "2026-09-01T01:48:52Z",
+    "labels": [
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 44139,
+    "title": "BUG: ValueError too many values to unpack in internlm2_tool_parser when output contains multiple tool-call markers",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/44139",
+    "updated": "2026-09-01T01:48:38Z",
+    "labels": [
+      "unstale",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 44280,
+    "title": "[Roadmap] Rust Frontend Feature Parity",
+    "state": "closed",
+    "html_url": "https://github.com/vllm-project/vllm/issues/44280",
+    "updated": "2026-09-01T09:18:35Z",
+    "labels": [
+      "rust"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 47137,
+    "title": "[Bug]: Streaming vs non-streaming tool-parser divergence on a truncated `<tool_call>` opener (ParserEngine / Qwen3)",
+    "state": "closed",
+    "html_url": "https://github.com/vllm-project/vllm/issues/47137",
+    "updated": "2026-09-01T18:11:38Z",
+    "labels": [
+      "bug",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 48089,
+    "title": "[Bug]:  DeepSeek V4 reasoning/tool parsers produce unbalanced tags under concurrent load",
+    "state": "closed",
+    "html_url": "https://github.com/vllm-project/vllm/issues/48089",
+    "updated": "2026-09-01T01:10:23Z",
+    "labels": [
+      "bug",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 51660,
+    "title": "[Bug]: No viable structured-outputs backend for Kimi-K2.6 + EAGLE3 on v0.26.0: xgrammar bitmask desync kills the engine, outlines compile-timeout leaks threads until OOM, guidance rejects the slow tokenizer",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/51660",
+    "updated": "2026-09-01T15:05:13Z",
+    "labels": [
+      "structured-output",
+      "kimi"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 51679,
+    "title": "[Bug]: qwen3_xml tool parser consumes `</think>`, merging reasoning into `content` with no way to split it",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/51679",
+    "updated": "2026-09-02T18:48:13Z",
+    "labels": [
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 53130,
+    "title": "[Bug]: Scheduler permanently stops admitting requests once running + skipped_waiting (\"deferred\") reaches max_num_seqs - engine reports healthy, KV cache mostly free, only a restart recovers",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/53130",
+    "updated": "2026-09-01T20:53:26Z",
+    "labels": [
+      "bug",
+      "scheduler"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 53227,
+    "title": "[Bug]: DeepSeek V4 streaming tool calls leak DSML markup into arguments",
+    "state": "closed",
+    "html_url": "https://github.com/vllm-project/vllm/issues/53227",
+    "updated": "2026-09-02T06:13:38Z",
+    "labels": [
+      "bug",
+      "tool-calling",
+      "deepseek"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54150,
+    "title": "[Bug]: GLM-5.3-Flash \u2014 ModelOpt NVFP4 checkpoints emit invalid UTF-8 byte tokens on SM120, while a compressed-tensors NVFP4 of the same model is clean",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54150",
+    "updated": "2026-09-02T01:59:23Z",
+    "labels": [
+      "glm"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54317,
+    "title": "[Bug]: GLM-5.3-Flash (glm5next) \u2014 recurring CUDA illegal memory access on 4xB200, surfacing in three unrelated kernels (KDA linear-attention, MHC TileLang, TRT-LLM fused MoE)",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54317",
+    "updated": "2026-09-02T16:55:16Z",
+    "labels": [
+      "structured-output",
+      "kimi",
+      "glm"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54491,
+    "title": "[Bug]: Qwen2.5 tool parser plus openai content format fails chat requests",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54491",
+    "updated": "2026-09-03T04:34:57Z",
+    "labels": [
+      "bug",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54677,
+    "title": "[Perf]: DeepSeek-V4-Flash TP4 on 4xH800: v0.28.0 needs ~4 GiB/GPU more non-KV memory than v0.26.0; my earlier TTFT-regression claim was caused by VLLM_USE_BREAKABLE_CUDAGRAPH=0 on my side (retracted)",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54677",
+    "updated": "2026-09-02T04:31:19Z",
+    "labels": [
+      "tool-calling",
+      "deepseek",
+      "DSv4"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54701,
+    "title": "[Bug] kimi_k2 streaming tool parser intermittently emits empty tool_calls deltas under concurrent load (finish_reason=tool_calls, no name/arguments)",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54701",
+    "updated": "2026-09-02T00:19:57Z",
+    "labels": [
+      "tool-calling",
+      "kimi"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54808,
+    "title": "[Bug]: qwen3_coder / qwen3_xml parser silently ignores tool_choice \"required\" and named function on /v1/chat/completions (0.28.0)",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54808",
+    "updated": "2026-09-01T23:21:22Z",
+    "labels": [
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54829,
+    "title": "[Feature][Frontend] Add reasoning and content phase per-request metrics",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54829",
+    "updated": "2026-09-01T19:04:43Z",
+    "labels": [
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 54937,
+    "title": "[Feature]: Tokenized Prompt as Input for Chat and Messages Endpoints when serving",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/54937",
+    "updated": "2026-09-03T01:24:03Z",
+    "labels": [
+      "feature request"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 55080,
+    "title": "[Bug]: tool_choice='none' silently deletes tool-call-shaped content",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/55080",
+    "updated": "2026-09-03T06:19:48Z",
+    "labels": [
+      "bug",
+      "tool-calling"
+    ]
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "number": 55082,
+    "title": "[Bug]: step3 streaming tool parser returns empty arguments unless each token arrives in its own delta",
+    "state": "open",
+    "html_url": "https://github.com/vllm-project/vllm/issues/55082",
+    "updated": "2026-09-03T04:58:51Z",
+    "labels": [
+      "tool-calling"
+    ]
+  }
+]

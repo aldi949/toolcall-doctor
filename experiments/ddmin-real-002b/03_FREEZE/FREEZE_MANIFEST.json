@@ -1,0 +1,27 @@
+{
+  "utc": "2026-09-03T18:25:25Z",
+  "version": "ddmin-real-002b-1.0",
+  "identity": "HTTP_200_TOOL_ARGS_ENUM_VIOLATION",
+  "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+  "repetition_policy": {
+    "n": 3,
+    "preserve_iff": "all_n_preserve_identity",
+    "escalate": false,
+    "note": "A candidate preserves the target only if every one of N independent POSTs FAILs HTTP_200_TOOL_ARGS_ENUM_VIOLATION."
+  },
+  "git_commit": null,
+  "hashes": {
+    "FAILURE_PREDICATE.md": "779239d5018128c982ca6662ff3a5b83365de5d72fa3577785efb07a378119f1",
+    "oracle.py": "82ffefc86d08afb4ccb9738c09f5efd225c4076998cfd8087442a83b1c59659b",
+    "REPETITION_POLICY.json": "34ca1bd6e9a3854d525b950b72d24d5dc26b25ca5a4c6d014c4115a288cccf23",
+    "minimizer.py": "100519f9e854da33f5cb96156e8255b09127359cfdafc4a5a9c7642d6c09ea06",
+    "execute.py": "d4b4abbf088b63ca531c5b974a49d5e92dac003fe478e78e0935e079c7aaa1d5",
+    "TRANSFORMATION_SPACE.md": "14c754e709cde26dabcd2a4ca2f3afb77a294645231876c5590135eb9a002072",
+    "original_request": "8795113cc8357c13fe5a829956a49ff597b150e9f97c133333d2b08a3e31798a",
+    "verify_1minimal.py": "746eb084f9082488ecd33881812097adf695c6e2a5adbf909df8d5de7e4c05a9",
+    "run_pipeline.py": "9756d4e2689fe3c27d7d29b9c43109ed2d4a22e2ae377eb907be8feede231ae0",
+    "ATOMS_AT_FREEZE.json": "c90035f03922c334b8f6f8ff8ca19c94a35023b32b7e2a76c414a305ca01a91d"
+  },
+  "n_atoms": 160,
+  "note": "Minimization HTTP must not start before this file exists."
+}

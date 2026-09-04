@@ -1,0 +1,9 @@
+Windows 11 10.0.26200
+CPU: i5-11300H
+RAM: ~16 GB
+GPU: RTX 3050 Ti 4 GB
+Python 3.12.0
+Ollama 0.4.6
+Installed model: llama3.2:3b
+Ports 8080/8000/30000 closed (no llama.cpp / vLLM / SGLang on this host)
+jsonschema 4.26.0

@@ -1,0 +1,7 @@
+{
+  "id": "ollama/ollama#14967",
+  "USEFUL_FAILURE_FAMILY": "TOOL_CHOICE_CONSTRAINT_FAILURE",
+  "quality": "GT-C",
+  "note": "required + name mismatch silently stops; also tests required honoring.",
+  "revealed_utc": "2026-09-03T10:38:45Z"
+}

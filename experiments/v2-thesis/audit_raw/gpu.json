@@ -1,0 +1,9 @@
+{
+  "name": "gpu",
+  "cmd": "nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version --format=csv",
+  "started_utc": "2026-09-03T10:22:50.359127+00:00",
+  "returncode": 0,
+  "stdout": "name, memory.total [MiB], memory.free [MiB], driver_version\nNVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096 MiB, 3852 MiB, 592.00\n",
+  "stderr": "",
+  "ended_utc": "2026-09-03T10:22:50.664289+00:00"
+}

@@ -1,0 +1,89 @@
+{
+  "n_probes": 9,
+  "n_still_fail_identity": 0,
+  "one_minimal_in_space": true,
+  "preserved_names": [],
+  "probes": [
+    {
+      "name": "empty_tools",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 352,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_tools",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 220,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_function",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 223,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_parameters",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 219,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_properties",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 335,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_query",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 420,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "drop_type_key",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 280,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "type_as_string",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 219,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    },
+    {
+      "name": "unwrap_function",
+      "http_status": 400,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "preserves_target": false,
+      "elapsed_ms": 219,
+      "body_preview": "{\"error\":{\"message\":\"[] is too short - 'messages'\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "doctor_version": "1.0.0-freeze",
+  "STATUS": "UNHEALTHY",
+  "OBSERVABLE_FAILURE_DIMENSION": "D_SCHEMA_STRUCTURE",
+  "USEFUL_FAILURE_FAMILY": "SCHEMA_DEPENDENT_FAILURE",
+  "LOCALIZATION_CONFIDENCE": "HIGH",
+  "INTERNAL_ROOT_CAUSE": "UNKNOWN",
+  "ROOT_CAUSE_CONFIDENCE": "LOW",
+  "SUPPORTING_EVIDENCE": [
+    "Control arguments validate against the declared simpler schema; broken arguments fail the declared deeper schema; both emitted tool_calls."
+  ],
+  "CONTRADICTING_EVIDENCE": [
+    "Streaming is the same.",
+    "Endpoint arguments do not prove which internal stage dropped or ignored nested schema structure."
+  ],
+  "ELIMINATED_ALTERNATIVES": [
+    "STREAM_DEPENDENT_FAILURE",
+    "TOOL_CHOICE_CONSTRAINT_FAILURE",
+    "HEALTHY",
+    "BASE_TOOL_CALL_FAILURE",
+    "PROTOCOL_FAILURE"
+  ],
+  "UNRESOLVED_ALTERNATIVES": [
+    "SCHEMA_TRANSFORMER",
+    "CHAT_TEMPLATE",
+    "TOOL_PARSER",
+    "MODEL_CAPABILITY",
+    "GRAMMAR_CONSTRAINT"
+  ],
+  "NEXT_BEST_PROBE": "Compare declared nested property keys to keys in a rendered tools prompt; replay the nested schema on a runtime that preserves nested properties.",
+  "MATCHED_RULE": "R4"
+}

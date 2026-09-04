@@ -1,0 +1,29 @@
+{
+  "classification": "WORKAROUND_VERIFIED",
+  "source_patch": "NOT_TESTABLE",
+  "source_patch_reason": "Ollama 0.4.6 running binary; PR 9434 not built",
+  "workaround": "properties.query.type scalar string instead of array",
+  "n": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 1045
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 697
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "elapsed_ms": 706
+    }
+  ]
+}

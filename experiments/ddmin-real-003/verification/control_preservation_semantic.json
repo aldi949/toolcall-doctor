@@ -1,0 +1,82 @@
+{
+  "mode": "semantic",
+  "static_satisfiable": true,
+  "enum": [
+    "T"
+  ],
+  "http_valid_tool_calls": "3/3",
+  "rows": [
+    {
+      "i": 1,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "g",
+      "arguments": {
+        "account": "T"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "T"
+            ]
+          }
+        }
+      },
+      "schema_valid_tool_call": true
+    },
+    {
+      "i": 2,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "g",
+      "arguments": {
+        "account": "T"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "T"
+            ]
+          }
+        }
+      },
+      "schema_valid_tool_call": true
+    },
+    {
+      "i": 3,
+      "oracle": "PASS",
+      "failure_identity": null,
+      "http_status": 200,
+      "tool_call_present": true,
+      "tool_name": "g",
+      "arguments": {
+        "account": "T"
+      },
+      "enum_error_paths": [],
+      "schema_present_for_tool": true,
+      "schema": {
+        "properties": {
+          "account": {
+            "type": "string",
+            "enum": [
+              "T"
+            ]
+          }
+        }
+      },
+      "schema_valid_tool_call": true
+    }
+  ]
+}

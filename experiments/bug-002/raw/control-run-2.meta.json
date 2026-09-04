@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-03T08:57:39.190057+00:00",
+  "ended_utc": "2026-09-03T08:57:40.002140+00:00",
+  "elapsed_ms": 812,
+  "http_status": 200,
+  "error": null,
+  "byte_count": 423,
+  "stream": false,
+  "url": "http://127.0.0.1:11434/v1/chat/completions",
+  "request_json": "<REPO_ROOT>\\experiments\\bug-002\\requests\\control.json"
+}

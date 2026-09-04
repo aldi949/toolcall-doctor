@@ -1,0 +1,10 @@
+2efe6c4e99af8ca1d914b1f6f9c841ac6caf41070515e57d55a5afc2186ecf1e  ./ollama-windows-arm64.zip
+f68572bd90be5dcabddbf37d103452d266003defe7e65824f7ea902b1ab9fcac  ./ollama-linux-amd64.tgz
+2ae916d5d2ed17d5d247bdeed76447f25fdc0dbfc184e258ca969a517515e525  ./ollama-darwin
+8fcf6f5262dc903ea362b59b9da316c651230d07e0b2ad5284d4016ce132fac7  ./ollama-linux-arm64-jetpack5.tgz
+59167cc7cec0ab8cc0c7848f3e5532ebec7fc733eba4f7302f4752e08b0dd35b  ./ollama-linux-amd64-rocm.tgz
+acc274e19c575e095a65637f10810f01bc82aade90a6116b4b6c1f6ec9831ec0  ./ollama-windows-amd64.zip
+b5c995460372ba4d9388bfabef04ce98e61d6428c7e3cbdfaa7945b25b7945b2  ./ollama-linux-arm64.tgz
+85e3075a4f1f5e3c532ab015badef379078d19c946f7b195b8ae04f984f7493c  ./Ollama-darwin.zip
+bc4e54025abb3cbec269d796aa2e33ba83b259fa7bcbb5109e31d8e3ec6f039b  ./ollama-linux-arm64-jetpack6.tgz
+ca54edf4a6f211b55e1118668e6c9a634bae17e1ee8e103dd456e893252e1369  ./OllamaSetup.exe

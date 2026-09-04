@@ -1,0 +1,20 @@
+{
+  "locked_utc": "2026-09-03T13:21:20Z",
+  "source_url": "https://github.com/ollama/ollama/issues/5990",
+  "issue_number": 5990,
+  "title": "Tools and properties.type Not Supporting Arrays",
+  "runtime": "ollama",
+  "runtime_version_documented": "0.3.0",
+  "runtime_version_used": "0.4.6",
+  "model_documented": "mistral-nemo",
+  "model_used": "llama3.2:3b",
+  "endpoint": "http://127.0.0.1:11434/v1/chat/completions",
+  "classification": "RELATED",
+  "classification_reason": "Same documented unmarshal class. Documented pin 0.3.0 + mistral-nemo is not installed. Do not upgrade to ORIGINAL.",
+  "minimizer_must_not_read": [
+    "experiments/ddmin-real-001 minimized payloads",
+    "previous deletion sequences",
+    "PR identities",
+    "known surviving keys"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "model": "llama3.2:3b",
+  "stream": false,
+  "temperature": 0,
+  "seed": 42,
+  "max_tokens": 200,
+  "tool_choice": "none",
+  "messages": [
+    {
+      "role": "user",
+      "content": "weatherParis"
+    }
+  ],
+  "tools": [
+    {
+      "function": {
+        "name": "get_weather"
+      }
+    }
+  ]
+}
