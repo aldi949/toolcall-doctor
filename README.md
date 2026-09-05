@@ -6,35 +6,38 @@
 
 ## Stop manually shrinking broken LLM tool calls.
 
-Give toolcall-doctor a failing request, a failure check, and the things that must remain. It removes what it can while repeatedly checking that the specified failure still happens.
+Got a huge request that reproduces a weird tool-calling bug?
 
-You get a **smaller reproducer**. You do not get an automatic diagnosis.
-
-```
-VALIDATED EXAMPLE · Ollama 0.4.6 + llama3.2:3b · live -n 3
-
-     583 B  ───────────────────────────→  185 B
-
-                    68.27% smaller
-
-     Specified failure check     3/3
-     Specified keepers           held
-```
-
-That is one live `tool_choice=none` run (`examples/tool-choice-none/`). It is not a benchmark across models or servers.
+toolcall-doctor automatically removes the parts it can — and keeps rerunning the model to make sure your specified failure still happens.
 
 ```
-BEFORE                                         AFTER
-─────────────────────────────────────          ──────────────────────────
-model, temperature, seed, max_tokens           model, temperature, seed
-tool_choice: none                              tool_choice: none
-"What is the weather in Paris                  "weatherParis"
- right now? You must use a tool."
-tools: get_time, get_weather                   tools: get_weather
-       + location schema
+     583 B  →  185 B
+
+         68.27% smaller
+
+     ✓ Specified failure still reproduced
+     ✓ Required parts preserved
 ```
 
-The after side is the bundled expected shrink of that example. Other failures shrink differently.
+```
+delete a tool
+    ↓
+rerun
+    ↓
+bug disappeared
+    ↓
+put it back
+    ↓
+delete a schema field
+    ↓
+rerun
+    ↓
+repeat...
+```
+
+toolcall-doctor automates this loop.
+
+One validated live example (`examples/tool-choice-none/`). Ollama 0.4.6 + `llama3.2:3b`, `-n 3`. Not a cross-model benchmark.
 
 ---
 
