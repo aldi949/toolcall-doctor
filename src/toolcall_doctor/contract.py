@@ -1,10 +1,19 @@
-"""JSON contract: three failure conditions + the keepers needed for #004–#006."""
+"""JSON contract: failure conditions + the keepers needed for #004–#006."""
 from __future__ import annotations
 
 import json
 from typing import Any
 
-FAILURE_CONDITIONS = ("type_is", "not_in_enum", "has_tool_call")
+FAILURE_CONDITIONS = (
+    "type_is",
+    "not_in_enum",
+    "has_tool_call",
+    "http_status_is",
+    "response_contains",
+    "missing_tool_call",
+    "tool_name_not",
+)
+V01_BEHAVIORAL = ("type_is", "not_in_enum", "has_tool_call")
 PRESERVE_TYPES = (
     "tool_name",
     "contains",
@@ -157,8 +166,9 @@ def parse_contract(data: Any) -> dict:
         raise ContractError("contract.failure must be an object")
     cond = failure.get("condition")
     if cond not in FAILURE_CONDITIONS:
+        listed = "\n".join(FAILURE_CONDITIONS)
         raise ContractError(
-            "failure.condition must be one of: type_is, not_in_enum, has_tool_call"
+            f'Unknown failure condition: {cond!r}\n\nSupported conditions:\n{listed}'
         )
     path = failure.get("path")
     if cond in {"type_is", "not_in_enum"}:
@@ -168,6 +178,18 @@ def parse_contract(data: Any) -> dict:
         val = failure.get("value")
         if val not in JSON_TYPES:
             raise ContractError("failure.value for type_is must be a JSON type name")
+    if cond == "http_status_is":
+        val = failure.get("value")
+        if isinstance(val, bool) or not isinstance(val, int) or not (100 <= val <= 599):
+            raise ContractError("failure.value for http_status_is must be an HTTP status integer (100-599)")
+    if cond == "response_contains":
+        val = failure.get("value")
+        if not isinstance(val, str) or not val:
+            raise ContractError("failure.value for response_contains must be a non-empty string")
+    if cond == "tool_name_not":
+        val = failure.get("value")
+        if not isinstance(val, str) or not val:
+            raise ContractError("failure.value for tool_name_not must be a non-empty tool name")
     preserve = data.get("preserve", [])
     if preserve is None:
         preserve = []
@@ -200,8 +222,32 @@ def _field_present(args: dict, parts: list[str]) -> bool:
     return isinstance(parent, dict) and parts[-1] in parent
 
 
+def describe_execution(
+    http_status: int | None,
+    body_text: str | None,
+    transport_error: str | None = None,
+) -> dict[str, Any]:
+    """Smallest execution view for predicates: status, raw body, parse, tool call, transport."""
+    text = body_text if isinstance(body_text, str) else ""
+    parsed: Any = None
+    if text and transport_error is None:
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError:
+            parsed = None
+    call = None if transport_error else first_tool_call(text if text else body_text)
+    return {
+        "http_status": http_status,
+        "body_text": text,
+        "parsed_json": parsed,
+        "tool_call": call,
+        "transport_error": transport_error,
+    }
+
+
 def evaluate_failure(http_status: int | None, body_text: str | None, request: Any, contract: dict) -> dict:
-    call = first_tool_call(body_text)
+    exe = describe_execution(http_status, body_text)
+    call = exe["tool_call"]
     fn = call.get("function") if isinstance(call, dict) else None
     name = fn.get("name") if isinstance(fn, dict) else None
     args = _as_object(fn.get("arguments")) if isinstance(fn, dict) else None
@@ -210,7 +256,32 @@ def evaluate_failure(http_status: int | None, body_text: str | None, request: An
     has_call = call is not None
     detail: dict[str, Any] = {}
     fail = False
-    if http_status == 200 and has_call:
+    transport_failed = http_status is None
+    if cond == "http_status_is":
+        if transport_failed:
+            detail["error"] = "no_http_response"
+        else:
+            fail = http_status == failure["value"]
+    elif cond == "response_contains":
+        if transport_failed:
+            detail["error"] = "no_http_response"
+        else:
+            fail = failure["value"] in exe["body_text"]
+    elif cond == "missing_tool_call":
+        if transport_failed:
+            detail["error"] = "no_http_response"
+        elif http_status != 200:
+            detail["reason"] = "http_not_200"
+        else:
+            fail = not has_call
+    elif cond == "tool_name_not":
+        if transport_failed:
+            detail["error"] = "no_http_response"
+        elif not has_call:
+            detail["reason"] = "no_tool_call"
+        else:
+            fail = isinstance(name, str) and name != failure["value"]
+    elif http_status == 200 and has_call:
         if cond == "has_tool_call":
             fail = True
         elif cond == "type_is" and isinstance(args, dict):
@@ -243,6 +314,7 @@ def evaluate_failure(http_status: int | None, body_text: str | None, request: An
         "failure_ok": fail,
         "detail": detail,
         "declared_tool_names": declared_tool_names(request),
+        "execution": exe,
     }
 
 
@@ -281,14 +353,20 @@ def check_trial(payload: dict, ora: dict, contract: dict) -> dict:
     failed = list(req["failed_invariants"])
     if not ora.get("failure_ok"):
         failed.append("failure_condition")
-    if ora.get("http_status") != 200:
-        failed.append("http_200")
-    if not ora.get("tool_call_present"):
-        failed.append("tool_call")
-    emitted = ora.get("tool_name")
+    cond = contract["failure"]["condition"]
     names = declared_tool_names(payload)
-    if emitted not in names:
-        failed.append("emitted_in_declared")
+    if cond in V01_BEHAVIORAL:
+        if ora.get("http_status") != 200:
+            failed.append("http_200")
+        if not ora.get("tool_call_present"):
+            failed.append("tool_call")
+        emitted = ora.get("tool_name")
+        if emitted not in names:
+            failed.append("emitted_in_declared")
+    elif cond == "tool_name_not" and ora.get("tool_call_present"):
+        emitted = ora.get("tool_name")
+        if emitted not in names:
+            failed.append("emitted_in_declared")
     args = ora.get("arguments")
     for item in contract["preserve"]:
         if item["type"] == "arg_equals":

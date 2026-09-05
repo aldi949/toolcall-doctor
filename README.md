@@ -159,7 +159,14 @@ One real contract (`examples/tool-choice-none/contract.json`):
 
 That means: keep shrinking only while the model still emits a tool call, `tool_choice` stays `none`, `get_weather` stays declared, and the user text still contains `weather` and `Paris`.
 
-Field reference: [`USER_CONTRACT_SPEC.md`](USER_CONTRACT_SPEC.md). Other shapes: [`examples/`](examples/).
+You can also treat a configured HTTP status or response substring as the failure condition, or require that no tool call (or the wrong tool name) appears:
+
+```json
+{"failure": {"condition": "http_status_is", "value": 400}}
+{"failure": {"condition": "missing_tool_call"}}
+```
+
+This is not “all HTTP errors.” Only the status or substring you write counts. Field reference: [`USER_CONTRACT_SPEC.md`](USER_CONTRACT_SPEC.md). Other shapes: [`examples/`](examples/).
 
 ---
 
@@ -202,8 +209,9 @@ Smaller is not unique-root-cause proof. It is a smaller request that still fails
 | --- | --- |
 | Install | `pip install -e .` from this repository (Python 3.10+) |
 | Demo | no model |
-| Live minimize | Ollama 0.4.6 + `llama3.2:3b` (validated) |
+| Live minimize | Ollama 0.4.6 + `llama3.2:3b` (validated for v0.1 families) |
 | API | OpenAI-compatible `POST /v1/chat/completions` |
+| Failure checks | `has_tool_call`, `type_is`, `not_in_enum`, `http_status_is`, `response_contains`, `missing_tool_call`, `tool_name_not` |
 
 There is no PyPI package yet.
 
@@ -221,6 +229,7 @@ These are product limits, not fine print.
 - Live validation is narrow: one Ollama version, one model.
 - Live minimization talks to the model many times. Minutes are expected.
 - Model nondeterminism can make a search-accepted candidate fail final verification. The CLI **fails closed** instead of reporting a shrink that did not re-verify.
+- Keepers still cannot address nested schema fields (for example a `pattern` under an object property) unless that field matches an existing keeper primitive.
 
 ---
 

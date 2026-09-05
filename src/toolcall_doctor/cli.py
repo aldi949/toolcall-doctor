@@ -440,7 +440,9 @@ def main(argv: list[str] | None = None) -> int:
             raise InputError(
                 f"invalid contract: {e}",
                 "The contract tells the tool what still counts as the same failure and what must not be removed.",
-                "See examples/*/contract.json or USER_CONTRACT_SPEC.md.",
+                "See USER_CONTRACT_SPEC.md. Supported failure conditions: "
+                "type_is, not_in_enum, has_tool_call, http_status_is, "
+                "response_contains, missing_tool_call, tool_name_not.",
             ) from e
         out = Path(args.output)
         out.mkdir(parents=True, exist_ok=True)
@@ -460,7 +462,7 @@ def main(argv: list[str] | None = None) -> int:
                 InputError(
                     f"invalid contract: {e}",
                     "The contract is not one of the supported failure/keeper shapes.",
-                    "See examples/*/contract.json.",
+                    "See USER_CONTRACT_SPEC.md for supported failure conditions.",
                 )
             )
             return EX_INPUT

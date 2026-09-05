@@ -1,6 +1,6 @@
 [project]
 name = "toolcall-doctor"
-version = "0.1.0"
+version = "0.2.0"
 description = "Shrink a reproducible tool-calling failure into a smaller request under an explicit contract."
 readme = "README.md"
 requires-python = ">=3.10"

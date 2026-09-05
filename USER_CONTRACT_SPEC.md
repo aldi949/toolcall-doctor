@@ -1,4 +1,4 @@
-# User contract (V0)
+# User contract (V0.2)
 
 No user-supplied Python. No `eval`. JSON only.
 
@@ -9,9 +9,9 @@ The user specifies **one failure** and **zero or more keepers**. The engine does
 ```json
 {
   "failure": {
-    "condition": "type_is | not_in_enum | has_tool_call",
+    "condition": "type_is | not_in_enum | has_tool_call | http_status_is | response_contains | missing_tool_call | tool_name_not",
     "path": "arguments.<field>",
-    "value": "string"
+    "value": "string | 400"
   },
   "preserve": [
     {"type": "tool_name", "value": "<declared tool name>"},
@@ -28,15 +28,21 @@ The user specifies **one failure** and **zero or more keepers**. The engine does
 
 `has_tool_call` needs no `path`. It is true iff HTTP 200 and `choices[0].message.tool_calls` is a non-empty list.
 
-All V0 failures also require HTTP 200. The emitted tool name, if any, must be one of the names declared in the candidate’s `tools` array.
+The three v0.1 behavioral conditions still require HTTP 200 and a structured tool call whose name is declared in the candidate’s `tools` array.
 
-## Failure primitives (3)
+`http_status_is` / `response_contains` / `missing_tool_call` do **not** require a tool call. Exact rules: `V0_2_PREDICATE_SPEC.md`.
 
-| condition | Meaning | Validated by |
-|-----------|---------|--------------|
-| `not_in_enum` | First tool-call argument at `path` is not a member of that property’s schema `enum` | #004 |
-| `has_tool_call` | HTTP 200 with at least one structured tool call | #005 (`tool_choice=none` kept via `request_equals`) |
-| `type_is` | Argument at `path` has JSON type `value` (`string`, `array`, `object`, `number`, `boolean`, `null`) | #006 |
+## Failure primitives
+
+| condition | Meaning |
+|-----------|---------|
+| `not_in_enum` | HTTP 200 + tool call; argument at `path` is not in that property’s schema `enum` |
+| `has_tool_call` | HTTP 200 with at least one structured tool call |
+| `type_is` | HTTP 200 + tool call; argument at `path` has JSON type `value` |
+| `http_status_is` | Completed HTTP response status equals integer `value` (e.g. 400). Transport failure is not a match |
+| `response_contains` | Raw HTTP body text contains literal substring `value` (error bodies included) |
+| `missing_tool_call` | HTTP **200** and no structured tool call. HTTP 4xx/5xx is **not** this failure |
+| `tool_name_not` | A structured tool call exists and its name ≠ `value`. No call is **not** this failure |
 
 ## Keeper primitives
 
