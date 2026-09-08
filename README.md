@@ -2,152 +2,106 @@
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-pytest-0A7B32)](tests/)
+[![Tests](https://github.com/aldi949/toolcall-doctor/actions/workflows/test.yml/badge.svg)](https://github.com/aldi949/toolcall-doctor/actions/workflows/test.yml)
 
-## Stop manually shrinking broken LLM tool calls.
+**Experimental v0.2.x.** A failure-preserving request minimizer, not a diagnoser.
 
-Got a huge request that reproduces a weird tool-calling bug?
+**toolcall-doctor shrinks an already-reproducing tool-calling failure into a smaller request while repeatedly verifying that the user's failure condition still holds.**
 
-toolcall-doctor automatically removes the parts it can — and keeps rerunning the model to make sure your specified failure still happens.
+It does **not** currently identify a root cause automatically. You write the failure contract. A smaller request is **not** proof of a unique cause. Live validation is limited to one Ollama pin and a few failure families.
 
 ```
-     583 B  →  185 B
-
-         68.27% smaller
+     583 B  →  185 B     (live, Ollama 0.4.6 + llama3.2:3b)
 
      ✓ Specified failure still reproduced
      ✓ Required parts preserved
+     ✗ Not a diagnosed root cause
 ```
-
-```
-delete a tool
-    ↓
-rerun
-    ↓
-bug disappeared
-    ↓
-put it back
-    ↓
-delete a schema field
-    ↓
-rerun
-    ↓
-repeat...
-```
-
-toolcall-doctor automates this loop.
-
-One validated live example (`examples/tool-choice-none/`). Ollama 0.4.6 + `llama3.2:3b`, `-n 3`. Not a cross-model benchmark.
 
 ---
 
-## See it in seconds
+## Install
 
-**Demo replay — no model required.** This copies a recorded argument-shape run. It does not call a model and is not a fresh minimization.
-
-From a clone of this repository:
+Python 3.10+. Clone this repository (no PyPI package yet):
 
 ```
 pip install -e .
-toolcall-doctor demo
 ```
 
-```
-QUICK DEMO -- replay of a recorded run. No live model call.
-This is not a fresh minimization and not evidence of current runtime health.
+Optional, for tests:
 
-ORIGINAL      468 bytes
-MINIMIZED     234 bytes
-REDUCTION     50.0%
-FAILURE       preserved (recorded)
-KEEPERS       preserved (recorded)
-OUTPUT        out/minimal-repro.json
-RESULT        out/result.json
 ```
+pip install -e ".[dev]"
+pytest
+```
+
+---
+
+## Demo (no model)
+
+Works from any directory after install:
+
+```
+toolcall-doctor demo -o out
+```
+
+This copies a **recorded** argument-shape run. It does not call a model and is not evidence that your runtime still fails.
 
 Open `out/minimal-repro.json`. `out/result.json` has `"mode": "demo_replay"` and `"live_inference": false`.
 
 ---
 
-## The loop this replaces
+## Live quickstart
 
-Debugging a tool-calling failure often turns into this:
-
-```
-delete a tool
-  → rerun
-  → bug disappeared
-  → put it back
-  → delete a schema field
-  → rerun
-  → repeat...
-```
-
-toolcall-doctor automates that loop. A reduction is kept only when your failure check still fires and your keepers still hold.
-
----
-
-## Use it on your own failure
+Needs a reachable OpenAI-compatible `POST /v1/chat/completions` server. The **only** live-validated pin is **Ollama 0.4.6** + **`llama3.2:3b`** at `http://127.0.0.1:11434`. Other servers and models are untested.
 
 ```
-request.json  +  contract.json
-              │
-              ▼
-    toolcall-doctor minimize
-              │
-              ▼
-     minimal-repro.json
-     result.json
+ollama pull llama3.2:3b
+toolcall-doctor minimize --example tool-choice-none -o out
 ```
+
+`--example` is bundled in the package. You do **not** need to be in the repository directory.
+
+To inspect the files first:
+
+```
+toolcall-doctor example tool-choice-none -o ./case
+```
+
+Your own failure:
 
 ```
 toolcall-doctor minimize request.json --contract contract.json -o out
 ```
 
-Needs a live OpenAI-compatible server. Validated on **Ollama 0.4.6** + **llama3.2:3b** at `http://127.0.0.1:11434`. Each candidate is a model call. Bundled examples took a few minutes with a hot model; a cold model can take longer. Default `-n 3` so one lucky reply is not enough.
-
-Representative live output (same `tool_choice` example as the hero; messages are what the CLI actually prints):
-
-```
-Probing runtime http://127.0.0.1:11434 ...
-Runtime reachable.
-Preflight: reproducing the failure 3/3 ...
-Original failure reproduced 3/3.
-Minimizing... output will be out/minimal-repro.json
-Verifying final candidate...
-Done.
-original bytes:    583
-minimized bytes:   185
-reduction:         68.27%
-failure reproduced: 3/3
-keepers held:      yes
-minimal-repro:     out/minimal-repro.json
-result:            out/result.json
-```
-
-If the final re-run does not keep the specified failure and keepers, the CLI **refuses success** and tells you not to treat the output as a successful shrink.
-
-Bundled starting points: `examples/tool-choice-none/`, `examples/argument-shape/`, `examples/enum-constraint/`.
-
-Write output to a dedicated folder (`-o out`). The tool only recycles its own marked `.toolcall-doctor` work directory. It does not delete a generic `work/` folder.
+Each candidate is a model call. Bundled examples take a few minutes with a hot model. Default `-n 3` so one lucky reply is not enough. If the final re-run does not keep the specified failure and keepers, the CLI **refuses success**.
 
 ---
 
-## What you put in the contract
+## Input
 
-**Failure check** — what behavior must still happen for this to count as the same specified failure?
+A chat-completions **request** plus a **contract**. The tool invents neither.
 
-**Keepers** — what must the minimizer not remove?
-
-The tool does not invent either. Properties you do not encode may still be deleted.
-
-One real contract (`examples/tool-choice-none/contract.json`):
+**request.json** (excerpt from the bundled `tool-choice-none` example):
 
 ```json
 {
-  "failure": {
-    "condition": "has_tool_call"
-  },
+  "model": "llama3.2:3b",
+  "tool_choice": "none",
+  "messages": [
+    {"role": "user", "content": "What is the weather in Paris right now? You must use a tool."}
+  ],
+  "tools": [
+    {"type": "function", "function": {"name": "get_weather", "parameters": {"type": "object", "properties": {"location": {"type": "string"}}}}}
+  ]
+}
+```
+
+**contract.json**:
+
+```json
+{
+  "failure": {"condition": "has_tool_call"},
   "preserve": [
     {"type": "request_equals", "key": "tool_choice", "value": "none"},
     {"type": "tool_name", "value": "get_weather"},
@@ -159,14 +113,53 @@ One real contract (`examples/tool-choice-none/contract.json`):
 
 That means: keep shrinking only while the model still emits a tool call, `tool_choice` stays `none`, `get_weather` stays declared, and the user text still contains `weather` and `Paris`.
 
-You can also treat a configured HTTP status or response substring as the failure condition, or require that no tool call (or the wrong tool name) appears:
+Field reference: [`USER_CONTRACT_SPEC.md`](USER_CONTRACT_SPEC.md).
+
+---
+
+## Minimized output
+
+A successful live run prints sizes, verification, and paths, then states that the result is **not** a diagnosis.
+
+Example `out/minimal-repro.json` from the same family (character-level shrink; keepers can concatenate substrings):
 
 ```json
-{"failure": {"condition": "http_status_is", "value": 400}}
-{"failure": {"condition": "missing_tool_call"}}
+{
+  "model": "llama3.2:3b",
+  "tool_choice": "none",
+  "messages": [{"role": "user", "content": "weatherParis"}],
+  "tools": [{"function": {"name": "get_weather"}}]
+}
 ```
 
-This is not “all HTTP errors.” Only the status or substring you write counts. Field reference: [`USER_CONTRACT_SPEC.md`](USER_CONTRACT_SPEC.md). Other shapes: [`examples/`](examples/).
+`weatherParis` is what remained after shrinking, not a suggested prompt rewrite.
+
+**Next after a successful run**
+
+1. Open `minimal-repro.json` and look at what the search was not allowed to delete.
+2. Attach that file to a runtime/model issue, or use it as the next experiment.
+3. Sanitize secrets and private data before sharing.
+
+---
+
+## Privacy
+
+Live `minimize` **POSTs your request JSON** (prompts, tool schemas, user text, and anything else in the body) to `--url` (default `http://127.0.0.1:11434/v1/chat/completions`). Strip API keys, tokens, internal URLs, and personal data first. Demo replay does not contact a server.
+
+---
+
+## Current support
+
+| | |
+| --- | --- |
+| Version | **0.2.1** |
+| Install | `pip install -e .` from this repository (Python 3.10+) |
+| Demo | no model; any working directory |
+| Live minimize | validated on Ollama 0.4.6 + `llama3.2:3b` |
+| API | OpenAI-compatible `POST /v1/chat/completions` |
+| Failure checks | `has_tool_call`, `type_is`, `not_in_enum`, `http_status_is`, `response_contains`, `missing_tool_call`, `tool_name_not` |
+
+Bundled examples: `tool-choice-none`, `argument-shape`, `enum-constraint` (`toolcall-doctor example --list`).
 
 ---
 
@@ -180,9 +173,7 @@ Live CLI runs on **one** runtime pin (Ollama **0.4.6** + **llama3.2:3b**), defau
 | argument shape | 468 B | 234 B | 50.00% | final verification 3/3 |
 | enum constraint | 401 B | 210 B | 47.63% | see caveat below |
 
-**Enum caveat.** Search can accept a candidate that still shows the configured failure, then **fail final repeated verification**. Model replies are not deterministic. When that happens the CLI exits unsuccessful and tells you not to treat the output as a successful shrink. Do not treat enum as a universally stable example.
-
-Other models and servers are untested.
+**Enum caveat.** Search can accept a candidate that still shows the configured failure, then **fail final repeated verification**. Model replies are not deterministic. When that happens the CLI exits unsuccessful and tells you not to treat the output as a successful shrink.
 
 ---
 
@@ -197,63 +188,32 @@ Other models and servers are untested.
 7. Repeat.
 8. Verify the final candidate the same way (`-n` times).
 
-The reduction engine is character-level [delta debugging (DDMin)](https://www.debuggingbook.org/html/DeltaDebugger.html). You do not need to know the algorithm to use the CLI.
-
-Smaller is not unique-root-cause proof. It is a smaller request that still fails the check you wrote.
-
----
-
-## Current support
-
-| | |
-| --- | --- |
-| Install | `pip install -e .` from this repository (Python 3.10+) |
-| Demo | no model |
-| Live minimize | Ollama 0.4.6 + `llama3.2:3b` (validated for v0.1 families) |
-| API | OpenAI-compatible `POST /v1/chat/completions` |
-| Failure checks | `has_tool_call`, `type_is`, `not_in_enum`, `http_status_is`, `response_contains`, `missing_tool_call`, `tool_name_not` |
-
-There is no PyPI package yet.
+The reduction engine is character-level [delta debugging (DDMin)](https://www.debuggingbook.org/html/DeltaDebugger.html). Smaller is not unique-root-cause proof. It is a smaller request that still fails the check you wrote.
 
 ---
 
 ## Current limitations
 
-These are product limits, not fine print.
-
 - **You** write the failure check. The tool does not discover what “broken” means.
 - **You** write the keepers. The tool does not infer intent.
-- Keepers preserve only the properties you encode. Other details can disappear (for example an enum member `ONLY-VALID-ACCOUNT` may shrink to `N` if that string was not a keeper).
-- This is not automatic root-cause diagnosis. It does not name a bug or a patch.
-- Semantic meaning that is not in the contract is not protected.
+- Keepers preserve only the properties you encode. Other details can disappear.
+- This is **not** automatic root-cause diagnosis. It does not name a bug or a patch.
 - Live validation is narrow: one Ollama version, one model.
 - Live minimization talks to the model many times. Minutes are expected.
-- Model nondeterminism can make a search-accepted candidate fail final verification. The CLI **fails closed** instead of reporting a shrink that did not re-verify.
-- Keepers still cannot address nested schema fields (for example a `pattern` under an object property) unless that field matches an existing keeper primitive.
+- Model nondeterminism can make a search-accepted candidate fail final verification. The CLI **fails closed**.
+- Keepers cannot address nested schema fields (for example a `pattern` under an object property) unless that field matches an existing keeper primitive.
 
 ---
 
 ## Evidence
 
-The CLI came out of experiments on real tool-calling failure families. Product behavior is the contract + DDMin loop above. The research trail is separate.
-
-Start at [`RESEARCH.md`](RESEARCH.md) → `experiments/ddmin-real-004` / `005` / `006`.
-
----
-
-## Development
-
-```
-pip install -e ".[dev]"
-pytest              # fast, no Ollama (default)
-pytest -m live      # needs Ollama + llama3.2:3b
-```
+Product behavior is the contract + DDMin loop above. Historical research notes are not part of this repository's product tree. Short pointer: [`RESEARCH.md`](RESEARCH.md).
 
 ---
 
 ## Contributing
 
-Issues and pull requests are welcome. Please keep claims no stronger than the contract and the validated runtime pin. Do not treat untested servers or models as supported.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Please keep claims no stronger than the contract and the validated runtime pin.
 
 ---
 

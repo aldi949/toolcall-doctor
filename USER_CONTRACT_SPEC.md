@@ -30,7 +30,7 @@ The user specifies **one failure** and **zero or more keepers**. The engine does
 
 The three v0.1 behavioral conditions still require HTTP 200 and a structured tool call whose name is declared in the candidate’s `tools` array.
 
-`http_status_is` / `response_contains` / `missing_tool_call` do **not** require a tool call. Exact rules: `V0_2_PREDICATE_SPEC.md`.
+`http_status_is` / `response_contains` / `missing_tool_call` do **not** require a tool call. Exact rules are in the tables below.
 
 ## Failure primitives
 

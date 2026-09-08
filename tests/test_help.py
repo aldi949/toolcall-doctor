@@ -11,3 +11,7 @@ def test_minimize_help_exits_zero():
 
 def test_demo_help_exits_zero():
     assert main(["demo", "--help"]) == 0
+
+
+def test_example_help_exits_zero():
+    assert main(["example", "--help"]) == 0

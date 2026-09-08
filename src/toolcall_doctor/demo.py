@@ -75,8 +75,9 @@ def print_demo(result: dict) -> None:
     print("OUTPUT       ", result["output"]["minimal_repro"])
     print("RESULT       ", result["output"]["result"])
     print()
-    print("For a live run (needs Ollama + llama3.2:3b, several minutes):")
-    print(
-        "  toolcall-doctor minimize examples/argument-shape/request.json "
-        "--contract examples/argument-shape/contract.json -o out"
-    )
+    print("This replay is not a diagnosis and not a live minimization.")
+    print()
+    print("Live run (needs the validated Ollama pin; several minutes; any working directory):")
+    print("  toolcall-doctor minimize --example argument-shape -o out")
+    print("Inspect files first (no model):")
+    print("  toolcall-doctor example argument-shape -o ./case")

@@ -1,9 +1,0 @@
-{
-  "keys": ["model", "temperature", "stream", "seed"],
-  "values": {
-    "model": "llama3.2:3b",
-    "temperature": 0,
-    "stream": false,
-    "seed": 42
-  }
-}

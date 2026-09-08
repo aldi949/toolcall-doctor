@@ -23,6 +23,7 @@ from toolcall_doctor.contract import (
 )
 from toolcall_doctor.ddmin import Session, compact_bytes, ddmin, extract_atoms
 from toolcall_doctor.demo import print_demo, run_demo
+from toolcall_doctor.examples import EXAMPLE_NAMES, ExampleError, load_example, write_example
 from toolcall_doctor.execute import DEFAULT_URL, exec_check, exec_spec_from_request, post, utc_now
 
 EX_OK = 0
@@ -257,6 +258,10 @@ def minimize(
     close_client = False
     try:
         t0 = time.perf_counter()
+        log(
+            f"Privacy: the request JSON is POSTed to {url}. "
+            "Strip secrets and private data before running."
+        )
         if not skip_probe:
             log(f"Probing runtime {url} ...")
             runtime_info.update(probe_runtime(url, model, timeout=5.0))
@@ -386,6 +391,14 @@ def print_summary(result: dict) -> None:
         print("wall seconds:     ", result["timings_s"].get("total"))
     print("minimal-repro:    ", result["output"]["minimal_repro"])
     print("result:           ", result["output"]["result"])
+    print()
+    print("This is a smaller request that still matches your contract.")
+    print("It is not an automatic root-cause diagnosis.")
+    print()
+    print("Next:")
+    print("  1. Open the minimal-repro.json path above and inspect what remained.")
+    print("  2. Use that file as a bug-report attachment or a starting point for the runtime.")
+    print("  3. Sanitize secrets and private data before sharing.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -393,7 +406,8 @@ def build_parser() -> argparse.ArgumentParser:
         prog="toolcall-doctor",
         description=(
             "Shrink a reproducible tool-calling failure into a smaller request, "
-            "while the failure you specified still happens and the keepers you specified still hold."
+            "while the failure you specified still happens and the keepers you specified still hold. "
+            "This is not automatic root-cause diagnosis."
         ),
     )
     p.add_argument("--version", action="version", version=f"toolcall-doctor {__version__}")
@@ -403,16 +417,122 @@ def build_parser() -> argparse.ArgumentParser:
         help="replay a recorded example (no live model; not a fresh minimization)",
     )
     d.add_argument("-o", "--output", default="out", help="directory for copied minimal-repro.json and result.json")
+    e = sub.add_parser(
+        "example",
+        help="list or write a bundled example (no model; cwd-independent)",
+    )
+    e.add_argument(
+        "name",
+        nargs="?",
+        choices=list(EXAMPLE_NAMES),
+        help="example to write (omit with --list)",
+    )
+    e.add_argument("--list", action="store_true", help="print bundled example names")
+    e.add_argument("-o", "--output", default=".", help="directory for request.json and contract.json")
     m = sub.add_parser(
         "minimize",
         help="minimize a failing chat-completions request under a JSON contract",
     )
-    m.add_argument("request", help="path to the failing request JSON")
-    m.add_argument("--contract", required=True, help="path to contract.json (failure + keepers)")
+    m.add_argument("request", nargs="?", default=None, help="path to the failing request JSON")
+    m.add_argument(
+        "--example",
+        choices=list(EXAMPLE_NAMES),
+        help="use a bundled example (does not depend on the current directory)",
+    )
+    m.add_argument("--contract", default=None, help="path to contract.json (failure + keepers)")
     m.add_argument("-o", "--output", default=".", help="directory for minimal-repro.json and result.json")
     m.add_argument("-n", type=int, default=3, help="trials for preflight, each accepted candidate, and verification (default 3)")
     m.add_argument("--url", default=os.environ.get("TOOLCALL_DOCTOR_URL", DEFAULT_URL), help="chat completions URL")
     return p
+
+
+def _contract_input_error(exc: ContractError) -> InputError:
+    return InputError(
+        f"invalid contract: {exc}",
+        "The contract tells the tool what still counts as the same failure and what must not be removed.",
+        "See USER_CONTRACT_SPEC.md. Supported failure conditions: "
+        "type_is, not_in_enum, has_tool_call, http_status_is, "
+        "response_contains, missing_tool_call, tool_name_not.",
+    )
+
+
+def _load_minimize_inputs(args: argparse.Namespace) -> tuple[dict, dict]:
+    example = getattr(args, "example", None)
+    request_path = getattr(args, "request", None)
+    contract_path = getattr(args, "contract", None)
+    if example and request_path:
+        raise InputError(
+            "pass either --example or a request path, not both",
+            "The bundled example already includes a request and a contract.",
+            f"Use: toolcall-doctor minimize --example {example} -o out",
+        )
+    if example:
+        if contract_path:
+            raise InputError(
+                "--contract cannot be combined with --example",
+                "The bundled example already includes contract.json.",
+                f"Use: toolcall-doctor minimize --example {example} -o out",
+            )
+        try:
+            request, raw_contract = load_example(example)
+        except ExampleError as e:
+            raise InputError(str(e), "Bundled examples are shipped with the package.", "Run: toolcall-doctor example --list") from e
+        try:
+            return request, parse_contract(raw_contract)
+        except ContractError as e:
+            raise _contract_input_error(e) from e
+    if not request_path:
+        raise InputError(
+            "missing request path",
+            "Minimize needs a failing chat-completions JSON body, or a bundled example.",
+            "Use --example tool-choice-none, or pass request.json --contract contract.json. "
+            "No-model walkthrough: toolcall-doctor demo -o out",
+        )
+    if not contract_path:
+        raise InputError(
+            "missing --contract",
+            "The contract is the failure check and keepers. The tool does not invent them.",
+            "Pass --contract contract.json, or use --example <name>. See USER_CONTRACT_SPEC.md.",
+        )
+    request = _load_json(Path(request_path), "request")
+    if not isinstance(request, dict):
+        raise InputError("request JSON must be an object", "The file parsed but was not a JSON object.", "Use a chat-completions request body.")
+    try:
+        raw_contract = _load_json(Path(contract_path), "contract")
+        return request, parse_contract(raw_contract)
+    except ContractError as e:
+        raise _contract_input_error(e) from e
+
+
+def _run_example_cmd(args: argparse.Namespace) -> int:
+    if args.list or not args.name:
+        if args.name and args.list:
+            print("bundled examples:")
+        print("bundled examples (cwd-independent):")
+        for name in EXAMPLE_NAMES:
+            print(f"  {name}")
+        print()
+        print("Write files:  toolcall-doctor example tool-choice-none -o ./case")
+        print("Live run:     toolcall-doctor minimize --example tool-choice-none -o out")
+        print("Replay only:  toolcall-doctor demo -o out")
+        return EX_OK
+    try:
+        written = write_example(args.name, Path(args.output))
+    except ExampleError as e:
+        _emit_error(
+            InputError(str(e), "Unknown bundled example.", "Run: toolcall-doctor example --list")
+        )
+        return EX_INPUT
+    print(f"Wrote {args.name} to {Path(args.output).resolve()}")
+    print(f"  request:  {written['request.json']}")
+    print(f"  contract: {written['contract.json']}")
+    print()
+    print("Inspect those files, sanitize secrets, then:")
+    print(
+        f"  toolcall-doctor minimize {written['request.json']} "
+        f"--contract {written['contract.json']} -o out"
+    )
+    return EX_OK
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -426,24 +546,13 @@ def main(argv: list[str] | None = None) -> int:
         result = run_demo(Path(args.output))
         print_demo(result)
         return EX_OK
+    if args.cmd == "example":
+        return _run_example_cmd(args)
     if args.cmd != "minimize":
         parser.print_help()
         return EX_INPUT
     try:
-        request = _load_json(Path(args.request), "request")
-        if not isinstance(request, dict):
-            raise InputError("request JSON must be an object", "The file parsed but was not a JSON object.", "Use a chat-completions request body.")
-        try:
-            raw_contract = _load_json(Path(args.contract), "contract")
-            contract = parse_contract(raw_contract)
-        except ContractError as e:
-            raise InputError(
-                f"invalid contract: {e}",
-                "The contract tells the tool what still counts as the same failure and what must not be removed.",
-                "See USER_CONTRACT_SPEC.md. Supported failure conditions: "
-                "type_is, not_in_enum, has_tool_call, http_status_is, "
-                "response_contains, missing_tool_call, tool_name_not.",
-            ) from e
+        request, contract = _load_minimize_inputs(args)
         out = Path(args.output)
         out.mkdir(parents=True, exist_ok=True)
         result = minimize(

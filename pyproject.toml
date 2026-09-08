@@ -1,6 +1,6 @@
 [project]
 name = "toolcall-doctor"
-version = "0.2.0"
+version = "0.2.1"
 description = "Shrink a reproducible tool-calling failure into a smaller request under an explicit contract."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,8 +25,9 @@ license-files = ["LICENSE"]
 where = ["src"]
 
 [tool.setuptools.package-data]
-toolcall_doctor = ["demo_data/*"]
+toolcall_doctor = ["demo_data/*", "bundled_examples/*", "bundled_examples/*/*"]
 "toolcall_doctor.demo_data" = ["*"]
+"toolcall_doctor.bundled_examples" = ["*", "*/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

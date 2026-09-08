@@ -22,19 +22,8 @@ examples/**/out/
 *.log
 .DS_Store
 
-# Research local-only: weights, vendor runtimes, machine dumps, candidate HTTP
-experiments/**/runtime/models/
-experiments/**/runtime/ollama-*/
-experiments/**/runtime/ollama-*.zip
-experiments/**/runtime/*.stderr.txt
-experiments/**/environment/
-experiments/**/01_ENVIRONMENT/
-experiments/**/MACHINE.txt
-experiments/**/MACHINE_AUDIT.md
-experiments/**/ddmin_result.json
-experiments/**/GENERATED_SCRIPT_*.json
-experiments/**/*.jsonl
-experiments/**/candidates/
-experiments/**/search/candidates/
-experiments/**/*.bin
-**/*.gguf
+# Not part of the public product tree
+external-tests/
+experiments/
+doctor_frozen/
+

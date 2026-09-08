@@ -1,0 +1,11 @@
+{
+  "failure": {
+    "condition": "has_tool_call"
+  },
+  "preserve": [
+    {"type": "request_equals", "key": "tool_choice", "value": "none"},
+    {"type": "tool_name", "value": "get_weather"},
+    {"type": "contains", "value": "weather"},
+    {"type": "contains", "value": "Paris"}
+  ]
+}
