@@ -1,0 +1,10 @@
+{
+  "http_status": 400,
+  "body": {
+    "error": {
+      "code": 400,
+      "message": "failed to parse grammar",
+      "type": "invalid_request_error"
+    }
+  }
+}

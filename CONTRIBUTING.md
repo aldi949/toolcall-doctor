@@ -1,6 +1,6 @@
 # Contributing
 
-This project is an **experimental v0.2.x request minimizer**. It does not automatically diagnose root causes. Please do not add claims or features that imply otherwise.
+This project is an **experimental v0.3.0-rc1** product: a request minimizer plus a conservative `diagnose` orchestrator. It does not invent causes or patches, and it does not diagnose arbitrary tool-calling failures. Please do not add claims that imply otherwise.
 
 ## Tests
 
@@ -29,4 +29,4 @@ Open an issue with:
 
 ## Pull requests
 
-Keep the public product a minimizer. Do not merge research diagnosers into the CLI. Do not treat untested servers or models as supported.
+Keep the public product a minimizer plus the conservative `diagnose` orchestrator. Do not merge research diagnosers into the CLI. Do not treat untested servers or models as supported.

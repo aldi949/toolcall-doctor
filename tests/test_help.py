@@ -15,3 +15,7 @@ def test_demo_help_exits_zero():
 
 def test_example_help_exits_zero():
     assert main(["example", "--help"]) == 0
+
+
+def test_diagnose_help_exits_zero():
+    assert main(["diagnose", "--help"]) == 0

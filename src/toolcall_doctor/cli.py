@@ -25,6 +25,45 @@ from toolcall_doctor.ddmin import Session, compact_bytes, ddmin, extract_atoms
 from toolcall_doctor.demo import print_demo, run_demo
 from toolcall_doctor.examples import EXAMPLE_NAMES, ExampleError, load_example, write_example
 from toolcall_doctor.execute import DEFAULT_URL, exec_check, exec_spec_from_request, post, utc_now
+from toolcall_doctor.localize import localize, print_localization
+from toolcall_doctor.ollama_adapter import (
+    ADAPTER_NAME,
+    DEFAULT_ADAPTER_TIMEOUT_S,
+    DEFAULT_MAX_INFERENCE_CALLS,
+    LiveOllamaAdapter,
+    format_adapter_plan,
+)
+from toolcall_doctor.causal import (
+    DEFAULT_CAUSAL_MAX_CALLS,
+    diagnose_causes,
+    format_causal_plan,
+    print_causal_diagnosis,
+)
+from toolcall_doctor.remediations import (
+    DEFAULT_REMEDIATION_MAX_CALLS,
+    format_remediation_plan,
+    print_remediation,
+    search_remediations,
+)
+from toolcall_doctor.diagnose import (
+    DEFAULT_DIAGNOSE_ADAPTER,
+    DEFAULT_DIAGNOSE_ADAPTER_MAX_CALLS,
+    DEFAULT_DIAGNOSE_CAUSAL_MAX_CALLS,
+    DEFAULT_DIAGNOSE_REMEDIATION_MAX_CALLS,
+    build_diagnose_plan,
+    build_report,
+    format_diagnose_plan,
+    print_diagnose_summary,
+)
+from toolcall_doctor.outcome import (
+    MANIFESTED,
+    NOT_REPRODUCED,
+    PRECONDITION_FAILED,
+    RUNTIME_UNAVAILABLE,
+    classify_k_of_n,
+    make_outcome,
+    print_outcome,
+)
 
 EX_OK = 0
 EX_INPUT = 1
@@ -45,19 +84,25 @@ class InputError(Exception):
 
 
 class RuntimeUnavailable(Exception):
-    def __init__(self, what: str, why: str = "", do: str = ""):
+    def __init__(self, what: str, why: str = "", do: str = "", result: dict | None = None):
         super().__init__(what)
         self.what = what
         self.why = why
         self.do = do
+        self.result = result
 
 
 class DoesNotReproduce(Exception):
-    def __init__(self, what: str, why: str = "", do: str = ""):
+    def __init__(self, what: str, why: str = "", do: str = "", result: dict | None = None):
         super().__init__(what)
         self.what = what
         self.why = why
         self.do = do
+        self.result = result
+
+
+class PreconditionFailed(DoesNotReproduce):
+    """Runtime reachable (or not yet needed) but the experiment cannot be interpreted."""
 
 
 def _emit_error(exc: Exception) -> None:
@@ -144,6 +189,7 @@ def probe_runtime(url: str, model: str | None, timeout: float = 5.0, client: htt
                     "The server is up but unhealthy.",
                     "Check `ollama serve` logs, then retry.",
                 )
+            model_present: bool | None = None
             if model:
                 tags_r = c.get(f"{origin}/api/tags")
                 if tags_r.status_code == 200:
@@ -158,16 +204,18 @@ def probe_runtime(url: str, model: str | None, timeout: float = 5.0, client: htt
                         isinstance(n, str) and (n == model or n.startswith(model) or n.startswith(model.split(":")[0]))
                         for n in names
                     )
+                    if names:
+                        model_present = bool(ok)
                     if names and not ok:
-                        raise RuntimeUnavailable(
+                        raise PreconditionFailed(
                             f"model {model!r} is not loaded at {origin}",
-                            "The request names a model this runtime does not have.",
+                            "The runtime is reachable, but the request names a model that is not present.",
                             f"Run: ollama pull {model}",
                         )
         finally:
             if own:
                 c.close()
-    except RuntimeUnavailable:
+    except (RuntimeUnavailable, PreconditionFailed):
         raise
     except httpx.ConnectError as e:
         raise RuntimeUnavailable(
@@ -177,7 +225,11 @@ def probe_runtime(url: str, model: str | None, timeout: float = 5.0, client: htt
         ) from e
     except httpx.HTTPError as e:
         raise RuntimeUnavailable(f"runtime probe failed: {e}", "Could not query /api/version or /api/tags.", "Confirm the server URL.") from e
-    return {"origin": origin, "ollama_version": version}
+    facts: dict[str, Any] = {"origin": origin, "ollama_version": version, "reachable": True}
+    if model:
+        facts["model"] = model
+        facts["model_present"] = model_present
+    return facts
 
 
 def _evaluate(contract: dict):
@@ -216,6 +268,9 @@ def run_pool(payload: dict, dest: Path, n: int, contract: dict, url: str, client
             {
                 "i": i,
                 "http_status": exe["status"],
+                "status": exe["status"],
+                "text": exe.get("text") or "",
+                "error": exe.get("error"),
                 "event": event,
                 "failed_invariants": sem["failed_invariants"],
                 "arguments": ora.get("arguments"),
@@ -223,6 +278,133 @@ def run_pool(payload: dict, dest: Path, n: int, contract: dict, url: str, client
             }
         )
     return {"n": n, "k_events": k, "rows": rows}
+
+
+def _write_result(out_dir: Path, result: dict) -> dict:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / "result.json"
+    result.setdefault("output", {})
+    result["output"]["result"] = str(path)
+    path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return result
+
+
+def _base_probe_facts(url: str, model: str | None, runtime_info: dict[str, Any]) -> dict[str, Any]:
+    facts: dict[str, Any] = {"url": url}
+    facts.update({k: v for k, v in runtime_info.items() if k != "url"})
+    if model and "model" not in facts:
+        facts["model"] = model
+    return facts
+
+
+def responses_from_pool(pool: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = []
+    for r in pool.get("rows") or []:
+        if not isinstance(r, dict):
+            continue
+        rows.append(
+            {
+                "status": r.get("http_status", r.get("status")),
+                "http_status": r.get("http_status", r.get("status")),
+                "text": r.get("text") or "",
+                "error": r.get("error"),
+                "event": r.get("event"),
+            }
+        )
+    return rows
+
+
+def _runtime_config_for_localization(runtime_info: dict[str, Any], model: str | None) -> dict[str, Any]:
+    cfg: dict[str, Any] = {}
+    for key in (
+        "origin",
+        "ollama_version",
+        "reachable",
+        "model",
+        "model_present",
+        "served_model",
+        "required_parser",
+        "available_parsers",
+    ):
+        if key in runtime_info:
+            cfg[key] = runtime_info[key]
+    if model and "model" not in cfg:
+        cfg["model"] = model
+    return cfg
+
+
+def localization_for_manifested(
+    *,
+    outcome: dict[str, Any],
+    request: dict[str, Any],
+    runtime_info: dict[str, Any],
+    model: str | None,
+    pre: dict[str, Any],
+    verify: dict[str, Any] | None = None,
+    minimized_request: dict[str, Any] | None = None,
+    runtime_adapter: Any = None,
+    progress: Callable[[str], None] | None = None,
+    contract: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    """Cheap layer isolation. Returns None unless outcome is manifested."""
+    if outcome.get("status") != MANIFESTED:
+        return None
+    responses = responses_from_pool(pre)
+    if verify is not None:
+        responses.extend(responses_from_pool(verify))
+    cfg = _runtime_config_for_localization(runtime_info, model)
+    if runtime_adapter is not None:
+        plan = runtime_adapter.plan() if hasattr(runtime_adapter, "plan") else None
+        if isinstance(plan, dict) and progress:
+            progress(format_adapter_plan(plan))
+        try:
+            facts = runtime_adapter.runtime_facts()
+            if isinstance(facts, dict):
+                cfg.update(facts)
+        except Exception:
+            pass
+    bundle: dict[str, Any] = {
+        "request": request,
+        "tool_schemas": request.get("tools"),
+        "runtime_config": cfg,
+        "raw_responses": responses,
+        "raw_response": responses[0] if responses else None,
+        "parser_result": None,
+        "server_probe_facts": dict(runtime_info),
+        "outcome": outcome,
+    }
+    if contract is not None:
+        bundle["contract"] = contract
+    if runtime_adapter is not None:
+        bundle["runtime_adapter"] = runtime_adapter
+    if minimized_request is not None:
+        bundle["minimized_request"] = minimized_request
+    return localize(bundle)
+
+
+def _maybe_live_adapter(
+    name: str | None,
+    *,
+    url: str,
+    request: dict[str, Any],
+    contract: dict[str, Any],
+    client: httpx.Client | None,
+    adapter_dry_run: bool,
+    adapter_max_calls: int,
+    adapter_timeout_s: float,
+) -> LiveOllamaAdapter | None:
+    if name != ADAPTER_NAME:
+        return None
+    return LiveOllamaAdapter(
+        url=url,
+        request=request,
+        contract=contract,
+        client=client,
+        timeout_s=adapter_timeout_s,
+        max_inference_calls=adapter_max_calls,
+        dry_run=adapter_dry_run,
+        original_manifested=True,
+    )
 
 
 def minimize(
@@ -235,6 +417,15 @@ def minimize(
     client: httpx.Client | None = None,
     skip_probe: bool = False,
     progress: Callable[[str], None] | None = None,
+    require_k: int | None = None,
+    runtime_adapter_name: str | None = None,
+    adapter_dry_run: bool = False,
+    adapter_max_calls: int = DEFAULT_MAX_INFERENCE_CALLS,
+    adapter_timeout_s: float = DEFAULT_ADAPTER_TIMEOUT_S,
+    causal_max_calls: int = DEFAULT_CAUSAL_MAX_CALLS,
+    causal_dry_run: bool = False,
+    remediation_max_calls: int = DEFAULT_REMEDIATION_MAX_CALLS,
+    remediation_dry_run: bool = False,
 ) -> dict:
     def log(msg: str) -> None:
         if progress:
@@ -242,12 +433,34 @@ def minimize(
 
     if n < 1:
         raise InputError("--n must be >= 1", "Need at least one trial.", "Use -n 3 (release default) or higher.")
-    req_keep = check_request_keepers(request, contract)
-    if not req_keep["ok"]:
-        raise DoesNotReproduce(
-            "the original request already breaks a keeper: " + ", ".join(req_keep["failed_invariants"]),
-            "A keeper is a field/substring the minimizer is not allowed to remove. It is missing before search starts.",
-            "Fix contract.json preserve entries so they match this request, or restore the missing text/tool/schema.",
+    required = n if require_k is None else require_k
+    if required < 1 or required > n:
+        raise InputError(
+            "--require-k must be between 1 and -n",
+            "The manifestation threshold cannot exceed the number of trials.",
+            f"Use --require-k {n} (default: all {n} trials) or a smaller integer.",
+        )
+    if runtime_adapter_name and runtime_adapter_name != ADAPTER_NAME:
+        raise InputError(
+            f"unknown runtime adapter {runtime_adapter_name!r}",
+            "Only the Ollama live adapter is implemented.",
+            "Use --runtime-adapter ollama, or omit the flag.",
+        )
+    if adapter_dry_run and not runtime_adapter_name:
+        raise InputError(
+            "--adapter-dry-run requires --runtime-adapter",
+            "Dry-run prints the live isolation plan for a chosen adapter.",
+            "Use: toolcall-doctor minimize ... --runtime-adapter ollama --adapter-dry-run",
+        )
+    if adapter_max_calls < 0:
+        raise InputError("--adapter-max-calls must be >= 0", "The inference cap cannot be negative.", "Use 0 to forbid extra adapter inference.")
+    if causal_max_calls < 0:
+        raise InputError("--causal-max-calls must be >= 0", "The causal inference cap cannot be negative.", "Use 0 to generate hypotheses without A/B/C inference.")
+    if remediation_max_calls < 0:
+        raise InputError(
+            "--remediation-max-calls must be >= 0",
+            "The remediation inference cap cannot be negative.",
+            "Use 0 to list remediation candidates without verification inference.",
         )
     spec = exec_spec_from_request(request)
     model = request.get("model") if isinstance(request.get("model"), str) else None
@@ -256,6 +469,55 @@ def minimize(
     t_all = time.perf_counter()
     timings: dict[str, float] = {}
     close_client = False
+
+    def close_case(
+        status: str,
+        *,
+        observed: int | None,
+        reason: str,
+        what: str,
+        why: str,
+        do: str,
+        extra: dict[str, Any] | None = None,
+        exc_type: type[Exception] = DoesNotReproduce,
+    ) -> None:
+        facts = _base_probe_facts(url, model, runtime_info)
+        if extra:
+            facts.update(extra)
+        outcome = make_outcome(
+            status,
+            observed=observed,
+            required=required,
+            trials=n,
+            probe_facts=facts,
+            reason=reason,
+        )
+        result = {
+            "tool_version": __version__,
+            "runtime": runtime_info,
+            "model": model,
+            "n": n,
+            "require_k": required,
+            "utc": utc_now(),
+            "status": status,
+            "outcome": outcome,
+            "output": {"result": str(out_dir / "result.json")},
+        }
+        _write_result(out_dir, result)
+        raise exc_type(what, why, do, result=result)
+
+    req_keep = check_request_keepers(request, contract)
+    if not req_keep["ok"]:
+        close_case(
+            PRECONDITION_FAILED,
+            observed=None,
+            reason="original request already breaks a keeper: " + ", ".join(req_keep["failed_invariants"]),
+            what="the original request already breaks a keeper: " + ", ".join(req_keep["failed_invariants"]),
+            why="A keeper is a field/substring the minimizer is not allowed to remove. It is missing before search starts.",
+            do="Fix contract.json preserve entries so they match this request, or restore the missing text/tool/schema.",
+            extra={"reachable": None, "failed_invariants": list(req_keep["failed_invariants"])},
+            exc_type=PreconditionFailed,
+        )
     try:
         t0 = time.perf_counter()
         log(
@@ -264,26 +526,76 @@ def minimize(
         )
         if not skip_probe:
             log(f"Probing runtime {url} ...")
-            runtime_info.update(probe_runtime(url, model, timeout=5.0))
+            try:
+                runtime_info.update(probe_runtime(url, model, timeout=5.0, client=client))
+            except PreconditionFailed as e:
+                close_case(
+                    PRECONDITION_FAILED,
+                    observed=None,
+                    reason=e.what,
+                    what=e.what,
+                    why=e.why,
+                    do=e.do,
+                    extra={"reachable": True, "model_present": False},
+                    exc_type=PreconditionFailed,
+                )
+            except RuntimeUnavailable as e:
+                close_case(
+                    RUNTIME_UNAVAILABLE,
+                    observed=None,
+                    reason=e.what,
+                    what=e.what,
+                    why=e.why,
+                    do=e.do,
+                    extra={"reachable": False},
+                    exc_type=RuntimeUnavailable,
+                )
             log("Runtime reachable.")
+        else:
+            runtime_info["probe_skipped"] = True
         timings["startup"] = round(time.perf_counter() - t0, 3)
         if client is None:
             client = httpx.Client(timeout=120.0)
             close_client = True
         work = prepare_owned_work_dir(out_dir)
-        log(f"Preflight: reproducing the failure {n}/{n} ...")
+        log(f"Preflight: reproducing the failure {required}/{n} ...")
         t0 = time.perf_counter()
-        pre = run_pool(request, work / "preflight", n, contract, url, client)
-        timings["preflight"] = round(time.perf_counter() - t0, 3)
-        if pre["k_events"] != n:
-            failed = pre["rows"][-1]["failed_invariants"] if pre["rows"] else []
-            raise DoesNotReproduce(
-                f"original request did not reproduce the specified failure ({pre['k_events']}/{n})",
-                "Search only starts when the current runtime shows your failure and keepers on this request.",
-                "Adjust failure.path/condition, confirm the model, or inspect .toolcall-doctor/preflight/. Failed checks: "
-                + (", ".join(failed) if failed else "none listed"),
+        try:
+            pre = run_pool(request, work / "preflight", n, contract, url, client)
+        except RuntimeUnavailable as e:
+            close_case(
+                RUNTIME_UNAVAILABLE,
+                observed=None,
+                reason=e.what,
+                what=e.what,
+                why=e.why,
+                do=e.do,
+                extra={"reachable": False, "phase": "preflight"},
+                exc_type=RuntimeUnavailable,
             )
-        log(f"Original failure reproduced {pre['k_events']}/{n}.")
+        timings["preflight"] = round(time.perf_counter() - t0, 3)
+        k = pre["k_events"]
+        failed = pre["rows"][-1]["failed_invariants"] if pre["rows"] else []
+        gate = classify_k_of_n(k, required)
+        if gate != MANIFESTED:
+            if gate == NOT_REPRODUCED:
+                why = "The runtime answered, but the contract did not match on any trial. Minimization does not start."
+            else:
+                why = (
+                    "Some trials matched the contract, but not enough to cross the required threshold. "
+                    "Minimization does not start."
+                )
+            close_case(
+                gate,
+                observed=k,
+                reason=f"preflight contract matches {k}/{n}; required {required}/{n}",
+                what=f"original request did not reproduce the specified failure ({k}/{n})",
+                why=why,
+                do="Adjust failure.path/condition, confirm the model, or inspect .toolcall-doctor/preflight/. Failed checks: "
+                + (", ".join(failed) if failed else "none listed"),
+                extra={"reachable": True, "phase": "preflight", "failed_invariants": failed},
+            )
+        log(f"OUTCOME: MANIFESTED ({k}/{n}, required {required}/{n}).")
         log(f"Minimizing... output will be {out_dir / 'minimal-repro.json'}")
 
         def post_fn(payload: dict, dest: Path) -> dict:
@@ -317,10 +629,14 @@ def minimize(
         mini = ddmin(request, atoms, session)
         timings["search"] = round(time.perf_counter() - t0, 3)
         if mini.get("status") != "REDUCED":
-            raise DoesNotReproduce(
-                "seed candidate did not reproduce the failure under the contract",
-                "The first full request must fail the same way before subsets are tried.",
-                "Check preflight output and the contract.",
+            close_case(
+                NOT_REPRODUCED,
+                observed=k,
+                reason="seed candidate did not reproduce the failure under the contract after preflight",
+                what="seed candidate did not reproduce the failure under the contract",
+                why="The first full request must fail the same way before subsets are tried.",
+                do="Check preflight output and the contract.",
+                extra={"reachable": True, "phase": "search"},
             )
         payload = mini["payload"]
         if not isinstance(payload, dict):
@@ -329,10 +645,27 @@ def minimize(
         t0 = time.perf_counter()
         verify = run_pool(payload, work / "verify", n, contract, url, client)
         timings["verify"] = round(time.perf_counter() - t0, 3)
-        verified = verify["k_events"] == n
+        vk = verify["k_events"]
+        verified = vk >= required
         fin_b = len(compact_bytes(payload))
         reduction = round(100.0 * (1 - fin_b / orig_b), 2) if orig_b else 0.0
         timings["total"] = round(time.perf_counter() - t_all, 3)
+        facts = _base_probe_facts(url, model, runtime_info)
+        facts.update({"reachable": True, "phase": "verify", "preflight_k": k, "verify_k": vk})
+        if verified:
+            v_status = MANIFESTED
+            v_reason = f"contract matched {vk}/{n} on the minimized request; required {required}/{n}"
+        else:
+            v_status = classify_k_of_n(vk, required)
+            v_reason = f"minimized request verification matched {vk}/{n}; required {required}/{n}"
+        outcome = make_outcome(
+            v_status,
+            observed=vk,
+            required=required,
+            trials=n,
+            probe_facts=facts,
+            reason=v_reason,
+        )
         result = {
             "tool_version": __version__,
             "runtime": runtime_info,
@@ -344,9 +677,10 @@ def minimize(
             "runtime_calls": session.http_calls + pre["n"] + verify["n"],
             "search_http_calls": session.http_calls,
             "n": n,
+            "require_k": required,
             "failure_verification": {
                 "preflight": f"{pre['k_events']}/{n}",
-                "minimized": f"{verify['k_events']}/{n}",
+                "minimized": f"{vk}/{n}",
                 "pass": verified,
             },
             "semantic_verification": {
@@ -356,21 +690,92 @@ def minimize(
             "execution": spec,
             "timings_s": timings,
             "utc": utc_now(),
-            "status": "ok" if verified else "verify_failed",
+            "status": "ok" if verified else v_status,
+            "outcome": outcome,
             "output": {
                 "minimal_repro": str(out_dir / "minimal-repro.json"),
                 "result": str(out_dir / "result.json"),
             },
         }
+        loc = localization_for_manifested(
+            outcome=outcome,
+            request=request,
+            runtime_info=runtime_info,
+            model=model,
+            pre=pre,
+            verify=verify,
+            minimized_request=payload,
+            runtime_adapter=_maybe_live_adapter(
+                runtime_adapter_name,
+                url=url,
+                request=request,
+                contract=contract,
+                client=client,
+                adapter_dry_run=adapter_dry_run,
+                adapter_max_calls=adapter_max_calls,
+                adapter_timeout_s=adapter_timeout_s,
+            ),
+            progress=log,
+            contract=contract,
+        )
+        if loc is not None:
+            result["localization"] = loc
+            def _causal_observe(payload: dict) -> dict:
+                exe = post(payload, None, url=url, client=client, persist=False)
+                return {
+                    "http_status": exe.get("status"),
+                    "text": exe.get("text") or "",
+                    "error": exe.get("error"),
+                }
+
+            run_live = (not causal_dry_run) and causal_max_calls > 0
+            diag = diagnose_causes(
+                request=payload,
+                original_request=request,
+                contract=contract,
+                outcome=outcome,
+                localization=loc,
+                n=n,
+                required=required,
+                dry_run=causal_dry_run,
+                max_calls=causal_max_calls,
+                observe=_causal_observe if run_live else None,
+                baseline_manifested=bool(verified),
+            )
+            if causal_dry_run and progress:
+                progress(format_causal_plan(diag))
+            result["causal_diagnosis"] = diag
+            result["runtime_calls"] = int(result.get("runtime_calls") or 0) + int(diag.get("inference_calls") or 0)
+            if diag.get("status") == "confirmed":
+                run_rem = (not remediation_dry_run) and remediation_max_calls > 0
+                rem = search_remediations(
+                    request=payload,
+                    contract=contract,
+                    causal_diagnosis=diag,
+                    outcome=outcome,
+                    n=n,
+                    required=required,
+                    dry_run=remediation_dry_run,
+                    max_calls=remediation_max_calls,
+                    observe=_causal_observe if run_rem else None,
+                    baseline_manifested=bool(verified),
+                )
+                if remediation_dry_run and progress:
+                    progress(format_remediation_plan(rem))
+                result["remediation"] = rem
+                result["runtime_calls"] = int(result.get("runtime_calls") or 0) + int(rem.get("inference_calls") or 0)
+        if runtime_adapter_name:
+            result["runtime_adapter"] = runtime_adapter_name
         (out_dir / "minimal-repro.json").write_text(
             json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
         )
-        (out_dir / "result.json").write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        _write_result(out_dir, result)
         if not verified:
             raise DoesNotReproduce(
-                f"minimized request failed verification ({verify['k_events']}/{n})",
+                f"minimized request failed verification ({vk}/{n})",
                 "The smaller request did not keep the failure and keepers on the final re-run.",
                 f"See {out_dir / 'result.json'}. Do not treat this as a successful shrink.",
+                result=result,
             )
         log("Done.")
         return result
@@ -380,6 +785,9 @@ def minimize(
 
 
 def print_summary(result: dict) -> None:
+    outcome = result.get("outcome") if isinstance(result.get("outcome"), dict) else None
+    if outcome:
+        print_outcome(outcome, minimization_ran=True, verified=True)
     print("original bytes:   ", result["original_bytes"])
     print("minimized bytes:  ", result["minimized_bytes"])
     print("reduction:        ", f"{result['reduction_pct']}%")
@@ -392,8 +800,19 @@ def print_summary(result: dict) -> None:
     print("minimal-repro:    ", result["output"]["minimal_repro"])
     print("result:           ", result["output"]["result"])
     print()
+    loc = result.get("localization")
+    if isinstance(loc, dict):
+        print_localization(loc)
+    causal = result.get("causal_diagnosis")
+    if isinstance(causal, dict):
+        print_causal_diagnosis(causal)
+    rem = result.get("remediation")
+    if isinstance(rem, dict):
+        print_remediation(rem)
     print("This is a smaller request that still matches your contract.")
     print("It is not an automatic root-cause diagnosis.")
+    print("Minimal reproducer != confirmed root cause.")
+    print("A plausible patch is not a verified fix.")
     print()
     print("Next:")
     print("  1. Open the minimal-repro.json path above and inspect what remained.")
@@ -401,13 +820,184 @@ def print_summary(result: dict) -> None:
     print("  3. Sanitize secrets and private data before sharing.")
 
 
+def run_diagnose(
+    request: dict,
+    contract: dict,
+    out_dir: Path,
+    *,
+    n: int,
+    url: str,
+    client: httpx.Client | None = None,
+    skip_probe: bool = False,
+    progress: Callable[[str], None] | None = None,
+    require_k: int | None = None,
+    runtime_adapter_name: str | None = DEFAULT_DIAGNOSE_ADAPTER,
+    adapter_max_calls: int = DEFAULT_DIAGNOSE_ADAPTER_MAX_CALLS,
+    adapter_timeout_s: float = DEFAULT_ADAPTER_TIMEOUT_S,
+    causal_max_calls: int = DEFAULT_DIAGNOSE_CAUSAL_MAX_CALLS,
+    remediation_max_calls: int = DEFAULT_DIAGNOSE_REMEDIATION_MAX_CALLS,
+    dry_run: bool = False,
+    adapter_dry_run: bool = False,
+    causal_dry_run: bool = False,
+    remediation_dry_run: bool = False,
+) -> dict:
+    """Orchestrate the existing pipeline with conservative diagnose presets."""
+    adapter_name = runtime_adapter_name or DEFAULT_DIAGNOSE_ADAPTER
+    plan = build_diagnose_plan(
+        request=request,
+        contract=contract,
+        url=url,
+        n=n,
+        require_k=require_k,
+        runtime_adapter_name=adapter_name,
+        adapter_max_calls=adapter_max_calls,
+        adapter_timeout_s=adapter_timeout_s,
+        causal_max_calls=causal_max_calls,
+        remediation_max_calls=remediation_max_calls,
+        dry_run=dry_run,
+    )
+    if progress:
+        progress(format_diagnose_plan(plan))
+    if dry_run:
+        result = {
+            "tool_version": __version__,
+            "mode": "diagnose_dry_run",
+            "live_inference": False,
+            "dry_run": True,
+            "runtime": {"url": url},
+            "model": request.get("model") if isinstance(request.get("model"), str) else None,
+            "n": n,
+            "require_k": n if require_k is None else require_k,
+            "utc": utc_now(),
+            "status": "dry_run",
+            "output": {"result": str(out_dir / "result.json")},
+        }
+        result["report"] = build_report(result, plan)
+        _write_result(out_dir, result)
+        return result
+
+    def attach(result: dict) -> dict:
+        result["report"] = build_report(result, plan)
+        _write_result(out_dir, result)
+        return result
+
+    try:
+        result = minimize(
+            request,
+            contract,
+            out_dir,
+            n=n,
+            url=url,
+            client=client,
+            skip_probe=skip_probe,
+            progress=progress,
+            require_k=require_k,
+            runtime_adapter_name=adapter_name,
+            adapter_dry_run=adapter_dry_run,
+            adapter_max_calls=adapter_max_calls,
+            adapter_timeout_s=adapter_timeout_s,
+            causal_max_calls=causal_max_calls,
+            causal_dry_run=causal_dry_run,
+            remediation_max_calls=remediation_max_calls,
+            remediation_dry_run=remediation_dry_run,
+        )
+    except (RuntimeUnavailable, DoesNotReproduce) as e:
+        closed = getattr(e, "result", None)
+        if isinstance(closed, dict):
+            attach(closed)
+        raise
+    return attach(result)
+
+
+def _add_case_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("request", nargs="?", default=None, help="path to the failing request JSON (or use --example)")
+    parser.add_argument(
+        "--example",
+        choices=list(EXAMPLE_NAMES),
+        help="use a bundled example (does not depend on the current directory)",
+    )
+    parser.add_argument("--contract", default=None, help="path to contract.json (required unless --example)")
+    parser.add_argument("-o", "--output", default=".", help="directory for minimal-repro.json and result.json")
+    parser.add_argument("-n", type=int, default=3, help="trials for preflight, each accepted candidate, and verification (default 3)")
+    parser.add_argument(
+        "--require-k",
+        type=int,
+        default=None,
+        help="minimum matching trials before minimization (default: all -n trials)",
+    )
+    parser.add_argument("--url", default=os.environ.get("TOOLCALL_DOCTOR_URL", DEFAULT_URL), help="chat completions URL")
+
+
+def _add_pipeline_flags(
+    parser: argparse.ArgumentParser,
+    *,
+    adapter_default: str | None,
+    adapter_max_default: int,
+    causal_default: int,
+    remediation_default: int,
+) -> None:
+    parser.add_argument(
+        "--runtime-adapter",
+        choices=[ADAPTER_NAME],
+        default=adapter_default,
+        help=(
+            "run live isolation probes after a manifested case (ollama only)"
+            if adapter_default is None
+            else f"live isolation adapter (default {adapter_default})"
+        ),
+    )
+    parser.add_argument(
+        "--adapter-dry-run",
+        action="store_true",
+        help="print the live adapter plan and estimated extra inference calls; do not execute adapter inference",
+    )
+    parser.add_argument(
+        "--adapter-max-calls",
+        type=int,
+        default=adapter_max_default,
+        help=f"maximum extra chat-completions calls for live isolation (default {adapter_max_default})",
+    )
+    parser.add_argument(
+        "--adapter-timeout",
+        type=float,
+        default=DEFAULT_ADAPTER_TIMEOUT_S,
+        help=f"timeout in seconds for each live adapter HTTP call (default {DEFAULT_ADAPTER_TIMEOUT_S:.0f})",
+    )
+    parser.add_argument(
+        "--causal-max-calls",
+        type=int,
+        default=causal_default,
+        help=f"maximum extra chat-completions calls for schema/tool A/B/C (default {causal_default}; 0 = hypotheses only)",
+    )
+    parser.add_argument(
+        "--causal-dry-run",
+        action="store_true",
+        help="print schema/tool causal hypotheses and planned interventions; do not run causal inference",
+    )
+    parser.add_argument(
+        "--remediation-max-calls",
+        type=int,
+        default=remediation_default,
+        help=(
+            f"maximum extra chat-completions calls for remediation verification "
+            f"(default {remediation_default}; 0 = candidates only)"
+        ),
+    )
+    parser.add_argument(
+        "--remediation-dry-run",
+        action="store_true",
+        help="print remediation candidates and planned verification calls; do not run remediation inference",
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="toolcall-doctor",
         description=(
             "Shrink a reproducible tool-calling failure into a smaller request, "
-            "while the failure you specified still happens and the keepers you specified still hold. "
-            "This is not automatic root-cause diagnosis."
+            "or run diagnose to orchestrate minimization, localization, causal confirmation, "
+            "and remediation with conservative budgets. "
+            "minimize alone is not automatic root-cause diagnosis."
         ),
     )
     p.add_argument("--version", action="version", version=f"toolcall-doctor {__version__}")
@@ -433,16 +1023,45 @@ def build_parser() -> argparse.ArgumentParser:
         "minimize",
         help="minimize a failing chat-completions request under a JSON contract",
     )
-    m.add_argument("request", nargs="?", default=None, help="path to the failing request JSON")
-    m.add_argument(
-        "--example",
-        choices=list(EXAMPLE_NAMES),
-        help="use a bundled example (does not depend on the current directory)",
+    _add_case_args(m)
+    _add_pipeline_flags(
+        m,
+        adapter_default=None,
+        adapter_max_default=DEFAULT_MAX_INFERENCE_CALLS,
+        causal_default=DEFAULT_CAUSAL_MAX_CALLS,
+        remediation_default=DEFAULT_REMEDIATION_MAX_CALLS,
     )
-    m.add_argument("--contract", default=None, help="path to contract.json (failure + keepers)")
-    m.add_argument("-o", "--output", default=".", help="directory for minimal-repro.json and result.json")
-    m.add_argument("-n", type=int, default=3, help="trials for preflight, each accepted candidate, and verification (default 3)")
-    m.add_argument("--url", default=os.environ.get("TOOLCALL_DOCTOR_URL", DEFAULT_URL), help="chat completions URL")
+    g = sub.add_parser(
+        "diagnose",
+        help="self-serve pipeline: outcome, minimize, localize, causal, remediation",
+        description=(
+            "Run the conservative diagnose pipeline on a contracted failure. "
+            "Provide request.json and --contract, or --example NAME. "
+            "Stages run only when prior evidence justifies them. "
+            "The command fails closed (INSUFFICIENT EVIDENCE) instead of guessing."
+        ),
+        epilog=(
+            "Default extra-call caps: adapter 2, causal 24, remediation 18 "
+            "(minimization search calls are separate). "
+            "--dry-run prints the plan and writes result.json with zero inference. "
+            "A verified ROOT_CAUSE_FIX and a verified WORKAROUND are distinct statuses. "
+            "Unsupported layers (including Ollama parser isolation) abstain. "
+            "See docs/DIAGNOSE.md."
+        ),
+    )
+    _add_case_args(g)
+    _add_pipeline_flags(
+        g,
+        adapter_default=DEFAULT_DIAGNOSE_ADAPTER,
+        adapter_max_default=DEFAULT_DIAGNOSE_ADAPTER_MAX_CALLS,
+        causal_default=DEFAULT_DIAGNOSE_CAUSAL_MAX_CALLS,
+        remediation_default=DEFAULT_DIAGNOSE_REMEDIATION_MAX_CALLS,
+    )
+    g.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="print planned stages and maximum extra-call budgets; do not send any model inference",
+    )
     return p
 
 
@@ -460,18 +1079,19 @@ def _load_minimize_inputs(args: argparse.Namespace) -> tuple[dict, dict]:
     example = getattr(args, "example", None)
     request_path = getattr(args, "request", None)
     contract_path = getattr(args, "contract", None)
+    command = getattr(args, "cmd", None) or "minimize"
     if example and request_path:
         raise InputError(
             "pass either --example or a request path, not both",
             "The bundled example already includes a request and a contract.",
-            f"Use: toolcall-doctor minimize --example {example} -o out",
+            f"Use: toolcall-doctor {command} --example {example} -o out",
         )
     if example:
         if contract_path:
             raise InputError(
                 "--contract cannot be combined with --example",
                 "The bundled example already includes contract.json.",
-                f"Use: toolcall-doctor minimize --example {example} -o out",
+                f"Use: toolcall-doctor {command} --example {example} -o out",
             )
         try:
             request, raw_contract = load_example(example)
@@ -484,8 +1104,9 @@ def _load_minimize_inputs(args: argparse.Namespace) -> tuple[dict, dict]:
     if not request_path:
         raise InputError(
             "missing request path",
-            "Minimize needs a failing chat-completions JSON body, or a bundled example.",
-            "Use --example tool-choice-none, or pass request.json --contract contract.json. "
+            "This command needs a failing chat-completions JSON body, or a bundled example.",
+            f"Use --example tool-choice-none, or pass request.json --contract contract.json. "
+            f"Self-serve: toolcall-doctor diagnose request.json --contract contract.json -o out. "
             "No-model walkthrough: toolcall-doctor demo -o out",
         )
     if not contract_path:
@@ -513,7 +1134,8 @@ def _run_example_cmd(args: argparse.Namespace) -> int:
             print(f"  {name}")
         print()
         print("Write files:  toolcall-doctor example tool-choice-none -o ./case")
-        print("Live run:     toolcall-doctor minimize --example tool-choice-none -o out")
+        print("Diagnose:     toolcall-doctor diagnose --example tool-choice-none -o out")
+        print("Minimize:     toolcall-doctor minimize --example tool-choice-none -o out")
         print("Replay only:  toolcall-doctor demo -o out")
         return EX_OK
     try:
@@ -529,7 +1151,7 @@ def _run_example_cmd(args: argparse.Namespace) -> int:
     print()
     print("Inspect those files, sanitize secrets, then:")
     print(
-        f"  toolcall-doctor minimize {written['request.json']} "
+        f"  toolcall-doctor diagnose {written['request.json']} "
         f"--contract {written['contract.json']} -o out"
     )
     return EX_OK
@@ -548,24 +1170,61 @@ def main(argv: list[str] | None = None) -> int:
         return EX_OK
     if args.cmd == "example":
         return _run_example_cmd(args)
-    if args.cmd != "minimize":
+    if args.cmd not in {"minimize", "diagnose"}:
         parser.print_help()
         return EX_INPUT
     try:
         request, contract = _load_minimize_inputs(args)
         out = Path(args.output)
         out.mkdir(parents=True, exist_ok=True)
+        if args.cmd == "diagnose":
+            result = run_diagnose(
+                request,
+                contract,
+                out,
+                n=args.n,
+                url=args.url,
+                require_k=args.require_k,
+                progress=lambda s: print(s, flush=True),
+                runtime_adapter_name=getattr(args, "runtime_adapter", DEFAULT_DIAGNOSE_ADAPTER),
+                adapter_dry_run=bool(getattr(args, "adapter_dry_run", False)),
+                adapter_max_calls=int(getattr(args, "adapter_max_calls", DEFAULT_DIAGNOSE_ADAPTER_MAX_CALLS)),
+                adapter_timeout_s=float(getattr(args, "adapter_timeout", DEFAULT_ADAPTER_TIMEOUT_S)),
+                causal_max_calls=int(getattr(args, "causal_max_calls", DEFAULT_DIAGNOSE_CAUSAL_MAX_CALLS)),
+                causal_dry_run=bool(getattr(args, "causal_dry_run", False)),
+                remediation_max_calls=int(getattr(args, "remediation_max_calls", DEFAULT_DIAGNOSE_REMEDIATION_MAX_CALLS)),
+                remediation_dry_run=bool(getattr(args, "remediation_dry_run", False)),
+                dry_run=bool(getattr(args, "dry_run", False)),
+            )
+            print_diagnose_summary(result)
+            return EX_OK
         result = minimize(
             request,
             contract,
             out,
             n=args.n,
             url=args.url,
+            require_k=args.require_k,
             progress=lambda s: print(s, flush=True),
+            runtime_adapter_name=getattr(args, "runtime_adapter", None),
+            adapter_dry_run=bool(getattr(args, "adapter_dry_run", False)),
+            adapter_max_calls=int(getattr(args, "adapter_max_calls", DEFAULT_MAX_INFERENCE_CALLS)),
+            adapter_timeout_s=float(getattr(args, "adapter_timeout", DEFAULT_ADAPTER_TIMEOUT_S)),
+            causal_max_calls=int(getattr(args, "causal_max_calls", DEFAULT_CAUSAL_MAX_CALLS)),
+            causal_dry_run=bool(getattr(args, "causal_dry_run", False)),
+            remediation_max_calls=int(getattr(args, "remediation_max_calls", DEFAULT_REMEDIATION_MAX_CALLS)),
+            remediation_dry_run=bool(getattr(args, "remediation_dry_run", False)),
         )
         print_summary(result)
         return EX_OK
     except (ContractError, InputError, RuntimeUnavailable, DoesNotReproduce) as e:
+        closed = getattr(e, "result", None)
+        if isinstance(closed, dict) and isinstance(closed.get("report"), dict):
+            print_diagnose_summary(closed)
+        elif isinstance(closed, dict) and isinstance(closed.get("outcome"), dict):
+            oc = closed["outcome"]
+            ran = oc.get("probe_facts", {}).get("phase") in {"search", "verify"}
+            print_outcome(oc, minimization_ran=ran, verified=False)
         if isinstance(e, ContractError):
             _emit_error(
                 InputError(

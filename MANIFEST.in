@@ -4,9 +4,20 @@ include LICENSE
 include CONTRIBUTING.md
 include RESEARCH.md
 include USER_CONTRACT_SPEC.md
+include CHANGELOG.md
+recursive-include docs *
 recursive-include src/toolcall_doctor *
 recursive-include tests *
 recursive-include examples *
 global-exclude *.py[cod]
 global-exclude __pycache__
 global-exclude .DS_Store
+prune src/toolcall_doctor.egg-info
+global-exclude *.egg-info
+global-exclude *.egg-info/*
+prune external-tests
+prune experiments
+prune doctor_frozen
+prune out
+prune dist
+prune build

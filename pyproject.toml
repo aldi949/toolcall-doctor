@@ -1,7 +1,7 @@
 [project]
 name = "toolcall-doctor"
-version = "0.2.1"
-description = "Shrink a reproducible tool-calling failure into a smaller request under an explicit contract."
+version = "0.3.0rc1"
+description = "Contract-driven tool-calling failure minimizer with conservative diagnose (schema/tool-set)."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

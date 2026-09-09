@@ -162,7 +162,7 @@ def test_runtime_unavailable(tmp_path: Path, capsys):
 
 
 def test_model_missing(tmp_path: Path, capsys):
-    from toolcall_doctor.cli import RuntimeUnavailable, _emit_error, probe_runtime
+    from toolcall_doctor.cli import PreconditionFailed, _emit_error, probe_runtime
 
     def handler(request: httpx.Request) -> httpx.Response:
         if str(request.url).endswith("/api/version"):
@@ -173,12 +173,12 @@ def test_model_missing(tmp_path: Path, capsys):
 
     transport = httpx.MockTransport(handler)
     with httpx.Client(transport=transport, timeout=1.0) as client:
-        with pytest.raises(RuntimeUnavailable, match="is not loaded"):
+        with pytest.raises(PreconditionFailed, match="is not loaded"):
             probe_runtime("http://127.0.0.1:11434/v1/chat/completions", "llama3.2:3b", client=client)
     _emit_error(
-        RuntimeUnavailable(
+        PreconditionFailed(
             "model 'llama3.2:3b' is not loaded at http://127.0.0.1:11434",
-            "The request names a model this runtime does not have.",
+            "The runtime is reachable, but the request names a model that is not present.",
             "Run: ollama pull llama3.2:3b",
         )
     )
