@@ -2,6 +2,8 @@
 
 This project is an **experimental v0.3.0-rc1** product: a request minimizer plus a conservative `diagnose` orchestrator. It does not invent causes or patches, and it does not diagnose arbitrary tool-calling failures. Please do not add claims that imply otherwise.
 
+Onboarding path: [`docs/ONBOARDING.md`](docs/ONBOARDING.md). Local demo family: [`examples/local-demo/`](examples/local-demo/).
+
 ## Tests
 
 ```

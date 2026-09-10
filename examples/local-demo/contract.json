@@ -1,0 +1,10 @@
+{
+  "failure": {
+    "condition": "not_in_enum",
+    "path": "arguments.v"
+  },
+  "preserve": [
+    { "type": "tool_name", "value": "pick" },
+    { "type": "contains", "value": "Call pick with v set to Z. Do not use A." }
+  ]
+}

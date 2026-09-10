@@ -1,0 +1,6 @@
+{
+  "failure": { "condition": "missing_tool_call" },
+  "preserve": [
+    { "type": "tool_name", "value": "YOUR_TOOL_NAME" }
+  ]
+}
