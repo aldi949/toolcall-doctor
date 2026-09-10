@@ -334,6 +334,37 @@ def print_diagnose_summary(result: dict[str, Any]) -> None:
     if summary:
         print(summary)
     print()
+    oc = result.get("outcome") if isinstance(result.get("outcome"), dict) else {}
+    manifested = oc.get("status") == MANIFESTED or result.get("status") == "ok"
+    if status not in {STATUS_DRY_RUN, STATUS_RUNTIME_PRECONDITION}:
+        print("Failure reproduced" if manifested else "Failure not reproduced")
+        print()
+    loc = result.get("localization") if isinstance(result.get("localization"), dict) else {}
+    causal = result.get("causal_diagnosis") if isinstance(result.get("causal_diagnosis"), dict) else {}
+    rem = result.get("remediation") if isinstance(result.get("remediation"), dict) else {}
+    verified = rem.get("verified") if isinstance(rem.get("verified"), dict) else {}
+    hyp = causal.get("hypothesis") if isinstance(causal.get("hypothesis"), dict) else {}
+    if hyp.get("component_path") or loc.get("layer"):
+        print("LAYER / COMPONENT")
+        if loc.get("layer"):
+            print(f"  localization: {loc.get('layer')} ({loc.get('status')})")
+        if hyp.get("component_path"):
+            print(f"  hypothesis:   {hyp.get('component_path')} ({hyp.get('status') or causal.get('status')})")
+        print()
+    phases = {e.get("phase"): e for e in (causal.get("experiments") or []) if isinstance(e, dict)}
+    if phases:
+        print("EVIDENCE (A/B/C)")
+        for name, label in (("A", "original"), ("B", "changed"), ("C", "restored")):
+            row = phases.get(name)
+            if not row:
+                continue
+            hit = row.get("original_failure_manifested")
+            print(f"  {name} {label:8} -> {'FAIL' if hit else 'PASS'} (original failure {'present' if hit else 'absent'})")
+        print()
+    if verified:
+        print("VERIFIED REMEDIATION")
+        print(f"  {verified.get('class')}: {verified.get('operation')} on {verified.get('target')}")
+        print()
     if result.get("minimized_bytes") is not None:
         print("original bytes:   ", result.get("original_bytes"))
         print("minimized bytes:  ", result.get("minimized_bytes"))
@@ -358,6 +389,7 @@ def print_diagnose_summary(result: dict[str, Any]) -> None:
             f"remediation={budgets.get('remediation_max_calls')}",
         )
     print()
+    print("Doctor does not need a GPU. It POSTs to the runtime at --url.")
     print("Parser isolation is unsupported. A plausible patch is not a verified fix.")
     print("Sanitize secrets before sharing result.json.")
     print()

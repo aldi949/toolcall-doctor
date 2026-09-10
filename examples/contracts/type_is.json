@@ -1,0 +1,11 @@
+{
+  "failure": {
+    "condition": "type_is",
+    "path": "arguments.FIELD",
+    "value": "string"
+  },
+  "preserve": [
+    { "type": "tool_name", "value": "YOUR_TOOL_NAME" },
+    { "type": "schema_type", "property": "FIELD", "value": "array" }
+  ]
+}

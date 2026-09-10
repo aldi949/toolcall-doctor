@@ -1,0 +1,7 @@
+{
+  "failure": {
+    "condition": "http_status_is",
+    "value": 400
+  },
+  "preserve": []
+}

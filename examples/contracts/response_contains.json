@@ -1,0 +1,7 @@
+{
+  "failure": {
+    "condition": "response_contains",
+    "value": "SUBSTRING_FROM_THE_ERROR_BODY"
+  },
+  "preserve": []
+}

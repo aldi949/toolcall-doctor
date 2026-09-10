@@ -145,8 +145,9 @@ def test_runtime_unavailable(tmp_path: Path, capsys):
 
     transport = httpx.MockTransport(handler)
     with httpx.Client(transport=transport, timeout=1.0) as client:
-        with pytest.raises(RuntimeUnavailable, match="cannot reach"):
+        with pytest.raises(RuntimeUnavailable, match="cannot reach") as ei:
             probe_runtime("http://127.0.0.1:11434/v1/chat/completions", "llama3.2:3b", client=client)
+    assert "does not need a GPU" in ei.value.do
     _emit_error(
         RuntimeUnavailable(
             "cannot reach http://127.0.0.1:11434",
@@ -338,3 +339,22 @@ def test_partition_covers_all():
     flat = [x for p in parts for x in p]
     assert flat == items
     assert partition([], 2) == []
+
+
+def test_diagnose_missing_request_points_at_examples(tmp_path: Path, capsys):
+    assert main(["diagnose", "-o", str(tmp_path / "out")]) == EX_INPUT
+    err = capsys.readouterr().err
+    assert "missing request path" in err
+    assert "argument-shape" in err
+    assert "local-demo" in err
+    assert "Traceback" not in err
+
+
+def test_diagnose_missing_contract_points_at_templates(tmp_path: Path, capsys):
+    req = tmp_path / "request.json"
+    req.write_text("{}", encoding="utf-8")
+    assert main(["diagnose", str(req), "-o", str(tmp_path / "out")]) == EX_INPUT
+    err = capsys.readouterr().err
+    assert "missing --contract" in err
+    assert "examples/contracts" in err
+    assert "Traceback" not in err

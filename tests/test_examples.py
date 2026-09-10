@@ -61,3 +61,41 @@ def test_print_summary_is_not_a_diagnosis(capsys):
     assert "sanitize" in out
     assert "583" in out
     assert "185" in out
+
+
+def test_local_demo_files_match_enum_keyword():
+    root = Path(__file__).resolve().parents[1]
+    bundled_req, bundled_con = load_example("enum-keyword")
+    demo_req = (root / "examples" / "local-demo" / "request.json").read_text(encoding="utf-8")
+    demo_con = (root / "examples" / "local-demo" / "contract.json").read_text(encoding="utf-8")
+    import json
+
+    assert json.loads(demo_req) == bundled_req
+    assert json.loads(demo_con) == bundled_con
+    disk_req = json.loads((root / "examples" / "enum-keyword" / "request.json").read_text(encoding="utf-8"))
+    disk_con = json.loads((root / "examples" / "enum-keyword" / "contract.json").read_text(encoding="utf-8"))
+    assert disk_req == bundled_req
+    assert disk_con == bundled_con
+
+
+def test_live_demo_example_is_not_wired_into_engines():
+    from pathlib import Path
+
+    from toolcall_doctor.examples import LIVE_DEMO_EXAMPLE
+
+    src = Path(__file__).resolve().parents[1] / "src" / "toolcall_doctor"
+    for name in ("causal.py", "remediations.py", "localize.py", "ollama_adapter.py"):
+        text = (src / name).read_text(encoding="utf-8")
+        assert LIVE_DEMO_EXAMPLE not in text
+        assert "enum-keyword" not in text
+
+
+def test_contract_templates_parse():
+    import json
+
+    from toolcall_doctor.contract import parse_contract
+
+    root = Path(__file__).resolve().parents[1]
+    templates = root / "examples" / "contracts"
+    for path in templates.glob("*.json"):
+        parse_contract(json.loads(path.read_text(encoding="utf-8")))

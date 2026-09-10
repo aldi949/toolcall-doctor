@@ -1,260 +1,185 @@
-# toolcall-doctor
+# ToolCall Doctor
+
+**Stop guessing why your LLM tool calls broke.**
+
+Give it a failing request. Doctor reproduces the failure, isolates a causal component when the evidence supports it, and verifies a remediation against the same runtime.
+
+```
+Failure reproduced
+Cause: tools[0].function[name=pick].parameters.properties.v.enum
+
+Original -> FAIL
+Removed -> PASS
+Restored -> FAIL
+
+VERIFIED ROOT CAUSE + VERIFIED WORKAROUND
+```
+
+**Bundled deterministic demo — not external validation.** Ollama 0.4.6 + `llama3.2:3b`. Doctor is an HTTP client; **it does not need a GPU.**
+
+```
+git clone https://github.com/aldi949/toolcall-doctor.git
+cd toolcall-doctor
+pip install -e .
+ollama serve
+ollama pull llama3.2:3b
+toolcall-doctor demo --live -o out
+```
+
+Takes about 1–2 minutes. Then open `out/result.json` and read `report.status`.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![Tests](https://github.com/aldi949/toolcall-doctor/actions/workflows/test.yml/badge.svg)](https://github.com/aldi949/toolcall-doctor/actions/workflows/test.yml)
 
-**Experimental v0.3.0-rc1.** A contract-driven minimizer for reproducible tool-calling failures, plus a conservative `diagnose` command for **deterministic schema/tool-set** cases.
+Experimental **v0.3.0-rc1**. Schema/tool-set confirmation is in scope. Parser isolation is not.
 
-It does **not** diagnose arbitrary tool-calling failures.
+---
 
-## What it does
+## Without vs with
 
-Given a chat-completions **request** and a user-written **contract**, ToolCall Doctor can:
+```
+WITHOUT                         WITH
+─────────────────────           ─────────────────────
+edit a tool, retry              demo --live  (or diagnose)
+edit the schema, retry                  ↓
+change a parser flag, retry     reproduce
+stare at logs                   isolate
+repeat                          confirm (A/B/C) or abstain
+                                verify remediation
+```
 
-- establish whether the contracted failure **manifests**
-- **minimize** a reproducer while the contract still holds
-- **localize** supported failure layers with isolation probes
-- for supported **deterministic schema/tool-set** failures:
-  - generate causal hypotheses
-  - perform A/B/C confirmation
-  - generate remediation candidates
-  - verify a **fix** or a **workaround** experimentally
+Not an LLM reading logs. For a confirmed schema/tool cause: original fails, the suspected piece is changed and the original failure disappears, then restoring it brings the failure back.
 
-Self-serve:
+---
+
+## Try it
+
+`demo --live` runs the real `diagnose` pipeline on bundled `enum-keyword` (`-n 1`, deterministic). Files: [`examples/local-demo/`](examples/local-demo/). Walkthrough: [`docs/ONBOARDING.md`](docs/ONBOARDING.md).
+
+Skip the model (recorded shrink only — **not** a diagnosis): `toolcall-doctor demo -o out`
+
+Plan only: `toolcall-doctor diagnose --example enum-keyword --dry-run -o out`
+
+---
+
+## Your own failing request
+
+1. Save the chat-completions body as `request.json` (strip secrets).
+2. Copy a template from [`examples/contracts/`](examples/contracts/) into `contract.json`. You must name the failure; Doctor does not invent it.
+3. Point `--url` at the same `POST .../v1/chat/completions` you already use (default: local Ollama).
 
 ```
 toolcall-doctor diagnose request.json --contract contract.json -o out
 ```
 
-Representative `report.status` values:
+---
 
-- `VERIFIED ROOT CAUSE + VERIFIED FIX` — A/B/C confirmed a schema/tool component and a `ROOT_CAUSE_FIX` verified
-- `LOCALIZED, CAUSE NOT CONFIRMED` — a layer was isolated; cause was not confirmed
-- `INSUFFICIENT EVIDENCE` — budget, probes, or k/n did not justify a cause (fail closed; not a guess)
+## Statuses
 
-`--dry-run` prints planned stages and extra-call caps with **zero** inference. Details: [`docs/DIAGNOSE.md`](docs/DIAGNOSE.md).
+| `report.status` | Meaning |
+| --- | --- |
+| `VERIFIED ROOT CAUSE + VERIFIED FIX` | Cause confirmed by A/B/C; a `ROOT_CAUSE_FIX` verified on the same runtime |
+| `VERIFIED ROOT CAUSE + VERIFIED WORKAROUND` | Cause confirmed; verified change is a **workaround**, not a root-cause fix |
+| `CAUSE CONFIRMED, NO VERIFIED REMEDIATION` | Cause confirmed; no remediation verified |
+| `LOCALIZED, CAUSE NOT CONFIRMED` | Layer isolated; cause not confirmed |
+| `INSUFFICIENT EVIDENCE` | Evidence too weak to name a cause — **abstention, not a guess** |
+| `NOT REPRODUCED` | Contract did not match; later stages did not run |
+| `RUNTIME/PRECONDITION FAILURE` | Runtime down or keepers unusable |
 
-You write the failure contract. A smaller request is **not** by itself a unique cause. Live validation is limited to one Ollama pin and a few failure families.
+A smaller request after minimization is not a confirmed cause. A plausible rewrite is not a verified fix.
 
-```
-     583 B  →  185 B     (live minimize, Ollama 0.4.6 + llama3.2:3b)
-
-     ✓ Specified failure still reproduced
-     ✓ Required parts preserved
-     ✗ Smaller request ≠ confirmed root cause
-```
+The bundled demo reaches **verified workaround** (removing the `enum` keyword). It does **not** claim a verified root-cause fix.
 
 ---
 
-## Install
+## When it cannot prove it, it abstains
 
-Python 3.10+. Clone this repository (no PyPI package yet):
+Live `argument-shape` on the same Ollama pin, keepers blocked every schema A/B/C:
 
 ```
-pip install -e .
+DIAGNOSE: INSUFFICIENT EVIDENCE
+
+Failure reproduced
+localization: unknown
 ```
 
-Optional, for tests:
+That is fail-closed. It is not a crash and not a guessed cause.
+
+---
+
+## Supported vs untested
+
+| | Status |
+| --- | --- |
+| HTTP `POST` chat-completions (`--url`) | Implemented |
+| Ollama live adapter | **Tested** pin: **0.4.6** + **`llama3.2:3b`** |
+| Other servers via `--url` | Untested; no extra adapter |
+| vLLM / SGLang / llama.cpp adapters | **Not supported** (no first-class adapter) |
+| Schema / tool-set A/B/C | Implemented; `diagnose` default |
+| Remediation verification | After a confirmed schema/tool cause |
+| Structured-decoding pair | Ollama, only if the request has `format` / `response_format` |
+| Parser injection | **Unsupported** on Ollama |
+| Streaming diagnosis | **Not** a feature |
+| Stochastic causal confirmation | **Not** supported |
+| Automatic contract generation | **Not** supported |
+| GPU for Doctor | **Not required** |
+
+`minimize` still exists. It does not spend causal/remediation calls unless you pass expert flags.
+
+---
+
+## FAQ
+
+**Do I need a GPU?** No. Doctor POSTs to `--url`. GPU cost belongs to the model you are already debugging.
+
+**Does `demo` without `--live` diagnose anything?** No. That is a recorded shrink replay (`live_inference: false`).
+
+**Is the live demo production proof?** No. It is a bundled deterministic protocol demo, not external validation.
+
+**Will I always get VERIFIED FIX?** No. The local demo is a **workaround**. Many real keepers yield **INSUFFICIENT EVIDENCE**.
+
+**vLLM / SGLang / llama.cpp?** You may pass `--url` at your own risk. Only the Ollama pin above is tested. Those stacks have no adapter here.
+
+---
+
+## How it works
+
+```
+your model / runtime / endpoint
+        ↓
+   ToolCall Doctor
+        ↓
+ reproduce → minimize → localize → A/B/C (if schema) → verify remediation
+        ↓
+ evidence-backed report  (or honest abstention)
+```
+
+Details: [`docs/DIAGNOSE.md`](docs/DIAGNOSE.md), [`docs/CAUSAL_DIAGNOSIS.md`](docs/CAUSAL_DIAGNOSIS.md), [`docs/REMEDIATION_VERIFICATION.md`](docs/REMEDIATION_VERIFICATION.md).
+
+Live minimize sizes on the Ollama pin (not a diagnose success-rate):
+
+| Family | Before | After |
+| --- | ---: | ---: |
+| tool_choice | 583 B | 185 B |
+| argument shape | 468 B | 234 B |
+| enum-constraint | 401 B | 210 B |
+| enum-keyword (local demo) | 252 B | 233 B |
+
+---
+
+## Development
 
 ```
 pip install -e ".[dev]"
 pytest
 ```
 
----
-
-## Demo (no model)
-
-Works from any directory after install:
-
-```
-toolcall-doctor demo -o out
-```
-
-This copies a **recorded** argument-shape run. It does not call a model and is not evidence that your runtime still fails.
-
-Open `out/minimal-repro.json`. `out/result.json` has `"mode": "demo_replay"` and `"live_inference": false`.
-
----
-
-## Live quickstart
-
-Needs a reachable OpenAI-compatible `POST /v1/chat/completions` server. The **only** live-validated pin is **Ollama 0.4.6** + **`llama3.2:3b`** at `http://127.0.0.1:11434`. Other servers and models are untested.
-
-```
-ollama pull llama3.2:3b
-toolcall-doctor diagnose --example tool-choice-none -o out
-```
-
-That command prints the planned stages and extra-call caps, then runs outcome → minimization → localization → causal confirmation (when justified) → remediation (when confirmed). Expert flags are optional.
-
-To shrink only, without causal/remediation inference:
-
-```
-toolcall-doctor minimize --example tool-choice-none -o out
-```
-
-`--example` is bundled in the package. You do **not** need to be in the repository directory.
-
-To inspect the files first:
-
-```
-toolcall-doctor example tool-choice-none -o ./case
-```
-
-Your own failure:
-
-```
-toolcall-doctor diagnose request.json --contract contract.json -o out
-```
-
-Each candidate is a model call. Bundled examples take a few minutes with a hot model. Default `-n 3` so one lucky reply is not enough.
-
-Every run first classifies whether the requested failure **manifests** (see [`docs/OUTCOME_TAXONOMY.md`](docs/OUTCOME_TAXONOMY.md)). If it does not reproduce, the runtime is down, a precondition fails, or too few trials match, later stages **do not start**. If the final re-run after a shrink does not keep the specified failure and keepers, the CLI **refuses success**. After a manifested (and verified) case, isolation probes may add a `localization` object: a failure-layer candidate from experiments, not from error-string matching, and not a confirmed cause ([`docs/LAYER_LOCALIZATION.md`](docs/LAYER_LOCALIZATION.md)). `diagnose` enables the Ollama adapter by default (schema / structured-decoding pairs when actually executable; parser injection is unsupported). See [`docs/FIRST_LIVE_ADAPTER_VALIDATION.md`](docs/FIRST_LIVE_ADAPTER_VALIDATION.md), [`docs/CAUSAL_DIAGNOSIS.md`](docs/CAUSAL_DIAGNOSIS.md), and [`docs/REMEDIATION_VERIFICATION.md`](docs/REMEDIATION_VERIFICATION.md).
-
----
-
-## Input
-
-A chat-completions **request** plus a **contract**. The tool invents neither.
-
-**request.json** (excerpt from the bundled `tool-choice-none` example):
-
-```json
-{
-  "model": "llama3.2:3b",
-  "tool_choice": "none",
-  "messages": [
-    {"role": "user", "content": "What is the weather in Paris right now? You must use a tool."}
-  ],
-  "tools": [
-    {"type": "function", "function": {"name": "get_weather", "parameters": {"type": "object", "properties": {"location": {"type": "string"}}}}}
-  ]
-}
-```
-
-**contract.json**:
-
-```json
-{
-  "failure": {"condition": "has_tool_call"},
-  "preserve": [
-    {"type": "request_equals", "key": "tool_choice", "value": "none"},
-    {"type": "tool_name", "value": "get_weather"},
-    {"type": "contains", "value": "weather"},
-    {"type": "contains", "value": "Paris"}
-  ]
-}
-```
-
-That means: keep shrinking only while the model still emits a tool call, `tool_choice` stays `none`, `get_weather` stays declared, and the user text still contains `weather` and `Paris`.
-
-Field reference: [`USER_CONTRACT_SPEC.md`](USER_CONTRACT_SPEC.md).
-
----
-
-## Minimized output
-
-`minimize` prints sizes, verification, and paths, and states that a smaller request is not by itself a diagnosis.
-
-Example `out/minimal-repro.json` from the same family (character-level shrink; keepers can concatenate substrings):
-
-```json
-{
-  "model": "llama3.2:3b",
-  "tool_choice": "none",
-  "messages": [{"role": "user", "content": "weatherParis"}],
-  "tools": [{"function": {"name": "get_weather"}}]
-}
-```
-
-`weatherParis` is what remained after shrinking, not a suggested prompt rewrite.
-
-**Next after a successful run**
-
-1. Open `minimal-repro.json` and look at what the search was not allowed to delete.
-2. Open `result.json` for the machine-readable `report` (diagnose) or minimize verification.
-3. Sanitize secrets and private data before sharing.
-
----
-
-## Privacy
-
-Live commands **POST your request JSON** (prompts, tool schemas, user text, and anything else in the body) to `--url` (default `http://127.0.0.1:11434/v1/chat/completions`). Strip API keys, tokens, internal URLs, and personal data first. Demo replay does not contact a server.
-
----
-
-## Current support
-
-| | |
-| --- | --- |
-| Version | **0.3.0-rc1** |
-| Install | `pip install -e .` from this repository (Python 3.10+) |
-| Demo | no model; any working directory |
-| Live pin | Ollama 0.4.6 + `llama3.2:3b` (first live adapter) |
-| API | OpenAI-compatible `POST /v1/chat/completions` |
-| Failure checks | `has_tool_call`, `type_is`, `not_in_enum`, `http_status_is`, `response_contains`, `missing_tool_call`, `tool_name_not` |
-| Causal / remediation | deterministic schema/tool-set only |
-
-Bundled examples: `tool-choice-none`, `argument-shape`, `enum-constraint` (`toolcall-doctor example --list`).
-
----
-
-## Validated results
-
-Live **minimize** runs on **one** runtime pin (Ollama **0.4.6** + **llama3.2:3b**), default `-n 3`. These are not ecosystem benchmarks and are not a claim that diagnose succeeds on every family.
-
-| Failure family | Before | After | Reduction | Notes |
-| --- | ---: | ---: | ---: | --- |
-| tool_choice constraint | 583 B | 185 B | 68.27% | final verification 3/3 |
-| argument shape | 468 B | 234 B | 50.00% | final verification 3/3 |
-| enum constraint | 401 B | 210 B | 47.63% | see caveat below |
-
-**Enum caveat.** Search can accept a candidate that still shows the configured failure, then **fail final repeated verification**. Model replies are not deterministic. When that happens the CLI exits unsuccessful and tells you not to treat the output as a successful shrink.
-
----
-
-## How it works
-
-1. Check whether the experiment can run (runtime reachable, request/keepers usable).
-2. Reproduce the specified failure on the original request (`-n` trials; default all must match).
-3. If it does not manifest, stop and report `NOT REPRODUCED`, `INSUFFICIENT EVIDENCE`, or `RUNTIME/PRECONDITION FAILURE`. No root cause is inferred.
-4. Only if the failure manifested: remove part of the request, rerun, and keep the reduction only while the contract still holds.
-5. Verify the final candidate the same way (`-n` times). If it still manifests, record a layer `localization` from isolation probes.
-6. `diagnose` may then run schema/tool A/B/C and, if a cause is confirmed, verify remediations. `minimize` does not spend those extra calls unless you pass expert flags.
-
-The reduction engine is character-level [delta debugging (DDMin)](https://www.debuggingbook.org/html/DeltaDebugger.html).
-
----
-
-## Current limitations
-
-- Causal/remediation support is currently **schema/tool-set** focused.
-- **Ollama** is the first live adapter.
-- **Parser injection is unsupported** on Ollama.
-- **Stochastic/flaky causal confirmation is not supported.**
-- **You supply the failure contract.** The tool does not generate it, discover “broken,” or infer keepers.
-- Keepers preserve only the properties you encode. Other details can disappear.
-- Unsupported cases may return **`INSUFFICIENT EVIDENCE`** (fail closed).
-- Live validation is narrow: one Ollama version, one model.
-- Live runs talk to the model many times. Minutes are expected.
-- Model nondeterminism can make a search-accepted candidate fail final verification. The CLI **fails closed**.
-- Keepers cannot address nested schema fields (for example a `pattern` under an object property) unless that field matches an existing keeper primitive.
-
----
-
-## Evidence
-
-Product behavior is the contract + experimental stages above. Historical research notes are not part of this repository's product tree. Short pointer: [`RESEARCH.md`](RESEARCH.md). Changelog: [`CHANGELOG.md`](CHANGELOG.md).
-
----
+Default pytest skips live inference (`pytest -m live` needs the Ollama pin).
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Please keep claims no stronger than the contract, the schema/tool-set scope, and the validated runtime pin.
-
----
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Keep claims no stronger than the contract, schema/tool-set scope, and the validated pin.
 
 ## License
 

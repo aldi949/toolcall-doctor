@@ -23,7 +23,13 @@ from toolcall_doctor.contract import (
 )
 from toolcall_doctor.ddmin import Session, compact_bytes, ddmin, extract_atoms
 from toolcall_doctor.demo import print_demo, run_demo
-from toolcall_doctor.examples import EXAMPLE_NAMES, ExampleError, load_example, write_example
+from toolcall_doctor.examples import (
+    EXAMPLE_NAMES,
+    LIVE_DEMO_EXAMPLE,
+    ExampleError,
+    load_example,
+    write_example,
+)
 from toolcall_doctor.execute import DEFAULT_URL, exec_check, exec_spec_from_request, post, utc_now
 from toolcall_doctor.localize import localize, print_localization
 from toolcall_doctor.ollama_adapter import (
@@ -221,7 +227,8 @@ def probe_runtime(url: str, model: str | None, timeout: float = 5.0, client: htt
         raise RuntimeUnavailable(
             f"cannot reach {origin}",
             "Ollama (or your --url server) is not accepting connections.",
-            "Start it (`ollama serve`) or pass --url. For a no-model walkthrough: toolcall-doctor demo -o out",
+            "Start it (`ollama serve`) or pass --url to the chat-completions endpoint where the failure occurs. "
+            "Tested pin: local Ollama. Doctor itself does not need a GPU. Offline walkthrough: toolcall-doctor demo -o out",
         ) from e
     except httpx.HTTPError as e:
         raise RuntimeUnavailable(f"runtime probe failed: {e}", "Could not query /api/version or /api/tags.", "Confirm the server URL.") from e
@@ -1004,9 +1011,31 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser(
         "demo",
-        help="replay a recorded example (no live model; not a fresh minimization)",
+        help="offline recorded replay, or --live diagnose against local Ollama",
+        description=(
+            "Without --live: copy a recorded argument-shape shrink (zero inference). "
+            "With --live: run the real diagnose pipeline on the bundled deterministic "
+            f"{LIVE_DEMO_EXAMPLE} example (not external validation)."
+        ),
     )
     d.add_argument("-o", "--output", default="out", help="directory for copied minimal-repro.json and result.json")
+    d.add_argument(
+        "--live",
+        action="store_true",
+        help=f"run diagnose on bundled {LIVE_DEMO_EXAMPLE} (needs Ollama + llama3.2:3b)",
+    )
+    d.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="with --live: print the diagnose plan only; zero inference",
+    )
+    d.add_argument("--url", default=os.environ.get("TOOLCALL_DOCTOR_URL", DEFAULT_URL), help="chat completions URL for --live")
+    d.add_argument(
+        "-n",
+        type=int,
+        default=1,
+        help="with --live: trials per gate (default 1; this bundled case is deterministic)",
+    )
     e = sub.add_parser(
         "example",
         help="list or write a bundled example (no model; cwd-independent)",
@@ -1069,7 +1098,8 @@ def _contract_input_error(exc: ContractError) -> InputError:
     return InputError(
         f"invalid contract: {exc}",
         "The contract tells the tool what still counts as the same failure and what must not be removed.",
-        "See USER_CONTRACT_SPEC.md. Supported failure conditions: "
+        "Copy examples/contracts/ and replace placeholders, or see USER_CONTRACT_SPEC.md. "
+        "Supported failure conditions: "
         "type_is, not_in_enum, has_tool_call, http_status_is, "
         "response_contains, missing_tool_call, tool_name_not.",
     )
@@ -1105,15 +1135,17 @@ def _load_minimize_inputs(args: argparse.Namespace) -> tuple[dict, dict]:
         raise InputError(
             "missing request path",
             "This command needs a failing chat-completions JSON body, or a bundled example.",
-            f"Use --example tool-choice-none, or pass request.json --contract contract.json. "
-            f"Self-serve: toolcall-doctor diagnose request.json --contract contract.json -o out. "
+            f"Use --example argument-shape, or pass request.json --contract contract.json. "
+            "Copy a starter pair: toolcall-doctor example argument-shape -o ./case "
+            "(same family as examples/local-demo/). "
             "No-model walkthrough: toolcall-doctor demo -o out",
         )
     if not contract_path:
         raise InputError(
             "missing --contract",
             "The contract is the failure check and keepers. The tool does not invent them.",
-            "Pass --contract contract.json, or use --example <name>. See USER_CONTRACT_SPEC.md.",
+            "Pass --contract contract.json, or use --example <name>. "
+            "Templates: examples/contracts/ and USER_CONTRACT_SPEC.md.",
         )
     request = _load_json(Path(request_path), "request")
     if not isinstance(request, dict):
@@ -1165,6 +1197,42 @@ def main(argv: list[str] | None = None) -> int:
         code = e.code
         return int(code) if isinstance(code, int) else 1
     if args.cmd == "demo":
+        if getattr(args, "live", False):
+            try:
+                request, raw_contract = load_example(LIVE_DEMO_EXAMPLE)
+                contract = parse_contract(raw_contract)
+                out = Path(args.output)
+                out.mkdir(parents=True, exist_ok=True)
+                print(
+                    f"Bundled deterministic local demo: --example {LIVE_DEMO_EXAMPLE} "
+                    "(not external validation).",
+                    flush=True,
+                )
+                result = run_diagnose(
+                    request,
+                    contract,
+                    out,
+                    n=int(getattr(args, "n", 1)),
+                    url=str(getattr(args, "url", DEFAULT_URL)),
+                    progress=lambda s: print(s, flush=True),
+                    dry_run=bool(getattr(args, "dry_run", False)),
+                )
+                print_diagnose_summary(result)
+                print(f"Saved report: {out / 'result.json'}")
+                print("Open that file and read report.status.")
+                return EX_OK
+            except (ContractError, InputError, RuntimeUnavailable, DoesNotReproduce) as e:
+                closed = getattr(e, "result", None)
+                if isinstance(closed, dict) and isinstance(closed.get("report"), dict):
+                    print_diagnose_summary(closed)
+                elif isinstance(closed, dict) and isinstance(closed.get("outcome"), dict):
+                    print_outcome(closed["outcome"], minimization_ran=False, verified=False)
+                _emit_error(e)
+                if isinstance(e, InputError):
+                    return EX_INPUT
+                if isinstance(e, RuntimeUnavailable):
+                    return EX_RUNTIME
+                return EX_NO_REPRO
         result = run_demo(Path(args.output))
         print_demo(result)
         return EX_OK

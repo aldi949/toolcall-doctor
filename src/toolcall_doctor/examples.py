@@ -10,7 +10,11 @@ EXAMPLE_NAMES = (
     "tool-choice-none",
     "argument-shape",
     "enum-constraint",
+    "enum-keyword",
 )
+
+# Bundled deterministic local demo (not external validation). Loaded by `demo --live`.
+LIVE_DEMO_EXAMPLE = "enum-keyword"
 
 PKG = "toolcall_doctor.bundled_examples"
 

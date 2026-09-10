@@ -1,7 +1,7 @@
 [project]
 name = "toolcall-doctor"
 version = "0.3.0rc1"
-description = "Contract-driven tool-calling failure minimizer with conservative diagnose (schema/tool-set)."
+description = "Experimentally isolate LLM tool-calling failures. Confirm schema/tool causes when evidence permits; abstain otherwise."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}

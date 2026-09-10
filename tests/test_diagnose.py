@@ -491,3 +491,121 @@ def test_not_reproduced_gets_user_status(tmp_path: Path):
             )
     dumped = json.loads((tmp_path / "result.json").read_text(encoding="utf-8"))
     assert dumped["report"]["status"] == STATUS_NOT_REPRODUCED
+
+
+def test_enum_keyword_demo_is_not_a_named_special_case(tmp_path: Path):
+    from toolcall_doctor.examples import LIVE_DEMO_EXAMPLE, load_example
+
+    def emit(name: str) -> dict:
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "role": "assistant",
+                        "content": "",
+                        "tool_calls": [
+                            {
+                                "id": "c1",
+                                "type": "function",
+                                "function": {"name": name, "arguments": json.dumps({"v": "Z"})},
+                            }
+                        ],
+                    }
+                }
+            ]
+        }
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        probe = _ollama_ok(request.url.path)
+        if probe is not None:
+            return probe
+        payload = json.loads(request.content)
+        name = "pick"
+        for t in payload.get("tools") or []:
+            fn = t.get("function") if isinstance(t, dict) else None
+            if isinstance(fn, dict) and isinstance(fn.get("name"), str):
+                name = fn["name"]
+                break
+        return httpx.Response(200, json=emit(name))
+
+    req, raw = load_example(LIVE_DEMO_EXAMPLE)
+    with _client_for(handler) as client:
+        bundled = run_diagnose(
+            req,
+            parse_contract(raw),
+            tmp_path / "bundled",
+            n=1,
+            url="http://127.0.0.1/v1/chat/completions",
+            client=client,
+            skip_probe=True,
+        )
+    clone_req = json.loads(json.dumps(req))
+    clone_req["tools"][0]["function"]["name"] = "choose"
+    clone_con = parse_contract(
+        {
+            "failure": {"condition": "not_in_enum", "path": "arguments.v"},
+            "preserve": [{"type": "tool_name", "value": "choose"}],
+        }
+    )
+    with _client_for(handler) as client:
+        cloned = run_diagnose(
+            clone_req,
+            clone_con,
+            tmp_path / "clone",
+            n=1,
+            url="http://127.0.0.1/v1/chat/completions",
+            client=client,
+            skip_probe=True,
+        )
+    _safe(bundled)
+    _safe(cloned)
+    assert bundled["report"]["status"] == STATUS_VERIFIED_WORKAROUND
+    assert cloned["report"]["status"] == STATUS_VERIFIED_WORKAROUND
+    assert bundled["causal_diagnosis"]["hypothesis"]["target"]["keyword"] == "enum"
+    assert cloned["causal_diagnosis"]["hypothesis"]["target"]["keyword"] == "enum"
+
+
+def test_print_diagnose_summary_mentions_gpu(capsys):
+    from toolcall_doctor.diagnose import print_diagnose_summary
+
+    print_diagnose_summary(
+        {
+            "report": {
+                "status": STATUS_INSUFFICIENT_EVIDENCE,
+                "summary": "budget exhausted",
+                "stages_ran": ["outcome"],
+            },
+            "outcome": {"status": MANIFESTED},
+            "live_inference": True,
+        }
+    )
+    out = capsys.readouterr().out
+    assert "DIAGNOSE: INSUFFICIENT EVIDENCE" in out
+    assert "Failure reproduced" in out
+    assert "does not need a GPU" in out
+
+
+def test_print_diagnose_summary_uses_ascii_arrows(capsys):
+    from toolcall_doctor.diagnose import print_diagnose_summary
+
+    print_diagnose_summary(
+        {
+            "report": {
+                "status": STATUS_VERIFIED_WORKAROUND,
+                "summary": "workaround",
+                "stages_ran": ["causal"],
+            },
+            "outcome": {"status": MANIFESTED},
+            "causal_diagnosis": {
+                "experiments": [
+                    {"phase": "A", "original_failure_manifested": True},
+                    {"phase": "B", "original_failure_manifested": False},
+                    {"phase": "C", "original_failure_manifested": True},
+                ]
+            },
+        }
+    )
+    out = capsys.readouterr().out
+    assert "A original" in out
+    assert "->" in out
+    assert "\u2192" not in out
