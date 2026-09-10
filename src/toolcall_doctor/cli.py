@@ -227,8 +227,8 @@ def probe_runtime(url: str, model: str | None, timeout: float = 5.0, client: htt
         raise RuntimeUnavailable(
             f"cannot reach {origin}",
             "Ollama (or your --url server) is not accepting connections.",
-            "Start it (`ollama serve`) or pass --url to an OpenAI-compatible chat-completions endpoint. "
-            "Doctor itself does not need a GPU. Offline walkthrough: toolcall-doctor demo -o out",
+            "Start it (`ollama serve`) or pass --url to the chat-completions endpoint where the failure occurs. "
+            "Tested pin: local Ollama. Doctor itself does not need a GPU. Offline walkthrough: toolcall-doctor demo -o out",
         ) from e
     except httpx.HTTPError as e:
         raise RuntimeUnavailable(f"runtime probe failed: {e}", "Could not query /api/version or /api/tags.", "Confirm the server URL.") from e
@@ -1218,6 +1218,8 @@ def main(argv: list[str] | None = None) -> int:
                     dry_run=bool(getattr(args, "dry_run", False)),
                 )
                 print_diagnose_summary(result)
+                print(f"Saved report: {out / 'result.json'}")
+                print("Open that file and read report.status.")
                 return EX_OK
             except (ContractError, InputError, RuntimeUnavailable, DoesNotReproduce) as e:
                 closed = getattr(e, "result", None)

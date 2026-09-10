@@ -2,15 +2,31 @@
 
 **Stop guessing why your LLM tool calls broke.**
 
-Give it a failing request. It experimentally isolates the problem, confirms a schema/tool cause when A/B/C evidence is strong enough, and verifies remediations against the same runtime. If the evidence is weak, it returns **INSUFFICIENT EVIDENCE** instead of inventing a cause.
+Give it a failing request. Doctor reproduces the failure, isolates a causal component when the evidence supports it, and verifies a remediation against the same runtime.
 
 ```
-toolcall-doctor diagnose request.json --contract contract.json -o out
+Failure reproduced
+Cause: tools[0].function[name=pick].parameters.properties.v.enum
+
+Original -> FAIL
+Removed -> PASS
+Restored -> FAIL
+
+VERIFIED ROOT CAUSE + VERIFIED WORKAROUND
 ```
 
-Not an LLM reading logs. Interventions: original fails → suspected cause changed → failure gone → restored → failure returns.
+**Bundled deterministic demo — not external validation.** Ollama 0.4.6 + `llama3.2:3b`. Doctor is an HTTP client; **it does not need a GPU.**
 
-Doctor is an HTTP client. **It does not need a GPU.** It talks to the runtime where your failure already happens.
+```
+git clone https://github.com/aldi949/toolcall-doctor.git
+cd toolcall-doctor
+pip install -e .
+ollama serve
+ollama pull llama3.2:3b
+toolcall-doctor demo --live -o out
+```
+
+Takes about 1–2 minutes. Then open `out/result.json` and read `report.status`.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -20,133 +36,75 @@ Experimental **v0.3.0-rc1**. Schema/tool-set confirmation is in scope. Parser is
 
 ---
 
-## 15-second try
-
-**Bundled deterministic local demo** (Ollama + `llama3.2:3b`). This demonstrates the diagnosis protocol; **it is not external validation.**
-
-```
-pip install -e .
-ollama pull llama3.2:3b
-toolcall-doctor demo --live -o out
-```
-
-Uses `-n 1` because this case is deterministic. Doctor POSTs to your runtime; it does not need a GPU.
-
-**Actual run** on this pin (Ollama **0.4.6** + **`llama3.2:3b`**, real `diagnose` pipeline, `--example enum-keyword -n 1`):
-
-```
-DIAGNOSE: VERIFIED ROOT CAUSE + VERIFIED WORKAROUND
-
-Failure reproduced
-
-LAYER / COMPONENT
-  localization: schema (localized)
-  hypothesis:   tools[0].function[name=pick].parameters.properties.v.enum (confirmed)
-
-EVIDENCE (A/B/C)
-  A original  -> FAIL (original failure present)
-  B changed   -> PASS (original failure absent)
-  C restored  -> FAIL (original failure present)
-
-VERIFIED REMEDIATION
-  WORKAROUND: REMOVE_UNSUPPORTED_SCHEMA_KEYWORD on tools[0].function[name=pick].parameters.properties.v.enum
-```
-
-Files: [`examples/local-demo/`](examples/local-demo/). Onboarding: [`docs/ONBOARDING.md`](docs/ONBOARDING.md).
-
-Offline replay (no model, **not** a diagnosis): `toolcall-doctor demo -o out`
-
-Plan only: `toolcall-doctor diagnose --example enum-keyword --dry-run -o out`
-
----
-
 ## Without vs with
 
 ```
 WITHOUT                         WITH
 ─────────────────────           ─────────────────────
-edit a tool, retry              diagnose request.json
+edit a tool, retry              demo --live  (or diagnose)
 edit the schema, retry                  ↓
-change a parser flag, retry     reproduce  →  minimize
-stare at logs                   isolate layer
-repeat                          A/B/C if schema/tool
+change a parser flag, retry     reproduce
+stare at logs                   isolate
+repeat                          confirm (A/B/C) or abstain
                                 verify remediation
-                                or INSUFFICIENT EVIDENCE
 ```
 
-Not an LLM reading logs. Interventions either keep the frozen failure, remove it, or restore it.
+Not an LLM reading logs. For a confirmed schema/tool cause: original fails, the suspected piece is changed and the original failure disappears, then restoring it brings the failure back.
 
 ---
 
-## Why trust it
+## Try it
 
-For a **confirmed** schema/tool cause, the protocol is:
+`demo --live` runs the real `diagnose` pipeline on bundled `enum-keyword` (`-n 1`, deterministic). Files: [`examples/local-demo/`](examples/local-demo/). Walkthrough: [`docs/ONBOARDING.md`](docs/ONBOARDING.md).
 
-| Step | Request | Original failure |
-| --- | --- | --- |
-| **A** | original | must still happen |
-| **B** | only the suspected component changed | must disappear (and not become a *different* failure) |
-| **C** | original restored | must return |
+Skip the model (recorded shrink only — **not** a diagnosis): `toolcall-doctor demo -o out`
 
-A smaller request after minimization is **not** a confirmed cause. A plausible rewrite is **not** a verified fix.
-
-Abstention is a feature:
-
-| `report.status` | Meaning |
-| --- | --- |
-| `VERIFIED ROOT CAUSE + VERIFIED FIX` | A/B/C confirmed; a `ROOT_CAUSE_FIX` verified |
-| `VERIFIED ROOT CAUSE + VERIFIED WORKAROUND` | Confirmed; verified workaround, not a root-cause fix |
-| `CAUSE CONFIRMED, NO VERIFIED REMEDIATION` | Confirmed; remediation did not verify |
-| `LOCALIZED, CAUSE NOT CONFIRMED` | Layer isolated; cause not confirmed |
-| `INSUFFICIENT EVIDENCE` | Budget, probes, or k/n did not justify a cause |
-| `NOT REPRODUCED` | Contract did not match; later stages did not run |
-| `RUNTIME/PRECONDITION FAILURE` | Runtime down or keepers unusable |
+Plan only: `toolcall-doctor diagnose --example enum-keyword --dry-run -o out`
 
 ---
 
-## Example report
+## Your own failing request
 
-The 15-second section is the **bundled deterministic local demo** (`enum-keyword` on live Ollama). It is not external validation.
-
-### Fail-closed behavior
-
-When keepers block A/B/C, Doctor does not invent a cause. Live `argument-shape` on the same pin (Ollama 0.4.6 + `llama3.2:3b`, `-n 1`):
-
-```
-DIAGNOSE: INSUFFICIENT EVIDENCE
-Not enough experimental evidence for a cause or verified remediation.
-
-Failure reproduced
-
-LAYER / COMPONENT
-  localization: unknown (insufficient_evidence)
-  hypothesis:   tools[0].function[name=execute_service].parameters.properties.list.type (candidate)
-
-original bytes:    468
-minimized bytes:   234
-```
-
-`schema_type` on `list` made every schema intervention keeper-breaking. Abstention is a trust feature.
-
-### When a removable `additionalProperties:false` confirms (tests, not this live demo)
-
-Deterministic tests with a mock that keys on that keyword can reach `VERIFIED ROOT CAUSE + VERIFIED FIX`. That mock is **not** how live llama3.2:3b behaves. Do not treat it as a live Ollama screenshot.
-
-Your `out/result.json` is the machine-readable record.
-
----
-
-## Quick start (your runtime)
-
-1. Save the failing chat-completions body as `request.json` (strip secrets).
-2. Write `contract.json` — copy [`examples/contracts/`](examples/contracts/) and set **your** tool names and failure condition.
-3. Point `--url` at the same `POST /v1/chat/completions` you already use (default: local Ollama).
+1. Save the chat-completions body as `request.json` (strip secrets).
+2. Copy a template from [`examples/contracts/`](examples/contracts/) into `contract.json`. You must name the failure; Doctor does not invent it.
+3. Point `--url` at the same `POST .../v1/chat/completions` you already use (default: local Ollama).
 
 ```
 toolcall-doctor diagnose request.json --contract contract.json -o out
 ```
 
-You write the contract. The tool does not discover what “broken” means.
+---
+
+## Statuses
+
+| `report.status` | Meaning |
+| --- | --- |
+| `VERIFIED ROOT CAUSE + VERIFIED FIX` | Cause confirmed by A/B/C; a `ROOT_CAUSE_FIX` verified on the same runtime |
+| `VERIFIED ROOT CAUSE + VERIFIED WORKAROUND` | Cause confirmed; verified change is a **workaround**, not a root-cause fix |
+| `CAUSE CONFIRMED, NO VERIFIED REMEDIATION` | Cause confirmed; no remediation verified |
+| `LOCALIZED, CAUSE NOT CONFIRMED` | Layer isolated; cause not confirmed |
+| `INSUFFICIENT EVIDENCE` | Evidence too weak to name a cause — **abstention, not a guess** |
+| `NOT REPRODUCED` | Contract did not match; later stages did not run |
+| `RUNTIME/PRECONDITION FAILURE` | Runtime down or keepers unusable |
+
+A smaller request after minimization is not a confirmed cause. A plausible rewrite is not a verified fix.
+
+The bundled demo reaches **verified workaround** (removing the `enum` keyword). It does **not** claim a verified root-cause fix.
+
+---
+
+## When it cannot prove it, it abstains
+
+Live `argument-shape` on the same Ollama pin, keepers blocked every schema A/B/C:
+
+```
+DIAGNOSE: INSUFFICIENT EVIDENCE
+
+Failure reproduced
+localization: unknown
+```
+
+That is fail-closed. It is not a crash and not a guessed cause.
 
 ---
 
@@ -154,32 +112,34 @@ You write the contract. The tool does not discover what “broken” means.
 
 | | Status |
 | --- | --- |
-| HTTP `POST` chat-completions | Implemented (`--url`) |
+| HTTP `POST` chat-completions (`--url`) | Implemented |
 | Ollama live adapter | **Tested** pin: **0.4.6** + **`llama3.2:3b`** |
-| Remote `--url` | Implemented; **not** a second validated pin |
-| vLLM / SGLang / llama.cpp adapters | **Not yet** (no first-class adapter) |
+| Other servers via `--url` | Untested; no extra adapter |
+| vLLM / SGLang / llama.cpp adapters | **Not supported** (no first-class adapter) |
 | Schema / tool-set A/B/C | Implemented; `diagnose` default |
-| Remediation verification | Implemented after a confirmed schema/tool cause |
+| Remediation verification | After a confirmed schema/tool cause |
 | Structured-decoding pair | Ollama, only if the request has `format` / `response_format` |
 | Parser injection | **Unsupported** on Ollama |
 | Streaming diagnosis | **Not** a feature |
-| Stochastic / flaky causal confirmation | **Not** supported |
+| Stochastic causal confirmation | **Not** supported |
 | Automatic contract generation | **Not** supported |
 | GPU for Doctor | **Not required** |
 
-`minimize` still exists. It does **not** spend causal/remediation calls unless you pass expert flags.
+`minimize` still exists. It does not spend causal/remediation calls unless you pass expert flags.
 
 ---
 
 ## FAQ
 
-**Do I need a GPU?** No. ToolCall Doctor POSTs to `--url`. GPU cost belongs to the model/runtime you are already debugging.
+**Do I need a GPU?** No. Doctor POSTs to `--url`. GPU cost belongs to the model you are already debugging.
 
-**Does `demo` diagnose my runtime?** Only `demo --live` (or `diagnose`) does. Plain `demo` is a recorded shrink replay with `live_inference: false`. `demo --live` runs bundled `enum-keyword` (deterministic `-n 1`). That is a protocol demo, not external validation.
+**Does `demo` without `--live` diagnose anything?** No. That is a recorded shrink replay (`live_inference: false`).
 
-**Will live Ollama always print VERIFIED FIX?** No. Enum removal is a **workaround**, not a root-cause fix. `argument-shape` keepers often block A/B/C and return **INSUFFICIENT EVIDENCE**. That is fail-closed, not a crash.
+**Is the live demo production proof?** No. It is a bundled deterministic protocol demo, not external validation.
 
-**Can I point it at vLLM / SGLang / llama.cpp?** You can pass any chat-completions `--url`. There is no first-class adapter or validated pin for those servers.
+**Will I always get VERIFIED FIX?** No. The local demo is a **workaround**. Many real keepers yield **INSUFFICIENT EVIDENCE**.
+
+**vLLM / SGLang / llama.cpp?** You may pass `--url` at your own risk. Only the Ollama pin above is tested. Those stacks have no adapter here.
 
 ---
 
@@ -216,8 +176,6 @@ pytest
 ```
 
 Default pytest skips live inference (`pytest -m live` needs the Ollama pin).
-
----
 
 ## Contributing
 

@@ -7,7 +7,9 @@ Contract: `not_in_enum` on `arguments.v`. Keepers allow removing the enum keywor
 This demonstrates the diagnosis protocol on ordinary Ollama hardware. **It is not external validation.**
 
 ```
-toolcall-doctor diagnose --example enum-keyword -n 1 -o out
+ollama serve
+ollama pull llama3.2:3b
+toolcall-doctor demo --live -o out
 ```
 
-Same case: `toolcall-doctor demo --live -o out`
+Then read `out/result.json` → `report.status`. Same case: `diagnose --example enum-keyword -n 1`.

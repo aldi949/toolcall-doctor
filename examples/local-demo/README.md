@@ -14,9 +14,12 @@ Doctor is an HTTP client. It does **not** need a GPU.
 ## Live (real pipeline, deterministic `-n 1`)
 
 ```
+ollama serve
 ollama pull llama3.2:3b
 toolcall-doctor demo --live -o out
 ```
+
+Then open `out/result.json` and read `report.status`. Expect about 1–2 minutes.
 
 Or from this folder:
 
